@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { EMAIL, ROUTES, waLink } from "@/lib/site";
-import logoIcon from "@/assets/numen-logo.png";
+import logoIcon from "@/assets/numen-mark.png";
 
 export const Footer = () => {
   return (

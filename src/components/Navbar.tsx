@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_LINKS, ROUTES, waLink } from "@/lib/site";
-import logoIcon from "@/assets/numen-logo.png";
+import logoIcon from "@/assets/numen-mark.png";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
