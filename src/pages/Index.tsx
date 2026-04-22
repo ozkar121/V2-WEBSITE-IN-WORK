@@ -66,9 +66,9 @@ const whyItems = [
 const Index = () => {
   useReveal();
   useSEO({
-    title: "Numen Aviation | Charter de Jet Privado en México y Las Américas",
+    title: "Renta de Jet Privado en Toluca y México | Numen Aviation",
     description:
-      "Charter de jet privado en México, EUA y el Caribe. Vuelos bajo demanda, empty legs, consultoría y adquisición de aeronaves. Disponible 24/7 desde Toluca (MMTO).",
+      "Renta de jet privado, charter bajo demanda, empty legs, consultoría y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Servicio 24/7 en México, EUA, Caribe y Centroamérica. Cotización en menos de 2 horas.",
     path: "/",
     jsonLd: HOME_JSONLD,
   });
