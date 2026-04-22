@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
@@ -7,8 +8,24 @@ import { useSEO } from "@/hooks/useSEO";
 import { ROUTE_DATA } from "@/data/routes";
 import { waLink } from "@/lib/site";
 
+const RouteSkeleton = () => (
+  <div className="animate-pulse" style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 6rem" }}>
+    <div className="h-3 w-40 bg-bg-3 mb-6" />
+    <div className="h-12 w-3/4 max-w-2xl bg-bg-3 mb-4" />
+    <div className="h-12 w-1/2 max-w-xl bg-bg-3 mb-8" />
+    <div className="h-px w-24 bg-jade-soft mb-8" />
+    <div className="h-3 w-full max-w-lg bg-bg-3 mb-2" />
+    <div className="h-3 w-2/3 max-w-md bg-bg-3 mb-10" />
+    <div className="flex gap-4">
+      <div className="h-12 w-48 bg-bg-3" />
+      <div className="h-12 w-40 bg-bg-3" />
+    </div>
+  </div>
+);
+
 const RoutePage = () => {
   const { slug } = useParams();
+  const [loading, setLoading] = useState(true);
   useReveal();
   const route = slug ? ROUTE_DATA[slug] : undefined;
 
@@ -17,10 +34,27 @@ const RoutePage = () => {
     description: route?.description,
   });
 
+  useEffect(() => {
+    setLoading(true);
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    const t = setTimeout(() => setLoading(false), 250);
+    return () => clearTimeout(t);
+  }, [slug]);
+
   if (!route) return <Navigate to="/" replace />;
 
+  if (loading) {
+    return (
+      <>
+        <Navbar />
+        <RouteSkeleton />
+      </>
+    );
+  }
+
   return (
-    <>
+    <div key={slug} className="animate-fade-in">
+
       <Navbar />
 
       {/* Breadcrumb */}
