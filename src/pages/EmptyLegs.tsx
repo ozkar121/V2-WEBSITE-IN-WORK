@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -6,9 +6,24 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
-import { EMPTY_LEGS } from "@/data/emptyLegs";
+import { supabase } from "@/integrations/supabase/client";
 import { CATEGORY_LABELS, type AircraftCategory } from "@/data/aircraft";
 import { waLink } from "@/lib/site";
+
+interface DbLeg {
+  id: string;
+  from_city: string;
+  from_iata: string | null;
+  to_city: string;
+  to_iata: string | null;
+  flight_date: string;
+  aircraft: string;
+  category: string;
+  seats: number;
+  price: number | null;
+  is_featured: boolean;
+  is_new: boolean;
+}
 
 type Filter = "all" | AircraftCategory;
 
@@ -45,10 +60,24 @@ const EmptyLegs = () => {
   });
 
   const [filter, setFilter] = useState<Filter>("all");
+  const [legs, setLegs] = useState<DbLeg[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase
+      .from("empty_legs")
+      .select("id,from_city,from_iata,to_city,to_iata,flight_date,aircraft,category,seats,price,is_featured,is_new")
+      .eq("is_active", true)
+      .order("flight_date", { ascending: true })
+      .then(({ data }) => {
+        setLegs((data as DbLeg[]) ?? []);
+        setLoading(false);
+      });
+  }, []);
 
   const visible = useMemo(
-    () => (filter === "all" ? EMPTY_LEGS : EMPTY_LEGS.filter((l) => l.category === filter)),
-    [filter]
+    () => (filter === "all" ? legs : legs.filter((l) => l.category === filter)),
+    [filter, legs]
   );
 
   return (
@@ -193,23 +222,26 @@ const EmptyLegs = () => {
           className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-px border border-jade-soft animate-fade-in"
         >
           <CornerBrackets />
-          {visible.map((leg) => (
+          {visible.map((leg) => {
+            const badge = leg.is_featured ? "Destacado" : leg.is_new ? "Nuevo" : null;
+            const cat = leg.category as AircraftCategory;
+            return (
             <article
               key={leg.id}
               className={`p-7 border-r border-b border-jade-soft flex flex-col gap-4 transition-colors ${
-                leg.featured ? "bg-bg-3" : "bg-bg-2 hover:bg-bg-3"
+                leg.is_featured ? "bg-bg-3" : "bg-bg-2 hover:bg-bg-3"
               }`}
             >
               <div className="flex items-start justify-between gap-3">
                 <span className="text-[0.6rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
-                  {CATEGORY_LABELS[leg.category]}
+                  {CATEGORY_LABELS[cat] ?? leg.category}
                 </span>
-                {leg.badge && (
+                {badge && (
                   <span
                     className="text-[0.55rem] uppercase border border-jade-soft text-jade-light px-2 py-1"
                     style={{ letterSpacing: "0.2em" }}
                   >
-                    {leg.badge}
+                    {badge}
                   </span>
                 )}
               </div>
@@ -219,18 +251,22 @@ const EmptyLegs = () => {
                   <div className="font-serif text-xl font-light text-foreground leading-tight">
                     {leg.from_city}
                   </div>
-                  <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
-                    {leg.from_iata}
-                  </div>
+                  {leg.from_iata && (
+                    <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
+                      {leg.from_iata}
+                    </div>
+                  )}
                 </div>
                 <span className="text-jade text-lg">›</span>
                 <div className="text-right">
                   <div className="font-serif text-xl font-light text-foreground leading-tight">
                     {leg.to_city}
                   </div>
-                  <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
-                    {leg.to_iata}
-                  </div>
+                  {leg.to_iata && (
+                    <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
+                      {leg.to_iata}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -239,13 +275,13 @@ const EmptyLegs = () => {
                   <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
                     Fecha
                   </div>
-                  <div className="text-[0.85rem] text-foreground mt-1">{formatDate(leg.date)}</div>
+                  <div className="text-[0.85rem] text-foreground mt-1">{formatDate(leg.flight_date)}</div>
                 </div>
                 <div>
                   <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
                     Asientos
                   </div>
-                  <div className="text-[0.85rem] text-foreground mt-1">{leg.seats}</div>
+                  <div className="text-[0.85rem] text-foreground mt-1">{leg.seats || "—"}</div>
                 </div>
                 <div>
                   <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
@@ -258,14 +294,14 @@ const EmptyLegs = () => {
                     Desde
                   </div>
                   <div className="font-serif text-lg font-light text-jade-light mt-0.5">
-                    {formatPrice(leg.price)}
+                    {leg.price ? formatPrice(Number(leg.price)) : "Cotizar"}
                   </div>
                 </div>
               </div>
 
               <a
                 href={waLink(
-                  `Hola, me interesa el empty leg ${leg.from_city} → ${leg.to_city} del ${formatDate(leg.date)} (${leg.aircraft}).`
+                  `Hola, me interesa el empty leg ${leg.from_city} → ${leg.to_city} del ${formatDate(leg.flight_date)} (${leg.aircraft}).`
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -274,12 +310,18 @@ const EmptyLegs = () => {
                 Reservar este tramo
               </a>
             </article>
-          ))}
-          {visible.length === 0 && (
+            );
+          })}
+          {!loading && visible.length === 0 && (
             <div className="col-span-full p-12 text-center bg-bg-2 border-r border-b border-jade-soft">
               <p className="text-fg-3 text-[0.85rem]">
                 No hay tramos disponibles en esta categoría. Escríbenos por WhatsApp para ver opciones.
               </p>
+            </div>
+          )}
+          {loading && (
+            <div className="col-span-full p-12 text-center bg-bg-2 border-r border-b border-jade-soft">
+              <p className="text-fg-3 text-[0.85rem]">Cargando disponibilidad...</p>
             </div>
           )}
         </div>
