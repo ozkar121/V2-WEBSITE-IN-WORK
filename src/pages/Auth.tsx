@@ -14,7 +14,7 @@ const schema = z.object({
 });
 
 const Auth = () => {
-  useSEO({ title: "Acceso · Numen Aviation" });
+  useSEO({ title: "Acceso · Numen Aviation", noindex: true });
   const { session, loading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();

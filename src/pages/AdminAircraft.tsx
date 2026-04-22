@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { toast } from "sonner";
 
 const AdminAircraft = () => {
-  useSEO({ title: "Gestión de Fotos · Numen Aviation" });
+  useSEO({ title: "Gestión de Fotos · Numen Aviation", noindex: true });
   const [photos, setPhotos] = useState<Record<string, string>>({});
   const [uploading, setUploading] = useState<string | null>(null);
 

@@ -58,7 +58,7 @@ const empty = {
 };
 
 const AdminEmptyLegs = () => {
-  useSEO({ title: "Gestión de Empty Legs · Numen Aviation" });
+  useSEO({ title: "Gestión de Empty Legs · Numen Aviation", noindex: true });
   const { signOut, user } = useAuth();
   const [rows, setRows] = useState<EmptyLegRow[]>([]);
   const [loading, setLoading] = useState(true);
