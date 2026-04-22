@@ -20,8 +20,9 @@ export const Footer = () => {
             </span>
           </div>
           <p className="text-[0.78rem] text-fg-3 leading-relaxed">
-            Correduría de aviación privada, consultoría y adquisición de aeronaves. Con base en
-            Toluca, México. Al servicio de las Américas.
+            Renta de jet privado y aviación ejecutiva con base en el Aeropuerto Internacional de Toluca (MMTO).
+            Charter bajo demanda, empty legs, consultoría y adquisición de aeronaves para México, Estados Unidos, el Caribe y Centroamérica.
+            Cotización en menos de 2 horas, operación 24/7.
           </p>
         </div>
 
