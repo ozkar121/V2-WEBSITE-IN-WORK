@@ -6,6 +6,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
+import { QuotationForm } from "@/components/QuotationForm";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
 import tolucaAerial from "@/assets/toluca-aerial.jpg";
 
