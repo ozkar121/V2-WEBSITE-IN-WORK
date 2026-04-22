@@ -84,6 +84,8 @@ const Index = () => {
         className="relative min-h-screen flex flex-col justify-end overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingBottom: "6rem", minHeight: 680 }}
       >
+        {/* Fondo oscuro mientras carga el video (evita flash del poster) */}
+        <div className="absolute inset-0 bg-background" aria-hidden="true" />
         {/* Video de fondo */}
         <video
           autoPlay
@@ -91,7 +93,6 @@ const Index = () => {
           loop
           playsInline
           preload="auto"
-          poster={tolucaAerial}
           className="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
         >
