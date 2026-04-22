@@ -7,14 +7,12 @@ const quotationSchema = z.object({
   name: z.string().trim().min(2, "Nombre demasiado corto").max(100),
   email: z.string().trim().email("Email inválido").max(255),
   phone: z.string().trim().min(7, "Teléfono inválido").max(30),
-  company: z.string().trim().max(150).optional().or(z.literal("")),
   fromCity: z.string().trim().min(2, "Origen requerido").max(100),
   toCity: z.string().trim().min(2, "Destino requerido").max(100),
   departureDate: z.string().min(1, "Fecha requerida"),
   returnDate: z.string().optional().or(z.literal("")),
   passengers: z.coerce.number().int().min(1).max(50),
   tripType: z.enum(["one_way", "round_trip"]),
-  preferredAircraft: z.string().max(80).optional().or(z.literal("")),
   message: z.string().trim().max(1000).optional().or(z.literal("")),
 });
 
@@ -24,24 +22,14 @@ const initialState: FormState = {
   name: "",
   email: "",
   phone: "",
-  company: "",
   fromCity: "",
   toCity: "",
   departureDate: "",
   returnDate: "",
   passengers: 1,
   tripType: "one_way",
-  preferredAircraft: "",
   message: "",
 };
-
-const aircraftOptions = [
-  "Sin preferencia",
-  "Turboprop",
-  "Light Jet",
-  "Midsize Jet",
-  "Heavy Jet",
-];
 
 export const QuotationForm = () => {
   const { toast } = useToast();
