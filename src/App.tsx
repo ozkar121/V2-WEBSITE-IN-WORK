@@ -21,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/empty-legs" element={<EmptyLegs />} />
           <Route path="/rutas/:slug" element={<RoutePage />} />
+          <Route path="/admin/aeronaves" element={<AdminAircraft />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
