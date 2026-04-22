@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      aircraft: {
+        Row: {
+          category: Database["public"]["Enums"]["aircraft_category"]
+          created_at: string
+          id: string
+          is_active: boolean
+          name: string
+          passengers: string
+          range_km: string
+          range_nm: string
+          sort_order: number
+          speed_kmh: string
+          updated_at: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["aircraft_category"]
+          created_at?: string
+          id: string
+          is_active?: boolean
+          name: string
+          passengers?: string
+          range_km?: string
+          range_nm?: string
+          sort_order?: number
+          speed_kmh?: string
+          updated_at?: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["aircraft_category"]
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          passengers?: string
+          range_km?: string
+          range_nm?: string
+          sort_order?: number
+          speed_kmh?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       aircraft_photos: {
         Row: {
           aircraft_id: string
@@ -30,7 +72,15 @@ export type Database = {
           image_url?: string
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "aircraft_photos_aircraft_id_fkey"
+            columns: ["aircraft_id"]
+            isOneToOne: true
+            referencedRelation: "aircraft"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       empty_legs: {
         Row: {
@@ -130,6 +180,7 @@ export type Database = {
       }
     }
     Enums: {
+      aircraft_category: "turbo" | "light" | "midsize" | "heavy"
       app_role: "admin" | "user"
     }
     CompositeTypes: {
@@ -258,6 +309,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      aircraft_category: ["turbo", "light", "midsize", "heavy"],
       app_role: ["admin", "user"],
     },
   },
