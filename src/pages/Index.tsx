@@ -43,24 +43,24 @@ const HOME_JSONLD = [
 ];
 
 const services = [
-  { num: "01", name: "Charter bajo Demanda", desc: "Acceso inmediato a turbohélices, jets ligeros, medianos y pesados en México, EUA y el Caribe. Despegue en horas, no en días." },
-  { num: "02", name: "Empty Legs", desc: "Acceso exclusivo a vuelos de reposicionamiento a una fracción del precio. Consúltanos sobre disponibilidad en tu ruta." },
-  { num: "03", name: "Consultoría de Aviación", desc: "Asesoría estratégica para operadores, inversionistas y viajeros frecuentes. Planificación de flota, cumplimiento regulatorio y más." },
-  { num: "04", name: "Adquisición de Aeronaves", desc: "Asesoría experta para compra o venta de aeronaves. Inspecciones previas, valuación de mercado y soporte en la transacción." },
+  { num: "01", name: "Charter Bajo Demanda", desc: "Renta de jet privado y turbohélices desde Toluca (MMTO) y cualquier aeropuerto de México. Despegue en horas — no en días — hacia EUA, el Caribe y Centroamérica." },
+  { num: "02", name: "Empty Legs / Trayectos Vacíos", desc: "Vuelos de reposicionamiento en jet privado con descuentos de hasta 75%. Disponibilidad real, actualizada al día, en rutas mexicanas e internacionales." },
+  { num: "03", name: "Consultoría en Aviación Ejecutiva", desc: "Asesoría estratégica para operadores, family offices e inversionistas: planificación de flota, cumplimiento ante AFAC y optimización de costos operativos." },
+  { num: "04", name: "Adquisición y Brokerage de Aeronaves", desc: "Compra, venta y valuación de jets ejecutivos. Inspecciones pre-compra, análisis de mercado y acompañamiento integral en la transacción." },
 ];
 
 const stats = [
-  { val: "24/7", label: "Siempre Disponibles" },
-  { val: "2h", label: "Tiempo de Respuesta" },
+  { val: "24/7", label: "Operación Continua" },
+  { val: "2h", label: "Cotización en Menos de" },
   { val: "150+", label: "Rutas Operadas" },
   { val: "100%", label: "Récord de Seguridad" },
 ];
 
 const whyItems = [
-  { num: "I", title: "Correduría Independiente", desc: "Sin sesgo de flota. Conseguimos la mejor aeronave para tu misión de una red de operadores certificados en México y las Américas." },
-  { num: "II", title: "Precios Transparentes", desc: "Sin cargos ocultos. Recibes un desglose completo antes de confirmar — ferry, handling e IVA incluidos." },
-  { num: "III", title: "Expertise México-First", desc: "Conocimiento profundo del espacio aéreo mexicano, regulaciones AFAC y relaciones con operadores que otros no tienen." },
-  { num: "IV", title: "Un Solo Punto de Contacto", desc: "Tu asesor de aviación dedicado maneja todo — de la cotización al aterrizaje. Sin call centers, sin filas." },
+  { num: "I", title: "Correduría Independiente", desc: "Sin flota propia, sin sesgos. Comparamos operadores certificados en México y Las Américas para conseguirte la mejor aeronave al mejor precio." },
+  { num: "II", title: "Precios Transparentes", desc: "Cotización con desglose completo: ferry, handling, IVA y servicios FBO incluidos. Sin sorpresas al cierre." },
+  { num: "III", title: "Expertise México-First", desc: "Conocimiento profundo del Aeropuerto de Toluca (MMTO), regulación AFAC, espacio aéreo mexicano y relaciones directas con operadores nacionales." },
+  { num: "IV", title: "Un Solo Punto de Contacto", desc: "Tu asesor dedicado de aviación privada coordina de la cotización al aterrizaje. Sin call centers ni intermediarios." },
 ];
 
 const Index = () => {
