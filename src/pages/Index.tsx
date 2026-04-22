@@ -116,7 +116,7 @@ const Index = () => {
       <section id="services" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <p className="eyebrow mb-4">Lo Que Ofrecemos</p>
-          <h2 className="section-title">Cada aspecto de<br />la aviación privada,<br /><em>resuelto.</em></h2>
+          <h2 className="section-title">Renta de jet privado<br />y aviación ejecutiva,<br /><em>sin fricciones.</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-16 border border-jade-soft reveal">
