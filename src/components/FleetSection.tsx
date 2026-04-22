@@ -1,27 +1,34 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { AIRCRAFT, AircraftCategory, CATEGORY_LABELS } from "@/data/aircraft";
+import { Aircraft, AircraftCategory, CATEGORY_LABELS, CATEGORY_ORDER } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { CornerBrackets } from "@/components/CornerBrackets";
 
-const CATEGORY_ORDER: AircraftCategory[] = ["turbo", "light", "midsize", "heavy"];
-
 export const FleetSection = () => {
   const [active, setActive] = useState<AircraftCategory>("turbo");
+  const [aircraft, setAircraft] = useState<Aircraft[]>([]);
   const [photos, setPhotos] = useState<Record<string, string>>({});
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const { data, error } = await supabase
-        .from("aircraft_photos")
-        .select("aircraft_id, image_url");
-      if (cancelled || error || !data) return;
-      const map: Record<string, string> = {};
-      data.forEach((row) => {
-        map[row.aircraft_id] = row.image_url;
-      });
-      setPhotos(map);
+      const [acRes, phRes] = await Promise.all([
+        supabase
+          .from("aircraft")
+          .select("id, name, category, passengers, range_km, speed_kmh, range_nm")
+          .eq("is_active", true)
+          .order("sort_order", { ascending: true }),
+        supabase.from("aircraft_photos").select("aircraft_id, image_url"),
+      ]);
+      if (cancelled) return;
+      if (acRes.data) setAircraft(acRes.data as Aircraft[]);
+      if (phRes.data) {
+        const map: Record<string, string> = {};
+        phRes.data.forEach((row) => {
+          map[row.aircraft_id] = row.image_url;
+        });
+        setPhotos(map);
+      }
     })();
     return () => {
       cancelled = true;
@@ -29,8 +36,8 @@ export const FleetSection = () => {
   }, []);
 
   const visible = useMemo(
-    () => AIRCRAFT.filter((a) => a.category === active),
-    [active]
+    () => aircraft.filter((a) => a.category === active),
+    [aircraft, active]
   );
 
   return (
@@ -53,7 +60,7 @@ export const FleetSection = () => {
           className="text-[0.62rem] uppercase text-fg-3 hover:text-jade no-underline"
           style={{ letterSpacing: "0.25em" }}
         >
-          Gestionar fotos →
+          Gestionar flota →
         </Link>
       </div>
 
@@ -82,6 +89,11 @@ export const FleetSection = () => {
         className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px mt-px border border-jade-soft animate-fade-in"
       >
         <CornerBrackets />
+        {visible.length === 0 && (
+          <div className="col-span-full p-12 text-center text-[0.75rem] uppercase text-fg-3 bg-bg-2" style={{ letterSpacing: "0.2em" }}>
+            Sin aeronaves en esta categoría
+          </div>
+        )}
         {visible.map((a) => {
           const img = photos[a.id];
           return (
@@ -124,7 +136,7 @@ export const FleetSection = () => {
                     <dd className="text-[0.85rem] text-foreground mt-1">{a.range_km}</dd>
                   </div>
                 </dl>
-                <p className="text-[0.75rem] text-fg-3 mt-2">{a.range_nm}</p>
+                {a.range_nm && <p className="text-[0.75rem] text-fg-3 mt-2">{a.range_nm}</p>}
               </div>
             </article>
           );
