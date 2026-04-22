@@ -18,16 +18,20 @@ export const TRANSLATIONS = {
     es: "Renta de jet privado y aviación ejecutiva con base en el Aeropuerto Internacional de Toluca (MMTO). Charter bajo demanda, empty legs, consultoría y adquisición de aeronaves para México, Estados Unidos, el Caribe y Centroamérica. Cotización en menos de 2 horas, operación 24/7.",
     en: "Private jet charter and executive aviation based at Toluca International Airport (MMTO). On-demand charter, empty legs, consulting, and aircraft acquisition across Mexico, the United States, the Caribbean, and Central America. Quotes in under 2 hours, 24/7 operations.",
   },
+  footer_aviation_center: { es: "Centro de Aviación", en: "Aviation Hub" },
+  footer_aviation_center_l1: { es: "Aeropuerto Intl. de Toluca", en: "Toluca Intl. Airport" },
+  footer_aviation_center_l2: { es: "MMTO · Toluca de Lerdo,", en: "MMTO · Toluca de Lerdo," },
+  footer_aviation_center_l3: { es: "EDOMEX, México", en: "EDOMEX, Mexico" },
+
   footer_offices_mx: { es: "Oficinas México", en: "Mexico Office" },
+  footer_offices_mx_l1: { es: "Bosques de la Reforma 1813,", en: "Bosques de la Reforma 1813," },
+  footer_offices_mx_l2: { es: "Lomas del Chamizal, Cuajimalpa,", en: "Lomas del Chamizal, Cuajimalpa," },
+  footer_offices_mx_l3: { es: "05100 Ciudad de México, CDMX", en: "05100 Mexico City, CDMX" },
+
   footer_offices_us: { es: "Oficinas EE.UU.", en: "U.S. Office" },
-  footer_offices_mx_addr: {
-    es: "Bosques de la Reforma 1813, Lomas del Chamizal, Cuajimalpa de Morelos, 05100 Ciudad de México, CDMX.",
-    en: "Bosques de la Reforma 1813, Lomas del Chamizal, Cuajimalpa de Morelos, 05100 Mexico City, CDMX.",
-  },
-  footer_offices_us_addr: {
-    es: "17350 State Hwy 249, Ste 220 #35286, Houston, TX 77064, USA.",
-    en: "17350 State Hwy 249, Ste 220 #35286, Houston, TX 77064, USA.",
-  },
+  footer_offices_us_l1: { es: "17350 State Hwy 249,", en: "17350 State Hwy 249," },
+  footer_offices_us_l2: { es: "Ste 220 #35286,", en: "Ste 220 #35286," },
+  footer_offices_us_l3: { es: "Houston, TX 77064, EUA", en: "Houston, TX 77064, USA" },
   footer_contact: { es: "Contacto", en: "Contact" },
   footer_rights: {
     es: "© 2025 Numen Aviation. Todos los derechos reservados.",
