@@ -15,4 +15,4 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://eyrrdyxperojgxalxygk.supabase.co/functions/v1/sitemap
+Sitemap: https://numen-aviation.com/sitemap.xml
