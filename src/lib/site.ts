@@ -1,5 +1,12 @@
+// Centralized site config — change SITE_URL once when domain changes.
 export const WHATSAPP_NUMBER = "524442348942";
 export const EMAIL = "operaciones@numen-aviation.com";
+
+// CANONICAL DOMAIN — update if the official domain differs.
+export const SITE_URL = "https://numen-aviation.com";
+export const SITE_NAME = "Numen Aviation";
+export const SITE_LOCALE = "es_MX";
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export const waLink = (text: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
