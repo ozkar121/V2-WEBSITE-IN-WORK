@@ -1,0 +1,135 @@
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { AIRCRAFT, AircraftCategory, CATEGORY_LABELS } from "@/data/aircraft";
+import { supabase } from "@/integrations/supabase/client";
+import { CornerBrackets } from "@/components/CornerBrackets";
+
+const CATEGORY_ORDER: AircraftCategory[] = ["turbo", "light", "midsize", "heavy"];
+
+export const FleetSection = () => {
+  const [active, setActive] = useState<AircraftCategory>("turbo");
+  const [photos, setPhotos] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const { data, error } = await supabase
+        .from("aircraft_photos")
+        .select("aircraft_id, image_url");
+      if (cancelled || error || !data) return;
+      const map: Record<string, string> = {};
+      data.forEach((row) => {
+        map[row.aircraft_id] = row.image_url;
+      });
+      setPhotos(map);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const visible = useMemo(
+    () => AIRCRAFT.filter((a) => a.category === active),
+    [active]
+  );
+
+  return (
+    <section
+      id="fleet"
+      className="py-28"
+      style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+    >
+      <div className="reveal flex flex-wrap items-end justify-between gap-8">
+        <div>
+          <p className="eyebrow mb-4">Nuestra Flota</p>
+          <h2 className="section-title">
+            Aeronaves para cada<br />
+            <em>misión.</em>
+          </h2>
+          <div className="gold-rule" />
+        </div>
+        <Link
+          to="/admin/aeronaves"
+          className="text-[0.62rem] uppercase text-fg-3 hover:text-jade no-underline"
+          style={{ letterSpacing: "0.25em" }}
+        >
+          Gestionar fotos →
+        </Link>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex flex-wrap gap-px mt-12 border border-jade-soft reveal">
+        {CATEGORY_ORDER.map((cat) => {
+          const isActive = cat === active;
+          return (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`flex-1 min-w-[140px] px-6 py-4 text-[0.7rem] uppercase transition-colors border-r border-jade-soft last:border-r-0 ${
+                isActive ? "bg-jade text-background" : "bg-bg-2 text-fg-3 hover:bg-bg-3 hover:text-foreground"
+              }`}
+              style={{ letterSpacing: "0.2em" }}
+            >
+              {CATEGORY_LABELS[cat]}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Grid */}
+      <div
+        key={active}
+        className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px mt-px border border-jade-soft animate-fade-in"
+      >
+        <CornerBrackets />
+        {visible.map((a) => {
+          const img = photos[a.id];
+          return (
+            <article
+              key={a.id}
+              className="bg-bg-2 hover:bg-bg-3 transition-colors flex flex-col border-r border-b border-jade-soft"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-bg-3 border-b border-jade-soft">
+                {img ? (
+                  <img
+                    src={img}
+                    alt={a.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.25em" }}>
+                      Foto próximamente
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="p-7 flex flex-col gap-3">
+                <div className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
+                  {CATEGORY_LABELS[a.category]}
+                </div>
+                <h3 className="font-serif text-2xl font-light text-foreground">{a.name}</h3>
+                <dl className="grid grid-cols-3 gap-3 mt-2 border-t border-jade-soft pt-4">
+                  <div>
+                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>Pax</dt>
+                    <dd className="text-[0.85rem] text-foreground mt-1">{a.passengers}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>Velocidad</dt>
+                    <dd className="text-[0.85rem] text-foreground mt-1">{a.speed_kmh}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>Alcance</dt>
+                    <dd className="text-[0.85rem] text-foreground mt-1">{a.range_km}</dd>
+                  </div>
+                </dl>
+                <p className="text-[0.75rem] text-fg-3 mt-2">{a.range_nm}</p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+};

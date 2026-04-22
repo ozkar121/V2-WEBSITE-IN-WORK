@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import EmptyLegs from "./pages/EmptyLegs.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AdminAircraft from "./pages/AdminAircraft.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/empty-legs" element={<EmptyLegs />} />
           <Route path="/rutas/:slug" element={<RoutePage />} />
+          <Route path="/admin/aeronaves" element={<AdminAircraft />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
