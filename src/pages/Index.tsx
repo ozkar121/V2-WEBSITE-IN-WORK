@@ -6,7 +6,41 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
-import { waLink } from "@/lib/site";
+import { waLink, SITE_URL, EMAIL } from "@/lib/site";
+
+const HOME_JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#business`,
+    name: "Numen Aviation",
+    image: `${SITE_URL}/og-image.jpg`,
+    url: SITE_URL,
+    telephone: "+52-444-234-8942",
+    email: EMAIL,
+    priceRange: "$$$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Toluca",
+      addressRegion: "Estado de México",
+      addressCountry: "MX",
+    },
+    areaServed: ["México", "Estados Unidos", "Caribe", "Centroamérica"],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "23:59",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: SITE_URL,
+    name: "Numen Aviation",
+    inLanguage: "es-MX",
+  },
+];
 
 const services = [
   { num: "01", name: "Charter bajo Demanda", desc: "Acceso inmediato a turbohélices, jets ligeros, medianos y pesados en México, EUA y el Caribe. Despegue en horas, no en días." },
@@ -33,7 +67,10 @@ const Index = () => {
   useReveal();
   useSEO({
     title: "Numen Aviation | Charter de Jet Privado en México y Las Américas",
-    description: "Charter de jet privado en México, EUA y el Caribe. Vuelos bajo demanda, empty legs, consultoría y adquisición de aeronaves. Disponible 24/7 desde Toluca.",
+    description:
+      "Charter de jet privado en México, EUA y el Caribe. Vuelos bajo demanda, empty legs, consultoría y adquisición de aeronaves. Disponible 24/7 desde Toluca (MMTO).",
+    path: "/",
+    jsonLd: HOME_JSONLD,
   });
 
   return (
