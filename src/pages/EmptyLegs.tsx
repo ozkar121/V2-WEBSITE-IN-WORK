@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -6,9 +6,24 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
-import { EMPTY_LEGS } from "@/data/emptyLegs";
+import { supabase } from "@/integrations/supabase/client";
 import { CATEGORY_LABELS, type AircraftCategory } from "@/data/aircraft";
 import { waLink } from "@/lib/site";
+
+interface DbLeg {
+  id: string;
+  from_city: string;
+  from_iata: string | null;
+  to_city: string;
+  to_iata: string | null;
+  flight_date: string;
+  aircraft: string;
+  category: string;
+  seats: number;
+  price: number | null;
+  is_featured: boolean;
+  is_new: boolean;
+}
 
 type Filter = "all" | AircraftCategory;
 
@@ -45,10 +60,24 @@ const EmptyLegs = () => {
   });
 
   const [filter, setFilter] = useState<Filter>("all");
+  const [legs, setLegs] = useState<DbLeg[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase
+      .from("empty_legs")
+      .select("id,from_city,from_iata,to_city,to_iata,flight_date,aircraft,category,seats,price,is_featured,is_new")
+      .eq("is_active", true)
+      .order("flight_date", { ascending: true })
+      .then(({ data }) => {
+        setLegs((data as DbLeg[]) ?? []);
+        setLoading(false);
+      });
+  }, []);
 
   const visible = useMemo(
-    () => (filter === "all" ? EMPTY_LEGS : EMPTY_LEGS.filter((l) => l.category === filter)),
-    [filter]
+    () => (filter === "all" ? legs : legs.filter((l) => l.category === filter)),
+    [filter, legs]
   );
 
   return (
