@@ -266,60 +266,6 @@ const Cargo = () => {
         ))}
       </div>
 
-      {/* MEDIA SHOWCASE — espacio para video o fotos */}
-      <section
-        className="relative"
-        style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}
-      >
-        <div className="reveal mb-10">
-          <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
-            En Operación
-          </p>
-          <h2
-            className="font-serif font-light leading-[1.1] text-foreground"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
-          >
-            Cuando importan los <em className="italic text-jade-light">minutos.</em>
-          </h2>
-          <div className="w-10 h-px bg-jade my-6" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-jade-soft border border-jade-soft reveal">
-          {/* Slot principal: video o foto grande */}
-          <div className="md:col-span-2 relative aspect-video bg-bg-2 group overflow-hidden">
-            <CornerBrackets />
-            {/* TODO: Reemplazar este placeholder por <video> o <img> cuando tengas el media */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-fg-3">
-              <div className="w-16 h-16 rounded-full border border-jade/40 flex items-center justify-center group-hover:border-jade transition-colors">
-                <Play className="w-6 h-6 text-jade" />
-              </div>
-              <p className="text-[0.7rem] uppercase" style={{ letterSpacing: "0.25em" }}>
-                Video / Foto principal
-              </p>
-              <p className="text-[0.65rem] text-fg-4 max-w-xs text-center px-6">
-                Espacio reservado para video de operación de carga (16:9 recomendado).
-              </p>
-            </div>
-          </div>
-
-          {/* Slots secundarios: dos fotos verticales */}
-          <div className="grid grid-rows-2 gap-px">
-            {[1, 2].map((n) => (
-              <div key={n} className="relative bg-bg-2 aspect-video md:aspect-auto group overflow-hidden">
-                <CornerBrackets />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-fg-3">
-                  <p className="text-[0.65rem] uppercase" style={{ letterSpacing: "0.25em" }}>
-                    Foto {n}
-                  </p>
-                  <p className="text-[0.6rem] text-fg-4">Espacio reservado</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* OPERADOR */}
       <section
         className="bg-bg-2"
         id="operador"
