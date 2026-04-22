@@ -9,6 +9,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { CATEGORY_LABELS, type AircraftCategory } from "@/data/aircraft";
 import { toast } from "sonner";
 import { Trash2, Plus, LogOut } from "lucide-react";
+import { PublishGuide } from "@/components/PublishGuide";
 
 interface EmptyLegRow {
   id: string;
