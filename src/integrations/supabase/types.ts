@@ -14,7 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      aircraft_photos: {
+        Row: {
+          aircraft_id: string
+          image_url: string
+          updated_at: string
+        }
+        Insert: {
+          aircraft_id: string
+          image_url: string
+          updated_at?: string
+        }
+        Update: {
+          aircraft_id?: string
+          image_url?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
