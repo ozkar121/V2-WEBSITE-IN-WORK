@@ -1,32 +1,356 @@
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
+import { CornerBrackets } from "@/components/CornerBrackets";
+import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
+import { EMPTY_LEGS } from "@/data/emptyLegs";
+import { CATEGORY_LABELS, type AircraftCategory } from "@/data/aircraft";
 import { waLink } from "@/lib/site";
 
+type Filter = "all" | AircraftCategory;
+
+const FILTERS: { id: Filter; label: string }[] = [
+  { id: "all", label: "Todas" },
+  { id: "turbo", label: CATEGORY_LABELS.turbo },
+  { id: "light", label: CATEGORY_LABELS.light },
+  { id: "midsize", label: CATEGORY_LABELS.midsize },
+  { id: "heavy", label: CATEGORY_LABELS.heavy },
+];
+
+const STEPS = [
+  { num: "01", title: "Consulta disponibilidad", desc: "Revisa los empty legs publicados o pídenos rutas específicas. Actualizamos diariamente con nuevos tramos disponibles." },
+  { num: "02", title: "Reserva en minutos", desc: "Confirma por WhatsApp o email. Generamos el contrato y la cotización formal en menos de una hora." },
+  { num: "03", title: "Vuela igual que un charter", desc: "Mismo servicio premium, mismo operador certificado, misma flexibilidad de horarios — a una fracción del precio." },
+];
+
+const formatDate = (iso: string) =>
+  new Date(iso + "T00:00:00").toLocaleDateString("es-MX", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
+const formatPrice = (n: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+
 const EmptyLegs = () => {
+  useReveal();
   useSEO({
     title: "Empty Legs México | Vuelos Privados hasta 75% Descuento — Numen Aviation",
-    description: "Empty legs en México, EUA y el Caribe hasta 75% más baratos que un charter completo. Disponibilidad actualizada.",
+    description:
+      "Empty legs en México, EUA y el Caribe hasta 75% más baratos que un charter completo. Disponibilidad actualizada diariamente.",
   });
+
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const visible = useMemo(
+    () => (filter === "all" ? EMPTY_LEGS : EMPTY_LEGS.filter((l) => l.category === filter)),
+    [filter]
+  );
 
   return (
     <>
       <Navbar />
-      <section className="min-h-[60vh] pt-32 pb-20 flex flex-col justify-end" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
-        <p className="text-[0.65rem] uppercase text-fg-3 mb-5" style={{ letterSpacing: "0.22em" }}>
-          <a href="/" className="text-jade no-underline hover:underline">Numen Aviation</a> &nbsp;/&nbsp; Empty Legs
+
+      {/* Breadcrumb */}
+      <nav
+        aria-label="breadcrumb"
+        className="absolute top-24 z-10"
+        style={{ left: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <ol
+          className="flex items-center gap-2 list-none text-[0.65rem] uppercase text-fg-3"
+          style={{ letterSpacing: "0.15em" }}
+        >
+          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">Inicio</Link></li>
+          <li className="text-jade opacity-50">›</li>
+          <li className="text-jade">Empty Legs</li>
+        </ol>
+      </nav>
+
+      {/* HERO */}
+      <section
+        className="relative min-h-[80vh] flex flex-col justify-end overflow-hidden"
+        style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 5rem" }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.07) 0%, transparent 70%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
+          }}
+        />
+        <p
+          className="relative z-10 eyebrow mb-5 animate-fade-up"
+          style={{ animationDelay: "0.3s" }}
+        >
+          Exclusivo · Disponibilidad Limitada
         </p>
-        <p className="eyebrow mb-5">Exclusivo · Disponibilidad Limitada</p>
-        <h1 className="display-title max-w-2xl">Vuela <em>más</em><br />por menos.</h1>
-        <div className="gold-rule" />
-        <p className="text-[0.95rem] text-fg-3 leading-relaxed max-w-xl mb-10">
-          Los vuelos empty leg son traslados de reposicionamiento disponibles hasta 75% por debajo del precio completo. Página completa con disponibilidad en tiempo real próximamente.
+        <h1
+          className="relative z-10 display-title max-w-2xl animate-fade-up"
+          style={{ animationDelay: "0.5s" }}
+        >
+          Vuela <em>más</em><br />por menos.
+        </h1>
+        <div
+          className="gold-rule relative z-10 animate-fade-up"
+          style={{ animationDelay: "0.7s" }}
+        />
+        <p
+          className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-xl mb-10 animate-fade-up"
+          style={{ animationDelay: "0.85s" }}
+        >
+          Los vuelos empty leg son tramos de reposicionamiento disponibles hasta <strong className="text-jade-light">75% por debajo</strong> del precio completo. Misma aeronave, mismo servicio, una fracción del costo.
         </p>
-        <a href={waLink("Hola, quisiera info sobre empty legs disponibles.")} target="_blank" rel="noopener noreferrer" className="btn-primary w-fit">
-          Ver disponibilidad por WhatsApp →
-        </a>
+        <div
+          className="relative z-10 flex gap-4 flex-wrap animate-fade-up"
+          style={{ animationDelay: "1s" }}
+        >
+          <a
+            href="#disponibles"
+            className="btn-primary"
+          >
+            Ver disponibles
+          </a>
+          <a
+            href={waLink("Hola, quisiera info sobre empty legs disponibles.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            WhatsApp
+          </a>
+        </div>
       </section>
+
+      {/* STATS */}
+      <div
+        className="grid grid-cols-2 md:grid-cols-4 border border-jade-soft reveal"
+        style={{ margin: "0 clamp(1rem, 4vw, 4rem)" }}
+      >
+        {[
+          { val: "−75%", lbl: "Ahorro Promedio" },
+          { val: "24h", lbl: "Confirmación" },
+          { val: "150+", lbl: "Rutas Activas" },
+          { val: "100%", lbl: "Operadores Certificados" },
+        ].map((s) => (
+          <div key={s.lbl} className="p-7 border-r border-jade-soft last:border-r-0">
+            <div className="font-serif text-2xl font-light text-foreground mb-1.5">{s.val}</div>
+            <div
+              className="text-[0.62rem] uppercase text-fg-3"
+              style={{ letterSpacing: "0.2em" }}
+            >
+              {s.lbl}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* AVAILABLE FLIGHTS */}
+      <section
+        id="disponibles"
+        className="py-24"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="reveal flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow mb-4">Disponibilidad Actual</p>
+            <h2 className="section-title">Vuelos <em>disponibles.</em></h2>
+            <div className="gold-rule" />
+          </div>
+          <p className="text-[0.7rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+            {visible.length} {visible.length === 1 ? "tramo" : "tramos"}
+          </p>
+        </div>
+
+        {/* Filters */}
+        <div className="flex flex-wrap gap-px mt-10 border border-jade-soft reveal">
+          {FILTERS.map((f) => {
+            const active = f.id === filter;
+            return (
+              <button
+                key={f.id}
+                onClick={() => setFilter(f.id)}
+                className={`flex-1 min-w-[120px] px-5 py-3 text-[0.68rem] uppercase border-r border-jade-soft last:border-r-0 transition-colors ${
+                  active
+                    ? "bg-jade text-background"
+                    : "bg-bg-2 text-fg-3 hover:bg-bg-3 hover:text-foreground"
+                }`}
+                style={{ letterSpacing: "0.2em" }}
+              >
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Grid */}
+        <div
+          key={filter}
+          className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-px border border-jade-soft animate-fade-in"
+        >
+          <CornerBrackets />
+          {visible.map((leg) => (
+            <article
+              key={leg.id}
+              className={`p-7 border-r border-b border-jade-soft flex flex-col gap-4 transition-colors ${
+                leg.featured ? "bg-bg-3" : "bg-bg-2 hover:bg-bg-3"
+              }`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <span className="text-[0.6rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
+                  {CATEGORY_LABELS[leg.category]}
+                </span>
+                {leg.badge && (
+                  <span
+                    className="text-[0.55rem] uppercase border border-jade-soft text-jade-light px-2 py-1"
+                    style={{ letterSpacing: "0.2em" }}
+                  >
+                    {leg.badge}
+                  </span>
+                )}
+              </div>
+
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 mt-2">
+                <div>
+                  <div className="font-serif text-xl font-light text-foreground leading-tight">
+                    {leg.from_city}
+                  </div>
+                  <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
+                    {leg.from_iata}
+                  </div>
+                </div>
+                <span className="text-jade text-lg">›</span>
+                <div className="text-right">
+                  <div className="font-serif text-xl font-light text-foreground leading-tight">
+                    {leg.to_city}
+                  </div>
+                  <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
+                    {leg.to_iata}
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 border-t border-jade-soft pt-4 mt-2">
+                <div>
+                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                    Fecha
+                  </div>
+                  <div className="text-[0.85rem] text-foreground mt-1">{formatDate(leg.date)}</div>
+                </div>
+                <div>
+                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                    Asientos
+                  </div>
+                  <div className="text-[0.85rem] text-foreground mt-1">{leg.seats}</div>
+                </div>
+                <div>
+                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                    Aeronave
+                  </div>
+                  <div className="text-[0.85rem] text-foreground mt-1">{leg.aircraft}</div>
+                </div>
+                <div>
+                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                    Desde
+                  </div>
+                  <div className="font-serif text-lg font-light text-jade-light mt-0.5">
+                    {formatPrice(leg.price)}
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href={waLink(
+                  `Hola, me interesa el empty leg ${leg.from_city} → ${leg.to_city} del ${formatDate(leg.date)} (${leg.aircraft}).`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-center mt-2"
+              >
+                Reservar este tramo
+              </a>
+            </article>
+          ))}
+          {visible.length === 0 && (
+            <div className="col-span-full p-12 text-center bg-bg-2 border-r border-b border-jade-soft">
+              <p className="text-fg-3 text-[0.85rem]">
+                No hay tramos disponibles en esta categoría. Escríbenos por WhatsApp para ver opciones.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section
+        className="bg-bg-2 py-24"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="reveal">
+          <p className="eyebrow mb-4">Cómo Funciona</p>
+          <h2 className="section-title">Tres pasos para <em>volar.</em></h2>
+          <div className="gold-rule" />
+        </div>
+        <div className="grid md:grid-cols-3 mt-12 border border-jade-soft">
+          {STEPS.map((s) => (
+            <div
+              key={s.num}
+              className="bg-background p-10 border-r border-b border-jade-soft last:border-r-0 reveal"
+            >
+              <div
+                className="font-serif text-3xl font-light mb-3"
+                style={{ color: "hsl(var(--jade) / 0.15)" }}
+              >
+                {s.num}
+              </div>
+              <div
+                className="text-[0.78rem] uppercase font-medium text-foreground mb-2.5"
+                style={{ letterSpacing: "0.12em" }}
+              >
+                {s.title}
+              </div>
+              <p className="text-[0.875rem] leading-relaxed text-fg-3">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        className="bg-bg-3 border-y border-jade-soft py-20 text-center"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="reveal">
+          <h2
+            className="font-serif font-light text-foreground mb-4"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+          >
+            ¿No ves tu ruta?<br />
+            <em className="italic text-jade-light">Avísanos.</em>
+          </h2>
+          <p className="text-[0.9rem] text-fg-3 mb-10 max-w-xl mx-auto">
+            Recibimos nuevos empty legs cada día. Déjanos tu ruta deseada y te avisamos en cuanto haya un tramo disponible.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a
+              href={waLink("Hola, busco un empty leg para mi ruta:")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              WhatsApp Ahora
+            </a>
+            <a href="/#contact" className="btn-secondary">
+              Enviar Solicitud
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <WhatsAppFAB />
     </>
