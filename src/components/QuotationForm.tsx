@@ -194,10 +194,7 @@ export const QuotationForm = () => {
           <input className={inputClass} value={form.phone} onChange={(e) => update("phone", e.target.value)} maxLength={30} />
           {errors.phone && <p className={errorClass}>{errors.phone}</p>}
         </div>
-        <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Empresa</label>
-          <input className={inputClass} value={form.company} onChange={(e) => update("company", e.target.value)} maxLength={150} />
-        </div>
+
 
         <div>
           <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Origen *</label>
@@ -239,15 +236,7 @@ export const QuotationForm = () => {
           />
         </div>
 
-        <div className="sm:col-span-2">
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Aeronave preferida</label>
-          <select className={inputClass} value={form.preferredAircraft} onChange={(e) => update("preferredAircraft", e.target.value)}>
-            <option value="">Sin preferencia</option>
-            {aircraftOptions.slice(1).map((a) => (
-              <option key={a} value={a}>{a}</option>
-            ))}
-          </select>
-        </div>
+
 
         <div className="sm:col-span-2">
           <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Mensaje</label>
