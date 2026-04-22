@@ -58,7 +58,10 @@ const Auth = () => {
         toast.success("Sesión iniciada");
       }
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Error de autenticación";
+      console.error("Auth error:", err);
+      const msg = mode === "signup"
+        ? "Si el email es válido, recibirás instrucciones por correo."
+        : "Credenciales incorrectas.";
       toast.error(msg);
     } finally {
       setBusy(false);
