@@ -20,8 +20,8 @@
 
     /* Foreground */
     --foreground: 120 9% 94%;       /* #EEF2EE */
-    --fg-2: 120 6% 74%;             /* #B8C0B8 */
-    --fg-3: 138 6% 46%;             /* #6E7D72 */
+    --fg-2: 120 6% 80%;             /* #C8CFC8 - mejor contraste */
+    --fg-3: 138 8% 62%;             /* #94A498 - WCAG AA sobre fondos oscuros */
     --fg-4: 110 8% 24%;             /* #3A4239 */
 
     /* Accent: Jade */

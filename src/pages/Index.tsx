@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { Navbar } from "@/components/Navbar";
@@ -69,6 +70,21 @@ const whyItems = [
 
 const Index = () => {
   useReveal();
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    // Diferimos el video hasta después del FCP/LCP para no bloquear render
+    const load = () => setShowVideo(true);
+    const w = window as any;
+    const id = w.requestIdleCallback
+      ? w.requestIdleCallback(load, { timeout: 2500 })
+      : window.setTimeout(load, 1500);
+    return () => {
+      if (w.cancelIdleCallback && typeof id === "number") w.cancelIdleCallback(id);
+      else clearTimeout(id);
+    };
+  }, []);
+
   useSEO({
     title: "Renta de Jet Privado en Toluca y México | Numen Aviation",
     description:
@@ -88,20 +104,29 @@ const Index = () => {
         className="relative min-h-screen flex flex-col justify-end overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingBottom: "6rem", minHeight: 680 }}
       >
-        {/* Fondo oscuro mientras carga el video (evita flash del poster) */}
-        <div className="absolute inset-0 bg-background" aria-hidden="true" />
-        {/* Video de fondo — preload metadata para no bloquear LCP en móvil */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+        {/* Fondo oscuro con gradient sutil — visible mientras carga el video */}
+        <div
+          className="absolute inset-0 bg-background"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 80% 60% at 30% 30%, hsl(var(--jade-dark) / 0.18) 0%, transparent 70%)",
+          }}
           aria-hidden="true"
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
+        />
+        {/* Video lazy-loaded después del FCP para no bloquear LCP en móvil */}
+        {showVideo && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover animate-fade-in"
+            aria-hidden="true"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+        )}
         {/* Overlay para legibilidad */}
         <div
           className="absolute inset-0"
