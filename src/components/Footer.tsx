@@ -1,20 +1,11 @@
 import { EMAIL, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
 import logoIcon from "@/assets/numen-mark.png";
-import brandImage from "@/assets/toluca-aerial.jpg";
 
 export const Footer = () => {
   const { t } = useLang();
 
   const offices = [
-    {
-      title: t("footer_aviation_center"),
-      lines: [
-        t("footer_aviation_center_l1"),
-        t("footer_aviation_center_l2"),
-        t("footer_aviation_center_l3"),
-      ],
-    },
     {
       title: t("footer_offices_mx"),
       lines: [
