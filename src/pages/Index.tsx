@@ -48,19 +48,6 @@ const HOME_JSONLD = [
   },
 ];
 
-const services = [
-  { num: "01", name: "Charter Bajo Demanda", desc: "Renta de jet privado y turbohélices desde Toluca (MMTO) y cualquier aeropuerto de México. Despegue en horas — no en días — hacia EUA, el Caribe y Centroamérica." },
-  { num: "02", name: "Empty Legs / Trayectos Vacíos", desc: "Vuelos de reposicionamiento en jet privado con descuentos de hasta 75%. Disponibilidad real, actualizada al día, en rutas mexicanas e internacionales." },
-  { num: "03", name: "Consultoría en Aviación Ejecutiva", desc: "Asesoría estratégica para operadores, family offices e inversionistas: planificación de flota, cumplimiento ante AFAC y optimización de costos operativos." },
-  { num: "04", name: "Adquisición y Brokerage de Aeronaves", desc: "Compra, venta y valuación de jets ejecutivos. Inspecciones pre-compra, análisis de mercado y acompañamiento integral en la transacción." },
-];
-
-const stats = [
-  { val: "24/7", label: "Operación Continua" },
-  { val: "2h", label: "Cotización en Menos de" },
-  { val: "150+", label: "Rutas Operadas" },
-  { val: "100%", label: "Récord de Seguridad" },
-];
 
 const Index = () => {
   useReveal();
