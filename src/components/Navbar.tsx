@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NAV_LINKS, ROUTES, waLink } from "@/lib/site";
-import logo from "@/assets/numen-logo-horizontal.png";
+import logoIcon from "@/assets/numen-logo.png";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +31,13 @@ export const Navbar = () => {
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
       <Link to="/" className="flex items-center gap-3" aria-label="Numen Aviation home">
-        <img src={logo} alt="Numen Aviation" className="h-8 md:h-9 w-auto" />
+        <img src={logoIcon} alt="" className="h-8 md:h-9 w-auto" />
+        <span
+          className="text-[0.8rem] md:text-[0.9rem] uppercase text-foreground font-light"
+          style={{ letterSpacing: "0.25em" }}
+        >
+          Numen Aviation
+        </span>
       </Link>
 
       {/* Desktop nav */}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { EMAIL, ROUTES, waLink } from "@/lib/site";
-import logo from "@/assets/numen-logo-horizontal.png";
+import logoIcon from "@/assets/numen-logo.png";
 
 export const Footer = () => {
   return (
@@ -10,7 +10,15 @@ export const Footer = () => {
     >
       <div className="flex flex-wrap justify-between items-start gap-12 mb-10">
         <div className="footer-brand max-w-xs">
-          <img src={logo} alt="Numen Aviation" className="h-9 w-auto mb-4" />
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logoIcon} alt="" className="h-9 w-auto" />
+            <span
+              className="text-[0.85rem] uppercase text-foreground font-light"
+              style={{ letterSpacing: "0.25em" }}
+            >
+              Numen Aviation
+            </span>
+          </div>
           <p className="text-[0.78rem] text-fg-3 leading-relaxed">
             Correduría de aviación privada, consultoría y adquisición de aeronaves. Con base en
             Toluca, México. Al servicio de las Américas.
