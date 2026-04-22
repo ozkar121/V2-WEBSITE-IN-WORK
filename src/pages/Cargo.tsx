@@ -3,7 +3,7 @@ import { Phone } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
-import { CornerBrackets } from "@/components/CornerBrackets";
+
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, PHONE_NUMBER, PHONE_TEL, SITE_URL } from "@/lib/site";
