@@ -89,9 +89,14 @@ const Index = () => {
   }, []);
 
   useSEO({
-    title: "Renta de Jet Privado en Toluca y México | Numen Aviation",
+    title:
+      lang === "en"
+        ? "Private Jet Charter in Toluca and Mexico | Numen Aviation"
+        : "Renta de Jet Privado en Toluca y México | Numen Aviation",
     description:
-      "Renta de jet privado, charter bajo demanda, empty legs, consultoría y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Servicio 24/7 en México, EUA, Caribe y Centroamérica. Cotización en menos de 2 horas.",
+      lang === "en"
+        ? "Private jet charter, on-demand flights, empty legs, consulting, and aircraft acquisition from Toluca Airport (MMTO). 24/7 service across Mexico, the U.S., the Caribbean, and Central America. Quote in under 2 hours."
+        : "Renta de jet privado, charter bajo demanda, empty legs, consultoría y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Servicio 24/7 en México, EUA, Caribe y Centroamérica. Cotización en menos de 2 horas.",
     path: "/",
     jsonLd: HOME_JSONLD,
   });
@@ -142,29 +147,29 @@ const Index = () => {
 
         <div className="relative z-10 inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-jade-soft bg-jade/[0.06] w-fit mb-7 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-jade animate-pulse-ring" />
-          <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>Renta de Jet Privado · Toluca · México · Las Américas</span>
+          <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>{t("hero_badge")}</span>
         </div>
 
         <h1 className="display-title relative z-10 max-w-3xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
-          Beyond <em>First</em><br />Class.
+          {t("hero_title_a")} <em>{t("hero_title_em")}</em><br />{t("hero_title_b")}
         </h1>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s", margin: "2rem 0" }} />
         <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-md mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>
-          Renta de jet privado, charter bajo demanda, empty legs y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Tu agenda, tus estándares, tu destino.
+          {t("hero_subtitle")}
         </p>
         <div className="relative z-10 flex gap-4 flex-wrap animate-fade-up" style={{ animationDelay: "1s" }}>
-          <a href={waLink("Hola, me gustaría solicitar una cotización de charter.")} target="_blank" rel="noopener noreferrer" className="btn-primary">Solicitar Cotización</a>
-          <a href="#fleet" className="btn-secondary">Ver Nuestra Flota</a>
+          <a href={waLink("Hola, me gustaría solicitar una cotización de charter.")} target="_blank" rel="noopener noreferrer" className="btn-primary">{t("hero_cta_quote")}</a>
+          <a href="#fleet" className="btn-secondary">{t("hero_cta_fleet")}</a>
         </div>
       </section>
 
-      <Marquee items={["Renta de Jet Privado","·","Charter Bajo Demanda","·","Empty Legs","·","Aviación Ejecutiva","·","Adquisición de Aeronaves","·","Servicio 24/7","·","Toluca · México · EUA · Caribe","·"]} />
+      <Marquee items={[t("marquee_rental"),"·",t("marquee_charter"),"·",t("marquee_empty"),"·",t("marquee_exec"),"·",t("marquee_acq"),"·",t("marquee_24"),"·",t("marquee_geo"),"·"]} />
 
       {/* SERVICES */}
       <section id="services" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
-          <p className="eyebrow mb-4">Lo Que Ofrecemos</p>
-          <h2 className="section-title">Renta de jet privado<br />y aviación ejecutiva,<br /><em>sin fricciones.</em></h2>
+          <p className="eyebrow mb-4">{t("services_eyebrow")}</p>
+          <h2 className="section-title">{t("services_title_a")}<br />{t("services_title_b")}<br /><em>{t("services_title_em")}</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-16 border border-jade-soft reveal">
@@ -211,15 +216,15 @@ const Index = () => {
           </div>
           <div className="absolute -bottom-6 -right-6 bg-bg-3 border border-jade-dark p-6 w-56 z-10">
             <div className="font-serif text-3xl font-light text-jade leading-none">Toluca</div>
-            <p className="text-[0.68rem] uppercase text-fg-3 mt-2" style={{ letterSpacing: "0.18em" }}>Hub Principal · MMTO</p>
+            <p className="text-[0.68rem] uppercase text-fg-3 mt-2" style={{ letterSpacing: "0.18em" }}>{t("why_hub")}</p>
           </div>
         </div>
         <div className="reveal">
-          <p className="eyebrow mb-4">Por Qué Numen</p>
-          <h2 className="section-title">El estándar de la<br />aviación privada en <em>México.</em></h2>
+          <p className="eyebrow mb-4">{t("why_eyebrow")}</p>
+          <h2 className="section-title">{t("why_title_a")}<br />{t("why_title_b")} <em>{t("why_title_em")}</em></h2>
           <div className="gold-rule" />
           <p className="text-[0.9rem] leading-relaxed text-fg-3 max-w-md">
-            Numen Aviation fue construida por operadores, no por vendedores. Conocemos cada detalle de la renta de jet privado en México — desde la coordinación FBO en Toluca hasta el cumplimiento ante AFAC — porque lo hemos hecho miles de veces.
+            {t("why_intro")}
           </p>
           <div className="mt-10 flex flex-col">
             {whyItems.map((w, i) => (
@@ -239,31 +244,31 @@ const Index = () => {
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <h2 className="font-serif font-light leading-tight" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}>
-            ¿Listo para volar?<br /><em className="italic text-jade-light">Cotiza tu jet privado.</em>
+            {t("cta_band_title_a")}<br /><em className="italic text-jade-light">{t("cta_band_title_em")}</em>
           </h2>
-          <p className="text-[0.875rem] text-fg-3 mt-3">Empty legs, charter bajo demanda y aviación ejecutiva desde Toluca. Respuesta en menos de 2 horas, 24/7.</p>
+          <p className="text-[0.875rem] text-fg-3 mt-3">{t("cta_band_sub")}</p>
         </div>
         <div className="flex gap-4 flex-wrap reveal">
-          <a href={waLink("Hola, quisiera cotizar un vuelo privado.")} target="_blank" rel="noopener noreferrer" className="btn-primary">WhatsApp</a>
-          <a href="#contact" className="btn-secondary">Enviar Solicitud</a>
+          <a href={waLink("Hola, quisiera cotizar un vuelo privado.")} target="_blank" rel="noopener noreferrer" className="btn-primary">{t("cta_whatsapp")}</a>
+          <a href="#contact" className="btn-secondary">{t("cta_send_request")}</a>
         </div>
       </div>
 
       {/* CONTACT — placeholder simple, full form in next iteration */}
       <section id="contact" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
-          <p className="eyebrow mb-4">Contáctanos</p>
-          <h2 className="section-title">Solicita una <em>cotización.</em></h2>
+          <p className="eyebrow mb-4">{t("contact_eyebrow")}</p>
+          <h2 className="section-title">{t("contact_title_a")} <em>{t("contact_title_em")}</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="grid md:grid-cols-2 gap-16 mt-14">
           <div className="flex flex-col gap-8 reveal">
             {[
-              { label: "WhatsApp", val: "+52 444 234 89 42" },
-              { label: "Email", val: "operaciones@numen-aviation.com" },
-              { label: "Hub Principal", val: "Aeropuerto Internacional de Toluca (MMTO)" },
-              { label: "Disponibilidad", val: "24 horas · 7 días a la semana" },
-              { label: "Área de Servicio", val: "México · EUA · Caribe · Centroamérica" },
+              { label: t("contact_lbl_whatsapp"), val: "+52 444 234 89 42" },
+              { label: t("contact_lbl_email"), val: "operaciones@numen-aviation.com" },
+              { label: t("contact_lbl_hub"), val: t("contact_val_hub") },
+              { label: t("contact_lbl_avail"), val: t("contact_val_avail") },
+              { label: t("contact_lbl_area"), val: t("contact_val_area") },
             ].map((c) => (
               <div key={c.label} className="flex flex-col gap-1">
                 <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>{c.label}</span>
