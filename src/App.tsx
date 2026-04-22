@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import EmptyLegs from "./pages/EmptyLegs.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AdminAircraft from "./pages/AdminAircraft.tsx";
 
 const queryClient = new QueryClient();
 
