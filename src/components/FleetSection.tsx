@@ -88,7 +88,7 @@ export const FleetSection = () => {
               }`}
               style={{ letterSpacing: "0.2em" }}
             >
-              {CATEGORY_LABELS[cat]}
+              {t(CAT_KEY[cat])}
             </button>
           );
         })}
@@ -130,7 +130,7 @@ export const FleetSection = () => {
               </div>
               <div className="p-7 flex flex-col gap-3">
                 <div className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
-                  {CATEGORY_LABELS[a.category]}
+                  {t(CAT_KEY[a.category])}
                 </div>
                 <h3 className="font-serif text-2xl font-light text-foreground">{a.name}</h3>
                 <dl className="grid grid-cols-3 gap-3 mt-2 border-t border-jade-soft pt-4">
