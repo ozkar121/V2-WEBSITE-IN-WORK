@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/useAuth";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import { ProtectedAdminRoute } from "@/components/ProtectedAdminRoute";
 import Index from "./pages/Index.tsx";
 import EmptyLegs from "./pages/EmptyLegs.tsx";
@@ -23,6 +24,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <LanguageProvider>
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -51,6 +53,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
+        </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
