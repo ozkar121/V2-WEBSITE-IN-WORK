@@ -180,54 +180,56 @@ export const QuotationForm = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Nombre *</label>
-          <input className={inputClass} value={form.name} onChange={(e) => update("name", e.target.value)} maxLength={100} />
+          <label htmlFor="qf-name" className={labelClass} style={{ letterSpacing: "0.2em" }}>Nombre *</label>
+          <input id="qf-name" name="name" autoComplete="name" className={inputClass} value={form.name} onChange={(e) => update("name", e.target.value)} maxLength={100} />
           {errors.name && <p className={errorClass}>{errors.name}</p>}
         </div>
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Email *</label>
-          <input type="email" className={inputClass} value={form.email} onChange={(e) => update("email", e.target.value)} maxLength={255} />
+          <label htmlFor="qf-email" className={labelClass} style={{ letterSpacing: "0.2em" }}>Email *</label>
+          <input id="qf-email" name="email" type="email" autoComplete="email" className={inputClass} value={form.email} onChange={(e) => update("email", e.target.value)} maxLength={255} />
           {errors.email && <p className={errorClass}>{errors.email}</p>}
         </div>
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Teléfono *</label>
-          <input className={inputClass} value={form.phone} onChange={(e) => update("phone", e.target.value)} maxLength={30} />
+          <label htmlFor="qf-phone" className={labelClass} style={{ letterSpacing: "0.2em" }}>Teléfono *</label>
+          <input id="qf-phone" name="phone" type="tel" autoComplete="tel" className={inputClass} value={form.phone} onChange={(e) => update("phone", e.target.value)} maxLength={30} />
           {errors.phone && <p className={errorClass}>{errors.phone}</p>}
         </div>
 
 
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Origen *</label>
-          <input className={inputClass} value={form.fromCity} onChange={(e) => update("fromCity", e.target.value)} placeholder="Toluca (MMTO)" maxLength={100} />
+          <label htmlFor="qf-from" className={labelClass} style={{ letterSpacing: "0.2em" }}>Origen *</label>
+          <input id="qf-from" name="fromCity" className={inputClass} value={form.fromCity} onChange={(e) => update("fromCity", e.target.value)} placeholder="Toluca (MMTO)" maxLength={100} />
           {errors.fromCity && <p className={errorClass}>{errors.fromCity}</p>}
         </div>
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Destino *</label>
-          <input className={inputClass} value={form.toCity} onChange={(e) => update("toCity", e.target.value)} placeholder="Los Cabos (MMSD)" maxLength={100} />
+          <label htmlFor="qf-to" className={labelClass} style={{ letterSpacing: "0.2em" }}>Destino *</label>
+          <input id="qf-to" name="toCity" className={inputClass} value={form.toCity} onChange={(e) => update("toCity", e.target.value)} placeholder="Los Cabos (MMSD)" maxLength={100} />
           {errors.toCity && <p className={errorClass}>{errors.toCity}</p>}
         </div>
 
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Tipo de viaje</label>
-          <select className={inputClass} value={form.tripType} onChange={(e) => update("tripType", e.target.value as "one_way" | "round_trip")}>
+          <label htmlFor="qf-trip" className={labelClass} style={{ letterSpacing: "0.2em" }}>Tipo de viaje</label>
+          <select id="qf-trip" name="tripType" aria-label="Tipo de viaje" className={inputClass} value={form.tripType} onChange={(e) => update("tripType", e.target.value as "one_way" | "round_trip")}>
             <option value="one_way">Solo ida</option>
             <option value="round_trip">Redondo</option>
           </select>
         </div>
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Pasajeros *</label>
-          <input type="number" min={1} max={50} className={inputClass} value={form.passengers} onChange={(e) => update("passengers", Number(e.target.value) as any)} />
+          <label htmlFor="qf-pax" className={labelClass} style={{ letterSpacing: "0.2em" }}>Pasajeros *</label>
+          <input id="qf-pax" name="passengers" type="number" min={1} max={50} className={inputClass} value={form.passengers} onChange={(e) => update("passengers", Number(e.target.value) as any)} />
           {errors.passengers && <p className={errorClass}>{errors.passengers}</p>}
         </div>
 
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Salida *</label>
-          <input type="date" className={inputClass} value={form.departureDate} onChange={(e) => update("departureDate", e.target.value)} />
+          <label htmlFor="qf-departure" className={labelClass} style={{ letterSpacing: "0.2em" }}>Salida *</label>
+          <input id="qf-departure" name="departureDate" type="date" className={inputClass} value={form.departureDate} onChange={(e) => update("departureDate", e.target.value)} />
           {errors.departureDate && <p className={errorClass}>{errors.departureDate}</p>}
         </div>
         <div>
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Regreso</label>
+          <label htmlFor="qf-return" className={labelClass} style={{ letterSpacing: "0.2em" }}>Regreso</label>
           <input
+            id="qf-return"
+            name="returnDate"
             type="date"
             className={inputClass}
             value={form.returnDate}
@@ -239,8 +241,10 @@ export const QuotationForm = () => {
 
 
         <div className="sm:col-span-2">
-          <label className={labelClass} style={{ letterSpacing: "0.2em" }}>Mensaje</label>
+          <label htmlFor="qf-message" className={labelClass} style={{ letterSpacing: "0.2em" }}>Mensaje</label>
           <textarea
+            id="qf-message"
+            name="message"
             className={inputClass}
             rows={3}
             value={form.message}
