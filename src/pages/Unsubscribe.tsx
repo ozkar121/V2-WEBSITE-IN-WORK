@@ -3,6 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
@@ -10,7 +11,8 @@ const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as strin
 type State = "loading" | "valid" | "already" | "invalid" | "submitting" | "done" | "error";
 
 const Unsubscribe = () => {
-  useSEO({ title: "Cancelar suscripción · Numen Aviation", description: "Gestiona tus preferencias de email." });
+  const { t } = useLanguage();
+  useSEO({ title: t("un_seo_title"), description: t("un_seo_desc") });
   const [params] = useSearchParams();
   const token = params.get("token");
   const [state, setState] = useState<State>("loading");
@@ -58,35 +60,36 @@ const Unsubscribe = () => {
             Numen Aviation
           </span>
           <h1 className="font-serif text-2xl font-light mt-3 mb-6">
-            {state === "loading" && "Verificando..."}
-            {state === "valid" && "Cancelar suscripción"}
-            {state === "submitting" && "Procesando..."}
-            {state === "done" && "Listo, te dimos de baja."}
-            {state === "already" && "Ya estabas dado de baja."}
-            {state === "invalid" && "Enlace inválido o expirado."}
-            {state === "error" && "Algo salió mal."}
+            {state === "loading" && t("un_verifying")}
+            {state === "valid" && t("un_title_valid")}
+            {state === "submitting" && t("un_processing")}
+            {state === "done" && t("un_done")}
+            {state === "already" && t("un_already")}
+            {state === "invalid" && t("un_invalid")}
+            {state === "error" && t("un_error")}
           </h1>
 
           {state === "valid" && (
             <>
-              <p className="text-fg-3 text-sm mb-6">
-                Si confirmas, dejarás de recibir nuestros emails.
-              </p>
+              <p className="text-fg-3 text-sm mb-6">{t("un_confirm_body")}</p>
               <button onClick={confirm} className="btn-primary">
-                Confirmar baja
+                {t("un_confirm_btn")}
               </button>
             </>
           )}
 
           {(state === "done" || state === "already") && (
             <p className="text-fg-3 text-sm">
-              Si fue un error, escríbenos a <a className="text-jade" href="mailto:operaciones@numen-aviation.com">operaciones@numen-aviation.com</a>.
+              {t("un_done_help_a")}{" "}
+              <a className="text-jade" href="mailto:operaciones@numen-aviation.com">
+                operaciones@numen-aviation.com
+              </a>.
             </p>
           )}
 
           {(state === "invalid" || state === "error") && (
             <Link to="/" className="text-jade text-sm hover:text-foreground transition-colors">
-              ← Volver al inicio
+              {t("un_back_home")}
             </Link>
           )}
         </div>
