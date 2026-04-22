@@ -10,10 +10,10 @@ export const Footer = () => {
     >
       <div className="flex flex-wrap justify-between items-start gap-12 mb-10">
         <div className="footer-brand max-w-xs">
-          <div className="flex items-center gap-3 mb-4">
-            <img src={logoIcon} alt="" className="h-9 w-auto" />
+          <div className="flex items-center gap-2.5 mb-4">
+            <img src={logoIcon} alt="" className="h-6 w-auto" />
             <span
-              className="text-[0.85rem] uppercase text-foreground font-light"
+              className="text-[0.75rem] uppercase text-foreground font-light"
               style={{ letterSpacing: "0.25em" }}
             >
               Numen Aviation
