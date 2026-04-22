@@ -17,6 +17,7 @@ export const NAV_LINKS = [
   { label: "Servicios", href: "/#services" },
   { label: "Flota", href: "/#fleet" },
   { label: "Empty Legs", href: "/empty-legs" },
+  { label: "Carga", href: "/vuelos-de-carga" },
   { label: "Nosotros", href: "/#why" },
   { label: "Contacto", href: "/#contact" },
 ];

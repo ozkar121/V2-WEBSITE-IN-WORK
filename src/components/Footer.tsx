@@ -36,6 +36,7 @@ export const Footer = () => {
           <ul className="list-none flex flex-col gap-2">
             <li><a href="/#services" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Charter bajo Demanda</a></li>
             <li><Link to="/empty-legs" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Empty Legs</Link></li>
+            <li><Link to="/vuelos-de-carga" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Vuelos de Carga</Link></li>
             <li><a href="/#services" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Consultoría</a></li>
             <li><a href="/#services" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Adquisición de Aeronaves</a></li>
           </ul>
