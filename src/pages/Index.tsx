@@ -158,10 +158,10 @@ const Index = () => {
         </div>
         <div className="reveal">
           <p className="eyebrow mb-4">Por Qué Numen</p>
-          <h2 className="section-title">El estándar que<br />otros no <em>alcanzan.</em></h2>
+          <h2 className="section-title">El estándar de la<br />aviación privada en <em>México.</em></h2>
           <div className="gold-rule" />
           <p className="text-[0.9rem] leading-relaxed text-fg-3 max-w-md">
-            Numen Aviation fue construida por operadores, no por vendedores. Entendemos lo que se necesita para ejecutar un vuelo perfecto — porque lo hemos hecho miles de veces.
+            Numen Aviation fue construida por operadores, no por vendedores. Conocemos cada detalle de la renta de jet privado en México — desde la coordinación FBO en Toluca hasta el cumplimiento ante AFAC — porque lo hemos hecho miles de veces.
           </p>
           <div className="mt-10 flex flex-col">
             {whyItems.map((w, i) => (
