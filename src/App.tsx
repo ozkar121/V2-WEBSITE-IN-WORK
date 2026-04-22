@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
 import AdminEmptyLegs from "./pages/AdminEmptyLegs.tsx";
 import Auth from "./pages/Auth.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/empty-legs" element={<EmptyLegs />} />
             <Route path="/rutas/:slug" element={<RoutePage />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route
               path="/admin/aeronaves"
               element={
