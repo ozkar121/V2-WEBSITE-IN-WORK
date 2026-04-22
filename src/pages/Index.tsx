@@ -7,7 +7,6 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
-import { PlaneFlyby } from "@/components/PlaneFlyby";
 import { QuotationForm } from "@/components/QuotationForm";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
 import tolucaAerial from "@/assets/toluca-aerial.jpg";
@@ -237,9 +236,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Avión cruzando: Why → CTA Band (izq → der, sutil) */}
-      <PlaneFlyby direction="ltr" verticalPosition={50} size={44} speed={1.6} />
 
       {/* CTA BAND */}
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
