@@ -181,9 +181,9 @@ const Index = () => {
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <h2 className="font-serif font-light leading-tight" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}>
-            ¿Listo para volar?<br /><em className="italic text-jade-light">Hablemos.</em>
+            ¿Listo para volar?<br /><em className="italic text-jade-light">Cotiza tu jet privado.</em>
           </h2>
-          <p className="text-[0.875rem] text-fg-3 mt-3">Empty legs, charters bajo demanda, consultoría. Estamos disponibles ahora.</p>
+          <p className="text-[0.875rem] text-fg-3 mt-3">Empty legs, charter bajo demanda y aviación ejecutiva desde Toluca. Respuesta en menos de 2 horas, 24/7.</p>
         </div>
         <div className="flex gap-4 flex-wrap reveal">
           <a href={waLink("Hola, quisiera cotizar un vuelo privado.")} target="_blank" rel="noopener noreferrer" className="btn-primary">WhatsApp</a>
