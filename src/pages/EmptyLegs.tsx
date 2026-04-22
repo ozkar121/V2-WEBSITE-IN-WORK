@@ -8,7 +8,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { supabase } from "@/integrations/supabase/client";
 import { CATEGORY_LABELS, type AircraftCategory } from "@/data/aircraft";
-import { waLink } from "@/lib/site";
+import { waLink, SITE_URL } from "@/lib/site";
 
 interface DbLeg {
   id: string;
@@ -51,12 +51,55 @@ const formatDate = (iso: string) =>
 const formatPrice = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
 
+const EMPTY_LEGS_JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Qué es un empty leg?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Un empty leg es un vuelo privado de reposicionamiento donde la aeronave debe volar sin pasajeros. Se ofrece hasta 75% por debajo del precio de un charter completo, con el mismo servicio y operador certificado.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Qué tan rápido puedo confirmar un empty leg?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Confirmamos por WhatsApp o email en menos de una hora. Generamos contrato y cotización formal el mismo día.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Puedo cambiar la fecha o el horario de un empty leg?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Las fechas y horarios de empty legs son fijos porque dependen del reposicionamiento de la aeronave. Si necesitas flexibilidad total, te recomendamos un charter bajo demanda.",
+        },
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Empty Legs", item: `${SITE_URL}/empty-legs` },
+    ],
+  },
+];
+
 const EmptyLegs = () => {
   useReveal();
   useSEO({
     title: "Empty Legs México | Vuelos Privados hasta 75% Descuento — Numen Aviation",
     description:
       "Empty legs en México, EUA y el Caribe hasta 75% más baratos que un charter completo. Disponibilidad actualizada diariamente.",
+    path: "/empty-legs",
+    jsonLd: EMPTY_LEGS_JSONLD,
   });
 
   const [filter, setFilter] = useState<Filter>("all");

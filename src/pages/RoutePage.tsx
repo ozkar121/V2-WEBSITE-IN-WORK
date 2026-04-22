@@ -6,7 +6,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { ROUTE_DATA } from "@/data/routes";
-import { waLink } from "@/lib/site";
+import { waLink, SITE_URL } from "@/lib/site";
 
 const RouteSkeleton = () => (
   <div className="animate-pulse" style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 6rem" }}>
@@ -29,9 +29,37 @@ const RoutePage = () => {
   useReveal();
   const route = slug ? ROUTE_DATA[slug] : undefined;
 
+  const path = `/rutas/${slug}`;
+  const jsonLd = route
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          serviceType: "Charter de Jet Privado",
+          provider: { "@type": "Organization", name: "Numen Aviation", url: SITE_URL },
+          areaServed: [route.heroFromCity, route.heroToCity, "México"],
+          name: `Vuelo Privado ${route.heroFromCity} → ${route.heroToCity}`,
+          description: route.description,
+          url: `${SITE_URL}${path}`,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: "Rutas", item: `${SITE_URL}/#fleet` },
+            { "@type": "ListItem", position: 3, name: route.tagline.replace(" · ", " → "), item: `${SITE_URL}${path}` },
+          ],
+        },
+      ]
+    : undefined;
+
   useSEO({
     title: route?.title ?? "Ruta — Numen Aviation",
     description: route?.description,
+    path,
+    type: "article",
+    jsonLd,
   });
 
   useEffect(() => {
