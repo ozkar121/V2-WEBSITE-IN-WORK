@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import { EMAIL, ROUTES, waLink } from "@/lib/site";
+import { EMAIL, waLink } from "@/lib/site";
+import { useLang } from "@/i18n/LanguageContext";
 import logoIcon from "@/assets/numen-mark.png";
 
 export const Footer = () => {
+  const { t } = useLang();
+
   return (
     <footer
       className="bg-bg-2 border-t border-jade-soft pt-12 pb-8"
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
-      <div className="flex flex-wrap justify-between items-start gap-12 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
         <div className="footer-brand max-w-xs">
           <div className="flex items-center gap-2.5 mb-4">
             <img src={logoIcon} alt="" className="h-6 w-auto" />
@@ -20,9 +22,7 @@ export const Footer = () => {
             </span>
           </div>
           <p className="text-[0.78rem] text-fg-3 leading-relaxed">
-            Renta de jet privado y aviación ejecutiva con base en el Aeropuerto Internacional de Toluca (MMTO).
-            Charter bajo demanda, empty legs, consultoría y adquisición de aeronaves para México, Estados Unidos, el Caribe y Centroamérica.
-            Cotización en menos de 2 horas, operación 24/7.
+            {t("footer_description")}
           </p>
         </div>
 
@@ -31,15 +31,11 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-4 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Servicios
+            {t("footer_offices_mx")}
           </h4>
-          <ul className="list-none flex flex-col gap-2">
-            <li><a href="/#services" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Charter bajo Demanda</a></li>
-            <li><Link to="/empty-legs" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Empty Legs</Link></li>
-            <li><Link to="/vuelos-de-carga" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Vuelos de Carga</Link></li>
-            <li><a href="/#services" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Consultoría</a></li>
-            <li><a href="/#services" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">Adquisición de Aeronaves</a></li>
-          </ul>
+          <p className="text-[0.78rem] text-fg-3 leading-relaxed">
+            {t("footer_offices_mx_addr")}
+          </p>
         </div>
 
         <div className="footer-col">
@@ -47,17 +43,11 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-4 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Rutas Top
+            {t("footer_offices_us")}
           </h4>
-          <ul className="list-none flex flex-col gap-2">
-            {ROUTES.map((r) => (
-              <li key={r.slug}>
-                <Link to={`/rutas/${r.slug}`} className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">
-                  {r.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="text-[0.78rem] text-fg-3 leading-relaxed">
+            {t("footer_offices_us_addr")}
+          </p>
         </div>
 
         <div className="footer-col">
@@ -65,18 +55,33 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-4 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Contacto
+            {t("footer_contact")}
           </h4>
           <ul className="list-none flex flex-col gap-2">
-            <li><a href={`mailto:${EMAIL}`} className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">{EMAIL}</a></li>
-            <li><a href={waLink("Hola, quisiera información.")} target="_blank" rel="noopener noreferrer" className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">WhatsApp</a></li>
-            <li><span className="text-[0.8rem] text-fg-3">MMTO — Toluca, México</span></li>
+            <li>
+              <a href={`mailto:${EMAIL}`} className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline">
+                {EMAIL}
+              </a>
+            </li>
+            <li>
+              <a
+                href={waLink("Hola, quisiera información.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[0.8rem] text-fg-3 hover:text-foreground no-underline"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li>
+              <span className="text-[0.8rem] text-fg-3">{t("footer_hub")}</span>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="flex justify-between items-center pt-6 border-t border-jade-soft flex-wrap gap-4">
-        <p className="text-[0.7rem] text-fg-3">© 2025 Numen Aviation. Todos los derechos reservados.</p>
+        <p className="text-[0.7rem] text-fg-3">{t("footer_rights")}</p>
         <div className="flex gap-6">
           {["México", "AFAC", "24/7"].map((b) => (
             <span
