@@ -232,6 +232,63 @@ export type Database = {
         }
         Relationships: []
       }
+      quotation_requests: {
+        Row: {
+          company: string | null
+          created_at: string
+          departure_date: string
+          email: string
+          from_city: string
+          id: string
+          message: string | null
+          name: string
+          passengers: number
+          phone: string
+          preferred_aircraft: string | null
+          return_date: string | null
+          status: string
+          to_city: string
+          trip_type: string
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          departure_date: string
+          email: string
+          from_city: string
+          id?: string
+          message?: string | null
+          name: string
+          passengers?: number
+          phone: string
+          preferred_aircraft?: string | null
+          return_date?: string | null
+          status?: string
+          to_city: string
+          trip_type?: string
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          departure_date?: string
+          email?: string
+          from_city?: string
+          id?: string
+          message?: string | null
+          name?: string
+          passengers?: number
+          phone?: string
+          preferred_aircraft?: string | null
+          return_date?: string | null
+          status?: string
+          to_city?: string
+          trip_type?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
