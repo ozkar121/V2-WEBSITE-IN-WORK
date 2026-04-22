@@ -235,15 +235,7 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="relative bg-bg-2/45 border border-foreground/10 p-10 reveal">
-            <p className="text-fg-3 text-[0.85rem] leading-relaxed">
-              El formulario completo de cotización se conectará a Lovable Cloud en la siguiente iteración.<br /><br />
-              Mientras tanto, escríbenos por WhatsApp para una respuesta inmediata.
-            </p>
-            <a href={waLink("Hola, quisiera cotizar un vuelo privado.")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex">
-              Escribir por WhatsApp →
-            </a>
-          </div>
+          <QuotationForm />
         </div>
       </section>
 

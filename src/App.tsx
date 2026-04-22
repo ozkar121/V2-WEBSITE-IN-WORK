@@ -12,6 +12,7 @@ import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
 import AdminEmptyLegs from "./pages/AdminEmptyLegs.tsx";
 import Auth from "./pages/Auth.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 
 const queryClient = new QueryClient();
 
