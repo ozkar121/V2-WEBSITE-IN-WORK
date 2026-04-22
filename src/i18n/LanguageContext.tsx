@@ -53,8 +53,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 };
 
-export const useLang = () => {
+export const useLang = (): LanguageContextValue => {
   const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLang must be used within LanguageProvider");
-  return ctx;
+  if (ctx) return ctx;
+  // Fallback to avoid runtime crashes during HMR or if a consumer renders
+  // outside the provider. Defaults to Spanish.
+  return {
+    lang: "es",
+    setLang: () => {},
+    t: (key) => {
+      const entry = TRANSLATIONS[key];
+      return entry ? entry.es : (key as string);
+    },
+  };
 };
