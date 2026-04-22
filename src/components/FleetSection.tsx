@@ -1,10 +1,21 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Aircraft, AircraftCategory, CATEGORY_LABELS, CATEGORY_ORDER } from "@/data/aircraft";
+import { Aircraft, AircraftCategory, CATEGORY_ORDER } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { CornerBrackets } from "@/components/CornerBrackets";
+import { useLang } from "@/i18n/LanguageContext";
+import type { TranslationKey } from "@/i18n/translations";
+
+const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
+  turbo: "cat_turbo",
+  light: "cat_light",
+  midsize: "cat_midsize",
+  heavy: "cat_heavy",
+  helicopter: "cat_helicopter",
+};
 
 export const FleetSection = () => {
+  const { t } = useLang();
   const [active, setActive] = useState<AircraftCategory>("turbo");
   const [aircraft, setAircraft] = useState<Aircraft[]>([]);
   const [photos, setPhotos] = useState<Record<string, string>>({});
