@@ -43,32 +43,32 @@ const HOME_JSONLD = [
 ];
 
 const services = [
-  { num: "01", name: "Charter bajo Demanda", desc: "Acceso inmediato a turbohélices, jets ligeros, medianos y pesados en México, EUA y el Caribe. Despegue en horas, no en días." },
-  { num: "02", name: "Empty Legs", desc: "Acceso exclusivo a vuelos de reposicionamiento a una fracción del precio. Consúltanos sobre disponibilidad en tu ruta." },
-  { num: "03", name: "Consultoría de Aviación", desc: "Asesoría estratégica para operadores, inversionistas y viajeros frecuentes. Planificación de flota, cumplimiento regulatorio y más." },
-  { num: "04", name: "Adquisición de Aeronaves", desc: "Asesoría experta para compra o venta de aeronaves. Inspecciones previas, valuación de mercado y soporte en la transacción." },
+  { num: "01", name: "Charter Bajo Demanda", desc: "Renta de jet privado y turbohélices desde Toluca (MMTO) y cualquier aeropuerto de México. Despegue en horas — no en días — hacia EUA, el Caribe y Centroamérica." },
+  { num: "02", name: "Empty Legs / Trayectos Vacíos", desc: "Vuelos de reposicionamiento en jet privado con descuentos de hasta 75%. Disponibilidad real, actualizada al día, en rutas mexicanas e internacionales." },
+  { num: "03", name: "Consultoría en Aviación Ejecutiva", desc: "Asesoría estratégica para operadores, family offices e inversionistas: planificación de flota, cumplimiento ante AFAC y optimización de costos operativos." },
+  { num: "04", name: "Adquisición y Brokerage de Aeronaves", desc: "Compra, venta y valuación de jets ejecutivos. Inspecciones pre-compra, análisis de mercado y acompañamiento integral en la transacción." },
 ];
 
 const stats = [
-  { val: "24/7", label: "Siempre Disponibles" },
-  { val: "2h", label: "Tiempo de Respuesta" },
+  { val: "24/7", label: "Operación Continua" },
+  { val: "2h", label: "Cotización en Menos de" },
   { val: "150+", label: "Rutas Operadas" },
   { val: "100%", label: "Récord de Seguridad" },
 ];
 
 const whyItems = [
-  { num: "I", title: "Correduría Independiente", desc: "Sin sesgo de flota. Conseguimos la mejor aeronave para tu misión de una red de operadores certificados en México y las Américas." },
-  { num: "II", title: "Precios Transparentes", desc: "Sin cargos ocultos. Recibes un desglose completo antes de confirmar — ferry, handling e IVA incluidos." },
-  { num: "III", title: "Expertise México-First", desc: "Conocimiento profundo del espacio aéreo mexicano, regulaciones AFAC y relaciones con operadores que otros no tienen." },
-  { num: "IV", title: "Un Solo Punto de Contacto", desc: "Tu asesor de aviación dedicado maneja todo — de la cotización al aterrizaje. Sin call centers, sin filas." },
+  { num: "I", title: "Correduría Independiente", desc: "Sin flota propia, sin sesgos. Comparamos operadores certificados en México y Las Américas para conseguirte la mejor aeronave al mejor precio." },
+  { num: "II", title: "Precios Transparentes", desc: "Cotización con desglose completo: ferry, handling, IVA y servicios FBO incluidos. Sin sorpresas al cierre." },
+  { num: "III", title: "Expertise México-First", desc: "Conocimiento profundo del Aeropuerto de Toluca (MMTO), regulación AFAC, espacio aéreo mexicano y relaciones directas con operadores nacionales." },
+  { num: "IV", title: "Un Solo Punto de Contacto", desc: "Tu asesor dedicado de aviación privada coordina de la cotización al aterrizaje. Sin call centers ni intermediarios." },
 ];
 
 const Index = () => {
   useReveal();
   useSEO({
-    title: "Numen Aviation | Charter de Jet Privado en México y Las Américas",
+    title: "Renta de Jet Privado en Toluca y México | Numen Aviation",
     description:
-      "Charter de jet privado en México, EUA y el Caribe. Vuelos bajo demanda, empty legs, consultoría y adquisición de aeronaves. Disponible 24/7 desde Toluca (MMTO).",
+      "Renta de jet privado, charter bajo demanda, empty legs, consultoría y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Servicio 24/7 en México, EUA, Caribe y Centroamérica. Cotización en menos de 2 horas.",
     path: "/",
     jsonLd: HOME_JSONLD,
   });
@@ -94,7 +94,7 @@ const Index = () => {
 
         <div className="relative z-10 inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-jade-soft bg-jade/[0.06] w-fit mb-7 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-jade animate-pulse-ring" />
-          <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>Aviación Privada · México y Las Américas</span>
+          <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>Renta de Jet Privado · Toluca · México · Las Américas</span>
         </div>
 
         <h1 className="display-title relative z-10 max-w-3xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
@@ -102,7 +102,7 @@ const Index = () => {
         </h1>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s", margin: "2rem 0" }} />
         <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-md mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>
-          Charter bajo demanda, consultoría y adquisición de aeronaves. Adaptado a tu agenda, tus estándares y tu destino.
+          Renta de jet privado, charter bajo demanda, empty legs y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Tu agenda, tus estándares, tu destino.
         </p>
         <div className="relative z-10 flex gap-4 flex-wrap animate-fade-up" style={{ animationDelay: "1s" }}>
           <a href={waLink("Hola, me gustaría solicitar una cotización de charter.")} target="_blank" rel="noopener noreferrer" className="btn-primary">Solicitar Cotización</a>
@@ -110,13 +110,13 @@ const Index = () => {
         </div>
       </section>
 
-      <Marquee items={["Charter bajo Demanda","·","Empty Legs","·","Consultoría","·","Adquisición de Aeronaves","·","Servicio 24/7","·","México · EUA · Caribe","·"]} />
+      <Marquee items={["Renta de Jet Privado","·","Charter Bajo Demanda","·","Empty Legs","·","Aviación Ejecutiva","·","Adquisición de Aeronaves","·","Servicio 24/7","·","Toluca · México · EUA · Caribe","·"]} />
 
       {/* SERVICES */}
       <section id="services" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <p className="eyebrow mb-4">Lo Que Ofrecemos</p>
-          <h2 className="section-title">Cada aspecto de<br />la aviación privada,<br /><em>resuelto.</em></h2>
+          <h2 className="section-title">Renta de jet privado<br />y aviación ejecutiva,<br /><em>sin fricciones.</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-16 border border-jade-soft reveal">
@@ -158,10 +158,10 @@ const Index = () => {
         </div>
         <div className="reveal">
           <p className="eyebrow mb-4">Por Qué Numen</p>
-          <h2 className="section-title">El estándar que<br />otros no <em>alcanzan.</em></h2>
+          <h2 className="section-title">El estándar de la<br />aviación privada en <em>México.</em></h2>
           <div className="gold-rule" />
           <p className="text-[0.9rem] leading-relaxed text-fg-3 max-w-md">
-            Numen Aviation fue construida por operadores, no por vendedores. Entendemos lo que se necesita para ejecutar un vuelo perfecto — porque lo hemos hecho miles de veces.
+            Numen Aviation fue construida por operadores, no por vendedores. Conocemos cada detalle de la renta de jet privado en México — desde la coordinación FBO en Toluca hasta el cumplimiento ante AFAC — porque lo hemos hecho miles de veces.
           </p>
           <div className="mt-10 flex flex-col">
             {whyItems.map((w, i) => (
@@ -181,9 +181,9 @@ const Index = () => {
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <h2 className="font-serif font-light leading-tight" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)" }}>
-            ¿Listo para volar?<br /><em className="italic text-jade-light">Hablemos.</em>
+            ¿Listo para volar?<br /><em className="italic text-jade-light">Cotiza tu jet privado.</em>
           </h2>
-          <p className="text-[0.875rem] text-fg-3 mt-3">Empty legs, charters bajo demanda, consultoría. Estamos disponibles ahora.</p>
+          <p className="text-[0.875rem] text-fg-3 mt-3">Empty legs, charter bajo demanda y aviación ejecutiva desde Toluca. Respuesta en menos de 2 horas, 24/7.</p>
         </div>
         <div className="flex gap-4 flex-wrap reveal">
           <a href={waLink("Hola, quisiera cotizar un vuelo privado.")} target="_blank" rel="noopener noreferrer" className="btn-primary">WhatsApp</a>

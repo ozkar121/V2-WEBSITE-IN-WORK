@@ -95,9 +95,9 @@ const EMPTY_LEGS_JSONLD = [
 const EmptyLegs = () => {
   useReveal();
   useSEO({
-    title: "Empty Legs México | Vuelos Privados hasta 75% Descuento — Numen Aviation",
+    title: "Empty Legs México · Trayectos Vacíos en Jet Privado hasta 75% off | Numen Aviation",
     description:
-      "Empty legs en México, EUA y el Caribe hasta 75% más baratos que un charter completo. Disponibilidad actualizada diariamente.",
+      "Empty legs y trayectos vacíos en jet privado desde México hacia EUA, Caribe y Centroamérica. Hasta 75% de descuento sobre el charter completo. Disponibilidad actualizada al día desde el Aeropuerto de Toluca (MMTO).",
     path: "/empty-legs",
     jsonLd: EMPTY_LEGS_JSONLD,
   });
