@@ -14,7 +14,7 @@ import { PublishGuide } from "@/components/PublishGuide";
 const schema = z.object({
   id: z.string().trim().min(1).max(40).regex(/^[a-z0-9-_]+$/i, "Solo letras, números, guion o guion bajo"),
   name: z.string().trim().min(1).max(80),
-  category: z.enum(["turbo", "light", "midsize", "heavy"]),
+  category: z.enum(["helicopter", "turbo", "light", "midsize", "heavy"]),
   passengers: z.string().trim().max(40),
   speed_kmh: z.string().trim().max(40),
   range_km: z.string().trim().max(40),
@@ -80,14 +80,14 @@ const AdminAircraft = () => {
     const { error } = await supabase.from("aircraft").insert({
       id: d.id,
       name: d.name,
-      category: d.category,
+      category: d.category as never,
       passengers: d.passengers,
       speed_kmh: d.speed_kmh,
       range_km: d.range_km,
       range_nm: d.range_nm,
       sort_order: d.sort_order,
       is_active: d.is_active,
-    });
+    } as never);
     setCreating(false);
     if (error) {
       toast.error(error.code === "23505" ? "Ese ID ya existe" : "Error al crear");
@@ -106,7 +106,7 @@ const AdminAircraft = () => {
     }
     setSavingId(row.id);
     const { id, ...updates } = parsed.data;
-    const { error } = await supabase.from("aircraft").update(updates).eq("id", id);
+    const { error } = await supabase.from("aircraft").update(updates as never).eq("id", id);
     setSavingId(null);
     if (error) {
       toast.error("No se pudo guardar");

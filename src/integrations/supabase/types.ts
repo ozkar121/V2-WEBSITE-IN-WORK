@@ -373,7 +373,7 @@ export type Database = {
       }
     }
     Enums: {
-      aircraft_category: "turbo" | "light" | "midsize" | "heavy"
+      aircraft_category: "turbo" | "light" | "midsize" | "heavy" | "helicopter"
       app_role: "admin" | "user"
     }
     CompositeTypes: {
@@ -502,7 +502,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      aircraft_category: ["turbo", "light", "midsize", "heavy"],
+      aircraft_category: ["turbo", "light", "midsize", "heavy", "helicopter"],
       app_role: ["admin", "user"],
     },
   },

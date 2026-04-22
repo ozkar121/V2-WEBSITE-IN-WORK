@@ -1,0 +1,1 @@
+ALTER TYPE public.aircraft_category ADD VALUE IF NOT EXISTS 'helicopter';

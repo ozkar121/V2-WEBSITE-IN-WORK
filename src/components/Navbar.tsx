@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { NAV_LINKS, ROUTES, waLink } from "@/lib/site";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { NAV_LINKS, ROUTES, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import logoIcon from "@/assets/numen-mark.png";
 
 export const Navbar = () => {
@@ -76,12 +76,27 @@ export const Navbar = () => {
         </li>
         <li>
           <a
+            href={`tel:${PHONE_TEL}`}
+            className="flex items-center gap-2 text-[0.72rem] uppercase text-fg-2 hover:text-jade transition-colors no-underline"
+            style={{ letterSpacing: "0.15em" }}
+            aria-label={`Llamar a ${PHONE_NUMBER}`}
+          >
+            <Phone className="w-3.5 h-3.5" />
+            {PHONE_NUMBER}
+          </a>
+        </li>
+        <li>
+          <a
             href={waLink("Hola, me gustaría solicitar una cotización de charter.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[0.72rem] uppercase text-jade border border-jade px-5 py-2.5 hover:bg-jade hover:text-background transition-colors no-underline"
-            style={{ letterSpacing: "0.18em" }}
+            className="relative inline-flex items-center gap-2 text-[0.72rem] uppercase text-background bg-jade px-6 py-3 hover:bg-jade-light transition-all no-underline shadow-[0_0_24px_-4px_hsl(var(--jade)/0.6)] hover:shadow-[0_0_32px_-2px_hsl(var(--jade)/0.85)] hover:-translate-y-0.5"
+            style={{ letterSpacing: "0.2em" }}
           >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-background opacity-75 animate-ping" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-background" />
+            </span>
             Solicitar Vuelo
           </a>
         </li>
@@ -132,12 +147,24 @@ export const Navbar = () => {
             </div>
           )}
           <a
+            href={`tel:${PHONE_TEL}`}
+            className="flex items-center gap-2 text-base uppercase text-fg-2 hover:text-jade transition-colors no-underline"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            <Phone className="w-4 h-4" />
+            {PHONE_NUMBER}
+          </a>
+          <a
             href={waLink("Hola, me gustaría solicitar una cotización de charter.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[0.72rem] uppercase text-jade border border-jade px-6 py-3 mt-4"
-            style={{ letterSpacing: "0.18em" }}
+            className="inline-flex items-center gap-2 text-[0.75rem] uppercase text-background bg-jade px-7 py-3.5 mt-4 shadow-[0_0_24px_-4px_hsl(var(--jade)/0.7)]"
+            style={{ letterSpacing: "0.2em" }}
           >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-background opacity-75 animate-ping" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-background" />
+            </span>
             Solicitar Vuelo
           </a>
         </div>
