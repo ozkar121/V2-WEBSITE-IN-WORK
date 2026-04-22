@@ -63,7 +63,7 @@ const Index = () => {
 
   const stats = [
     { val: "24/7", label: t("stat_24_7") },
-    { val: "2h", label: t("stat_2h") },
+    { val: "< 2h", label: t("stat_2h") },
     { val: "150+", label: t("stat_routes") },
     { val: "100%", label: t("stat_safety") },
   ];

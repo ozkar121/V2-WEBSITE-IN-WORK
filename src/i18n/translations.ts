@@ -83,7 +83,7 @@ export const TRANSLATIONS = {
 
   // Stats
   stat_24_7: { es: "Operación Continua", en: "Continuous Operation" },
-  stat_2h: { es: "Cotización en Menos de", en: "Quote in Under" },
+  stat_2h: { es: "Cotización Promedio", en: "Average Quote Time" },
   stat_routes: { es: "Rutas Operadas", en: "Routes Operated" },
   stat_safety: { es: "Récord de Seguridad", en: "Safety Record" },
 
@@ -315,10 +315,10 @@ export const TRANSLATIONS = {
   cg_breadcrumb_services: { es: "Servicios", en: "Services" },
   cg_breadcrumb: { es: "Vuelos de Carga", en: "Cargo Flights" },
   cg_eyebrow: { es: "Hot Shot · 24/7 · Respuesta en Horas", en: "Hot Shot · 24/7 · Response in Hours" },
-  cg_hero_a: { es: "Carga", en: "Urgent" },
-  cg_hero_em: { es: "Urgente", en: "Cargo" },
-  cg_hero_b: { es: "Cuando", en: "When" },
-  cg_hero_c: { es: "No Puede Esperar.", en: "It Can't Wait." },
+  cg_hero_a: { es: "Carga", en: "Air Cargo" },
+  cg_hero_em: { es: "Urgente", en: "Charter" },
+  cg_hero_b: { es: "Cuando", en: "for Time-Critical" },
+  cg_hero_c: { es: "No Puede Esperar.", en: "Shipments." },
   cg_hero_sub: {
     es: "Charter de carga aérea para misiones críticas. Hacemos el brokerage con una red de operadores certificados para mover lo que tu línea de producción, tu aeronave o tu cliente necesitan ya.",
     en: "Air cargo charter for critical missions. We broker with a network of certified operators to move whatever your production line, aircraft, or client needs now.",
