@@ -80,6 +80,7 @@ const Index = () => {
   return (
     <>
       <Navbar />
+      <main>
 
       {/* HERO */}
       <section
@@ -245,6 +246,7 @@ const Index = () => {
           <QuotationForm />
         </div>
       </section>
+      </main>
 
       <Footer />
       <WhatsAppFAB />
