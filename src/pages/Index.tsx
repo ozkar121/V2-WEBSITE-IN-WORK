@@ -94,7 +94,7 @@ const Index = () => {
 
         <div className="relative z-10 inline-flex items-center gap-2.5 px-3.5 py-1.5 border border-jade-soft bg-jade/[0.06] w-fit mb-7 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-jade animate-pulse-ring" />
-          <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>Aviación Privada · México y Las Américas</span>
+          <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>Renta de Jet Privado · Toluca · México · Las Américas</span>
         </div>
 
         <h1 className="display-title relative z-10 max-w-3xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
@@ -102,7 +102,7 @@ const Index = () => {
         </h1>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s", margin: "2rem 0" }} />
         <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-md mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>
-          Charter bajo demanda, consultoría y adquisición de aeronaves. Adaptado a tu agenda, tus estándares y tu destino.
+          Renta de jet privado, charter bajo demanda, empty legs y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Tu agenda, tus estándares, tu destino.
         </p>
         <div className="relative z-10 flex gap-4 flex-wrap animate-fade-up" style={{ animationDelay: "1s" }}>
           <a href={waLink("Hola, me gustaría solicitar una cotización de charter.")} target="_blank" rel="noopener noreferrer" className="btn-primary">Solicitar Cotización</a>
@@ -110,7 +110,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Marquee items={["Charter bajo Demanda","·","Empty Legs","·","Consultoría","·","Adquisición de Aeronaves","·","Servicio 24/7","·","México · EUA · Caribe","·"]} />
+      <Marquee items={["Renta de Jet Privado","·","Charter Bajo Demanda","·","Empty Legs","·","Aviación Ejecutiva","·","Adquisición de Aeronaves","·","Servicio 24/7","·","Toluca · México · EUA · Caribe","·"]} />
 
       {/* SERVICES */}
       <section id="services" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
