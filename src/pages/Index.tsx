@@ -106,7 +106,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* WHY */}
+      {/* FLEET */}
+      <FleetSection />
       <section id="why" className="py-28 grid md:grid-cols-2 gap-16 items-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal relative h-[420px] hidden md:block">
           <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden flex items-center justify-center relative">
