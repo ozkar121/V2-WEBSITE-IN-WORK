@@ -146,6 +146,8 @@ const AdminEmptyLegs = () => {
           </div>
         </div>
 
+        <PublishGuide />
+
         {/* Formulario nuevo */}
         <form
           onSubmit={handleCreate}
