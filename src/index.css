@@ -1,96 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================================
+   Numen Aviation — Design System
+   Dark luxury · jade accent · Cormorant + DM Sans
+   All colors HSL.
+   ============================================================ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Backgrounds (layered near-black) */
+    --background: 80 12% 3%;        /* #080907 */
+    --bg-2: 90 11% 5%;              /* #0C0E0B */
+    --bg-3: 96 14% 7%;              /* #121510 */
+    --bg-4: 91 16% 11%;             /* #1A1F17 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Foreground */
+    --foreground: 120 9% 94%;       /* #EEF2EE */
+    --fg-2: 120 6% 74%;             /* #B8C0B8 */
+    --fg-3: 138 6% 46%;             /* #6E7D72 */
+    --fg-4: 110 8% 24%;             /* #3A4239 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Accent: Jade */
+    --jade: 162 55% 36%;            /* #2A8F72 */
+    --jade-light: 162 51% 53%;      /* #47C4A1 */
+    --jade-dark: 162 60% 21%;       /* #165640 */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Shadcn aliases mapped to Numen palette */
+    --card: var(--bg-2);
+    --card-foreground: var(--foreground);
+    --popover: var(--bg-2);
+    --popover-foreground: var(--foreground);
+    --primary: var(--jade);
+    --primary-foreground: 80 12% 3%;
+    --secondary: var(--bg-3);
+    --secondary-foreground: var(--foreground);
+    --muted: var(--bg-3);
+    --muted-foreground: var(--fg-3);
+    --accent: var(--bg-3);
+    --accent-foreground: var(--jade);
+    --destructive: 11 51% 53%;
+    --destructive-foreground: var(--foreground);
+    --border: 162 55% 36%;          /* used with /22 alpha via utility */
+    --input: var(--bg-2);
+    --ring: var(--jade);
+    --radius: 0;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--bg-2);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--jade);
+    --sidebar-primary-foreground: 80 12% 3%;
+    --sidebar-accent: var(--bg-3);
+    --sidebar-accent-foreground: var(--jade);
+    --sidebar-border: var(--jade);
+    --sidebar-ring: var(--jade);
   }
 
+  /* Force dark by default — brand is dark-only */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* same tokens; placeholder so .dark queries don't fail */
   }
 }
 
@@ -98,8 +69,134 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Signature grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px;
   }
 }
+
+@layer components {
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-sans  { font-family: 'DM Sans', system-ui, sans-serif; }
+
+  /* Eyebrow / section tag */
+  .eyebrow {
+    @apply text-[0.65rem] uppercase text-jade font-normal;
+    letter-spacing: 0.3em;
+  }
+
+  /* Section title */
+  .section-title {
+    @apply font-serif font-light text-foreground;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: hsl(var(--jade-light)); }
+
+  /* Display */
+  .display-title {
+    @apply font-serif font-light text-foreground;
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .display-title em { font-style: italic; color: hsl(var(--jade-light)); }
+
+  /* Hairline gold rule */
+  .gold-rule {
+    @apply block bg-jade;
+    width: 40px;
+    height: 0.5px;
+    margin: 1.5rem 0;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-jade text-[#07070E] font-medium uppercase no-underline transition-all;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    padding: 0.9rem 2rem;
+  }
+  .btn-primary:hover { background: hsl(var(--jade-light)); transform: translateY(-1px); }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-transparent text-foreground font-normal uppercase no-underline transition-colors;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    padding: 0.9rem 2rem;
+    border: 0.5px solid hsl(var(--foreground) / 0.25);
+  }
+  .btn-secondary:hover { border-color: hsl(var(--foreground)); }
+
+  /* Hairline border helper */
+  .border-hairline { border: 0.5px solid hsl(var(--jade) / 0.22); }
+  .border-hairline-muted { border: 0.5px solid hsl(var(--foreground) / 0.08); }
+
+  /* Reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+}
+
+@layer utilities {
+  .text-jade { color: hsl(var(--jade)); }
+  .text-jade-light { color: hsl(var(--jade-light)); }
+  .text-jade-dark { color: hsl(var(--jade-dark)); }
+  .bg-jade { background-color: hsl(var(--jade)); }
+  .bg-jade-light { background-color: hsl(var(--jade-light)); }
+  .bg-jade-dark { background-color: hsl(var(--jade-dark)); }
+  .bg-bg-2 { background-color: hsl(var(--bg-2)); }
+  .bg-bg-3 { background-color: hsl(var(--bg-3)); }
+  .bg-bg-4 { background-color: hsl(var(--bg-4)); }
+  .text-fg-2 { color: hsl(var(--fg-2)); }
+  .text-fg-3 { color: hsl(var(--fg-3)); }
+  .text-fg-4 { color: hsl(var(--fg-4)); }
+  .border-jade { border-color: hsl(var(--jade)); }
+  .border-jade-soft { border-color: hsl(var(--jade) / 0.22); }
+  .border-jade-strong { border-color: hsl(var(--jade) / 0.5); }
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 hsl(var(--jade) / 0.55); }
+  70%  { box-shadow: 0 0 0 9px hsl(var(--jade) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--jade) / 0); }
+}
+
+.animate-fade-up { animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+.animate-fade-in { animation: fadeIn 1s forwards; opacity: 0; }
+.animate-marquee { animation: marquee 28s linear infinite; }
+.animate-pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
