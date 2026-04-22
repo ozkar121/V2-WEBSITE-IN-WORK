@@ -1,0 +1,159 @@
+import { useParams, Link, Navigate } from "react-router-dom";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { WhatsAppFAB } from "@/components/WhatsAppFAB";
+import { useReveal } from "@/hooks/useReveal";
+import { useSEO } from "@/hooks/useSEO";
+import { ROUTE_DATA } from "@/data/routes";
+import { waLink } from "@/lib/site";
+
+const RoutePage = () => {
+  const { slug } = useParams();
+  useReveal();
+  const route = slug ? ROUTE_DATA[slug] : undefined;
+
+  useSEO({
+    title: route?.title ?? "Ruta — Numen Aviation",
+    description: route?.description,
+  });
+
+  if (!route) return <Navigate to="/" replace />;
+
+  return (
+    <>
+      <Navbar />
+
+      {/* Breadcrumb */}
+      <nav aria-label="breadcrumb" className="absolute top-24 z-10" style={{ left: "clamp(1.5rem, 4vw, 4rem)" }}>
+        <ol className="flex items-center gap-2 list-none text-[0.65rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>
+          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">Inicio</Link></li>
+          <li className="text-jade opacity-50">›</li>
+          <li>Rutas</li>
+          <li className="text-jade opacity-50">›</li>
+          <li className="text-jade">{route.tagline.replace(" · ", " → ")}</li>
+        </ol>
+      </nav>
+
+      {/* HERO */}
+      <section className="relative min-h-[88vh] flex flex-col justify-end overflow-hidden" style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 6rem" }}>
+        <div className="absolute inset-0" style={{
+          background: "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.07) 0%, transparent 70%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
+        }} />
+        <p className="relative z-10 eyebrow mb-5 animate-fade-up" style={{ animationDelay: "0.3s" }}>{route.tagline}</p>
+        <h1 className="relative z-10 display-title max-w-2xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          {route.heroFromCity}<br />a <em>{route.heroToCity}.</em>
+        </h1>
+        <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s" }} />
+        <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-lg mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>{route.heroSubtitle}</p>
+        <div className="relative z-10 flex gap-4 flex-wrap animate-fade-up" style={{ animationDelay: "1s" }}>
+          <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">Solicitar Cotización</a>
+          <a href="#aircraft" className="btn-secondary">Ver Aeronaves</a>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <div className="grid grid-cols-2 md:grid-cols-4 border border-jade-soft reveal" style={{ margin: "0 clamp(1rem, 4vw, 4rem)" }}>
+        {[
+          { val: route.stats.distance, lbl: "Distancia" },
+          { val: route.stats.time, lbl: "Tiempo de Vuelo" },
+          { val: route.stats.price, lbl: "Precio Aprox. (USD)" },
+          { val: route.stats.aircraft, lbl: "Aeronave Recomendada" },
+        ].map((s) => (
+          <div key={s.lbl} className="p-7 border-r border-jade-soft last:border-r-0">
+            <div className="font-serif text-2xl font-light text-foreground mb-1.5">{s.val}</div>
+            <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.2em" }}>{s.lbl}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* AIRPORTS */}
+      <section className="bg-bg-2 py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="eyebrow mb-4">Detalles de Ruta</p>
+          <h2 className="section-title">Salida y <em>Llegada.</em></h2>
+          <div className="gold-rule" />
+        </div>
+        <div className="grid md:grid-cols-[1fr_auto_1fr] gap-12 items-center mt-12 reveal">
+          <div>
+            <div className="text-[0.62rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>Salida</div>
+            <div className="font-serif text-2xl font-light leading-snug">{route.airports.departure}</div>
+          </div>
+          <div className="hidden md:block text-center">
+            <div className="w-px h-16 mx-auto mb-2" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)" }} />
+            <span className="text-jade text-xl">›</span>
+            <div className="w-px h-16 mx-auto mt-2" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)" }} />
+          </div>
+          <div>
+            <div className="text-[0.62rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>Llegada</div>
+            <div className="font-serif text-2xl font-light leading-snug">{route.airports.arrival}</div>
+          </div>
+        </div>
+      </section>
+
+      {/* AIRCRAFT */}
+      <section id="aircraft" className="py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="eyebrow mb-4">Flota para esta Ruta</p>
+          <h2 className="section-title">Aeronaves <em>Recomendadas.</em></h2>
+          <div className="gold-rule" />
+        </div>
+        <div className="grid md:grid-cols-3 mt-12 border border-jade-soft reveal">
+          {route.aircraft.map((a) => (
+            <div key={a.name} className="bg-bg-2 hover:bg-bg-3 transition-colors p-8 border-r border-jade-soft last:border-r-0">
+              <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>{a.category}</div>
+              <div className="font-serif text-2xl font-light text-foreground mb-2">{a.name}</div>
+              <div className="flex gap-6 my-4">
+                <div>
+                  <div className="text-[0.85rem] font-medium">{a.pax}</div>
+                  <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.1em" }}>Pasajeros</div>
+                </div>
+                <div>
+                  <div className="text-[0.85rem] font-medium">{a.range}</div>
+                  <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.1em" }}>Alcance</div>
+                </div>
+              </div>
+              <p className="text-[0.82rem] leading-relaxed text-fg-3 border-t border-jade-soft pt-4 mt-4">{a.note}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHY */}
+      <section className="bg-bg-2 py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="eyebrow mb-4">Por Qué Privado</p>
+          <h2 className="section-title">Lo que hace esta ruta <em>diferente.</em></h2>
+          <div className="gold-rule" />
+        </div>
+        <div className="grid md:grid-cols-2 mt-12 border border-jade-soft">
+          {route.why.map((w) => (
+            <div key={w.num} className="bg-background p-10 border-r border-b border-jade-soft last:border-r-0 reveal">
+              <div className="font-serif text-3xl font-light mb-3" style={{ color: "hsl(var(--jade) / 0.15)" }}>{w.num}</div>
+              <div className="text-[0.78rem] uppercase font-medium text-foreground mb-2.5" style={{ letterSpacing: "0.12em" }}>{w.title}</div>
+              <p className="text-[0.875rem] leading-relaxed text-fg-3">{w.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-bg-3 border-y border-jade-soft py-20 text-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <h2 className="font-serif font-light text-foreground mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
+            ¿Listo para volar a<br /><em className="italic text-jade-light">{route.ctaCity}?</em>
+          </h2>
+          <p className="text-[0.9rem] text-fg-3 mb-10">Envíanos una solicitud y tendrás una cotización en tu inbox en menos de una hora.</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">WhatsApp Ahora</a>
+            <a href="/#contact" className="btn-secondary">Enviar Formulario</a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppFAB />
+    </>
+  );
+};
+
+export default RoutePage;
