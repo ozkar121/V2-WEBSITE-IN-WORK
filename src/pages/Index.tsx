@@ -188,14 +188,9 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Avión cruzando: Stats → Fleet (izq → der) */}
-      <PlaneFlyby direction="ltr" verticalPosition={55} size={48} speed={1.5} />
-
       {/* FLEET */}
       <FleetSection />
 
-      {/* Avión cruzando: Fleet → Why (der → izq, más alto y rápido) */}
-      <PlaneFlyby direction="rtl" verticalPosition={45} size={56} speed={1.7} />
       <section id="why" className="py-28 grid md:grid-cols-2 gap-16 items-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal relative h-[420px] hidden md:block">
           <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden">
