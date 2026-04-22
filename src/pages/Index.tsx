@@ -23,8 +23,10 @@ const HOME_JSONLD = [
     priceRange: "$$$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Aeropuerto Internacional de Toluca (MMTO)",
       addressLocality: "Toluca",
       addressRegion: "Estado de México",
+      postalCode: "50200",
       addressCountry: "MX",
     },
     areaServed: ["México", "Estados Unidos", "Caribe", "Centroamérica"],
@@ -78,6 +80,7 @@ const Index = () => {
   return (
     <>
       <Navbar />
+      <main>
 
       {/* HERO */}
       <section
@@ -87,13 +90,14 @@ const Index = () => {
       >
         {/* Fondo oscuro mientras carga el video (evita flash del poster) */}
         <div className="absolute inset-0 bg-background" aria-hidden="true" />
-        {/* Video de fondo */}
+        {/* Video de fondo — preload metadata para no bloquear LCP en móvil */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
         >
@@ -170,6 +174,9 @@ const Index = () => {
               alt="Vista aérea del Aeropuerto Internacional de Toluca (MMTO), hub principal de Numen Aviation"
               className="w-full h-full object-cover"
               loading="lazy"
+              decoding="async"
+              width={1600}
+              height={900}
             />
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(var(--background) / 0.35) 0%, transparent 50%, hsl(var(--background) / 0.55) 100%)" }} />
             <CornerBrackets size="lg" />
@@ -239,6 +246,7 @@ const Index = () => {
           <QuotationForm />
         </div>
       </section>
+      </main>
 
       <Footer />
       <WhatsAppFAB />
