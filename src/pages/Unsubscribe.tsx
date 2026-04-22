@@ -3,7 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
-import { useLanguage } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/LanguageContext";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
@@ -11,7 +11,7 @@ const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as strin
 type State = "loading" | "valid" | "already" | "invalid" | "submitting" | "done" | "error";
 
 const Unsubscribe = () => {
-  const { t } = useLanguage();
+  const { t } = useLang();
   useSEO({ title: t("un_seo_title"), description: t("un_seo_desc") });
   const [params] = useSearchParams();
   const token = params.get("token");

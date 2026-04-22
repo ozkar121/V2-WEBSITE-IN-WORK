@@ -1,11 +1,11 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useSEO } from "@/hooks/useSEO";
-import { useLanguage } from "@/i18n/LanguageContext";
+import { useLang } from "@/i18n/LanguageContext";
 
 const NotFound = () => {
   const location = useLocation();
-  const { t } = useLanguage();
+  const { t } = useLang();
   useSEO({
     title: t("nf_seo_title"),
     description: t("nf_seo_desc"),
