@@ -7,6 +7,7 @@ import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
+import tolucaAerial from "@/assets/toluca-aerial.jpg";
 
 const HOME_JSONLD = [
   {
@@ -83,11 +84,25 @@ const Index = () => {
         className="relative min-h-screen flex flex-col justify-end overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingBottom: "6rem", minHeight: 680 }}
       >
+        {/* Video de fondo */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={tolucaAerial}
+          className="absolute inset-0 w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay para legibilidad */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 80% at 20% 80%, hsl(var(--background) / 0.85) 0%, transparent 60%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
+              "linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.35) 40%, hsl(var(--background) / 0.92) 100%), radial-gradient(ellipse 60% 80% at 20% 80%, hsl(var(--background) / 0.6) 0%, transparent 70%)",
           }}
         />
         <div className="absolute top-0 right-[20%] w-px h-[55%]" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)", opacity: 0.4 }} />
@@ -147,11 +162,17 @@ const Index = () => {
       <FleetSection />
       <section id="why" className="py-28 grid md:grid-cols-2 gap-16 items-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal relative h-[420px] hidden md:block">
-          <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden flex items-center justify-center relative">
+          <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden">
+            <img
+              src={tolucaAerial}
+              alt="Vista aérea del Aeropuerto Internacional de Toluca (MMTO), hub principal de Numen Aviation"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(var(--background) / 0.35) 0%, transparent 50%, hsl(var(--background) / 0.55) 100%)" }} />
             <CornerBrackets size="lg" />
-            <div className="absolute -top-1/3 -left-1/4 w-[70%] h-[70%]" style={{ background: "radial-gradient(circle, hsl(var(--jade) / 0.1), transparent 70%)" }} />
           </div>
-          <div className="absolute -bottom-6 -right-6 bg-bg-3 border border-jade-dark p-6 w-56">
+          <div className="absolute -bottom-6 -right-6 bg-bg-3 border border-jade-dark p-6 w-56 z-10">
             <div className="font-serif text-3xl font-light text-jade leading-none">Toluca</div>
             <p className="text-[0.68rem] uppercase text-fg-3 mt-2" style={{ letterSpacing: "0.18em" }}>Hub Principal · MMTO</p>
           </div>
