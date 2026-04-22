@@ -94,7 +94,7 @@ const AdminEmptyLegs = () => {
       to_iata: parsed.data.to_iata || null,
       price: parsed.data.price || null,
     };
-    const { error } = await supabase.from("empty_legs").insert(payload);
+    const { error } = await supabase.from("empty_legs").insert(payload as never);
     setSaving(false);
     if (error) {
       toast.error("Error al guardar");
@@ -106,7 +106,7 @@ const AdminEmptyLegs = () => {
   };
 
   const toggle = async (id: string, field: "is_active" | "is_featured" | "is_new", value: boolean) => {
-    const { error } = await supabase.from("empty_legs").update({ [field]: value }).eq("id", id);
+    const { error } = await supabase.from("empty_legs").update({ [field]: value } as never).eq("id", id);
     if (error) toast.error("Error al actualizar");
     else load();
   };
