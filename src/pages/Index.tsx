@@ -7,7 +7,6 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
-import { PlaneFlyby } from "@/components/PlaneFlyby";
 import { QuotationForm } from "@/components/QuotationForm";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
 import tolucaAerial from "@/assets/toluca-aerial.jpg";
@@ -128,12 +127,12 @@ const Index = () => {
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
         )}
-        {/* Overlay para legibilidad */}
+        {/* Overlay para legibilidad — refuerza contraste del título y CTAs */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.35) 40%, hsl(var(--background) / 0.92) 100%), radial-gradient(ellipse 60% 80% at 20% 80%, hsl(var(--background) / 0.6) 0%, transparent 70%)",
+              "linear-gradient(180deg, hsl(var(--background) / 0.65) 0%, hsl(var(--background) / 0.45) 35%, hsl(var(--background) / 0.95) 100%), linear-gradient(90deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.15) 55%, transparent 100%)",
           }}
         />
         <div className="absolute top-0 right-[20%] w-px h-[55%]" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)", opacity: 0.4 }} />
@@ -189,14 +188,9 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Avión cruzando: Stats → Fleet (izq → der) */}
-      <PlaneFlyby direction="ltr" verticalPosition={55} size={48} speed={1.5} />
-
       {/* FLEET */}
       <FleetSection />
 
-      {/* Avión cruzando: Fleet → Why (der → izq, más alto y rápido) */}
-      <PlaneFlyby direction="rtl" verticalPosition={45} size={56} speed={1.7} />
       <section id="why" className="py-28 grid md:grid-cols-2 gap-16 items-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal relative h-[420px] hidden md:block">
           <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden">
@@ -237,9 +231,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Avión cruzando: Why → CTA Band (izq → der, sutil) */}
-      <PlaneFlyby direction="ltr" verticalPosition={50} size={44} speed={1.6} />
 
       {/* CTA BAND */}
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
