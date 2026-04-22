@@ -190,7 +190,7 @@ const Index = () => {
           {stats.map((s) => (
             <div key={s.label} className="text-center px-6 py-6 border-r border-jade-soft last:border-r-0 reveal">
               <div className="font-serif font-light text-jade leading-none mb-2" style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)" }}>{s.val}</div>
-              <p className="text-[0.7rem] uppercase text-fg-3" style={{ letterSpacing: "0.2em" }}>{s.label}</p>
+              <p className="text-[0.7rem] uppercase text-fg-3 break-words" style={{ letterSpacing: "0.2em" }}>{s.label}</p>
             </div>
           ))}
         </div>
