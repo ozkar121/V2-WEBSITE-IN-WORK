@@ -173,61 +173,61 @@ export const QuotationForm = () => {
       className="relative bg-bg-2/45 border border-foreground/10 p-8 reveal"
     >
       <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
-        Cotización privada
+        {t("qf_eyebrow")}
       </span>
       <h3 className="font-serif text-xl font-light mt-2 mb-6">
-        Cuéntanos sobre tu vuelo.
+        {t("qf_title")}
       </h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="qf-name" className={labelClass} style={{ letterSpacing: "0.2em" }}>Nombre *</label>
+          <label htmlFor="qf-name" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_name")} *</label>
           <input id="qf-name" name="name" autoComplete="name" className={inputClass} value={form.name} onChange={(e) => update("name", e.target.value)} maxLength={100} />
           {errors.name && <p className={errorClass}>{errors.name}</p>}
         </div>
         <div>
-          <label htmlFor="qf-email" className={labelClass} style={{ letterSpacing: "0.2em" }}>Email *</label>
+          <label htmlFor="qf-email" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_email")} *</label>
           <input id="qf-email" name="email" type="email" autoComplete="email" className={inputClass} value={form.email} onChange={(e) => update("email", e.target.value)} maxLength={255} />
           {errors.email && <p className={errorClass}>{errors.email}</p>}
         </div>
         <div>
-          <label htmlFor="qf-phone" className={labelClass} style={{ letterSpacing: "0.2em" }}>Teléfono *</label>
+          <label htmlFor="qf-phone" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_phone")} *</label>
           <input id="qf-phone" name="phone" type="tel" autoComplete="tel" className={inputClass} value={form.phone} onChange={(e) => update("phone", e.target.value)} maxLength={30} />
           {errors.phone && <p className={errorClass}>{errors.phone}</p>}
         </div>
 
 
         <div>
-          <label htmlFor="qf-from" className={labelClass} style={{ letterSpacing: "0.2em" }}>Origen *</label>
+          <label htmlFor="qf-from" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_from")} *</label>
           <input id="qf-from" name="fromCity" className={inputClass} value={form.fromCity} onChange={(e) => update("fromCity", e.target.value)} placeholder="Toluca (MMTO)" maxLength={100} />
           {errors.fromCity && <p className={errorClass}>{errors.fromCity}</p>}
         </div>
         <div>
-          <label htmlFor="qf-to" className={labelClass} style={{ letterSpacing: "0.2em" }}>Destino *</label>
+          <label htmlFor="qf-to" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_to")} *</label>
           <input id="qf-to" name="toCity" className={inputClass} value={form.toCity} onChange={(e) => update("toCity", e.target.value)} placeholder="Los Cabos (MMSD)" maxLength={100} />
           {errors.toCity && <p className={errorClass}>{errors.toCity}</p>}
         </div>
 
         <div>
-          <label htmlFor="qf-trip" className={labelClass} style={{ letterSpacing: "0.2em" }}>Tipo de viaje</label>
-          <select id="qf-trip" name="tripType" aria-label="Tipo de viaje" className={inputClass} value={form.tripType} onChange={(e) => update("tripType", e.target.value as "one_way" | "round_trip")}>
-            <option value="one_way">Solo ida</option>
-            <option value="round_trip">Redondo</option>
+          <label htmlFor="qf-trip" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_trip")}</label>
+          <select id="qf-trip" name="tripType" aria-label={t("qf_trip")} className={inputClass} value={form.tripType} onChange={(e) => update("tripType", e.target.value as "one_way" | "round_trip")}>
+            <option value="one_way">{t("qf_one_way")}</option>
+            <option value="round_trip">{t("qf_round")}</option>
           </select>
         </div>
         <div>
-          <label htmlFor="qf-pax" className={labelClass} style={{ letterSpacing: "0.2em" }}>Pasajeros *</label>
+          <label htmlFor="qf-pax" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_pax")} *</label>
           <input id="qf-pax" name="passengers" type="number" min={1} max={50} className={inputClass} value={form.passengers} onChange={(e) => update("passengers", Number(e.target.value) as any)} />
           {errors.passengers && <p className={errorClass}>{errors.passengers}</p>}
         </div>
 
         <div>
-          <label htmlFor="qf-departure" className={labelClass} style={{ letterSpacing: "0.2em" }}>Salida *</label>
+          <label htmlFor="qf-departure" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_departure")} *</label>
           <input id="qf-departure" name="departureDate" type="date" className={inputClass} value={form.departureDate} onChange={(e) => update("departureDate", e.target.value)} />
           {errors.departureDate && <p className={errorClass}>{errors.departureDate}</p>}
         </div>
         <div>
-          <label htmlFor="qf-return" className={labelClass} style={{ letterSpacing: "0.2em" }}>Regreso</label>
+          <label htmlFor="qf-return" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_return")}</label>
           <input
             id="qf-return"
             name="returnDate"
@@ -242,7 +242,7 @@ export const QuotationForm = () => {
 
 
         <div className="sm:col-span-2">
-          <label htmlFor="qf-message" className={labelClass} style={{ letterSpacing: "0.2em" }}>Mensaje</label>
+          <label htmlFor="qf-message" className={labelClass} style={{ letterSpacing: "0.2em" }}>{t("qf_message")}</label>
           <textarea
             id="qf-message"
             name="message"
@@ -251,7 +251,7 @@ export const QuotationForm = () => {
             value={form.message}
             onChange={(e) => update("message", e.target.value)}
             maxLength={1000}
-            placeholder="Catering, equipaje especial, requerimientos..."
+            placeholder={t("qf_message_ph")}
           />
         </div>
       </div>
@@ -261,10 +261,10 @@ export const QuotationForm = () => {
         disabled={submitting}
         className="btn-primary mt-6 inline-flex disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {submitting ? "Enviando..." : "Solicitar cotización →"}
+        {submitting ? t("qf_submitting") : t("qf_submit")}
       </button>
       <p className="text-[0.7rem] text-fg-3 mt-4">
-        Te respondemos en menos de 2 horas. Tus datos solo se usan para esta cotización.
+        {t("qf_disclaimer")}
       </p>
     </form>
   );
