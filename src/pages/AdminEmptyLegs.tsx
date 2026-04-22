@@ -281,7 +281,7 @@ const AdminEmptyLegs = () => {
                       </div>
                     </td>
                     <td className="px-4 py-3 text-right">
-                      <button onClick={() => remove(r.id)} className="text-fg-3 hover:text-red-400" aria-label="Eliminar">
+                      <button onClick={() => remove(r.id)} className="text-fg-3 hover:text-destructive transition-colors" aria-label="Eliminar">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </td>
