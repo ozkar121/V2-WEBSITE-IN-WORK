@@ -7,6 +7,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
+import { PlaneFlyby } from "@/components/PlaneFlyby";
 import { QuotationForm } from "@/components/QuotationForm";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
 import tolucaAerial from "@/assets/toluca-aerial.jpg";
@@ -188,8 +189,14 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Avión cruzando: Stats → Fleet (izq → der) */}
+      <PlaneFlyby direction="ltr" verticalPosition={55} size={48} speed={1.5} />
+
       {/* FLEET */}
       <FleetSection />
+
+      {/* Avión cruzando: Fleet → Why (der → izq, más alto y rápido) */}
+      <PlaneFlyby direction="rtl" verticalPosition={45} size={56} speed={1.7} />
       <section id="why" className="py-28 grid md:grid-cols-2 gap-16 items-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal relative h-[420px] hidden md:block">
           <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden">
@@ -230,6 +237,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Avión cruzando: Why → CTA Band (izq → der, sutil) */}
+      <PlaneFlyby direction="ltr" verticalPosition={50} size={44} speed={1.6} />
 
       {/* CTA BAND */}
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
