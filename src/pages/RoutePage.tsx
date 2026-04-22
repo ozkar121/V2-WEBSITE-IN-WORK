@@ -186,7 +186,7 @@ const RoutePage = () => {
 
       <Footer />
       <WhatsAppFAB />
-    </>
+    </div>
   );
 };
 
