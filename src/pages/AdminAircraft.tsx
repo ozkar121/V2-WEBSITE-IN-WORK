@@ -5,6 +5,7 @@ import { AIRCRAFT, CATEGORY_LABELS } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { useSEO } from "@/hooks/useSEO";
 import { toast } from "sonner";
+import { PublishGuide } from "@/components/PublishGuide";
 
 const AdminAircraft = () => {
   useSEO({ title: "Gestión de Fotos · Numen Aviation", noindex: true });
@@ -90,9 +91,11 @@ const AdminAircraft = () => {
         <p className="eyebrow mb-4">Administración</p>
         <h1 className="section-title">Fotos de <em>Aeronaves.</em></h1>
         <div className="gold-rule" />
-        <p className="text-[0.85rem] text-fg-3 max-w-xl mt-4">
+        <p className="text-[0.85rem] text-fg-3 max-w-xl mt-4 mb-8">
           Sube una foto por aeronave (JPG/PNG, máx 5 MB). Se mostrará automáticamente en la sección Flota de la home.
         </p>
+
+        <PublishGuide />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px mt-12 border border-jade-soft">
           {AIRCRAFT.map((a) => {
