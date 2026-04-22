@@ -58,7 +58,7 @@ export const Navbar = () => {
           <li key={l.href}>
             <a
               href={l.href}
-              className="text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors no-underline"
+              className="text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors no-underline whitespace-nowrap"
               style={{ letterSpacing: "0.15em" }}
             >
               {l.label}
