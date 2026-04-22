@@ -14,7 +14,7 @@ import { PublishGuide } from "@/components/PublishGuide";
 const schema = z.object({
   id: z.string().trim().min(1).max(40).regex(/^[a-z0-9-_]+$/i, "Solo letras, números, guion o guion bajo"),
   name: z.string().trim().min(1).max(80),
-  category: z.enum(["turbo", "light", "midsize", "heavy"]),
+  category: z.enum(["helicopter", "turbo", "light", "midsize", "heavy"]),
   passengers: z.string().trim().max(40),
   speed_kmh: z.string().trim().max(40),
   range_km: z.string().trim().max(40),
