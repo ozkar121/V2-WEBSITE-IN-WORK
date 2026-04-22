@@ -8,6 +8,7 @@ import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
 import { QuotationForm } from "@/components/QuotationForm";
+import { useLang } from "@/i18n/LanguageContext";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
 import tolucaAerial from "@/assets/toluca-aerial.jpg";
 
@@ -61,16 +62,31 @@ const stats = [
   { val: "100%", label: "Récord de Seguridad" },
 ];
 
-const whyItems = [
-  { num: "I", title: "Correduría Independiente", desc: "Sin flota propia, sin sesgos. Comparamos operadores certificados en México y Las Américas para conseguirte la mejor aeronave al mejor precio." },
-  { num: "II", title: "Precios Transparentes", desc: "Cotización con desglose completo: ferry, handling, IVA y servicios FBO incluidos. Sin sorpresas al cierre." },
-  { num: "III", title: "Expertise México-First", desc: "Conocimiento profundo del Aeropuerto de Toluca (MMTO), regulación AFAC, espacio aéreo mexicano y relaciones directas con operadores nacionales." },
-  { num: "IV", title: "Un Solo Punto de Contacto", desc: "Tu asesor dedicado de aviación privada coordina de la cotización al aterrizaje. Sin call centers ni intermediarios." },
-];
-
 const Index = () => {
   useReveal();
+  const { t, lang } = useLang();
   const [showVideo, setShowVideo] = useState(false);
+
+  const services = [
+    { num: "01", name: t("service_01_name"), desc: t("service_01_desc") },
+    { num: "02", name: t("service_02_name"), desc: t("service_02_desc") },
+    { num: "03", name: t("service_03_name"), desc: t("service_03_desc") },
+    { num: "04", name: t("service_04_name"), desc: t("service_04_desc") },
+  ];
+
+  const stats = [
+    { val: "24/7", label: t("stat_24_7") },
+    { val: "2h", label: t("stat_2h") },
+    { val: "150+", label: t("stat_routes") },
+    { val: "100%", label: t("stat_safety") },
+  ];
+
+  const whyItems = [
+    { num: "I", title: t("why_01_t"), desc: t("why_01_d") },
+    { num: "II", title: t("why_02_t"), desc: t("why_02_d") },
+    { num: "III", title: t("why_03_t"), desc: t("why_03_d") },
+    { num: "IV", title: t("why_04_t"), desc: t("why_04_d") },
+  ];
 
   useEffect(() => {
     // Diferimos el video hasta después del FCP/LCP para no bloquear render
