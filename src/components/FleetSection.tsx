@@ -59,10 +59,10 @@ export const FleetSection = () => {
     >
       <div className="reveal flex flex-wrap items-end justify-between gap-8">
         <div>
-          <p className="eyebrow mb-4">Nuestra Flota</p>
+          <p className="eyebrow mb-4">{t("fleet_eyebrow")}</p>
           <h2 className="section-title">
-            Aeronaves para cada<br />
-            <em>misión.</em>
+            {t("fleet_title_a")}<br />
+            <em>{t("fleet_title_em")}</em>
           </h2>
           <div className="gold-rule" />
         </div>
@@ -71,7 +71,7 @@ export const FleetSection = () => {
           className="text-[0.62rem] uppercase text-fg-3 hover:text-jade no-underline"
           style={{ letterSpacing: "0.25em" }}
         >
-          Gestionar flota →
+          {t("fleet_manage")}
         </Link>
       </div>
 
@@ -102,7 +102,7 @@ export const FleetSection = () => {
         <CornerBrackets />
         {visible.length === 0 && (
           <div className="col-span-full p-12 text-center text-[0.75rem] uppercase text-fg-3 bg-bg-2" style={{ letterSpacing: "0.2em" }}>
-            Sin aeronaves en esta categoría
+            {t("fleet_empty")}
           </div>
         )}
         {visible.map((a) => {
@@ -123,7 +123,7 @@ export const FleetSection = () => {
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.25em" }}>
-                      Foto próximamente
+                      {t("fleet_no_photo")}
                     </div>
                   </div>
                 )}
@@ -135,15 +135,15 @@ export const FleetSection = () => {
                 <h3 className="font-serif text-2xl font-light text-foreground">{a.name}</h3>
                 <dl className="grid grid-cols-3 gap-3 mt-2 border-t border-jade-soft pt-4">
                   <div>
-                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>Pax</dt>
+                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>{t("fleet_pax")}</dt>
                     <dd className="text-[0.85rem] text-foreground mt-1">{a.passengers}</dd>
                   </div>
                   <div>
-                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>Velocidad</dt>
+                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>{t("fleet_speed")}</dt>
                     <dd className="text-[0.85rem] text-foreground mt-1">{a.speed_kmh}</dd>
                   </div>
                   <div>
-                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>Alcance</dt>
+                    <dt className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>{t("fleet_range")}</dt>
                     <dd className="text-[0.85rem] text-foreground mt-1">{a.range_km}</dd>
                   </div>
                 </dl>
