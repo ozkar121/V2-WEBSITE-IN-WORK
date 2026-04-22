@@ -30,10 +30,10 @@ export const Navbar = () => {
       }`}
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
-      <Link to="/" className="flex items-center gap-3" aria-label="Numen Aviation home">
-        <img src={logoIcon} alt="" className="h-8 md:h-9 w-auto" />
+      <Link to="/" className="flex items-center gap-2.5" aria-label="Numen Aviation home">
+        <img src={logoIcon} alt="" className="h-5 md:h-6 w-auto" />
         <span
-          className="text-[0.8rem] md:text-[0.9rem] uppercase text-foreground font-light"
+          className="text-[0.7rem] md:text-[0.78rem] uppercase text-foreground font-light"
           style={{ letterSpacing: "0.25em" }}
         >
           Numen Aviation
