@@ -7,8 +7,10 @@ import { CornerBrackets } from "@/components/CornerBrackets";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { supabase } from "@/integrations/supabase/client";
-import { CATEGORY_LABELS, type AircraftCategory } from "@/data/aircraft";
+import { type AircraftCategory } from "@/data/aircraft";
 import { waLink, SITE_URL } from "@/lib/site";
+import { useLang } from "@/i18n/LanguageContext";
+import type { TranslationKey } from "@/i18n/translations";
 
 interface DbLeg {
   id: string;
@@ -26,27 +28,6 @@ interface DbLeg {
 }
 
 type Filter = "all" | AircraftCategory;
-
-const FILTERS: { id: Filter; label: string }[] = [
-  { id: "all", label: "Todas" },
-  { id: "turbo", label: CATEGORY_LABELS.turbo },
-  { id: "light", label: CATEGORY_LABELS.light },
-  { id: "midsize", label: CATEGORY_LABELS.midsize },
-  { id: "heavy", label: CATEGORY_LABELS.heavy },
-];
-
-const STEPS = [
-  { num: "01", title: "Consulta disponibilidad", desc: "Revisa los empty legs publicados o pídenos rutas específicas. Actualizamos diariamente con nuevos tramos disponibles." },
-  { num: "02", title: "Reserva en minutos", desc: "Confirma por WhatsApp o email. Generamos el contrato y la cotización formal en menos de una hora." },
-  { num: "03", title: "Vuela igual que un charter", desc: "Mismo servicio premium, mismo operador certificado, misma flexibilidad de horarios — a una fracción del precio." },
-];
-
-const formatDate = (iso: string) =>
-  new Date(iso + "T00:00:00").toLocaleDateString("es-MX", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
 
 const formatPrice = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
@@ -94,10 +75,10 @@ const EMPTY_LEGS_JSONLD = [
 
 const EmptyLegs = () => {
   useReveal();
+  const { t, lang } = useLang();
   useSEO({
-    title: "Empty Legs México · Trayectos Vacíos en Jet Privado hasta 75% off | Numen Aviation",
-    description:
-      "Empty legs y trayectos vacíos en jet privado desde México hacia EUA, Caribe y Centroamérica. Hasta 75% de descuento sobre el charter completo. Disponibilidad actualizada al día desde el Aeropuerto de Toluca (MMTO).",
+    title: t("seo_el_title"),
+    description: t("seo_el_desc"),
     path: "/empty-legs",
     jsonLd: EMPTY_LEGS_JSONLD,
   });
@@ -105,6 +86,27 @@ const EmptyLegs = () => {
   const [filter, setFilter] = useState<Filter>("all");
   const [legs, setLegs] = useState<DbLeg[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const formatDate = (iso: string) =>
+    new Date(iso + "T00:00:00").toLocaleDateString(lang === "en" ? "en-US" : "es-MX", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+
+  const FILTERS: { id: Filter; label: string }[] = [
+    { id: "all", label: t("el_filter_all") },
+    { id: "turbo", label: t("cat_turbo") },
+    { id: "light", label: t("cat_light") },
+    { id: "midsize", label: t("cat_midsize") },
+    { id: "heavy", label: t("cat_heavy") },
+  ];
+
+  const STEPS: { num: string; tKey: TranslationKey; dKey: TranslationKey }[] = [
+    { num: "01", tKey: "el_step1_t", dKey: "el_step1_d" },
+    { num: "02", tKey: "el_step2_t", dKey: "el_step2_d" },
+    { num: "03", tKey: "el_step3_t", dKey: "el_step3_d" },
+  ];
 
   useEffect(() => {
     supabase
@@ -123,6 +125,11 @@ const EmptyLegs = () => {
     [filter, legs]
   );
 
+  const catLabel = (c: string) => {
+    const key = `cat_${c}` as TranslationKey;
+    return t(key) || c;
+  };
+
   return (
     <>
       <Navbar />
@@ -137,9 +144,9 @@ const EmptyLegs = () => {
           className="flex items-center gap-2 list-none text-[0.65rem] uppercase text-fg-3"
           style={{ letterSpacing: "0.15em" }}
         >
-          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">Inicio</Link></li>
+          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">{t("common_home")}</Link></li>
           <li className="text-jade opacity-50">›</li>
-          <li className="text-jade">Empty Legs</li>
+          <li className="text-jade">{t("el_breadcrumb")}</li>
         </ol>
       </nav>
 
@@ -155,44 +162,23 @@ const EmptyLegs = () => {
               "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.07) 0%, transparent 70%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
           }}
         />
-        <p
-          className="relative z-10 eyebrow mb-5 animate-fade-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          Exclusivo · Disponibilidad Limitada
+        <p className="relative z-10 eyebrow mb-5 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          {t("el_eyebrow")}
         </p>
-        <h1
-          className="relative z-10 display-title max-w-2xl animate-fade-up"
-          style={{ animationDelay: "0.5s" }}
-        >
-          Vuela <em>más</em><br />por menos.
+        <h1 className="relative z-10 display-title max-w-2xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
+          {t("el_hero_title_a")} <em>{t("el_hero_title_em")}</em><br />{t("el_hero_title_b")}
         </h1>
-        <div
-          className="gold-rule relative z-10 animate-fade-up"
-          style={{ animationDelay: "0.7s" }}
-        />
+        <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s" }} />
         <p
           className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-xl mb-10 animate-fade-up"
           style={{ animationDelay: "0.85s" }}
-        >
-          Los vuelos empty leg son tramos de reposicionamiento disponibles hasta <strong className="text-jade-light">75% por debajo</strong> del precio completo. Misma aeronave, mismo servicio, una fracción del costo.
-        </p>
-        <div
-          className="relative z-10 flex gap-4 flex-wrap animate-fade-up"
-          style={{ animationDelay: "1s" }}
-        >
-          <a
-            href="#disponibles"
-            className="btn-primary"
-          >
-            Ver disponibles
+          dangerouslySetInnerHTML={{ __html: t("el_hero_intro") }}
+        />
+        <div className="relative z-10 flex gap-4 flex-wrap animate-fade-up" style={{ animationDelay: "1s" }}>
+          <a href="#disponibles" className="btn-primary">
+            {t("el_cta_view")}
           </a>
-          <a
-            href={waLink("Hola, quisiera info sobre empty legs disponibles.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
+          <a href={waLink(t("el_cta_wa_msg"))} target="_blank" rel="noopener noreferrer" className="btn-secondary">
             WhatsApp
           </a>
         </div>
@@ -204,17 +190,14 @@ const EmptyLegs = () => {
         style={{ margin: "0 clamp(1rem, 4vw, 4rem)" }}
       >
         {[
-          { val: "−75%", lbl: "Ahorro Promedio" },
-          { val: "24h", lbl: "Confirmación" },
-          { val: "150+", lbl: "Rutas Activas" },
-          { val: "100%", lbl: "Operadores Certificados" },
+          { val: "−75%", lbl: t("el_stat_savings") },
+          { val: "24h", lbl: t("el_stat_confirm") },
+          { val: "150+", lbl: t("el_stat_routes") },
+          { val: "100%", lbl: t("el_stat_certified") },
         ].map((s) => (
           <div key={s.lbl} className="p-7 border-r border-jade-soft last:border-r-0">
             <div className="font-serif text-2xl font-light text-foreground mb-1.5">{s.val}</div>
-            <div
-              className="text-[0.62rem] uppercase text-fg-3"
-              style={{ letterSpacing: "0.2em" }}
-            >
+            <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.2em" }}>
               {s.lbl}
             </div>
           </div>
@@ -229,12 +212,12 @@ const EmptyLegs = () => {
       >
         <div className="reveal flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow mb-4">Disponibilidad Actual</p>
-            <h2 className="section-title">Vuelos <em>disponibles.</em></h2>
+            <p className="eyebrow mb-4">{t("el_avail_eyebrow")}</p>
+            <h2 className="section-title">{t("el_avail_title_a")} <em>{t("el_avail_title_em")}</em></h2>
             <div className="gold-rule" />
           </div>
           <p className="text-[0.7rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
-            {visible.length} {visible.length === 1 ? "tramo" : "tramos"}
+            {visible.length} {visible.length === 1 ? t("el_count_one") : t("el_count_many")}
           </p>
         </div>
 
@@ -266,105 +249,102 @@ const EmptyLegs = () => {
         >
           <CornerBrackets />
           {visible.map((leg) => {
-            const badge = leg.is_featured ? "Destacado" : leg.is_new ? "Nuevo" : null;
-            const cat = leg.category as AircraftCategory;
+            const badge = leg.is_featured ? t("el_badge_featured") : leg.is_new ? t("el_badge_new") : null;
             return (
-            <article
-              key={leg.id}
-              className={`p-7 border-r border-b border-jade-soft flex flex-col gap-4 transition-colors ${
-                leg.is_featured ? "bg-bg-3" : "bg-bg-2 hover:bg-bg-3"
-              }`}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <span className="text-[0.6rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
-                  {CATEGORY_LABELS[cat] ?? leg.category}
-                </span>
-                {badge && (
-                  <span
-                    className="text-[0.55rem] uppercase border border-jade-soft text-jade-light px-2 py-1"
-                    style={{ letterSpacing: "0.2em" }}
-                  >
-                    {badge}
-                  </span>
-                )}
-              </div>
-
-              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 mt-2">
-                <div>
-                  <div className="font-serif text-xl font-light text-foreground leading-tight">
-                    {leg.from_city}
-                  </div>
-                  {leg.from_iata && (
-                    <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
-                      {leg.from_iata}
-                    </div>
-                  )}
-                </div>
-                <span className="text-jade text-lg">›</span>
-                <div className="text-right">
-                  <div className="font-serif text-xl font-light text-foreground leading-tight">
-                    {leg.to_city}
-                  </div>
-                  {leg.to_iata && (
-                    <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
-                      {leg.to_iata}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 border-t border-jade-soft pt-4 mt-2">
-                <div>
-                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
-                    Fecha
-                  </div>
-                  <div className="text-[0.85rem] text-foreground mt-1">{formatDate(leg.flight_date)}</div>
-                </div>
-                <div>
-                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
-                    Asientos
-                  </div>
-                  <div className="text-[0.85rem] text-foreground mt-1">{leg.seats || "—"}</div>
-                </div>
-                <div>
-                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
-                    Aeronave
-                  </div>
-                  <div className="text-[0.85rem] text-foreground mt-1">{leg.aircraft}</div>
-                </div>
-                <div>
-                  <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
-                    Desde
-                  </div>
-                  <div className="font-serif text-lg font-light text-jade-light mt-0.5">
-                    {leg.price ? formatPrice(Number(leg.price)) : "Cotizar"}
-                  </div>
-                </div>
-              </div>
-
-              <a
-                href={waLink(
-                  `Hola, me interesa el empty leg ${leg.from_city} → ${leg.to_city} del ${formatDate(leg.flight_date)} (${leg.aircraft}).`
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary text-center mt-2"
+              <article
+                key={leg.id}
+                className={`p-7 border-r border-b border-jade-soft flex flex-col gap-4 transition-colors ${
+                  leg.is_featured ? "bg-bg-3" : "bg-bg-2 hover:bg-bg-3"
+                }`}
               >
-                Reservar este tramo
-              </a>
-            </article>
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-[0.6rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
+                    {catLabel(leg.category)}
+                  </span>
+                  {badge && (
+                    <span
+                      className="text-[0.55rem] uppercase border border-jade-soft text-jade-light px-2 py-1"
+                      style={{ letterSpacing: "0.2em" }}
+                    >
+                      {badge}
+                    </span>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 mt-2">
+                  <div>
+                    <div className="font-serif text-xl font-light text-foreground leading-tight">
+                      {leg.from_city}
+                    </div>
+                    {leg.from_iata && (
+                      <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
+                        {leg.from_iata}
+                      </div>
+                    )}
+                  </div>
+                  <span className="text-jade text-lg">›</span>
+                  <div className="text-right">
+                    <div className="font-serif text-xl font-light text-foreground leading-tight">
+                      {leg.to_city}
+                    </div>
+                    {leg.to_iata && (
+                      <div className="text-[0.62rem] uppercase text-fg-3 mt-1" style={{ letterSpacing: "0.2em" }}>
+                        {leg.to_iata}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 border-t border-jade-soft pt-4 mt-2">
+                  <div>
+                    <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                      {t("el_lbl_date")}
+                    </div>
+                    <div className="text-[0.85rem] text-foreground mt-1">{formatDate(leg.flight_date)}</div>
+                  </div>
+                  <div>
+                    <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                      {t("el_lbl_seats")}
+                    </div>
+                    <div className="text-[0.85rem] text-foreground mt-1">{leg.seats || "—"}</div>
+                  </div>
+                  <div>
+                    <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                      {t("el_lbl_aircraft")}
+                    </div>
+                    <div className="text-[0.85rem] text-foreground mt-1">{leg.aircraft}</div>
+                  </div>
+                  <div>
+                    <div className="text-[0.6rem] uppercase text-fg-3" style={{ letterSpacing: "0.18em" }}>
+                      {t("el_lbl_from_price")}
+                    </div>
+                    <div className="font-serif text-lg font-light text-jade-light mt-0.5">
+                      {leg.price ? formatPrice(Number(leg.price)) : t("el_quote_word")}
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href={waLink(
+                    `${t("el_book_wa_msg")} ${leg.from_city} → ${leg.to_city} ${t("el_book_wa_on")} ${formatDate(leg.flight_date)} (${leg.aircraft}).`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary text-center mt-2"
+                >
+                  {t("el_book_leg")}
+                </a>
+              </article>
             );
           })}
           {!loading && visible.length === 0 && (
             <div className="col-span-full p-12 text-center bg-bg-2 border-r border-b border-jade-soft">
-              <p className="text-fg-3 text-[0.85rem]">
-                No hay tramos disponibles en esta categoría. Escríbenos por WhatsApp para ver opciones.
-              </p>
+              <p className="text-fg-3 text-[0.85rem]">{t("el_no_legs")}</p>
             </div>
           )}
           {loading && (
             <div className="col-span-full p-12 text-center bg-bg-2 border-r border-b border-jade-soft">
-              <p className="text-fg-3 text-[0.85rem]">Cargando disponibilidad...</p>
+              <p className="text-fg-3 text-[0.85rem]">{t("el_loading")}</p>
             </div>
           )}
         </div>
@@ -376,8 +356,8 @@ const EmptyLegs = () => {
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
         <div className="reveal">
-          <p className="eyebrow mb-4">Cómo Funciona</p>
-          <h2 className="section-title">Tres pasos para <em>volar.</em></h2>
+          <p className="eyebrow mb-4">{t("el_how_eyebrow")}</p>
+          <h2 className="section-title">{t("el_how_title_a")} <em>{t("el_how_title_em")}</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="grid md:grid-cols-3 mt-12 border border-jade-soft">
@@ -396,9 +376,9 @@ const EmptyLegs = () => {
                 className="text-[0.78rem] uppercase font-medium text-foreground mb-2.5"
                 style={{ letterSpacing: "0.12em" }}
               >
-                {s.title}
+                {t(s.tKey)}
               </div>
-              <p className="text-[0.875rem] leading-relaxed text-fg-3">{s.desc}</p>
+              <p className="text-[0.875rem] leading-relaxed text-fg-3">{t(s.dKey)}</p>
             </div>
           ))}
         </div>
@@ -414,23 +394,16 @@ const EmptyLegs = () => {
             className="font-serif font-light text-foreground mb-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
           >
-            ¿No ves tu ruta?<br />
-            <em className="italic text-jade-light">Avísanos.</em>
+            {t("el_cta_title_a")}<br />
+            <em className="italic text-jade-light">{t("el_cta_title_em")}</em>
           </h2>
-          <p className="text-[0.9rem] text-fg-3 mb-10 max-w-xl mx-auto">
-            Recibimos nuevos empty legs cada día. Déjanos tu ruta deseada y te avisamos en cuanto haya un tramo disponible.
-          </p>
+          <p className="text-[0.9rem] text-fg-3 mb-10 max-w-xl mx-auto">{t("el_cta_sub")}</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href={waLink("Hola, busco un empty leg para mi ruta:")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              WhatsApp Ahora
+            <a href={waLink(t("el_cta_wa_route"))} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              {t("common_whatsapp_now")}
             </a>
             <a href="/#contact" className="btn-secondary">
-              Enviar Solicitud
+              {t("common_send_request")}
             </a>
           </div>
         </div>

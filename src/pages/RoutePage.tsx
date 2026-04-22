@@ -7,6 +7,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { ROUTE_DATA } from "@/data/routes";
 import { waLink, SITE_URL } from "@/lib/site";
+import { useLang } from "@/i18n/LanguageContext";
 
 const RouteSkeleton = () => (
   <div className="animate-pulse" style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 6rem" }}>
@@ -26,6 +27,7 @@ const RouteSkeleton = () => (
 const RoutePage = () => {
   const { slug } = useParams();
   const [loading, setLoading] = useState(true);
+  const { t } = useLang();
   useReveal();
   const route = slug ? ROUTE_DATA[slug] : undefined;
 
@@ -55,7 +57,7 @@ const RoutePage = () => {
     : undefined;
 
   useSEO({
-    title: route?.title ?? "Ruta — Numen Aviation",
+    title: route?.title ?? t("rt_seo_default_title"),
     description: route?.description,
     path,
     type: "article",
@@ -65,8 +67,8 @@ const RoutePage = () => {
   useEffect(() => {
     setLoading(true);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-    const t = setTimeout(() => setLoading(false), 250);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => setLoading(false), 250);
+    return () => clearTimeout(timer);
   }, [slug]);
 
   if (!route) return <Navigate to="/" replace />;
@@ -88,9 +90,9 @@ const RoutePage = () => {
       {/* Breadcrumb */}
       <nav aria-label="breadcrumb" className="absolute top-24 z-10" style={{ left: "clamp(1.5rem, 4vw, 4rem)" }}>
         <ol className="flex items-center gap-2 list-none text-[0.65rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>
-          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">Inicio</Link></li>
+          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">{t("common_home")}</Link></li>
           <li className="text-jade opacity-50">›</li>
-          <li>Rutas</li>
+          <li>{t("rt_breadcrumb_routes")}</li>
           <li className="text-jade opacity-50">›</li>
           <li className="text-jade">{route.tagline.replace(" · ", " → ")}</li>
         </ol>
@@ -108,18 +110,18 @@ const RoutePage = () => {
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s" }} />
         <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-lg mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>{route.heroSubtitle}</p>
         <div className="relative z-10 flex gap-4 flex-wrap animate-fade-up" style={{ animationDelay: "1s" }}>
-          <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">Solicitar Cotización</a>
-          <a href="#aircraft" className="btn-secondary">Ver Aeronaves</a>
+          <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">{t("rt_cta_request_quote")}</a>
+          <a href="#aircraft" className="btn-secondary">{t("rt_cta_view_aircraft")}</a>
         </div>
       </section>
 
       {/* STATS */}
       <div className="grid grid-cols-2 md:grid-cols-4 border border-jade-soft reveal" style={{ margin: "0 clamp(1rem, 4vw, 4rem)" }}>
         {[
-          { val: route.stats.distance, lbl: "Distancia" },
-          { val: route.stats.time, lbl: "Tiempo de Vuelo" },
-          { val: route.stats.price, lbl: "Precio Aprox. (USD)" },
-          { val: route.stats.aircraft, lbl: "Aeronave Recomendada" },
+          { val: route.stats.distance, lbl: t("rt_stat_distance") },
+          { val: route.stats.time, lbl: t("rt_stat_time") },
+          { val: route.stats.price, lbl: t("rt_stat_price") },
+          { val: route.stats.aircraft, lbl: t("rt_stat_aircraft") },
         ].map((s) => (
           <div key={s.lbl} className="p-7 border-r border-jade-soft last:border-r-0">
             <div className="font-serif text-2xl font-light text-foreground mb-1.5">{s.val}</div>
@@ -131,13 +133,13 @@ const RoutePage = () => {
       {/* AIRPORTS */}
       <section className="bg-bg-2 py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
-          <p className="eyebrow mb-4">Detalles de Ruta</p>
-          <h2 className="section-title">Salida y <em>Llegada.</em></h2>
+          <p className="eyebrow mb-4">{t("rt_details_eyebrow")}</p>
+          <h2 className="section-title">{t("rt_details_title_a")} <em>{t("rt_details_title_em")}</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-12 items-center mt-12 reveal">
           <div>
-            <div className="text-[0.62rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>Salida</div>
+            <div className="text-[0.62rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>{t("rt_lbl_departure")}</div>
             <div className="font-serif text-2xl font-light leading-snug">{route.airports.departure}</div>
           </div>
           <div className="hidden md:block text-center">
@@ -146,7 +148,7 @@ const RoutePage = () => {
             <div className="w-px h-16 mx-auto mt-2" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)" }} />
           </div>
           <div>
-            <div className="text-[0.62rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>Llegada</div>
+            <div className="text-[0.62rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>{t("rt_lbl_arrival")}</div>
             <div className="font-serif text-2xl font-light leading-snug">{route.airports.arrival}</div>
           </div>
         </div>
@@ -155,8 +157,8 @@ const RoutePage = () => {
       {/* AIRCRAFT */}
       <section id="aircraft" className="py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
-          <p className="eyebrow mb-4">Flota para esta Ruta</p>
-          <h2 className="section-title">Aeronaves <em>Recomendadas.</em></h2>
+          <p className="eyebrow mb-4">{t("rt_fleet_eyebrow")}</p>
+          <h2 className="section-title">{t("rt_fleet_title_a")} <em>{t("rt_fleet_title_em")}</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="grid md:grid-cols-3 mt-12 border border-jade-soft reveal">
@@ -167,11 +169,11 @@ const RoutePage = () => {
               <div className="flex gap-6 my-4">
                 <div>
                   <div className="text-[0.85rem] font-medium">{a.pax}</div>
-                  <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.1em" }}>Pasajeros</div>
+                  <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.1em" }}>{t("rt_lbl_pax")}</div>
                 </div>
                 <div>
                   <div className="text-[0.85rem] font-medium">{a.range}</div>
-                  <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.1em" }}>Alcance</div>
+                  <div className="text-[0.62rem] uppercase text-fg-3" style={{ letterSpacing: "0.1em" }}>{t("rt_lbl_range")}</div>
                 </div>
               </div>
               <p className="text-[0.82rem] leading-relaxed text-fg-3 border-t border-jade-soft pt-4 mt-4">{a.note}</p>
@@ -183,8 +185,8 @@ const RoutePage = () => {
       {/* WHY */}
       <section className="bg-bg-2 py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
-          <p className="eyebrow mb-4">Por Qué Privado</p>
-          <h2 className="section-title">Lo que hace esta ruta <em>diferente.</em></h2>
+          <p className="eyebrow mb-4">{t("rt_why_eyebrow")}</p>
+          <h2 className="section-title">{t("rt_why_title_a")} <em>{t("rt_why_title_em")}</em></h2>
           <div className="gold-rule" />
         </div>
         <div className="grid md:grid-cols-2 mt-12 border border-jade-soft">
@@ -202,12 +204,12 @@ const RoutePage = () => {
       <section className="bg-bg-3 border-y border-jade-soft py-20 text-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <h2 className="font-serif font-light text-foreground mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
-            ¿Listo para volar a<br /><em className="italic text-jade-light">{route.ctaCity}?</em>
+            {t("rt_cta_a")}<br /><em className="italic text-jade-light">{route.ctaCity}?</em>
           </h2>
-          <p className="text-[0.9rem] text-fg-3 mb-10">Envíanos una solicitud y tendrás una cotización en tu inbox en menos de una hora.</p>
+          <p className="text-[0.9rem] text-fg-3 mb-10">{t("rt_cta_sub")}</p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">WhatsApp Ahora</a>
-            <a href="/#contact" className="btn-secondary">Enviar Formulario</a>
+            <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">{t("common_whatsapp_now")}</a>
+            <a href="/#contact" className="btn-secondary">{t("common_send_form")}</a>
           </div>
         </div>
       </section>
