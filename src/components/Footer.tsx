@@ -29,53 +29,21 @@ export const Footer = () => {
       className="bg-bg-2 border-t border-jade-soft pt-12 pb-8"
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
-      {/* Top: brand + photo on left, three offices spread on right */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_2.7fr] gap-10 lg:gap-14 mb-10">
-        {/* Brand block with image */}
-        <div className="flex flex-col gap-5">
-          <div className="flex items-center gap-3">
-            <img src={logoIcon} alt="" className="h-6 w-auto" />
-            <span
-              className="text-[0.75rem] uppercase text-foreground font-light"
-              style={{ letterSpacing: "0.25em" }}
-            >
-              Numen Aviation
-            </span>
-          </div>
-          <div className="relative aspect-[16/9] sm:aspect-[16/7] lg:aspect-[16/9] overflow-hidden border border-jade-soft">
-            <img
-              src={brandImage}
-              alt="Aeropuerto Internacional de Toluca (MMTO)"
-              className="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, hsl(var(--background) / 0.55) 0%, transparent 50%, hsl(var(--background) / 0.65) 100%)",
-              }}
-            />
-            <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
-              <span
-                className="text-[0.6rem] uppercase text-jade-light"
-                style={{ letterSpacing: "0.25em" }}
-              >
-                MMTO · Toluca
-              </span>
-              <span
-                className="text-[0.55rem] uppercase text-fg-3 border border-jade-soft px-2 py-0.5"
-                style={{ letterSpacing: "0.2em" }}
-              >
-                24/7
-              </span>
-            </div>
-          </div>
+      {/* Top: brand on left, two offices on right */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-14 mb-10">
+        {/* Brand block */}
+        <div className="flex items-center gap-3">
+          <img src={logoIcon} alt="" className="h-6 w-auto" />
+          <span
+            className="text-[0.75rem] uppercase text-foreground font-light"
+            style={{ letterSpacing: "0.25em" }}
+          >
+            Numen Aviation
+          </span>
         </div>
 
-        {/* Offices grid (3 columns on large screens) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        {/* Offices grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {offices.map((o) => (
             <div key={o.title}>
               <h4
