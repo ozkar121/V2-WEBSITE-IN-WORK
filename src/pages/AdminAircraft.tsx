@@ -76,7 +76,7 @@ const AdminAircraft = () => {
       return;
     }
     setCreating(true);
-    const { error } = await supabase.from("aircraft").insert(parsed.data);
+    const { error } = await supabase.from("aircraft").insert([parsed.data]);
     setCreating(false);
     if (error) {
       toast.error(error.code === "23505" ? "Ese ID ya existe" : "Error al crear");
