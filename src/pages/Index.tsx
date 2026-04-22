@@ -96,8 +96,7 @@ const Index = () => {
           muted
           loop
           playsInline
-          preload="metadata"
-          poster="/hero-poster.jpg"
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           aria-hidden="true"
         >
