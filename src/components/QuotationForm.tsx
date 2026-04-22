@@ -2,6 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useLang } from "@/i18n/LanguageContext";
 
 const quotationSchema = z.object({
   name: z.string().trim().min(2, "Nombre demasiado corto").max(100),
@@ -32,6 +33,7 @@ const initialState: FormState = {
 };
 
 export const QuotationForm = () => {
+  const { t } = useLang();
   const { toast } = useToast();
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -125,8 +127,8 @@ export const QuotationForm = () => {
     } catch (err) {
       console.error("Quotation submit failed", err);
       toast({
-        title: "No pudimos enviar tu solicitud",
-        description: "Por favor inténtalo de nuevo o escríbenos por WhatsApp.",
+        title: t("qf_error_title"),
+        description: t("qf_error_body"),
         variant: "destructive",
       });
     } finally {
@@ -138,14 +140,13 @@ export const QuotationForm = () => {
     return (
       <div className="relative bg-bg-2/45 border border-foreground/10 p-10 reveal">
         <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.25em" }}>
-          Solicitud recibida
+          {t("qf_success_eyebrow")}
         </span>
         <h3 className="font-serif text-2xl font-light mt-3 mb-4">
-          Gracias, tu solicitud está en revisión.
+          {t("qf_success_title")}
         </h3>
         <p className="text-fg-3 text-[0.9rem] leading-relaxed">
-          Nuestro equipo de operaciones se pondrá en contacto contigo en menos de 2 horas.
-          Te enviamos una confirmación a tu correo con el resumen de la solicitud.
+          {t("qf_success_body")}
         </p>
         <button
           type="button"
@@ -153,7 +154,7 @@ export const QuotationForm = () => {
           className="mt-6 inline-flex text-[0.75rem] uppercase text-jade hover:text-foreground transition-colors"
           style={{ letterSpacing: "0.25em" }}
         >
-          Enviar otra solicitud →
+          {t("qf_send_another")}
         </button>
       </div>
     );
