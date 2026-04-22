@@ -1,7 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
-import { NAV_LINKS, ROUTES, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
+import { ROUTES, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
+import { useLang } from "@/i18n/LanguageContext";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import logoIcon from "@/assets/numen-mark.png";
 
 export const Navbar = () => {
@@ -9,6 +11,16 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [routesOpen, setRoutesOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLang();
+
+  const navLinks = [
+    { label: t("nav_services"), href: "/#services" },
+    { label: t("nav_fleet"), href: "/#fleet" },
+    { label: t("nav_empty_legs"), href: "/empty-legs" },
+    { label: t("nav_cargo"), href: "/vuelos-de-carga" },
+    { label: t("nav_about"), href: "/#why" },
+    { label: t("nav_contact"), href: "/#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -41,8 +53,8 @@ export const Navbar = () => {
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden lg:flex items-center gap-10 list-none">
-        {NAV_LINKS.map((l) => (
+      <ul className="hidden lg:flex items-center gap-8 list-none">
+        {navLinks.map((l) => (
           <li key={l.href}>
             <a
               href={l.href}
@@ -58,7 +70,7 @@ export const Navbar = () => {
             className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
             style={{ letterSpacing: "0.15em" }}
           >
-            Rutas <ChevronDown className="w-3 h-3" />
+            {t("nav_routes")} <ChevronDown className="w-3 h-3" />
           </button>
           <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[230px] py-2 list-none">
             {ROUTES.map((r) => (
@@ -73,6 +85,9 @@ export const Navbar = () => {
               </li>
             ))}
           </ul>
+        </li>
+        <li>
+          <LanguageSwitcher />
         </li>
         <li>
           <a
@@ -97,24 +112,27 @@ export const Navbar = () => {
               <span className="absolute inline-flex h-full w-full rounded-full bg-background opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-background" />
             </span>
-            Solicitar Vuelo
+            {t("nav_request_flight")}
           </a>
         </li>
       </ul>
 
       {/* Mobile burger */}
-      <button
-        className="lg:hidden text-foreground"
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Toggle menu"
-      >
-        {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-      </button>
+      <div className="lg:hidden flex items-center gap-3">
+        <LanguageSwitcher variant="mobile" />
+        <button
+          className="text-foreground"
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
 
       {/* Mobile drawer */}
       {open && (
         <div className="lg:hidden fixed inset-0 top-0 bg-background z-40 flex flex-col items-center justify-center gap-6">
-          {NAV_LINKS.map((l) => (
+          {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -130,7 +148,7 @@ export const Navbar = () => {
             className="flex items-center gap-1 text-base uppercase text-fg-2"
             style={{ letterSpacing: "0.15em" }}
           >
-            Rutas <ChevronDown className="w-4 h-4" />
+            {t("nav_routes")} <ChevronDown className="w-4 h-4" />
           </button>
           {routesOpen && (
             <div className="flex flex-col gap-3 items-center">
@@ -165,7 +183,7 @@ export const Navbar = () => {
               <span className="absolute inline-flex h-full w-full rounded-full bg-background opacity-75 animate-ping" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-background" />
             </span>
-            Solicitar Vuelo
+            {t("nav_request_flight")}
           </a>
         </div>
       )}
