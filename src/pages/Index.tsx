@@ -127,12 +127,12 @@ const Index = () => {
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
         )}
-        {/* Overlay para legibilidad */}
+        {/* Overlay para legibilidad — refuerza contraste del título y CTAs */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.35) 40%, hsl(var(--background) / 0.92) 100%), radial-gradient(ellipse 60% 80% at 20% 80%, hsl(var(--background) / 0.6) 0%, transparent 70%)",
+              "linear-gradient(180deg, hsl(var(--background) / 0.65) 0%, hsl(var(--background) / 0.45) 35%, hsl(var(--background) / 0.95) 100%), linear-gradient(90deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.15) 55%, transparent 100%)",
           }}
         />
         <div className="absolute top-0 right-[20%] w-px h-[55%]" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)", opacity: 0.4 }} />
