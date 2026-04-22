@@ -5,6 +5,7 @@ import { AIRCRAFT, CATEGORY_LABELS } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { useSEO } from "@/hooks/useSEO";
 import { toast } from "sonner";
+import { PublishGuide } from "@/components/PublishGuide";
 
 const AdminAircraft = () => {
   useSEO({ title: "Gestión de Fotos · Numen Aviation", noindex: true });
