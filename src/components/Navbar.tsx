@@ -92,7 +92,7 @@ export const Navbar = () => {
         <li>
           <a
             href={`tel:${PHONE_TEL}`}
-            className="flex items-center gap-2 text-[0.72rem] uppercase text-fg-2 hover:text-jade transition-colors no-underline"
+            className="flex items-center gap-2 whitespace-nowrap text-[0.72rem] uppercase text-fg-2 hover:text-jade transition-colors no-underline"
             style={{ letterSpacing: "0.15em" }}
             aria-label={`Llamar a ${PHONE_NUMBER}`}
           >
