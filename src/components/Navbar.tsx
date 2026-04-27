@@ -105,7 +105,7 @@ export const Navbar = () => {
             href={waLink("Hola, me gustaría solicitar una cotización de charter.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-flex items-center gap-2 text-[0.72rem] uppercase text-background bg-jade px-6 py-3 hover:bg-jade-light transition-all no-underline shadow-[0_0_24px_-4px_hsl(var(--jade)/0.6)] hover:shadow-[0_0_32px_-2px_hsl(var(--jade)/0.85)] hover:-translate-y-0.5"
+            className="relative inline-flex items-center gap-2 whitespace-nowrap text-[0.72rem] uppercase text-background bg-jade px-6 py-3 hover:bg-jade-light transition-all no-underline shadow-[0_0_24px_-4px_hsl(var(--jade)/0.6)] hover:shadow-[0_0_32px_-2px_hsl(var(--jade)/0.85)] hover:-translate-y-0.5"
             style={{ letterSpacing: "0.2em" }}
           >
             <span className="relative flex h-2 w-2">
