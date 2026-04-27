@@ -1,6 +1,6 @@
 import { EMAIL, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
-import logoIcon from "@/assets/numen-mark.png";
+import logoIcon from "@/assets/numen-symbol.svg";
 
 export const Footer = () => {
   const { t } = useLang();
@@ -33,7 +33,7 @@ export const Footer = () => {
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-14 mb-10">
         {/* Brand block */}
         <div className="flex items-center gap-3">
-          <img src={logoIcon} alt="" className="h-6 w-auto" />
+          <img src={logoIcon} alt="Numen Aviation" className="h-4 w-auto" />
           <span
             className="text-[0.75rem] uppercase text-foreground font-light"
             style={{ letterSpacing: "0.25em" }}

@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { ROUTES, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import logoIcon from "@/assets/numen-mark.png";
+import logoIcon from "@/assets/numen-symbol.svg";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,7 +43,7 @@ export const Navbar = () => {
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
       <Link to="/" className="flex items-center gap-2.5" aria-label="Numen Aviation home">
-        <img src={logoIcon} alt="" className="h-5 md:h-6 w-auto" />
+        <img src={logoIcon} alt="Numen Aviation" className="h-3 md:h-4 w-auto" />
         <span
           className="text-[0.7rem] md:text-[0.78rem] uppercase text-foreground font-light"
           style={{ letterSpacing: "0.25em" }}

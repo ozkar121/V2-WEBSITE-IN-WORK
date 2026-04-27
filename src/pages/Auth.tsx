@@ -6,7 +6,7 @@ import { lovable } from "@/integrations/lovable";
 import { useAuth } from "@/hooks/useAuth";
 import { useSEO } from "@/hooks/useSEO";
 import { toast } from "sonner";
-import logoIcon from "@/assets/numen-mark.png";
+import logoIcon from "@/assets/numen-symbol.svg";
 
 const schema = z.object({
   email: z.string().trim().email("Email inválido").max(255),
@@ -89,7 +89,7 @@ const Auth = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-12">
       <Link to="/" className="flex items-center gap-2.5 mb-12">
-        <img src={logoIcon} alt="Numen" className="h-6 w-auto" />
+        <img src={logoIcon} alt="Numen Aviation" className="h-4 w-auto" />
         <span className="text-[0.78rem] uppercase text-foreground font-light" style={{ letterSpacing: "0.25em" }}>
           Numen Aviation
         </span>
