@@ -66,9 +66,15 @@ export const QuotationForm = () => {
     setSubmitting(true);
     try {
       const data = parsed.data;
-      const { data: inserted, error } = await supabase
+      const requestId =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+      const { error } = await supabase
         .from("quotation_requests")
         .insert({
+          id: requestId,
           name: data.name,
           email: data.email,
           phone: data.phone,
@@ -79,11 +85,10 @@ export const QuotationForm = () => {
           passengers: data.passengers,
           trip_type: data.tripType,
           message: data.message || null,
-        })
-        .select("id")
-        .single();
+        });
 
       if (error) throw error;
+      const inserted = { id: requestId };
 
       // Email de confirmación al cliente
       await supabase.functions.invoke("send-transactional-email", {
