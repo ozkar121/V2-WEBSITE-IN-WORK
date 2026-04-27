@@ -16,7 +16,7 @@ const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
 
 export const FleetSection = () => {
   const { t } = useLang();
-  const [active, setActive] = useState<AircraftCategory>("turbo");
+  const [active, setActive] = useState<AircraftCategory>("midsize");
   const [aircraft, setAircraft] = useState<Aircraft[]>([]);
   const [photos, setPhotos] = useState<Record<string, string>>({});
 
