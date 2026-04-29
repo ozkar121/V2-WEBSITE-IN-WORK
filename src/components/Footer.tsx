@@ -20,6 +20,7 @@ export const Footer = () => {
         t("footer_offices_us_l1"),
         t("footer_offices_us_l2"),
         t("footer_offices_us_l3"),
+        t("footer_offices_us_phone"),
       ],
     },
   ];

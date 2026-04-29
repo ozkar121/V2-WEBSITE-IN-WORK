@@ -32,6 +32,7 @@ export const TRANSLATIONS = {
   footer_offices_us_l1: { es: "17350 State Hwy 249,", en: "17350 State Hwy 249," },
   footer_offices_us_l2: { es: "Ste 220 #35286,", en: "Ste 220 #35286," },
   footer_offices_us_l3: { es: "Houston, TX 77064, EUA", en: "Houston, TX 77064, USA" },
+  footer_offices_us_phone: { es: "+1 737 372 4548", en: "+1 737 372 4548" },
   footer_contact: { es: "Contacto", en: "Contact" },
   footer_rights: {
     es: "© 2025 Numen Aviation. Todos los derechos reservados.",
