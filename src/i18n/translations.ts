@@ -443,12 +443,12 @@ export const TRANSLATIONS = {
 
   // SEO Cargo
   seo_cg_title: {
-    es: "Vuelos de Carga Urgente México | Hot Shot Charter — Numen Aviation",
-    en: "Urgent Cargo Flights Mexico | Hot Shot Charter — Numen Aviation",
+    es: "Vuelos de Carga Urgente México | Numen Aviation",
+    en: "Urgent Cargo Flights Mexico | Numen Aviation",
   },
   seo_cg_desc: {
-    es: "Charter de carga aérea urgente en México, EUA y el Caribe. Hot shot, carga AOG, refacciones críticas. Red de operadores certificados. Mobilización en horas. 24/7.",
-    en: "Urgent air cargo charter in Mexico, the U.S., and the Caribbean. Hot shot, AOG cargo, critical parts. Network of certified operators. Mobilization in hours. 24/7.",
+    es: "Charter de carga aérea urgente en México, EUA y Caribe. Hot shot, AOG, refacciones críticas. Operadores certificados. 24/7.",
+    en: "Urgent air cargo charter in Mexico, the U.S. and Caribbean. Hot shot, AOG, critical parts. Certified operators. 24/7.",
   },
 
   // Route page
