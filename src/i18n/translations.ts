@@ -304,12 +304,12 @@ export const TRANSLATIONS = {
 
   // SEO Empty Legs
   seo_el_title: {
-    es: "Empty Legs México · Trayectos Vacíos en Jet Privado hasta 75% off | Numen Aviation",
-    en: "Empty Legs Mexico · Repositioning Private Jet Flights up to 75% off | Numen Aviation",
+    es: "Empty Legs México · Jet Privado hasta 75% Off | Numen",
+    en: "Empty Legs Mexico · Private Jet up to 75% Off | Numen",
   },
   seo_el_desc: {
-    es: "Empty legs y trayectos vacíos en jet privado desde México hacia EUA, Caribe y Centroamérica. Hasta 75% de descuento sobre el charter completo. Disponibilidad actualizada al día desde el Aeropuerto de Toluca (MMTO).",
-    en: "Empty legs and repositioning private jet flights from Mexico to the U.S., Caribbean, and Central America. Up to 75% off the full charter price. Daily-updated availability from Toluca Airport (MMTO).",
+    es: "Empty legs y trayectos vacíos en jet privado desde México a EUA, Caribe y Centroamérica. Hasta 75% off. Disponibilidad diaria desde Toluca (MMTO).",
+    en: "Empty leg private jet flights from Mexico to the U.S., Caribbean and Central America. Up to 75% off. Daily availability from Toluca (MMTO).",
   },
 
   // Cargo page
@@ -443,12 +443,12 @@ export const TRANSLATIONS = {
 
   // SEO Cargo
   seo_cg_title: {
-    es: "Vuelos de Carga Urgente México | Hot Shot Charter — Numen Aviation",
-    en: "Urgent Cargo Flights Mexico | Hot Shot Charter — Numen Aviation",
+    es: "Vuelos de Carga Urgente México | Numen Aviation",
+    en: "Urgent Cargo Flights Mexico | Numen Aviation",
   },
   seo_cg_desc: {
-    es: "Charter de carga aérea urgente en México, EUA y el Caribe. Hot shot, carga AOG, refacciones críticas. Red de operadores certificados. Mobilización en horas. 24/7.",
-    en: "Urgent air cargo charter in Mexico, the U.S., and the Caribbean. Hot shot, AOG cargo, critical parts. Network of certified operators. Mobilization in hours. 24/7.",
+    es: "Charter de carga aérea urgente en México, EUA y Caribe. Hot shot, AOG, refacciones críticas. Operadores certificados. 24/7.",
+    en: "Urgent air cargo charter in Mexico, the U.S. and Caribbean. Hot shot, AOG, critical parts. Certified operators. 24/7.",
   },
 
   // Route page

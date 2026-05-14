@@ -95,8 +95,8 @@ const Index = () => {
         : "Renta de Jet Privado en Toluca y México | Numen Aviation",
     description:
       lang === "en"
-        ? "Private jet charter, on-demand flights, empty legs, consulting, and aircraft acquisition from Toluca Airport (MMTO). 24/7 service across Mexico, the U.S., the Caribbean, and Central America. Quote in under 2 hours."
-        : "Renta de jet privado, charter bajo demanda, empty legs, consultoría y adquisición de aeronaves desde el Aeropuerto de Toluca (MMTO). Servicio 24/7 en México, EUA, Caribe y Centroamérica. Cotización en menos de 2 horas.",
+        ? "Private jet charter on demand from Toluca Airport (MMTO). Empty legs, consulting and acquisition. Quote in under 2 hours. 24/7 service."
+        : "Renta de jet privado y charter bajo demanda desde Toluca (MMTO). Empty legs, consultoría y adquisición. Cotización en menos de 2 horas. 24/7.",
     path: "/",
     jsonLd: HOME_JSONLD,
   });
