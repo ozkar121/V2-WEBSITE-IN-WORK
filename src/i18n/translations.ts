@@ -304,12 +304,12 @@ export const TRANSLATIONS = {
 
   // SEO Empty Legs
   seo_el_title: {
-    es: "Empty Legs México · Trayectos Vacíos en Jet Privado hasta 75% off | Numen Aviation",
-    en: "Empty Legs Mexico · Repositioning Private Jet Flights up to 75% off | Numen Aviation",
+    es: "Empty Legs México · Jet Privado hasta 75% Off | Numen",
+    en: "Empty Legs Mexico · Private Jet up to 75% Off | Numen",
   },
   seo_el_desc: {
-    es: "Empty legs y trayectos vacíos en jet privado desde México hacia EUA, Caribe y Centroamérica. Hasta 75% de descuento sobre el charter completo. Disponibilidad actualizada al día desde el Aeropuerto de Toluca (MMTO).",
-    en: "Empty legs and repositioning private jet flights from Mexico to the U.S., Caribbean, and Central America. Up to 75% off the full charter price. Daily-updated availability from Toluca Airport (MMTO).",
+    es: "Empty legs y trayectos vacíos en jet privado desde México a EUA, Caribe y Centroamérica. Hasta 75% off. Disponibilidad diaria desde Toluca (MMTO).",
+    en: "Empty leg private jet flights from Mexico to the U.S., Caribbean and Central America. Up to 75% off. Daily availability from Toluca (MMTO).",
   },
 
   // Cargo page
