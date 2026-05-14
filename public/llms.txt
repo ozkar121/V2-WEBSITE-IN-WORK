@@ -1,0 +1,24 @@
+# Numen Aviation
+
+> Renta de jet privado y charter ejecutivo bajo demanda desde el Aeropuerto Internacional de Toluca (MMTO). Operaciones 24/7 en México, EUA, Caribe y Centroamérica.
+
+Numen Aviation es un broker de aviación privada con sede en Toluca, México. Ofrece charter on-demand, empty legs, consultoría y adquisición de aeronaves, además de vuelos de carga urgente (hot shot / AOG).
+
+## Pages
+
+- [Inicio](/): Servicios, flota y cotización de jet privado.
+- [Empty Legs](/empty-legs): Trayectos vacíos en jet privado con hasta 75% de descuento, actualizados a diario.
+- [Vuelos de Carga](/vuelos-de-carga): Charter de carga urgente, hot shot y AOG en México, EUA y Caribe.
+
+## Routes
+
+- [CDMX → Cancún](/rutas/cdmx-cancun)
+- [CDMX → Los Cabos](/rutas/cdmx-los-cabos)
+- [CDMX → Miami](/rutas/cdmx-miami)
+- [CDMX → Monterrey](/rutas/cdmx-monterrey)
+
+## Contact
+
+- WhatsApp: +52 444 234 8942
+- Email: operaciones@numen-aviation.com
+- Hub: Aeropuerto Internacional de Toluca (MMTO)
