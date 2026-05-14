@@ -31,7 +31,7 @@ export interface RouteData {
 export const ROUTE_DATA: Record<string, RouteData> = {
   "cdmx-cancun": {
     slug: "cdmx-cancun",
-    title: "Jet Privado CDMX a Cancún — Charter sin escalas | Numen Aviation",
+    title: "Jet Privado CDMX a Cancún | Numen Aviation",
     description: "Charter de jet privado de Toluca (MMTO) a Cancún (MMUN) en menos de 2 horas. Sin escalas, sin filas. Desde $18,000 USD. Disponible 24/7.",
     tagline: "Toluca · Cancún",
     heroFromCity: "Toluca",
@@ -59,7 +59,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
   },
   "cdmx-los-cabos": {
     slug: "cdmx-los-cabos",
-    title: "Jet Privado CDMX a Los Cabos — Charter sin escalas | Numen Aviation",
+    title: "Jet Privado CDMX a Los Cabos | Numen Aviation",
     description: "Charter de jet privado de Toluca (MMTO) a Los Cabos (MMSD) en menos de 2 horas. Sin escalas. Desde $16,000 USD. Disponible 24/7.",
     tagline: "Toluca · Los Cabos",
     heroFromCity: "Toluca",
@@ -87,7 +87,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
   },
   "cdmx-miami": {
     slug: "cdmx-miami",
-    title: "Jet Privado CDMX a Miami — Charter sin escalas | Numen Aviation",
+    title: "Jet Privado CDMX a Miami | Numen Aviation",
     description: "Charter de jet privado de Toluca (MMTO) a Miami (KMIA / KOPF) en 3.5 horas. Sin escalas, sin terminales comerciales. Desde $38,000 USD. Disponible 24/7.",
     tagline: "Toluca · Miami",
     heroFromCity: "Toluca",
@@ -115,7 +115,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
   },
   "cdmx-monterrey": {
     slug: "cdmx-monterrey",
-    title: "Jet Privado CDMX a Monterrey — Charter sin escalas | Numen Aviation",
+    title: "Jet Privado CDMX a Monterrey | Numen Aviation",
     description: "Charter de jet privado de Toluca (MMTO) a Monterrey (MMMY / MMAN) en 1.5 horas. La ruta de negocios por excelencia. Desde $9,500 USD. Disponible 24/7.",
     tagline: "Toluca · Monterrey",
     heroFromCity: "Toluca",
