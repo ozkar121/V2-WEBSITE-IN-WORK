@@ -29,6 +29,7 @@ const App = () => (
       <BrowserRouter>
         <LanguageProvider>
         <AuthProvider>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/empty-legs" element={<EmptyLegs />} />
