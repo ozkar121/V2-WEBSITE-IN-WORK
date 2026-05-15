@@ -127,6 +127,20 @@ const ChartersGrupos = () => {
         ? "Bodas, celebraciones de vida, viajes a destinos especiales. Chártea la aeronave completa y llegan como uno."
         : "Weddings, milestone events, destination celebrations. Charter the whole aircraft and arrive as one.",
     },
+    {
+      Icon: Heart,
+      t: isEs ? "Bodas y Celebraciones" : "Weddings & Celebrations",
+      d: isEs
+        ? "Vuela a toda tu boda en una sola aeronave. Terminal privada, tiempos coordinados, cero caos comercial. La celebración empieza antes de aterrizar."
+        : "Fly your entire wedding party on one aircraft. Private terminal, coordinated timing, zero commercial chaos. The celebration starts before you land.",
+    },
+    {
+      Icon: Music,
+      t: isEs ? "Logística para Artistas" : "Artist & Tour Logistics",
+      d: isEs
+        ? "Crew de producción, instrumentos, management y talento — todos en el mismo vuelo. Discreción garantizada, horario tuyo. Sin conexiones comerciales, sin retrasos, sin exposición."
+        : "Production crew, instruments, management, and talent — all on the same flight. Discretion guaranteed, schedule yours. No commercial connections, no delays, no exposure.",
+    },
   ];
 
   const STEPS = [
