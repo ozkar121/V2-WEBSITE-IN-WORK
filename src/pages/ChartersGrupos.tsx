@@ -81,7 +81,7 @@ const ChartersGrupos = () => {
       name: "Bombardier CRJ-200",
       cat: isEs ? "Regional Jet · Charter Grupal" : "Regional Jet · Group Charter",
       specs: [
-        { l: isEs ? "Capacidad" : "Capacity", v: isEs ? "Hasta 50 pasajeros" : "Up to 50 passengers" },
+        { l: isEs ? "Capacidad" : "Capacity", v: isEs ? "Hasta 38 pasajeros" : "Up to 38 passengers" },
         { l: isEs ? "Alcance" : "Range", v: "3,148 km" },
         { l: isEs ? "Velocidad" : "Speed", v: "830 km/h" },
         {
@@ -90,8 +90,8 @@ const ChartersGrupos = () => {
         },
       ],
       copy: isEs
-        ? "El CRJ200 transporta hasta 50 pasajeros con un alcance ligeramente mayor que el ERJ145 — ideal cuando tu destino está en el límite del mapa. Silencioso, confiable y totalmente charteable desde MMTO."
-        : "The CRJ200 carries up to 50 passengers with a slightly longer range than the ERJ145 — ideal when your destination sits closer to the edge of the map. Quiet, reliable, and fully charterable from MMTO.",
+        ? "El CRJ200 transporta hasta 38 pasajeros con un alcance ligeramente mayor que el ERJ145 — ideal cuando tu destino está en el límite del mapa. Silencioso, confiable y totalmente charteable desde MMTO."
+        : "The CRJ200 carries up to 38 passengers with a slightly longer range than the ERJ145 — ideal when your destination sits closer to the edge of the map. Quiet, reliable, and fully charterable from MMTO.",
       ideal: isEs
         ? "Equipos deportivos, retiros de empresa, grupos familiares UHNW"
         : "Sports teams, company retreats, UHNW family groups",
