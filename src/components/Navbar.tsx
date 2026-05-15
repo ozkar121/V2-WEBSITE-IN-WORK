@@ -53,7 +53,7 @@ export const Navbar = () => {
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden lg:flex items-center gap-8 list-none">
+      <ul className="hidden lg:flex items-center gap-8 list-none ml-auto pl-12 xl:pl-20">
         {navLinks.map((l) => (
           <li key={l.href}>
             <a
