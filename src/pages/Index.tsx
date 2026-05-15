@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { Navbar } from "@/components/Navbar";
