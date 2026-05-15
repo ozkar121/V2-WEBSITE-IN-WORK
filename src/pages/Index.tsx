@@ -52,7 +52,6 @@ const HOME_JSONLD = [
 const Index = () => {
   useReveal();
   const { t, lang } = useLang();
-  const [showVideo, setShowVideo] = useState(false);
 
   const services = [
     { num: "01", name: t("service_01_name"), desc: t("service_01_desc") },
@@ -74,19 +73,6 @@ const Index = () => {
     { num: "III", title: t("why_03_t"), desc: t("why_03_d") },
     { num: "IV", title: t("why_04_t"), desc: t("why_04_d") },
   ];
-
-  useEffect(() => {
-    // Diferimos el video hasta después del FCP/LCP para no bloquear render
-    const load = () => setShowVideo(true);
-    const w = window as any;
-    const id = w.requestIdleCallback
-      ? w.requestIdleCallback(load, { timeout: 2500 })
-      : window.setTimeout(load, 1500);
-    return () => {
-      if (w.cancelIdleCallback && typeof id === "number") w.cancelIdleCallback(id);
-      else clearTimeout(id);
-    };
-  }, []);
 
   useSEO({
     title:
