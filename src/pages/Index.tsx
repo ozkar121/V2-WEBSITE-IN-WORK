@@ -47,6 +47,24 @@ const HOME_JSONLD = [
     name: "Numen Aviation",
     inLanguage: "es-MX",
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      ["¿Cuánto cuesta rentar un jet privado desde Toluca?", "El costo varía según el tipo de aeronave, destino y duración del vuelo. Un vuelo en light jet desde Toluca (MMTO) a Cancún comienza desde aproximadamente $12,000 USD. Solicita una cotización sin compromiso y te respondemos en menos de 30 minutos."],
+      ["¿Por qué operan desde Toluca y no desde el AICM?", "El Aeropuerto Internacional de Toluca (MMTO) ofrece tiempos de espera mínimos, acceso directo a pista sin congestión, hangares privados y una ubicación estratégica a 40 minutos de Santa Fe y Polanco. Es la base preferida de la aviación ejecutiva en el Valle de México."],
+      ["¿Con cuánta anticipación debo reservar un vuelo?", "Podemos coordinar un vuelo chárter en tan solo 2 a 4 horas para rutas nacionales. Para vuelos internacionales recomendamos al menos 24-48 horas. Los empty legs tienen disponibilidad inmediata."],
+      ["¿Qué incluye el precio de un vuelo charter?", "Nuestra cotización es transparente e incluye: tiempo de vuelo, ferry (posicionamiento), handling aeroportuario, IVA, servicios FBO y coordinación completa. Sin cargos ocultos ni sorpresas al cierre."],
+      ["¿Qué documentación necesito para volar en jet privado?", "Para vuelos nacionales solo necesitas una identificación oficial vigente (INE o pasaporte). Para vuelos internacionales se requiere pasaporte vigente y, según el destino, visa correspondiente. Nosotros coordinamos todos los permisos de vuelo y trámites ante AFAC."],
+      ["¿Qué es un empty leg y cómo puedo aprovecharlo?", "Un empty leg es un vuelo de reposicionamiento que ya está programado y se ofrece con descuentos de hasta 75% sobre la tarifa regular. Publicamos disponibilidad actualizada en nuestra sección de Empty Legs. Es la forma más accesible de volar en jet privado."],
+      ["¿Numen Aviation es operador o broker?", "Somos una correduría independiente (broker). No operamos aeronaves propias, lo que nos permite comparar objetivamente entre operadores certificados en México y Las Américas para conseguirte la mejor aeronave al mejor precio, sin conflictos de interés."],
+      ["¿Puedo solicitar catering, transporte terrestre u otros servicios?", "Sí. Coordinamos servicios complementarios como catering gourmet, transporte terrestre privado (SUV blindada, helicóptero), equipaje especial y cualquier requerimiento que haga tu experiencia perfecta. Tu asesor dedicado se encarga de todo."],
+    ].map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  },
 ];
 
 
