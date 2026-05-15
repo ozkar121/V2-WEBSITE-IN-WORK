@@ -103,10 +103,17 @@ const Index = () => {
             En el hero dejamos transparente para que el video se vea protagónico. */}
         {/* Overlay para legibilidad — refuerza contraste del título y CTAs */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           style={{
             background:
               "linear-gradient(180deg, hsl(var(--background) / 0.65) 0%, hsl(var(--background) / 0.45) 35%, hsl(var(--background) / 0.95) 100%), linear-gradient(90deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.15) 55%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(var(--background) / 0.25) 0%, hsl(var(--background) / 0.15) 40%, hsl(var(--background) / 0.85) 100%)",
           }}
         />
         <div className="absolute top-0 right-[20%] w-px h-[55%]" style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--jade)), transparent)", opacity: 0.4 }} />
