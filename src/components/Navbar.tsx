@@ -172,7 +172,10 @@ export const Navbar = () => {
               </span>
             </Link>
           </div>
-          <div className="flex flex-col items-center justify-center gap-6 flex-1 py-10">
+          <div
+            className="flex flex-col items-center justify-center gap-6 flex-1 py-10"
+            onClick={(e) => e.stopPropagation()}
+          >
             {navLinks.map((l) => (
               <a
                 key={l.href}
