@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { Navbar } from "@/components/Navbar";
+import { ScrollVideoBackground } from "@/components/ScrollVideoBackground";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
