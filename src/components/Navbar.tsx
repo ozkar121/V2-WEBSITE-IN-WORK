@@ -14,12 +14,16 @@ export const Navbar = () => {
   const { t } = useLang();
 
   const navLinks = [
-    { label: t("nav_services"), href: "/#services" },
     { label: t("nav_fleet"), href: "/#fleet" },
     { label: t("nav_empty_legs"), href: "/empty-legs" },
-    { label: t("nav_cargo"), href: "/vuelos-de-carga" },
     { label: t("nav_about"), href: "/#why" },
     { label: t("nav_contact"), href: "/#contact" },
+  ];
+
+  const services = [
+    { label: t("nav_cargo"), to: "/vuelos-de-carga" },
+    { label: t("nav_svc_ambulance"), to: "/servicios/ambulancias-aereas" },
+    { label: t("nav_svc_groups"), to: "/servicios/charters-grupos" },
   ];
 
   useEffect(() => {
@@ -65,6 +69,27 @@ export const Navbar = () => {
             </a>
           </li>
         ))}
+        <li className="relative group">
+          <button
+            className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            {t("nav_services")} <ChevronDown className="w-3 h-3" />
+          </button>
+          <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[280px] py-2 list-none">
+            {services.map((s) => (
+              <li key={s.to}>
+                <Link
+                  to={s.to}
+                  className="block px-5 py-3 text-[0.72rem] uppercase text-fg-3 hover:text-jade-light hover:bg-bg-3 transition-colors no-underline border-b border-jade-soft last:border-b-0 whitespace-nowrap"
+                  style={{ letterSpacing: "0.15em" }}
+                >
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
         <li className="relative group">
           <button
             className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
@@ -158,6 +183,24 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            <details className="group">
+              <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
+                {t("nav_services")} <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="flex flex-col gap-3 items-center mt-4">
+                {services.map((s) => (
+                  <Link
+                    key={s.to}
+                    to={s.to}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light text-center px-4"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
             <button
               onClick={() => setRoutesOpen((r) => !r)}
               className="flex items-center gap-1 text-base uppercase text-fg-2"

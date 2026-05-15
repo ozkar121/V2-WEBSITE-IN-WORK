@@ -9,6 +9,8 @@ import { ProtectedAdminRoute } from "@/components/ProtectedAdminRoute";
 import Index from "./pages/Index.tsx";
 import EmptyLegs from "./pages/EmptyLegs.tsx";
 import Cargo from "./pages/Cargo.tsx";
+import AmbulanciasAereas from "./pages/AmbulanciasAereas.tsx";
+import ChartersGrupos from "./pages/ChartersGrupos.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/empty-legs" element={<EmptyLegs />} />
             <Route path="/vuelos-de-carga" element={<Cargo />} />
+            <Route path="/servicios/ambulancias-aereas" element={<AmbulanciasAereas />} />
+            <Route path="/servicios/charters-grupos" element={<ChartersGrupos />} />
             <Route path="/rutas/:slug" element={<RoutePage />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
