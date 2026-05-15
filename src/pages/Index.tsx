@@ -7,6 +7,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
+import { FAQSection } from "@/components/FAQSection";
 import { QuotationForm } from "@/components/QuotationForm";
 import { useLang } from "@/i18n/LanguageContext";
 import { waLink, SITE_URL, EMAIL } from "@/lib/site";
