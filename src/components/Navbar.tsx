@@ -183,6 +183,24 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            <details className="group">
+              <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
+                {t("nav_services")} <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="flex flex-col gap-3 items-center mt-4">
+                {services.map((s) => (
+                  <Link
+                    key={s.to}
+                    to={s.to}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light text-center px-4"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
             <button
               onClick={() => setRoutesOpen((r) => !r)}
               className="flex items-center gap-1 text-base uppercase text-fg-2"
