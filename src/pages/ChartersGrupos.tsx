@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Briefcase, Trophy, Star, Users } from "lucide-react";
+import { Briefcase, Trophy, Star, Users, Heart, Music } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
@@ -126,6 +126,20 @@ const ChartersGrupos = () => {
       d: isEs
         ? "Bodas, celebraciones de vida, viajes a destinos especiales. Chártea la aeronave completa y llegan como uno."
         : "Weddings, milestone events, destination celebrations. Charter the whole aircraft and arrive as one.",
+    },
+    {
+      Icon: Heart,
+      t: isEs ? "Bodas y Celebraciones" : "Weddings & Celebrations",
+      d: isEs
+        ? "Vuela a toda tu boda en una sola aeronave. Terminal privada, tiempos coordinados, cero caos comercial. La celebración empieza antes de aterrizar."
+        : "Fly your entire wedding party on one aircraft. Private terminal, coordinated timing, zero commercial chaos. The celebration starts before you land.",
+    },
+    {
+      Icon: Music,
+      t: isEs ? "Logística para Artistas" : "Artist & Tour Logistics",
+      d: isEs
+        ? "Crew de producción, instrumentos, management y talento — todos en el mismo vuelo. Discreción garantizada, horario tuyo. Sin conexiones comerciales, sin retrasos, sin exposición."
+        : "Production crew, instruments, management, and talent — all on the same flight. Discretion guaranteed, schedule yours. No commercial connections, no delays, no exposure.",
     },
   ];
 
@@ -341,7 +355,7 @@ const ChartersGrupos = () => {
           </h2>
           <div className="w-10 h-px bg-jade my-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-12 border border-jade-soft bg-jade-soft reveal">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px mt-12 border border-jade-soft bg-jade-soft reveal">
           {USE_CASES.map(({ Icon, t, d }) => (
             <article key={t} className="bg-background p-8 hover:bg-bg-3 transition-colors">
               <Icon className="w-7 h-7 text-jade mb-5" strokeWidth={1.2} />
