@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { Navbar } from "@/components/Navbar";
+import { ScrollVideoBackground } from "@/components/ScrollVideoBackground";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { Marquee } from "@/components/Marquee";
@@ -52,7 +52,6 @@ const HOME_JSONLD = [
 const Index = () => {
   useReveal();
   const { t, lang } = useLang();
-  const [showVideo, setShowVideo] = useState(false);
 
   const services = [
     { num: "01", name: t("service_01_name"), desc: t("service_01_desc") },
@@ -75,19 +74,6 @@ const Index = () => {
     { num: "IV", title: t("why_04_t"), desc: t("why_04_d") },
   ];
 
-  useEffect(() => {
-    // Diferimos el video hasta después del FCP/LCP para no bloquear render
-    const load = () => setShowVideo(true);
-    const w = window as any;
-    const id = w.requestIdleCallback
-      ? w.requestIdleCallback(load, { timeout: 2500 })
-      : window.setTimeout(load, 1500);
-    return () => {
-      if (w.cancelIdleCallback && typeof id === "number") w.cancelIdleCallback(id);
-      else clearTimeout(id);
-    };
-  }, []);
-
   useSEO({
     title:
       lang === "en"
@@ -103,6 +89,7 @@ const Index = () => {
 
   return (
     <>
+      <ScrollVideoBackground src="/plane-scroll.mp4" />
       <Navbar />
       <main>
 
@@ -112,29 +99,8 @@ const Index = () => {
         className="relative min-h-screen flex flex-col justify-end overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingBottom: "6rem", minHeight: 680 }}
       >
-        {/* Fondo oscuro con gradient sutil — visible mientras carga el video */}
-        <div
-          className="absolute inset-0 bg-background"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 80% 60% at 30% 30%, hsl(var(--jade-dark) / 0.18) 0%, transparent 70%)",
-          }}
-          aria-hidden="true"
-        />
-        {/* Video lazy-loaded después del FCP para no bloquear LCP en móvil */}
-        {showVideo && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover animate-fade-in"
-            aria-hidden="true"
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-        )}
+        {/* El fondo de avión con scroll está montado a nivel de página (ScrollVideoBackground).
+            En el hero dejamos transparente para que el video se vea protagónico. */}
         {/* Overlay para legibilidad — refuerza contraste del título y CTAs */}
         <div
           className="absolute inset-0"
