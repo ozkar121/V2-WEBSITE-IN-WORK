@@ -355,7 +355,7 @@ const ChartersGrupos = () => {
           </h2>
           <div className="w-10 h-px bg-jade my-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-12 border border-jade-soft bg-jade-soft reveal">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px mt-12 border border-jade-soft bg-jade-soft reveal">
           {USE_CASES.map(({ Icon, t, d }) => (
             <article key={t} className="bg-background p-8 hover:bg-bg-3 transition-colors">
               <Icon className="w-7 h-7 text-jade mb-5" strokeWidth={1.2} />
