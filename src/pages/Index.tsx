@@ -232,6 +232,8 @@ const Index = () => {
         </div>
       </section>
 
+      <FAQSection />
+
       {/* CTA BAND */}
       <div id="cta-band" className="bg-bg-2 border-y border-jade-soft py-20 flex flex-wrap justify-between items-center gap-8" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
