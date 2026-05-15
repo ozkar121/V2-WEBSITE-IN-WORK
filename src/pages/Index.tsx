@@ -104,6 +104,7 @@ const Index = () => {
 
   return (
     <>
+      <ScrollVideoBackground src="/plane-scroll.mp4" />
       <Navbar />
       <main>
 
