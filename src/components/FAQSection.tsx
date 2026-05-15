@@ -87,51 +87,43 @@ export const FAQSection = () => {
   return (
     <section
       id="faq"
-      className="py-20 md:py-28"
+      className="py-28"
       style={{
-        backgroundColor: "#F5F0EB",
         paddingLeft: "clamp(1.5rem, 4vw, 4rem)",
         paddingRight: "clamp(1.5rem, 4vw, 4rem)",
-        color: "#1a1a1a",
       }}
     >
-      <div className="max-w-[800px] mx-auto">
-        <div className="text-center mb-12 md:mb-16 reveal">
-          <p
-            className="text-[0.62rem] uppercase mb-4"
-            style={{ letterSpacing: "0.3em", color: "#6b6b6b" }}
-          >
-            {eyebrow}
-          </p>
-          <h2
-            className="font-serif font-light leading-tight"
-            style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)", color: "#1a1a1a" }}
-          >
-            {title}
-          </h2>
-          <p className="mt-4 text-[0.95rem]" style={{ color: "#5a5a5a" }}>
+      <div className="max-w-[860px] mx-auto">
+        <div className="reveal mb-14">
+          <p className="eyebrow mb-4">{eyebrow}</p>
+          <h2 className="section-title">{title}</h2>
+          <div className="gold-rule" />
+          <p className="text-[0.9rem] leading-relaxed text-fg-3 max-w-md">
             {subtitle}
           </p>
         </div>
 
-        <Accordion type="single" collapsible defaultValue="item-0" className="flex flex-col gap-3 reveal">
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue="item-0"
+          className="flex flex-col reveal border-t border-jade-soft"
+        >
           {items.map((item, idx) => (
             <AccordionItem
               key={idx}
               value={`item-${idx}`}
-              className="border rounded-lg px-5 md:px-6 bg-white/60 transition-colors data-[state=open]:bg-white"
-              style={{ borderColor: "rgba(0,0,0,0.08)" }}
+              className="border-b border-jade-soft border-t-0"
             >
-              <AccordionTrigger
-                className="hover:no-underline py-5 text-left font-semibold text-[16px] md:text-[17px] focus-visible:ring-2 focus-visible:ring-offset-2"
-                style={{ color: "#1a1a1a" }}
-              >
-                {item.q}
+              <AccordionTrigger className="hover:no-underline py-5 text-left text-[0.95rem] md:text-[1rem] font-medium text-foreground gap-6">
+                <span className="flex gap-5 items-start">
+                  <span className="font-serif text-[0.75rem] text-jade-dark mt-1 w-6 flex-shrink-0">
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <span>{item.q}</span>
+                </span>
               </AccordionTrigger>
-              <AccordionContent
-                className="pb-5 text-[15px] md:text-[16px] leading-relaxed"
-                style={{ color: "#4a4a4a" }}
-              >
+              <AccordionContent className="pb-6 pl-11 text-[0.875rem] leading-relaxed text-fg-3">
                 {item.a}
               </AccordionContent>
             </AccordionItem>
