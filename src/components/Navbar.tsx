@@ -22,8 +22,8 @@ export const Navbar = () => {
 
   const services = [
     { label: t("nav_cargo"), to: "/vuelos-de-carga" },
-    { label: t("nav_svc_ambulance"), to: "/servicios/ambulancias-aereas" },
-    { label: t("nav_svc_groups"), to: "/servicios/charters-grupos" },
+    { label: t("nav_svc_ambulance"), to: "/ambulancia-aerea" },
+    { label: t("nav_svc_groups"), to: "/charters-grupales" },
   ];
 
   useEffect(() => {

@@ -32,6 +32,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/empty-legs" element={<EmptyLegs />} />
             <Route path="/vuelos-de-carga" element={<Cargo />} />
+            <Route path="/ambulancia-aerea" element={<AmbulanciasAereas />} />
+            <Route path="/charters-grupales" element={<ChartersGrupos />} />
+            {/* Legacy redirects */}
             <Route path="/servicios/ambulancias-aereas" element={<AmbulanciasAereas />} />
             <Route path="/servicios/charters-grupos" element={<ChartersGrupos />} />
             <Route path="/rutas/:slug" element={<RoutePage />} />
