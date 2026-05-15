@@ -114,29 +114,8 @@ const Index = () => {
         className="relative min-h-screen flex flex-col justify-end overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingBottom: "6rem", minHeight: 680 }}
       >
-        {/* Fondo oscuro con gradient sutil — visible mientras carga el video */}
-        <div
-          className="absolute inset-0 bg-background"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 80% 60% at 30% 30%, hsl(var(--jade-dark) / 0.18) 0%, transparent 70%)",
-          }}
-          aria-hidden="true"
-        />
-        {/* Video lazy-loaded después del FCP para no bloquear LCP en móvil */}
-        {showVideo && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover animate-fade-in"
-            aria-hidden="true"
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-        )}
+        {/* El fondo de avión con scroll está montado a nivel de página (ScrollVideoBackground).
+            En el hero dejamos transparente para que el video se vea protagónico. */}
         {/* Overlay para legibilidad — refuerza contraste del título y CTAs */}
         <div
           className="absolute inset-0"
