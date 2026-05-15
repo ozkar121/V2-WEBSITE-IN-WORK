@@ -3,10 +3,10 @@ export type Lang = "es" | "en";
 
 export const TRANSLATIONS = {
   // Navbar
-  nav_services: { es: "Servicios", en: "Services" },
+  nav_services: { es: "Servicios Especializados", en: "Specialized Services" },
   nav_fleet: { es: "Flota", en: "Fleet" },
   nav_empty_legs: { es: "Empty Legs", en: "Empty Legs" },
-  nav_cargo: { es: "Carga Aérea Especializada", en: "Specialized Air Cargo" },
+  nav_cargo: { es: "Carga Aérea", en: "Air Cargo" },
   nav_svc_ambulance: { es: "Ambulancias Aéreas", en: "Air Ambulance" },
   nav_svc_groups: { es: "Charters para Grupos Grandes", en: "Large Group Charters" },
   nav_about: { es: "Nosotros", en: "About" },
