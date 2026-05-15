@@ -160,10 +160,10 @@ const ChartersGrupos = () => {
     },
     {
       n: "03",
-      t: isEs ? "Aborden en Toluca" : "Board at Toluca",
+      t: isEs ? "Terminal Privada, Tu Ciudad" : "Private Terminal, Your City",
       d: isEs
-        ? "Tu grupo llega a la terminal privada de MMTO. Sin puertas comerciales. Ruedas arriba en tu horario."
-        : "Your group arrives at MMTO's private terminal. No commercial gates. Wheels up on your schedule.",
+        ? "Tu grupo aborda desde una terminal privada o FBO — en Toluca o en el aeropuerto más cercano a ti. Sin puertas comerciales, sin filas. Ruedas arriba en tu horario, desde tu ciudad."
+        : "Your group boards from a private terminal or FBO — at Toluca or at the airport closest to you. No commercial gates, no queues. Wheels up on your schedule, from your city.",
     },
   ];
 
