@@ -37,6 +37,16 @@ export const Navbar = () => {
     setRoutesOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [open]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between transition-all duration-300 ${
@@ -162,7 +172,7 @@ export const Navbar = () => {
           onClick={() => setOpen(false)}
         >
           <div
-            className="flex items-center px-6 py-6 border-b border-jade-soft"
+            className="flex items-center justify-between px-6 py-6 border-b border-jade-soft"
             onClick={(e) => e.stopPropagation()}
           >
             <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
@@ -171,6 +181,13 @@ export const Navbar = () => {
                 Numen Aviation
               </span>
             </Link>
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Cerrar menú"
+              className="text-fg-3 hover:text-foreground transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
           </div>
           <div
             className="flex flex-col items-center justify-center gap-6 flex-1 py-10"
