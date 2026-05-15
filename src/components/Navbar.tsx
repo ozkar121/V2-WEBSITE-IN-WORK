@@ -14,12 +14,16 @@ export const Navbar = () => {
   const { t } = useLang();
 
   const navLinks = [
-    { label: t("nav_services"), href: "/#services" },
     { label: t("nav_fleet"), href: "/#fleet" },
     { label: t("nav_empty_legs"), href: "/empty-legs" },
-    { label: t("nav_cargo"), href: "/vuelos-de-carga" },
     { label: t("nav_about"), href: "/#why" },
     { label: t("nav_contact"), href: "/#contact" },
+  ];
+
+  const services = [
+    { label: t("nav_cargo"), to: "/vuelos-de-carga" },
+    { label: t("nav_svc_ambulance"), to: "/servicios/ambulancias-aereas" },
+    { label: t("nav_svc_groups"), to: "/servicios/charters-grupos" },
   ];
 
   useEffect(() => {
