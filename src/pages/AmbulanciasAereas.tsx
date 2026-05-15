@@ -244,8 +244,8 @@ const AmbulanciasAereas = () => {
         >
           {isEs ? (
             <>
-              Cuatro horas<br />
-              <em className="italic text-jade-light">a ruedas arriba.</em>
+              Activación en 4 horas.<br />
+              <em className="italic text-jade-light">Sin excepciones.</em>
             </>
           ) : (
             <>
