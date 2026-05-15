@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/useAuth";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { ProtectedAdminRoute } from "@/components/ProtectedAdminRoute";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 import EmptyLegs from "./pages/EmptyLegs.tsx";
 import Cargo from "./pages/Cargo.tsx";
