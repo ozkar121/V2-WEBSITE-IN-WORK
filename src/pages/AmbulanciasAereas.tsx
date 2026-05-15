@@ -18,11 +18,11 @@ const AmbulanciasAereas = () => {
 
   useSEO({
     title: isEs
-      ? "Ambulancia Aérea México — Learjet 45 · Respuesta en 4 Horas | Numen Aviation"
-      : "Air Ambulance Mexico — Learjet 45 · 4-Hour Response | Numen Aviation",
+      ? "Ambulancia Aérea México — Learjet 35 · Respuesta en 4 Horas | Numen Aviation"
+      : "Air Ambulance Mexico — Learjet 35 · 4-Hour Response | Numen Aviation",
     description: isEs
-      ? "Transporte aéreo médico desde el Aeropuerto de Toluca. Learjet 45 equipado para traslado de pacientes críticos. Ruedas arriba en 4 horas desde el primer contacto. 24/7."
-      : "Medical air transport from Toluca Airport. Learjet 45 fully equipped for critical patient transfer. Wheels up in 4 hours from first contact. 24/7. Operated by Numen Aviation.",
+      ? "Transporte aéreo médico desde el Aeropuerto de Toluca. Learjet 35 equipado para traslado de pacientes críticos. Ruedas arriba en 4 horas desde el primer contacto. 24/7."
+      : "Medical air transport from Toluca Airport. Learjet 35 fully equipped for critical patient transfer. Wheels up in 4 hours from first contact. 24/7. Operated by Numen Aviation.",
     path: "/ambulancia-aerea",
     jsonLd: [
       {
@@ -30,7 +30,7 @@ const AmbulanciasAereas = () => {
         "@type": "MedicalOrganization",
         name: "Numen Aviation — Air Ambulance",
         description:
-          "Medical air transport from Toluca Airport (MMTO). Learjet 45, 24/7, 4-hour activation.",
+          "Medical air transport from Toluca Airport (MMTO). Learjet 35, 24/7, 4-hour activation.",
         url: `${SITE_URL}/ambulancia-aerea`,
         telephone: "+524442348942",
         address: {
@@ -42,7 +42,7 @@ const AmbulanciasAereas = () => {
         availableService: {
           "@type": "MedicalProcedure",
           name: "Air Ambulance Transport",
-          description: "Critical patient air transport via Learjet 45 from MMTO",
+          description: "Critical patient air transport via Learjet 35 from MMTO",
         },
       },
       {
@@ -64,7 +64,7 @@ const AmbulanciasAereas = () => {
   const STATS = [
     { val: "4 hrs", lbl: isEs ? "Tiempo a Ruedas Arriba" : "Time to Wheels Up" },
     { val: "24 / 7", lbl: isEs ? "Siempre Disponible" : "Always On" },
-    { val: "Learjet 45", lbl: isEs ? "Aeronave Principal" : "Primary Aircraft" },
+    { val: "Learjet 35", lbl: isEs ? "Aeronave Principal" : "Primary Aircraft" },
     { val: "ICU-grade", lbl: isEs ? "Equipo Médico" : "Medical Equipment" },
   ];
 
@@ -124,8 +124,8 @@ const AmbulanciasAereas = () => {
       time: "T+1 hr",
       t: isEs ? "Activación de Aeronave" : "Aircraft Activation",
       d: isEs
-        ? "El Learjet 45 entra en standby en MMTO. La tripulación médica se moviliza. Equipo cargado y verificado."
-        : "Learjet 45 placed on standby at MMTO. Medical crew mobilizes. Equipment loaded and checked.",
+        ? "El Learjet 35 entra en standby en MMTO. La tripulación médica se moviliza. Equipo cargado y verificado."
+        : "Learjet 35 placed on standby at MMTO. Medical crew mobilizes. Equipment loaded and checked.",
     },
     {
       time: "T+2–3 hrs",
@@ -257,8 +257,8 @@ const AmbulanciasAereas = () => {
         <div className="w-[60px] h-px bg-jade my-8" />
         <p className="text-[0.95rem] font-light leading-[1.7] text-fg-3 max-w-[560px] mb-10">
           {isEs
-            ? "Transporte aéreo médico desde el Aeropuerto Internacional de Toluca. Learjet 45 equipado con sistemas de nivel UCI, disponible las 24 horas. Cuando los minutos importan, nosotros actuamos."
-            : "Medical air transport from Toluca International Airport. Learjet 45 equipped with ICU-grade systems, available around the clock. When minutes matter, we move."}
+            ? "Transporte aéreo médico desde el Aeropuerto Internacional de Toluca. Learjet 35 equipado con sistemas de nivel UCI, disponible las 24 horas. Cuando los minutos importan, nosotros actuamos."
+            : "Medical air transport from Toluca International Airport. Learjet 35 equipped with ICU-grade systems, available around the clock. When minutes matter, we move."}
         </p>
         <div className="flex gap-4 flex-wrap">
           <a
@@ -337,7 +337,7 @@ const AmbulanciasAereas = () => {
             className="font-serif font-light leading-[1.1] text-foreground"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
-            Learjet 45.<br />
+            Learjet 35.<br />
             <em className="italic text-jade-light">
               {isEs ? "Precisión en altitud." : "Precision at altitude."}
             </em>
@@ -348,15 +348,15 @@ const AmbulanciasAereas = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start mt-8 reveal">
           <p className="text-[0.95rem] leading-[1.8] text-fg-3">
             {isEs
-              ? "El Learjet 45 es una de las plataformas de transporte médico más capaces de su clase. Su cabina presurizada mantiene niveles de oxígeno cercanos al nivel del mar en crucero — crítico para pacientes postquirúrgicos y cardíacos. Con un alcance superior a los 3,700 km sin escalas, alcanza todos los destinos principales de México, Estados Unidos y el Caribe desde Toluca sin parada de combustible."
-              : "The Learjet 45 is one of the most capable medical transport platforms in its class. Its pressurized cabin maintains near sea-level oxygen levels at cruise altitude — critical for post-surgical and cardiac patients. With a range exceeding 3,700 km nonstop, it reaches every major destination in Mexico, the United States, and the Caribbean from Toluca without a fuel stop."}
+              ? "El Learjet 35 es una de las plataformas de transporte médico más capaces de su clase. Su cabina presurizada mantiene niveles de oxígeno cercanos al nivel del mar en crucero — crítico para pacientes postquirúrgicos y cardíacos. Con un alcance superior a los 3,700 km sin escalas, alcanza todos los destinos principales de México, Estados Unidos y el Caribe desde Toluca sin parada de combustible."
+              : "The Learjet 35 is one of the most capable medical transport platforms in its class. Its pressurized cabin maintains near sea-level oxygen levels at cruise altitude — critical for post-surgical and cardiac patients. With a range exceeding 3,700 km nonstop, it reaches every major destination in Mexico, the United States, and the Caribbean from Toluca without a fuel stop."}
           </p>
           <div className="border border-jade-soft p-7">
             <h3 className="font-serif text-[1.3rem] font-light text-foreground mb-1">
               {isEs ? "Especificaciones" : "Specifications"}
             </h3>
             <p className="text-[0.7rem] uppercase text-jade mb-5" style={{ letterSpacing: "0.2em" }}>
-              Learjet 45
+              Learjet 35
             </p>
             {SPECS.map((row, i) => (
               <div
@@ -458,8 +458,8 @@ const AmbulanciasAereas = () => {
           <div className="w-10 h-px bg-jade my-6" />
           <p className="text-[0.9rem] text-fg-3 leading-[1.7] max-w-[640px]">
             {isEs
-              ? "Con base en el Aeropuerto Internacional de Toluca, cubrimos todo México, Estados Unidos continental, Centroamérica y el Caribe — sin escala en el Learjet 45 para la mayoría de los destinos."
-              : "Based at Toluca International Airport, we cover all of Mexico, the continental United States, Central America, and the Caribbean — nonstop in the Learjet 45 for most destinations."}
+              ? "Con base en el Aeropuerto Internacional de Toluca, cubrimos todo México, Estados Unidos continental, Centroamérica y el Caribe — sin escala en el Learjet 35 para la mayoría de los destinos."
+              : "Based at Toluca International Airport, we cover all of Mexico, the continental United States, Central America, and the Caribbean — nonstop in the Learjet 35 for most destinations."}
           </p>
         </div>
         <div className="flex flex-wrap gap-2.5 mt-10 reveal">
