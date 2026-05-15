@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Briefcase, Trophy, Star, Users } from "lucide-react";
+import { Briefcase, Trophy, Star, Users, Heart, Music } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
