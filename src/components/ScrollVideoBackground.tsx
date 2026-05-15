@@ -68,19 +68,12 @@ export const ScrollVideoBackground = ({ src }: { src: string }) => {
           style={{ opacity: ready ? 1 : 0, willChange: "opacity" }}
         />
       )}
-      {/* Overlay para legibilidad del contenido — más ligero en móvil para que el video se vea mejor */}
+      {/* Overlay para legibilidad del contenido */}
       <div
-        className="absolute inset-0 hidden md:block"
+        className="absolute inset-0"
         style={{
           background:
             "linear-gradient(180deg, hsl(var(--background) / 0.78) 0%, hsl(var(--background) / 0.86) 50%, hsl(var(--background) / 0.92) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 md:hidden"
-        style={{
-          background:
-            "linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.65) 50%, hsl(var(--background) / 0.78) 100%)",
         }}
       />
     </div>
