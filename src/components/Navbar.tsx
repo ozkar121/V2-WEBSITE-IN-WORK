@@ -53,7 +53,7 @@ export const Navbar = () => {
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden lg:flex items-center gap-8 list-none">
+      <ul className="hidden lg:flex items-center gap-8 list-none ml-auto pl-12 xl:pl-20">
         {navLinks.map((l) => (
           <li key={l.href}>
             <a
@@ -131,60 +131,79 @@ export const Navbar = () => {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="lg:hidden fixed inset-0 top-0 bg-background z-40 flex flex-col items-center justify-center gap-6">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-base uppercase text-fg-2 hover:text-foreground transition-colors no-underline"
+        <div
+          className="lg:hidden fixed inset-0 bg-background z-40 flex flex-col overflow-y-auto"
+          style={{ height: "100dvh" }}
+        >
+          <div className="flex items-center justify-between px-6 py-6 border-b border-jade-soft">
+            <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
+              <img src={logoIcon} alt="Numen Aviation" className="h-3 w-auto" />
+              <span className="text-[0.7rem] uppercase text-foreground font-light" style={{ letterSpacing: "0.25em" }}>
+                Numen Aviation
+              </span>
+            </Link>
+            <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-foreground">
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+          <div className="flex flex-col items-center justify-center gap-6 flex-1 py-10">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-base uppercase text-fg-2 hover:text-foreground transition-colors no-underline"
+                style={{ letterSpacing: "0.15em" }}
+              >
+                {l.label}
+              </a>
+            ))}
+            <button
+              onClick={() => setRoutesOpen((r) => !r)}
+              className="flex items-center gap-1 text-base uppercase text-fg-2"
               style={{ letterSpacing: "0.15em" }}
             >
-              {l.label}
+              {t("nav_routes")} <ChevronDown className="w-4 h-4" />
+            </button>
+            {routesOpen && (
+              <div className="flex flex-col gap-3 items-center">
+                {ROUTES.map((r) => (
+                  <Link
+                    key={r.slug}
+                    to={`/rutas/${r.slug}`}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {r.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+            <a
+              href={`tel:${PHONE_TEL}`}
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 text-base uppercase text-fg-2 hover:text-jade transition-colors no-underline"
+              style={{ letterSpacing: "0.15em" }}
+            >
+              <Phone className="w-4 h-4" />
+              {PHONE_NUMBER}
             </a>
-          ))}
-          <button
-            onClick={() => setRoutesOpen((r) => !r)}
-            className="flex items-center gap-1 text-base uppercase text-fg-2"
-            style={{ letterSpacing: "0.15em" }}
-          >
-            {t("nav_routes")} <ChevronDown className="w-4 h-4" />
-          </button>
-          {routesOpen && (
-            <div className="flex flex-col gap-3 items-center">
-              {ROUTES.map((r) => (
-                <Link
-                  key={r.slug}
-                  to={`/rutas/${r.slug}`}
-                  className="text-sm uppercase text-jade-light"
-                  style={{ letterSpacing: "0.15em" }}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
-          )}
-          <a
-            href={`tel:${PHONE_TEL}`}
-            className="flex items-center gap-2 text-base uppercase text-fg-2 hover:text-jade transition-colors no-underline"
-            style={{ letterSpacing: "0.15em" }}
-          >
-            <Phone className="w-4 h-4" />
-            {PHONE_NUMBER}
-          </a>
-          <a
-            href={waLink("Hola, me gustaría solicitar una cotización de charter.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[0.75rem] uppercase text-background bg-jade px-7 py-3.5 mt-4 shadow-[0_0_24px_-4px_hsl(var(--jade)/0.7)]"
-            style={{ letterSpacing: "0.2em" }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-background opacity-75 animate-ping" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-background" />
-            </span>
-            {t("nav_request_flight")}
-          </a>
+            <a
+              href={waLink("Hola, me gustaría solicitar una cotización de charter.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center gap-2 text-[0.75rem] uppercase text-background bg-jade px-7 py-3.5 mt-4 shadow-[0_0_24px_-4px_hsl(var(--jade)/0.7)]"
+              style={{ letterSpacing: "0.2em" }}
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-background opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-background" />
+              </span>
+              {t("nav_request_flight")}
+            </a>
+          </div>
         </div>
       )}
     </nav>
