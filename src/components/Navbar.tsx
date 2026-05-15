@@ -37,6 +37,16 @@ export const Navbar = () => {
     setRoutesOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [open]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between transition-all duration-300 ${
