@@ -159,19 +159,23 @@ export const Navbar = () => {
         <div
           className="lg:hidden fixed inset-0 bg-background z-40 flex flex-col overflow-y-auto"
           style={{ height: "100dvh" }}
+          onClick={() => setOpen(false)}
         >
-          <div className="flex items-center justify-between px-6 py-6 border-b border-jade-soft">
+          <div
+            className="flex items-center px-6 py-6 border-b border-jade-soft"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
               <img src={logoIcon} alt="Numen Aviation" className="h-3 w-auto" />
               <span className="text-[0.7rem] uppercase text-foreground font-light" style={{ letterSpacing: "0.25em" }}>
                 Numen Aviation
               </span>
             </Link>
-            <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-foreground">
-              <X className="w-6 h-6" />
-            </button>
           </div>
-          <div className="flex flex-col items-center justify-center gap-6 flex-1 py-10">
+          <div
+            className="flex flex-col items-center justify-center gap-6 flex-1 py-10"
+            onClick={(e) => e.stopPropagation()}
+          >
             {navLinks.map((l) => (
               <a
                 key={l.href}
