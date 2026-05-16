@@ -7,6 +7,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_URL, EMAIL, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
+import heroAmbulancia from "@/assets/hero-ambulancia.png";
 
 const WA_AMB =
   "https://wa.me/524442348942?text=Emergencia%20m%C3%A9dica%2C%20necesito%20ambulancia%20a%C3%A9rea";
@@ -210,11 +211,18 @@ const AmbulanciasAereas = () => {
         className="relative min-h-[80vh] flex flex-col justify-end overflow-hidden"
         style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 4rem" }}
       >
+        <img
+          src={heroAmbulancia}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          className="absolute inset-0 -z-20 w-full h-full object-cover"
+        />
         <div
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.09) 0%, transparent 70%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
+              "linear-gradient(90deg, hsl(var(--background)) 0%, hsl(var(--background) / 0.85) 35%, hsl(var(--background) / 0.3) 70%, transparent 100%), linear-gradient(to top, hsl(var(--background)) 0%, transparent 40%)",
           }}
         />
         <div
