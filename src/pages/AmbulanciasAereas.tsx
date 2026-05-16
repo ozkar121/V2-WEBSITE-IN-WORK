@@ -208,7 +208,7 @@ const AmbulanciasAereas = () => {
 
       {/* HERO */}
       <section
-        className="relative min-h-[80vh] flex flex-col justify-end overflow-hidden"
+        className="relative isolate min-h-[80vh] flex flex-col justify-end overflow-hidden"
         style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 4rem" }}
       >
         <img

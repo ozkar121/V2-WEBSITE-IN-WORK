@@ -155,7 +155,7 @@ const Cargo = () => {
 
       {/* HERO */}
       <section
-        className="relative min-h-[88vh] flex flex-col justify-end overflow-hidden"
+        className="relative isolate min-h-[88vh] flex flex-col justify-end overflow-hidden"
         style={{ padding: "9rem clamp(1.5rem, 4vw, 4rem) 6rem" }}
       >
         <img
