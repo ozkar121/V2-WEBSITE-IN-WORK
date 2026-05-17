@@ -129,6 +129,18 @@ export const QuotationForm = () => {
 
       setSuccess(true);
       setForm(initialState);
+
+      try {
+        // @ts-ignore
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          // @ts-ignore
+          window.gtag("event", "form_submission", {
+            event_category: "conversion",
+            event_label: "contact_form",
+            value: 1,
+          });
+        }
+      } catch (_err) {}
     } catch (err) {
       console.error("Quotation submit failed", err);
       toast({
