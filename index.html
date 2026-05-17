@@ -22,6 +22,34 @@
       gtag('config', 'AW-18123739578');
     </script>
 
+    <!-- Conversion tracking (WhatsApp, phone, form) -->
+    <script>
+      (function () {
+        document.addEventListener('click', function (e) {
+          var link = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+          if (!link) return;
+          var href = link.getAttribute('href') || '';
+          if (href.indexOf('wa.me') !== -1) {
+            try {
+              gtag('event', 'whatsapp_click', {
+                event_category: 'conversion',
+                event_label: link.href,
+                value: 1,
+              });
+            } catch (err) {}
+          } else if (href.indexOf('tel:') === 0) {
+            try {
+              gtag('event', 'phone_call_click', {
+                event_category: 'conversion',
+                event_label: link.href,
+                value: 1,
+              });
+            } catch (err) {}
+          }
+        }, true);
+      })();
+    </script>
+
     <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
