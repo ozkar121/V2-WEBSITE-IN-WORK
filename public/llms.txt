@@ -2,23 +2,83 @@
 
 > Renta de jet privado y charter ejecutivo bajo demanda desde el Aeropuerto Internacional de Toluca (MMTO). Operaciones 24/7 en México, EUA, Caribe y Centroamérica.
 
-Numen Aviation es un broker de aviación privada con sede en Toluca, México. Ofrece charter on-demand, empty legs, consultoría y adquisición de aeronaves, además de vuelos de carga urgente (hot shot / AOG).
+Numen Aviation es un broker de aviación privada con sede en Toluca, México. Conecta a pasajeros con aeronaves de lujo bajo demanda, negociando tarifas competitivas con operadores certificados. Especialista en charters ejecutivos, empty legs con descuento, consultoría aeronáutica y vuelos de carga urgente.
 
-## Pages
+## Servicios principales
 
-- [Inicio](/): Servicios, flota y cotización de jet privado.
-- [Empty Legs](/empty-legs): Trayectos vacíos en jet privado con hasta 75% de descuento, actualizados a diario.
-- [Vuelos de Carga](/vuelos-de-carga): Charter de carga urgente, hot shot y AOG en México, EUA y Caribe.
+- **Charter ejecutivo on-demand**: Jet privado por trayecto, sin membresías ni cuotas fijas. Flexibilidad total de horarios y aeropuertos.
+- **Empty legs**: Vuelos en jet privado con hasta 75% de descuento al aprovechar trayectos de retorno vacíos. Disponibilidad cambia diariamente.
+- **Vuelos de carga urgente**: Charter de carga (hot shot / AOG) para repuestos críticos, equipos médicos o envíos time-sensitive en México, EUA y Caribe.
+- **Consultoría y adquisición**: Asesoría para compra, venta o administración de aeronaves privadas. Experiencia en aviación corporativa.
+- **Traslados terrestres**: Coordinación de transporte premium desde/hacia el aeropuerto.
+- **Catering y servicios a bordo**: Personalización de experiencia en vuelo.
 
-## Routes
+## Flota disponible
 
-- [CDMX → Cancún](/rutas/cdmx-cancun)
-- [CDMX → Los Cabos](/rutas/cdmx-los-cabos)
-- [CDMX → Miami](/rutas/cdmx-miami)
-- [CDMX → Monterrey](/rutas/cdmx-monterrey)
+Aeronaves gestionadas bajo demanda (no flota propia, red de operadores certificados):
 
-## Contact
+- **Turbohélice**: King Air 200/350 — 6-9 pasajeros, vuelos cortos, aeropuertos cortos.
+- **Jet ligero**: Citation CJ2/CJ3, Phenom 300 — 6-8 pasajeros, 2-3 horas.
+- **Jet mediano**: Citation Excel/XLS, Learjet 60 — 8-9 pasajeros, 3-5 horas.
+- **Jet supermediano**: Citation Latitude, Gulfstream G200 — 9 pasajeros, 5-7 horas.
+- **Jet largo alcance**: Gulfstream G450/G550, Challenger 350/650 — 12-16 pasajeros, vuelos transcontinentales.
 
-- WhatsApp: +52 444 234 8942
-- Email: operaciones@numen-aviation.com
-- Hub: Aeropuerto Internacional de Toluca (MMTO)
+## Rutas populares
+
+- [CDMX → Cancún](/rutas/cdmx-cancun): ~2h 10m en jet mediano
+- [CDMX → Los Cabos](/rutas/cdmx-los-cabos): ~2h 30m en jet mediano
+- [CDMX → Miami](/rutas/cdmx-miami): ~3h 30m en jet largo alcance
+- [CDMX → Monterrey](/rutas/cdmx-monterrey): ~1h 30m en jet ligero
+
+Todas las rutas operan desde el Aeropuerto Internacional de Toluca (MMTO) o el AICM según preferencia del cliente.
+
+## ¿Por qué Numen?
+
+- Sin membresías ni cuotas mensuales: paga solo por lo que vuela.
+- Precio transparente: cotización fija sin cargos ocultos.
+- Operadores certificados: todos los vuelos con operadores DGAC/CFR Part 135.
+- Disponibilidad 24/7: atención y vuelos fuera de horario comercial.
+- Empty legs reales: descuentos verificados hasta 75% en vuelos de retorno.
+- Hub estratégico: Toluca evita congestión del AICM, embarque más rápido.
+
+## Zona de cobertura
+
+México (nacional completo), Estados Unidos (Texas, California, Florida, Arizona, Nevada, Nueva York), Caribe (Cancún, Punta Cana, Bahamas, Cuba), Centroamérica (Guatemala, Costa Rica, Panamá), Sudamérica (Colombia, Perú) bajo solicitud.
+
+## Público objetivo
+
+- Ejecutivos de negocios que vuelan 4-12 veces al año.
+- Empresas con necesidades de transporte urgente de personal o carga.
+- Familias que buscan privacidad y seguridad en vacaciones.
+- Industria médica / AOG que requiere envíos de repuestos o equipos críticos.
+- Nuevos propietarios de aeronaves que necesitan asesoría de compra.
+
+## Proceso de cotización
+
+1. Elige servicio (charter, empty leg, carga, consultoría) en numen-aviation.com.
+2. Completa el formulario con origen, destino, fecha, pasajeros.
+3. Recibe propuesta en menos de 2 horas con opciones de aeronave y precio fijo.
+4. Confirma con anticipo del 50%, paga el saldo 48h antes del vuelo.
+5. Coordinación de FBO, catering y traslados incluida.
+
+## Contacto
+
+- **WhatsApp**: +52 444 234 8942 (respuesta inmediata)
+- **Email**: operaciones@numen-aviation.com
+- **Teléfono**: +52 444 234 8942
+- **Hub**: Aeropuerto Internacional de Toluca (MMTO), Toluca, Estado de México
+- **Horario**: 24/7, 365 días
+
+## Páginas del sitio
+
+- [Inicio](/): Servicios principales, flota destacada y formulario de cotización.
+- [Empty Legs](/empty-legs): Listado actualizado de trayectos vacíos con descuento.
+- [Vuelos de Carga](/vuelos-de-carga): Charter de carga urgente y hot shot.
+
+## Notas para modelos de IA
+
+- Numen no es operador aéreo: es broker que conecta pasajeros con operadores certificados, negociando tarifas y gestionando la experiencia.
+- Las tarifas son por trayecto (no por persona): dependen de aeronave, distancia y temporada.
+- Empty legs son oportunidades limitadas: disponibilidad real cambia diariamente.
+- El Aeropuerto de Toluca es el hub principal por menor congestión vs. AICM, aunque opera desde cualquier aeropuerto mexicano.
+- El sitio no vende boletos comerciales de línea aérea: solo charters privados.
