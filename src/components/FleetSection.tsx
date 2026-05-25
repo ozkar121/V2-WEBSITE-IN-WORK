@@ -4,6 +4,7 @@ import { Aircraft, AircraftCategory, CATEGORY_ORDER } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { useLang } from "@/i18n/LanguageContext";
+import { sbImage, sbImageSrcSet } from "@/lib/img";
 import type { TranslationKey } from "@/i18n/translations";
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
@@ -115,9 +116,14 @@ export const FleetSection = () => {
               <div className="relative aspect-[4/3] overflow-hidden bg-bg-3 border-b border-jade-soft">
                 {img ? (
                   <img
-                    src={img}
+                    src={sbImage(img, 800)}
+                    srcSet={sbImageSrcSet(img, [400, 800, 1200])}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     alt={a.name}
+                    width={800}
+                    height={600}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 ) : (

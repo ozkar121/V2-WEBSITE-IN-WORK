@@ -7,6 +7,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { Aircraft, AircraftCategory, CATEGORY_ORDER, CATEGORY_LABELS } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
+import { sbImage, sbImageSrcSet } from "@/lib/img";
 import { useLang } from "@/i18n/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
@@ -259,9 +260,14 @@ const Fleet = () => {
                         <div className="relative aspect-[4/3] overflow-hidden bg-bg-3">
                           {img ? (
                             <img
-                              src={img}
+                              src={sbImage(img, 800)}
+                              srcSet={sbImageSrcSet(img, [400, 800, 1200])}
+                              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                               alt={a.name}
+                              width={800}
+                              height={600}
                               loading="lazy"
+                              decoding="async"
                               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                           ) : (
