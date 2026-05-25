@@ -65,16 +65,16 @@ Monterrey, la capital industrial de México, cuenta con dos aeropuertos internac
 
 La ruta Toluca–Monterrey es operada frecuentemente por Numen Aviation, con tiempos de vuelo de 1 hora 30 minutos en aeronaves turbohélice como el Piper M500 o jets ligeros como el Learjet 35.
 
-## 5. Ciudad de México (MMMX / MEX) — El Gigante Congestionado
+## 5. Ciudad de México (MMMX / MEX) — Cerrado para Aviación Privada
 
-El Aeropuerto Internacional Benito Juárez es el más grande de México, pero su saturación lo convierte en una opción menos eficiente para aviación privada.
+El Aeropuerto Internacional Benito Juárez es el más grande de México, pero debido a su nivel extremo de saturación, la aviación privada tiene prácticamente prohibido operar desde ahí. Solo en ocasiones muy excepcionales — y con un permiso especial del gobierno federal — se autoriza la operación de aeronaves privadas en MMMX.
 
-**Datos clave:**
-- **Tráfico:** Uno de los aeropuertos más congestionados de América Latina
-- **Slots:** Restricciones de horario que pueden retrasar operaciones privadas
-- **Alternativa clara:** MMTO Toluca, ubicado a solo 60 km, ofrece toda la infraestructura ejecutiva sin las demoras
+**¿Por qué no puedes volar privado desde el AICM?**
+- **Saturación total:** El aeropuerto opera al límite de su capacidad con vuelos comerciales, dejando cero espacio para operaciones privadas
+- **Restricción gubernamental:** Se requiere un permiso especial del gobierno para operar aviación privada, otorgado solo en casos extraordinarios
+- **Sin FBOs dedicados:** A diferencia de Toluca, no existe infraestructura de terminales privadas para aviación ejecutiva
 
-Por esta razón, la gran mayoría de operadores de aviación privada prefieren Toluca como punto de entrada y salida del Valle de México.
+Esto convierte a **Toluca (MMTO)** en la única opción real para aviación privada en el Valle de México. Ubicado a solo 60 km del AICM, Toluca ofrece toda la infraestructura ejecutiva que el aeropuerto de la Ciudad de México simplemente no puede proporcionar.
 
 ## 6. Otros Aeropuertos Relevantes
 

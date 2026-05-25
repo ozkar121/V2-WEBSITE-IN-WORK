@@ -31,7 +31,7 @@ Los descuentos en empty legs oscilan entre el 25% y el 75% respecto a una tarifa
 - **Tipo de aeronave:** Jets más grandes ofrecen descuentos más significativos en términos absolutos
 - **Flexibilidad del operador:** Algunos operadores prefieren ofrecer descuentos agresivos antes que volar vacíos
 
-**Ejemplo real:** Un charter estándar en Hawker 800A de Toluca a Cancún puede costar alrededor de $30,000-$35,000 USD. Un empty leg en la misma ruta y aeronave podría estar disponible por $12,000-$18,000 USD — un ahorro de hasta el 60%.
+**Ejemplo real:** Un charter estándar en Hawker 800A de Toluca a Cancún puede costar alrededor de $15,000-$20,000 USD. Un empty leg en la misma ruta y aeronave podría estar disponible por $6,000-$8,000 USD — un ahorro de hasta el 60%.
 
 ## ¿Por Qué Existen Tantos Empty Legs?
 
