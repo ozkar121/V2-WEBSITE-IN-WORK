@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
-import { Aircraft, AircraftCategory, CATEGORY_ORDER } from "@/data/aircraft";
+import { Aircraft, AircraftCategory, CATEGORY_ORDER, CATEGORY_LABELS } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/i18n/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
@@ -89,12 +89,12 @@ const Fleet = () => {
   useSEO({
     title:
       lang === "en"
-        ? "Private Jet Fleet — Helicopters, Turboprops, Light, Midsize & Heavy Jets | Numen Aviation"
-        : "Flota de Jets Privados — Helicópteros, Turbohélices, Ligeros, Medianos y Pesados | Numen Aviation",
+        ? "Private Jet Fleet | Numen Aviation"
+        : "Flota de Jets Privados | Numen Aviation",
     description:
       lang === "en"
-        ? "Explore the full Numen Aviation fleet: helicopters, turboprops, light, midsize, and heavy jets available for charter from Toluca (MMTO) across Mexico, the U.S., the Caribbean, and Central America."
-        : "Explora la flota completa de Numen Aviation: helicópteros, turbohélices, jets ligeros, medianos y pesados disponibles para charter desde Toluca (MMTO) en México, EUA, Caribe y Centroamérica.",
+        ? "Explore the Numen Aviation fleet: helicopters, turboprops, light, midsize, and heavy jets for charter from Toluca (MMTO) across Mexico, the U.S., the Caribbean, and Central America."
+        : "Explora la flota Numen Aviation: helicópteros, turbohélices, jets ligeros, medianos y pesados para charter desde Toluca (MMTO) en México, EUA, Caribe y Centroamérica.",
     path: "/flota",
     type: "website",
     jsonLd: {
@@ -114,7 +114,14 @@ const Fleet = () => {
         itemListElement: aircraft.map((a, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          name: a.name,
+          url: `${SITE_URL}/flota#${a.id}`,
+          item: {
+            "@type": "Vehicle",
+            "@id": `${SITE_URL}/flota#${a.id}`,
+            name: a.name,
+            vehicleConfiguration: CATEGORY_LABELS[a.category],
+            url: `${SITE_URL}/flota#${a.id}`,
+          },
         })),
       },
     },
