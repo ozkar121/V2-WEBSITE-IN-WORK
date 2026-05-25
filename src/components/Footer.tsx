@@ -12,9 +12,9 @@ const POPULAR_ROUTES = [
 
 const EXPLORE_LINKS = [
   { to: "/flota", label: "Flota" },
-  { to: "/ambulancias-aereas", label: "Ambulancias Aéreas" },
-  { to: "/cargo", label: "Cargo" },
-  { to: "/charters-grupos", label: "Charters de Grupos" },
+  { to: "/ambulancia-aerea", label: "Ambulancias Aéreas" },
+  { to: "/vuelos-de-carga", label: "Cargo" },
+  { to: "/charters-grupales", label: "Charters de Grupos" },
   { to: "/empty-legs", label: "Empty Legs" },
   { to: "/briefing", label: "Briefing" },
   { to: "/briefing/tramites-aduanales-jet-privado-mexico", label: "Trámites Aduanales en México" },
