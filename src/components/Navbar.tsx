@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
-import { ROUTES, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
+import { waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import logoIcon from "@/assets/numen-symbol.svg";
@@ -9,7 +9,7 @@ import logoIcon from "@/assets/numen-symbol.svg";
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [routesOpen, setRoutesOpen] = useState(false);
+  
   const location = useLocation();
   const { t } = useLang();
 
@@ -35,7 +35,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     setOpen(false);
-    setRoutesOpen(false);
+    
   }, [location.pathname]);
 
   useEffect(() => {
@@ -96,27 +96,6 @@ export const Navbar = () => {
                   style={{ letterSpacing: "0.15em" }}
                 >
                   {s.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </li>
-        <li className="relative group">
-          <button
-            className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
-            style={{ letterSpacing: "0.15em" }}
-          >
-            {t("nav_routes")} <ChevronDown className="w-3 h-3" />
-          </button>
-          <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[230px] py-2 list-none">
-            {ROUTES.map((r) => (
-              <li key={r.slug}>
-                <Link
-                  to={`/rutas/${r.slug}`}
-                  className="block px-5 py-3 text-[0.72rem] uppercase text-fg-3 hover:text-jade-light hover:bg-bg-3 transition-colors no-underline border-b border-jade-soft last:border-b-0 whitespace-nowrap"
-                  style={{ letterSpacing: "0.15em" }}
-                >
-                  {r.label}
                 </Link>
               </li>
             ))}
@@ -223,28 +202,6 @@ export const Navbar = () => {
                 ))}
               </div>
             </details>
-            <button
-              onClick={() => setRoutesOpen((r) => !r)}
-              className="flex items-center gap-1 text-base uppercase text-fg-2"
-              style={{ letterSpacing: "0.15em" }}
-            >
-              {t("nav_routes")} <ChevronDown className="w-4 h-4" />
-            </button>
-            {routesOpen && (
-              <div className="flex flex-col gap-3 items-center">
-                {ROUTES.map((r) => (
-                  <Link
-                    key={r.slug}
-                    to={`/rutas/${r.slug}`}
-                    onClick={() => setOpen(false)}
-                    className="text-sm uppercase text-jade-light"
-                    style={{ letterSpacing: "0.15em" }}
-                  >
-                    {r.label}
-                  </Link>
-                ))}
-              </div>
-            )}
             <a
               href={`tel:${PHONE_TEL}`}
               onClick={() => setOpen(false)}
