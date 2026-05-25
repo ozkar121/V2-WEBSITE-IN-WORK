@@ -14,6 +14,8 @@ import midsizeES from "@/content/briefing/05-midsize-jets-ES.md?raw";
 import midsizeEN from "@/content/briefing/05-midsize-jets-EN.md?raw";
 import emptyLegsES from "@/content/briefing/06-empty-legs-ES.md?raw";
 import emptyLegsEN from "@/content/briefing/06-empty-legs-EN.md?raw";
+import helicopterES from "@/content/briefing/07-helicopter-cdmx-ES.md?raw";
+import helicopterEN from "@/content/briefing/07-helicopter-cdmx-EN.md?raw";
 
 import type { Lang } from "@/i18n/translations";
 
@@ -49,8 +51,8 @@ const make = (raw: { es: string; en: string }) => ({
 export const BRIEFING_POSTS: BriefingPost[] = [
   {
     slug: "tramites-aduanales-jet-privado-mexico",
-    order: 1,
-    date: "2026-05-25",
+    order: 7,
+    date: "2026-02-08",
     category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
     title: {
       es: "Cómo Funcionan los Trámites Aduanales para Jets Privados en México",
@@ -73,8 +75,8 @@ export const BRIEFING_POSTS: BriefingPost[] = [
   },
   {
     slug: "mejores-aeropuertos-aviacion-privada-mexico",
-    order: 2,
-    date: "2026-05-25",
+    order: 6,
+    date: "2026-02-25",
     category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
     title: {
       es: "Los Mejores Aeropuertos para Aviación Privada en México",
@@ -97,8 +99,8 @@ export const BRIEFING_POSTS: BriefingPost[] = [
   },
   {
     slug: "toluca-vs-santa-lucia-vuelos-privados",
-    order: 3,
-    date: "2026-05-25",
+    order: 5,
+    date: "2026-03-14",
     category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
     title: {
       es: "Toluca vs Santa Lucía (AIFA) para Vuelos Privados: Comparativa 2026",
@@ -122,7 +124,7 @@ export const BRIEFING_POSTS: BriefingPost[] = [
   {
     slug: "aeronaves-usa-vuelos-domesticos-mexico",
     order: 4,
-    date: "2026-05-25",
+    date: "2026-04-02",
     category: { es: "Regulación Aeronáutica", en: "Aviation Regulation" },
     title: {
       es: "¿Pueden las Aeronaves de EUA Operar Vuelos Domésticos en México?",
@@ -145,8 +147,8 @@ export const BRIEFING_POSTS: BriefingPost[] = [
   },
   {
     slug: "mejores-jets-medianos-mexico-usa",
-    order: 5,
-    date: "2026-05-25",
+    order: 3,
+    date: "2026-04-18",
     category: { es: "Flota y Aeronaves", en: "Fleet & Aircraft" },
     title: {
       es: "Los Mejores Jets para Vuelos México-EUA: Medianos y Heavy",
@@ -169,8 +171,8 @@ export const BRIEFING_POSTS: BriefingPost[] = [
   },
   {
     slug: "como-funcionan-empty-legs",
-    order: 6,
-    date: "2026-05-25",
+    order: 2,
+    date: "2026-05-05",
     category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
     title: {
       es: "Cómo Funcionan los Empty Legs en Aviación Privada",
@@ -190,6 +192,30 @@ export const BRIEFING_POSTS: BriefingPost[] = [
     },
     readMinutes: 7,
     body: make({ es: emptyLegsES, en: emptyLegsEN }),
+  },
+  {
+    slug: "renta-helicoptero-ciudad-de-mexico",
+    order: 1,
+    date: "2026-05-22",
+    category: { es: "Servicios de Aviación Privada", en: "Private Aviation Services" },
+    title: {
+      es: "Renta de Helicópteros en la Ciudad de México: Traslados Ejecutivos y Vuelos Turísticos",
+      en: "Helicopter Rental in Mexico City: Executive Transfers and Scenic Flights",
+    },
+    description: {
+      es: "Renta de helicópteros ejecutivos y turísticos en CDMX. Traslados Toluca–CDMX, vuelos panorámicos y más. Agusta 109E, Bell 505 y Bell 206 desde Numen Aviation.",
+      en: "Executive and scenic helicopter rental in Mexico City. Toluca–CDMX transfers, panoramic flights, and more. Agusta 109E, Bell 505, and Bell 206 from Numen Aviation.",
+    },
+    excerpt: {
+      es: "Traslados ejecutivos y vuelos panorámicos en helicóptero sobre la Ciudad de México.",
+      en: "Executive transfers and scenic helicopter flights over Mexico City.",
+    },
+    keywords: {
+      es: "renta helicóptero Ciudad de México, helicóptero ejecutivo CDMX, traslado helicóptero Toluca, vuelo panorámico CDMX, taxi aéreo México",
+      en: "helicopter rental Mexico City, executive helicopter CDMX, helicopter transfer Toluca, panoramic flight Mexico City, air taxi Mexico",
+    },
+    readMinutes: 8,
+    body: make({ es: helicopterES, en: helicopterEN }),
   },
 ];
 
