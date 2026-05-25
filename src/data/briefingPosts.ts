@@ -1,0 +1,148 @@
+// Briefing post metadata + raw markdown content (ES + EN).
+// To add a new post: drop the two .md files in src/content/briefing/ and
+// register the entry below.
+
+import customsES from "@/content/briefing/01-customs-ES.md?raw";
+import customsEN from "@/content/briefing/01-customs-EN.md?raw";
+import airportsES from "@/content/briefing/02-airports-ES.md?raw";
+import airportsEN from "@/content/briefing/02-airports-EN.md?raw";
+import tolucaES from "@/content/briefing/03-toluca-vs-aifa-ES.md?raw";
+import tolucaEN from "@/content/briefing/03-toluca-vs-aifa-EN.md?raw";
+import cabotageES from "@/content/briefing/04-cabotage-ES.md?raw";
+import cabotageEN from "@/content/briefing/04-cabotage-EN.md?raw";
+
+import type { Lang } from "@/i18n/translations";
+
+export interface BriefingPost {
+  /** Canonical slug (language-neutral). URL: /briefing/:slug */
+  slug: string;
+  /** Display order — lower = newer. */
+  order: number;
+  /** ISO date for schema & display. */
+  date: string;
+  category: { es: string; en: string };
+  title: { es: string; en: string };
+  description: { es: string; en: string };
+  excerpt: { es: string; en: string };
+  keywords: { es: string; en: string };
+  readMinutes: number;
+  body: { es: string; en: string };
+}
+
+const stripFrontMeta = (md: string): string => {
+  // Drop the H1 + the meta block (lines until the first --- separator).
+  const lines = md.split("\n");
+  const sepIdx = lines.findIndex((l) => l.trim() === "---");
+  if (sepIdx === -1) return md.trim();
+  return lines.slice(sepIdx + 1).join("\n").trim();
+};
+
+const make = (raw: { es: string; en: string }) => ({
+  es: stripFrontMeta(raw.es),
+  en: stripFrontMeta(raw.en),
+});
+
+export const BRIEFING_POSTS: BriefingPost[] = [
+  {
+    slug: "tramites-aduanales-jet-privado-mexico",
+    order: 1,
+    date: "2026-05-25",
+    category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
+    title: {
+      es: "Cómo Funcionan los Trámites Aduanales para Jets Privados en México",
+      en: "How Private Jet Customs Work in Mexico",
+    },
+    description: {
+      es: "Todo lo que necesitas saber sobre aduanas, migración y despacho FBO al volar en jet privado en México. Guía actualizada desde el Aeropuerto de Toluca (MMTO).",
+      en: "Everything you need to know about customs, immigration, and FBO clearance when flying by private jet to Mexico. Updated guide from Toluca Airport (MMTO).",
+    },
+    excerpt: {
+      es: "Aduanas, migración y despacho FBO paso a paso para vuelos privados que llegan a México.",
+      en: "Customs, immigration and FBO clearance — step by step — for private flights arriving in Mexico.",
+    },
+    keywords: {
+      es: "trámites aduanales jet privado México, FBO Toluca, despacho aduanal MMTO",
+      en: "private jet customs Mexico, FBO Toluca, MMTO customs",
+    },
+    readMinutes: 6,
+    body: make({ es: customsES, en: customsEN }),
+  },
+  {
+    slug: "mejores-aeropuertos-aviacion-privada-mexico",
+    order: 2,
+    date: "2026-05-25",
+    category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
+    title: {
+      es: "Los Mejores Aeropuertos para Aviación Privada en México",
+      en: "Best Airports for Private Aviation in Mexico",
+    },
+    description: {
+      es: "Descubre los mejores aeropuertos para jets privados en México: Toluca (MMTO), Cancún, Los Cabos, Monterrey y más.",
+      en: "Discover the best airports for private jets in Mexico: Toluca (MMTO), Cancún, Los Cabos, Monterrey, and more.",
+    },
+    excerpt: {
+      es: "Comparativa de FBOs, pistas e infraestructura en los aeropuertos clave para aviación ejecutiva.",
+      en: "FBO comparison, runways, and infrastructure across the country's key executive aviation airports.",
+    },
+    keywords: {
+      es: "mejores aeropuertos aviación privada México, FBO México, aeropuerto Toluca MMTO",
+      en: "best airports private aviation Mexico, FBO Mexico, Toluca airport MMTO",
+    },
+    readMinutes: 8,
+    body: make({ es: airportsES, en: airportsEN }),
+  },
+  {
+    slug: "toluca-vs-santa-lucia-vuelos-privados",
+    order: 3,
+    date: "2026-05-25",
+    category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
+    title: {
+      es: "Toluca vs Santa Lucía (AIFA) para Vuelos Privados: Comparativa 2026",
+      en: "Toluca vs Santa Lucía (AIFA) for Private Flights: 2026 Comparison",
+    },
+    description: {
+      es: "Comparativa detallada entre Toluca (MMTO) y Santa Lucía (AIFA) para aviación privada. FBOs, pistas, aduanas y servicios ejecutivos.",
+      en: "Detailed comparison between Toluca (MMTO) and Santa Lucía (AIFA) for private aviation. FBOs, runways, customs, and executive services.",
+    },
+    excerpt: {
+      es: "¿MMTO o AIFA? Pistas, FBOs, aduanas y tiempos a CDMX, lado a lado.",
+      en: "MMTO or AIFA? Runways, FBOs, customs and ground time to Mexico City — side by side.",
+    },
+    keywords: {
+      es: "Toluca vs Santa Lucía, MMTO vs AIFA, aviación privada Toluca",
+      en: "Toluca vs Santa Lucía, MMTO vs AIFA, private aviation Toluca",
+    },
+    readMinutes: 7,
+    body: make({ es: tolucaES, en: tolucaEN }),
+  },
+  {
+    slug: "aeronaves-usa-vuelos-domesticos-mexico",
+    order: 4,
+    date: "2026-05-25",
+    category: { es: "Regulación Aeronáutica", en: "Aviation Regulation" },
+    title: {
+      es: "¿Pueden las Aeronaves de EUA Operar Vuelos Domésticos en México?",
+      en: "Can US Aircraft Operate Domestic Flights in Mexico?",
+    },
+    description: {
+      es: "Guía completa sobre las reglas de cabotaje en México para aeronaves con matrícula N. Qué está permitido, qué no, y cómo operar legalmente.",
+      en: "Complete guide to cabotage rules in Mexico for N-registered aircraft. What's allowed, what's not, and how to operate legally.",
+    },
+    excerpt: {
+      es: "Cabotaje aéreo en México: lo que la AFAC permite (y lo que no) para matrículas N.",
+      en: "Air cabotage in Mexico: what AFAC allows — and what it doesn't — for N-registered aircraft.",
+    },
+    keywords: {
+      es: "cabotaje aviación México, aeronaves matrícula N México, AFAC",
+      en: "cabotage aviation Mexico, N-registered aircraft Mexico, AFAC",
+    },
+    readMinutes: 6,
+    body: make({ es: cabotageES, en: cabotageEN }),
+  },
+];
+
+export const getBriefingPost = (slug: string): BriefingPost | undefined =>
+  BRIEFING_POSTS.find((p) => p.slug === slug);
+
+export const localized = <T,>(field: { es: T; en: T }, lang: Lang): T =>
+  field[lang];
