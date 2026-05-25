@@ -200,7 +200,54 @@ const RoutePage = () => {
         </div>
       </section>
 
+      {/* RELATED — internal links to other routes & related briefing */}
+      <section className="py-20" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="eyebrow mb-4">Explora</p>
+          <h2 className="section-title">Otras <em>rutas</em></h2>
+          <div className="gold-rule" />
+        </div>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-jade-soft mt-12 border border-jade-soft reveal">
+          {Object.values(ROUTE_DATA)
+            .filter((r) => r.slug !== slug)
+            .map((r) => (
+              <Link
+                key={r.slug}
+                to={`/rutas/${r.slug}`}
+                className="bg-bg-2 hover:bg-bg-3 transition-colors p-6 no-underline group"
+              >
+                <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>{r.tagline}</div>
+                <div className="font-serif text-xl font-light text-foreground group-hover:text-jade-light transition-colors">
+                  {r.heroFromCity} → {r.heroToCity}
+                </div>
+                <div className="text-[0.78rem] text-fg-3 mt-2">{r.stats.time} · {r.stats.price}</div>
+              </Link>
+            ))}
+          <Link
+            to="/briefing/tramites-aduanales-jet-privado-mexico"
+            className="bg-bg-2 hover:bg-bg-3 transition-colors p-6 no-underline group"
+          >
+            <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>Briefing</div>
+            <div className="font-serif text-xl font-light text-foreground group-hover:text-jade-light transition-colors">
+              Trámites Aduanales en México
+            </div>
+            <div className="text-[0.78rem] text-fg-3 mt-2">Guía para vuelos internacionales en jet privado</div>
+          </Link>
+          <Link
+            to="/flota"
+            className="bg-bg-2 hover:bg-bg-3 transition-colors p-6 no-underline group"
+          >
+            <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>Flota</div>
+            <div className="font-serif text-xl font-light text-foreground group-hover:text-jade-light transition-colors">
+              Ver flota completa
+            </div>
+            <div className="text-[0.78rem] text-fg-3 mt-2">Turbohélices, jets ligeros, medianos y pesados</div>
+          </Link>
+        </div>
+      </section>
+
       {/* CTA */}
+
       <section className="bg-bg-3 border-y border-jade-soft py-20 text-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <h2 className="font-serif font-light text-foreground mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
