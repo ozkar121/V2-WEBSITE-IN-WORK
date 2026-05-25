@@ -4,6 +4,7 @@ import { Aircraft, AircraftCategory, CATEGORY_ORDER } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { useLang } from "@/i18n/LanguageContext";
+import { sbImage, sbImageSrcSet } from "@/lib/img";
 import type { TranslationKey } from "@/i18n/translations";
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
