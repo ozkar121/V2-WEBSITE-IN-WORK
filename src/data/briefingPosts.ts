@@ -149,22 +149,22 @@ export const BRIEFING_POSTS: BriefingPost[] = [
     date: "2026-05-25",
     category: { es: "Flota y Aeronaves", en: "Fleet & Aircraft" },
     title: {
-      es: "Los Mejores Jets Medianos para Vuelos México-EUA",
-      en: "Best Midsize Jets for Mexico-USA Flights",
+      es: "Los Mejores Jets para Vuelos México-EUA: Medianos y Heavy",
+      en: "Best Jets for Mexico-USA Flights: Midsize and Heavy",
     },
     description: {
-      es: "Comparativa de los mejores jets medianos y super-medianos para vuelos entre México y EUA. Hawker, Challenger, Gulfstream y más.",
-      en: "Comparison of the best midsize and super-midsize jets for flights between Mexico and the USA. Hawker, Challenger, Gulfstream, and more.",
+      es: "Comparativa de los mejores jets medianos y heavy para vuelos entre México y EUA. Hawker, Gulfstream, Challenger, Legacy y más.",
+      en: "Comparison of the best midsize and heavy jets for flights between Mexico and the USA. Hawker, Gulfstream, Challenger, Legacy, and more.",
     },
     excerpt: {
-      es: "Hawker, Challenger, Citation y Gulfstream: qué jet elegir según ruta y distancia.",
-      en: "Hawker, Challenger, Citation and Gulfstream — which jet fits each cross-border route.",
+      es: "Hawker, Gulfstream, Challenger y Legacy: qué jet elegir según ruta y distancia.",
+      en: "Hawker, Gulfstream, Challenger and Legacy — which jet fits each cross-border route.",
     },
     keywords: {
-      es: "mejores jets medianos México EUA, Hawker 800 México, Challenger 300",
-      en: "best midsize jets Mexico USA, Hawker 800 Mexico, Challenger 300",
+      es: "mejores jets México EUA, Hawker 800 México, Gulfstream G450, Challenger 601, heavy jet charter México",
+      en: "best jets Mexico USA, Hawker 800 Mexico, Gulfstream G450, Challenger 601, heavy jet charter Mexico",
     },
-    readMinutes: 9,
+    readMinutes: 10,
     body: make({ es: midsizeES, en: midsizeEN }),
   },
   {
