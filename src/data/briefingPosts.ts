@@ -143,6 +143,54 @@ export const BRIEFING_POSTS: BriefingPost[] = [
     readMinutes: 6,
     body: make({ es: cabotageES, en: cabotageEN }),
   },
+  {
+    slug: "mejores-jets-medianos-mexico-usa",
+    order: 5,
+    date: "2026-05-25",
+    category: { es: "Flota y Aeronaves", en: "Fleet & Aircraft" },
+    title: {
+      es: "Los Mejores Jets Medianos para Vuelos México-EUA",
+      en: "Best Midsize Jets for Mexico-USA Flights",
+    },
+    description: {
+      es: "Comparativa de los mejores jets medianos y super-medianos para vuelos entre México y EUA. Hawker, Challenger, Gulfstream y más.",
+      en: "Comparison of the best midsize and super-midsize jets for flights between Mexico and the USA. Hawker, Challenger, Gulfstream, and more.",
+    },
+    excerpt: {
+      es: "Hawker, Challenger, Citation y Gulfstream: qué jet elegir según ruta y distancia.",
+      en: "Hawker, Challenger, Citation and Gulfstream — which jet fits each cross-border route.",
+    },
+    keywords: {
+      es: "mejores jets medianos México EUA, Hawker 800 México, Challenger 300",
+      en: "best midsize jets Mexico USA, Hawker 800 Mexico, Challenger 300",
+    },
+    readMinutes: 9,
+    body: make({ es: midsizeES, en: midsizeEN }),
+  },
+  {
+    slug: "como-funcionan-empty-legs",
+    order: 6,
+    date: "2026-05-25",
+    category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
+    title: {
+      es: "Cómo Funcionan los Empty Legs en Aviación Privada",
+      en: "How Empty Legs Work in Private Aviation",
+    },
+    description: {
+      es: "Guía completa sobre empty legs en aviación privada. Qué son, cómo encontrarlos, cuánto ahorras y disponibles desde Toluca (MMTO).",
+      en: "Complete guide to empty leg flights. What they are, how to find them, how much you save, and current empty legs from Toluca (MMTO).",
+    },
+    excerpt: {
+      es: "Volar en jet privado con hasta 75% de descuento: cómo funcionan los empty legs.",
+      en: "Fly private at up to 75% off — how empty legs really work.",
+    },
+    keywords: {
+      es: "empty legs jet privado, trayectos vacíos, empty legs México",
+      en: "empty legs private jet, empty leg flights, empty legs Mexico",
+    },
+    readMinutes: 7,
+    body: make({ es: emptyLegsES, en: emptyLegsEN }),
+  },
 ];
 
 export const getBriefingPost = (slug: string): BriefingPost | undefined =>
