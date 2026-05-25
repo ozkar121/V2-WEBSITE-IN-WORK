@@ -102,13 +102,21 @@ const Fleet = () => {
       "@type": "CollectionPage",
       name: lang === "en" ? "Numen Aviation Fleet" : "Flota Numen Aviation",
       url: `${SITE_URL}/flota`,
-      publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
-      hasPart: aircraft.map((a) => ({
-        "@type": "Vehicle",
-        name: a.name,
-        vehicleConfiguration: a.category,
-        seatingCapacity: a.passengers,
-      })),
+      publisher: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/og-image.jpg`,
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: aircraft.length,
+        itemListElement: aircraft.map((a, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: a.name,
+        })),
+      },
     },
   });
 
