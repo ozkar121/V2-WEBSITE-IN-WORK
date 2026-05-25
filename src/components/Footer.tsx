@@ -10,12 +10,15 @@ const POPULAR_ROUTES = [
   { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
 ];
 
-const EXPLORE_LINKS = [
+const SERVICES_LINKS = [
   { to: "/flota", label: "Flota" },
-  { to: "/ambulancia-aerea", label: "Ambulancias Aéreas" },
-  { to: "/vuelos-de-carga", label: "Cargo" },
-  { to: "/charters-grupales", label: "Charters de Grupos" },
   { to: "/empty-legs", label: "Empty Legs" },
+  { to: "/charters-grupales", label: "Charters de Grupos" },
+  { to: "/vuelos-de-carga", label: "Cargo" },
+  { to: "/ambulancia-aerea", label: "Ambulancias Aéreas" },
+];
+
+const RESOURCES_LINKS = [
   { to: "/briefing", label: "Briefing" },
   { to: "/briefing/tramites-aduanales-jet-privado-mexico", label: "Trámites Aduanales en México" },
 ];
@@ -83,11 +86,31 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Sitemap links — popular routes & explore */}
+      {/* Sitemap links */}
       <nav
         aria-label="Sitemap"
-        className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 border-t border-jade-soft"
+        className="grid grid-cols-2 md:grid-cols-3 gap-8 py-8 border-t border-jade-soft"
       >
+        <div>
+          <h4
+            className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
+            style={{ letterSpacing: "0.25em" }}
+          >
+            Servicios
+          </h4>
+          <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
+            {SERVICES_LINKS.map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div>
           <h4
             className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
@@ -113,10 +136,10 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Explorar
+            Recursos
           </h4>
           <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
-            {EXPLORE_LINKS.map((l) => (
+            {RESOURCES_LINKS.map((l) => (
               <li key={l.to}>
                 <Link
                   to={l.to}
