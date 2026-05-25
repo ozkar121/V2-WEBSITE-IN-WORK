@@ -51,6 +51,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://numen-aviation.com/briefing/mejores-jets-medianos-mexico-usa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://numen-aviation.com/briefing/como-funcionan-empty-legs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://numen-aviation.com/rutas/cdmx-cancun</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
