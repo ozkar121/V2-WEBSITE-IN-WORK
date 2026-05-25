@@ -10,6 +10,10 @@ import tolucaES from "@/content/briefing/03-toluca-vs-aifa-ES.md?raw";
 import tolucaEN from "@/content/briefing/03-toluca-vs-aifa-EN.md?raw";
 import cabotageES from "@/content/briefing/04-cabotage-ES.md?raw";
 import cabotageEN from "@/content/briefing/04-cabotage-EN.md?raw";
+import midsizeES from "@/content/briefing/05-midsize-jets-ES.md?raw";
+import midsizeEN from "@/content/briefing/05-midsize-jets-EN.md?raw";
+import emptyLegsES from "@/content/briefing/06-empty-legs-ES.md?raw";
+import emptyLegsEN from "@/content/briefing/06-empty-legs-EN.md?raw";
 
 import type { Lang } from "@/i18n/translations";
 
