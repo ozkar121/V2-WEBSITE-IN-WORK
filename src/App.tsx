@@ -14,6 +14,7 @@ import AmbulanciasAereas from "./pages/AmbulanciasAereas.tsx";
 import ChartersGrupos from "./pages/ChartersGrupos.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
 import Briefing from "./pages/Briefing.tsx";
+import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
@@ -34,6 +35,8 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/flota" element={<Fleet />} />
+            <Route path="/fleet" element={<Fleet />} />
             <Route path="/empty-legs" element={<EmptyLegs />} />
             <Route path="/vuelos-de-carga" element={<Cargo />} />
             <Route path="/ambulancia-aerea" element={<AmbulanciasAereas />} />
