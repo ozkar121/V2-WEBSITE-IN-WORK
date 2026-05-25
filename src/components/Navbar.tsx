@@ -14,7 +14,7 @@ export const Navbar = () => {
   const { t } = useLang();
 
   const navLinks = [
-    { label: t("nav_fleet"), href: "/#fleet" },
+    { label: t("nav_fleet"), href: "/flota" },
     { label: t("nav_empty_legs"), href: "/empty-legs" },
     { label: t("nav_briefing"), href: "/briefing" },
     { label: t("nav_about"), href: "/#why" },
