@@ -12,6 +12,7 @@ export const TRANSLATIONS = {
   nav_about: { es: "Nosotros", en: "About" },
   nav_contact: { es: "Contacto", en: "Contact" },
   nav_routes: { es: "Rutas", en: "Routes" },
+  nav_briefing: { es: "Briefing", en: "Briefing" },
   nav_request_flight: { es: "Solicitar Vuelo", en: "Request a Flight" },
   nav_call: { es: "Llamar", en: "Call" },
 

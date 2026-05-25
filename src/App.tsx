@@ -13,6 +13,8 @@ import Cargo from "./pages/Cargo.tsx";
 import AmbulanciasAereas from "./pages/AmbulanciasAereas.tsx";
 import ChartersGrupos from "./pages/ChartersGrupos.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
+import Briefing from "./pages/Briefing.tsx";
+import BriefingPost from "./pages/BriefingPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
 import AdminEmptyLegs from "./pages/AdminEmptyLegs.tsx";
@@ -40,6 +42,8 @@ const App = () => (
             <Route path="/servicios/ambulancias-aereas" element={<AmbulanciasAereas />} />
             <Route path="/servicios/charters-grupos" element={<ChartersGrupos />} />
             <Route path="/rutas/:slug" element={<RoutePage />} />
+            <Route path="/briefing" element={<Briefing />} />
+            <Route path="/briefing/:slug" element={<BriefingPost />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route

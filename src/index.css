@@ -200,3 +200,79 @@
 .animate-fade-in { animation: fadeIn 1s forwards; opacity: 0; }
 .animate-marquee { animation: marquee 28s linear infinite; }
 .animate-pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
+
+/* ─── Briefing article prose ─── */
+.briefing-prose { color: hsl(var(--fg-2)); font-size: 1rem; line-height: 1.75; }
+.briefing-prose h2 {
+  color: hsl(var(--foreground));
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid hsl(var(--jade) / 0.18);
+}
+.briefing-prose h3 {
+  color: hsl(var(--foreground));
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 2rem 0 0.75rem;
+}
+.briefing-prose p { margin: 1rem 0; }
+.briefing-prose ul, .briefing-prose ol { margin: 1rem 0 1rem 1.25rem; padding: 0; }
+.briefing-prose ul { list-style: none; }
+.briefing-prose ul > li { position: relative; padding-left: 1.25rem; margin: 0.5rem 0; }
+.briefing-prose ul > li::before {
+  content: "—";
+  color: hsl(var(--jade));
+  position: absolute; left: 0; top: 0;
+}
+.briefing-prose ol { list-style: decimal; }
+.briefing-prose ol > li { margin: 0.5rem 0; padding-left: 0.25rem; }
+.briefing-prose strong { color: hsl(var(--foreground)); font-weight: 500; }
+.briefing-prose a {
+  color: hsl(var(--jade-light));
+  text-decoration: underline;
+  text-decoration-color: hsl(var(--jade) / 0.4);
+  text-underline-offset: 3px;
+}
+.briefing-prose a:hover { color: hsl(var(--jade)); text-decoration-color: hsl(var(--jade)); }
+.briefing-prose blockquote {
+  border-left: 2px solid hsl(var(--jade));
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 1.5rem 0;
+  color: hsl(var(--fg-2));
+  font-style: italic;
+}
+.briefing-prose hr {
+  border: 0;
+  border-top: 1px solid hsl(var(--jade) / 0.22);
+  margin: 2.5rem 0;
+}
+.briefing-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: hsl(var(--bg-3));
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}
+.briefing-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.briefing-prose th, .briefing-prose td {
+  border: 1px solid hsl(var(--jade) / 0.22);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+.briefing-prose th {
+  background: hsl(var(--bg-3));
+  color: hsl(var(--foreground));
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
