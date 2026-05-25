@@ -83,7 +83,53 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Contact strip */}
+      {/* Sitemap links — popular routes & explore */}
+      <nav
+        aria-label="Sitemap"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8 border-t border-jade-soft"
+      >
+        <div>
+          <h4
+            className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
+            style={{ letterSpacing: "0.25em" }}
+          >
+            Rutas Populares
+          </h4>
+          <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
+            {POPULAR_ROUTES.map((r) => (
+              <li key={r.to}>
+                <Link
+                  to={r.to}
+                  className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline"
+                >
+                  {r.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4
+            className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
+            style={{ letterSpacing: "0.25em" }}
+          >
+            Explorar
+          </h4>
+          <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
+            {EXPLORE_LINKS.map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-6 border-t border-jade-soft">
         <div className="flex flex-col gap-1">
           <span
