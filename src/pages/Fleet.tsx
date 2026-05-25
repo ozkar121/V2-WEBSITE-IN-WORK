@@ -7,6 +7,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { Aircraft, AircraftCategory, CATEGORY_ORDER, CATEGORY_LABELS } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
+import { sbImage, sbImageSrcSet } from "@/lib/img";
 import { useLang } from "@/i18n/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
