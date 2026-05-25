@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
-import { Aircraft, AircraftCategory, CATEGORY_ORDER } from "@/data/aircraft";
+import { Aircraft, AircraftCategory, CATEGORY_ORDER, CATEGORY_LABELS } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { useLang } from "@/i18n/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
