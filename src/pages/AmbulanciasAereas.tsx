@@ -33,6 +33,8 @@ const AmbulanciasAereas = () => {
         description:
           "Medical air transport from Toluca Airport (MMTO). Learjet 35, 24/7, 4-hour activation.",
         url: `${SITE_URL}/ambulancia-aerea`,
+        logo: `${SITE_URL}/og-image.jpg`,
+        image: `${SITE_URL}/og-image.jpg`,
         telephone: "+524442348942",
         address: {
           "@type": "PostalAddress",
