@@ -14,6 +14,7 @@ import AmbulanciasAereas from "./pages/AmbulanciasAereas.tsx";
 import ChartersGrupos from "./pages/ChartersGrupos.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
 import Briefing from "./pages/Briefing.tsx";
+import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
