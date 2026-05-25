@@ -1,6 +1,24 @@
 import { EMAIL, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
+import { Link } from "react-router-dom";
 import logoIcon from "@/assets/numen-symbol.svg";
+
+const POPULAR_ROUTES = [
+  { to: "/rutas/cdmx-cancun", label: "CDMX → Cancún" },
+  { to: "/rutas/cdmx-los-cabos", label: "CDMX → Los Cabos" },
+  { to: "/rutas/cdmx-miami", label: "CDMX → Miami" },
+  { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
+];
+
+const EXPLORE_LINKS = [
+  { to: "/flota", label: "Flota" },
+  { to: "/ambulancias-aereas", label: "Ambulancias Aéreas" },
+  { to: "/cargo", label: "Cargo" },
+  { to: "/charters-grupos", label: "Charters de Grupos" },
+  { to: "/empty-legs", label: "Empty Legs" },
+  { to: "/briefing", label: "Briefing" },
+  { to: "/briefing/tramites-aduanales-jet-privado-mexico", label: "Trámites Aduanales en México" },
+];
 
 export const Footer = () => {
   const { t } = useLang();
