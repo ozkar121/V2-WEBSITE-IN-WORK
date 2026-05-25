@@ -42,6 +42,8 @@ const App = () => (
             <Route path="/servicios/ambulancias-aereas" element={<AmbulanciasAereas />} />
             <Route path="/servicios/charters-grupos" element={<ChartersGrupos />} />
             <Route path="/rutas/:slug" element={<RoutePage />} />
+            <Route path="/briefing" element={<Briefing />} />
+            <Route path="/briefing/:slug" element={<BriefingPost />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route
