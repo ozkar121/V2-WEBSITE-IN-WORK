@@ -10,12 +10,15 @@ const POPULAR_ROUTES = [
   { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
 ];
 
-const EXPLORE_LINKS = [
+const SERVICES_LINKS = [
   { to: "/flota", label: "Flota" },
-  { to: "/ambulancia-aerea", label: "Ambulancias Aéreas" },
-  { to: "/vuelos-de-carga", label: "Cargo" },
-  { to: "/charters-grupales", label: "Charters de Grupos" },
   { to: "/empty-legs", label: "Empty Legs" },
+  { to: "/charters-grupales", label: "Charters de Grupos" },
+  { to: "/vuelos-de-carga", label: "Cargo" },
+  { to: "/ambulancia-aerea", label: "Ambulancias Aéreas" },
+];
+
+const RESOURCES_LINKS = [
   { to: "/briefing", label: "Briefing" },
   { to: "/briefing/tramites-aduanales-jet-privado-mexico", label: "Trámites Aduanales en México" },
 ];
