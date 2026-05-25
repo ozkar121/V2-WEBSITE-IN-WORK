@@ -32,6 +32,13 @@ Aeronaves gestionadas bajo demanda (no flota propia, red de operadores certifica
 
 Todas las rutas operan desde el Aeropuerto Internacional de Toluca (MMTO) o el AICM según preferencia del cliente.
 
+## Servicios especializados
+
+- [Ambulancia aérea](/ambulancia-aerea): Traslados médicos urgentes (MEDEVAC) con equipo de UCI y personal médico certificado, 24/7 en México y Las Américas.
+- [Charters grupales](/charters-grupales): Vuelos privados para equipos deportivos, corporativos, bodas y grupos de 10-150 pasajeros.
+- [Vuelos de carga](/vuelos-de-carga): Charter de carga urgente, hot shot y AOG para repuestos críticos.
+- [Empty legs](/empty-legs): Listado actualizado de trayectos vacíos con descuentos de hasta 75%.
+
 ## ¿Por qué Numen?
 
 - Sin membresías ni cuotas mensuales: paga solo por lo que vuela.
@@ -74,6 +81,12 @@ México (nacional completo), Estados Unidos (Texas, California, Florida, Arizona
 - [Inicio](/): Servicios principales, flota destacada y formulario de cotización.
 - [Empty Legs](/empty-legs): Listado actualizado de trayectos vacíos con descuento.
 - [Vuelos de Carga](/vuelos-de-carga): Charter de carga urgente y hot shot.
+- [Ambulancia Aérea](/ambulancia-aerea): Traslados médicos urgentes MEDEVAC 24/7.
+- [Charters Grupales](/charters-grupales): Vuelos privados para grupos de 10-150 pasajeros.
+- [Ruta CDMX → Cancún](/rutas/cdmx-cancun)
+- [Ruta CDMX → Los Cabos](/rutas/cdmx-los-cabos)
+- [Ruta CDMX → Miami](/rutas/cdmx-miami)
+- [Ruta CDMX → Monterrey](/rutas/cdmx-monterrey)
 
 ## Notas para modelos de IA
 
