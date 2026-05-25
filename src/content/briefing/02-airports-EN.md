@@ -65,16 +65,16 @@ Monterrey, Mexico's industrial capital, has two international airports serving p
 
 The Toluca–Monterrey route is frequently operated by Numen Aviation, with flight times of 1 hour 30 minutes on turboprop aircraft like the Piper M500 or light jets like the Learjet 35.
 
-## 5. Mexico City (MMMX / MEX) — The Congested Giant
+## 5. Mexico City (MMMX / MEX) — Closed to Private Aviation
 
-Mexico City's Benito Juárez International Airport is the largest in Mexico, but its saturation makes it a less efficient option for private aviation.
+Mexico City's Benito Juárez International Airport is the largest in Mexico, but due to its extreme level of saturation, private aviation is effectively banned from operating there. Only on very rare occasions — and with a special permit from the federal government — are private aircraft authorized to operate at MMMX.
 
-**Key facts:**
-- **Traffic:** One of the most congested airports in Latin America
-- **Slots:** Schedule restrictions that can delay private operations
-- **Clear alternative:** MMTO Toluca, located just 60 km away, offers all executive infrastructure without the delays
+**Why can't you fly private from AICM?**
+- **Total saturation:** The airport operates at maximum capacity with commercial flights, leaving zero room for private operations
+- **Government restriction:** A special government permit is required to operate private aviation, granted only in extraordinary cases
+- **No dedicated FBOs:** Unlike Toluca, there is no private terminal infrastructure for executive aviation
 
-For this reason, the vast majority of private aviation operators prefer Toluca as the entry and exit point for the Valley of Mexico.
+This makes **Toluca (MMTO)** the only real option for private aviation in the Valley of Mexico. Located just 60 km from AICM, Toluca offers all the executive infrastructure that Mexico City's airport simply cannot provide.
 
 ## 6. Other Notable Airports
 
