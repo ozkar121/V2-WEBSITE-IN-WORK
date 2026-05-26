@@ -243,6 +243,39 @@ const Index = () => {
         </div>
       </section>
 
+      {/* LONG-FORM SEO CONTENT — expands the homepage with natural, structured copy */}
+      <section
+        id="guide"
+        className="py-28"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="reveal max-w-3xl">
+          <p className="eyebrow mb-4">{t("seo_eyebrow")}</p>
+          <h2 className="section-title">
+            {t("seo_title_a")} <em>{t("seo_title_em")}</em>
+          </h2>
+          <div className="gold-rule" />
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-2 gap-x-14 gap-y-12 max-w-6xl">
+          {([
+            ["seo_h3_1", "seo_p_1"],
+            ["seo_h3_2", "seo_p_2"],
+            ["seo_h3_3", "seo_p_3"],
+            ["seo_h3_4", "seo_p_4"],
+            ["seo_h3_5", "seo_p_5"],
+            ["seo_h3_6", "seo_p_6"],
+          ] as const).map(([h, p]) => (
+            <article key={h} className="reveal">
+              <h3 className="font-serif font-light text-[1.5rem] md:text-[1.7rem] leading-snug text-foreground mb-4">
+                {t(h)}
+              </h3>
+              <p className="text-[0.9rem] leading-relaxed text-fg-3">{t(p)}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <FAQSection />
 
       {/* CTA BAND */}
