@@ -48,6 +48,10 @@ export const TRANSLATIONS = {
     es: "Renta de Jet Privado · Toluca · México · Las Américas",
     en: "Private Jet Charter · Toluca · Mexico · The Americas",
   },
+  hero_title_pre: {
+    es: "Renta de Jet Privado en Toluca, México",
+    en: "Private Jet Charter in Toluca, Mexico",
+  },
   hero_title_a: { es: "Beyond", en: "Beyond" },
   hero_title_em: { es: "First", en: "First" },
   hero_title_b: { es: "Class.", en: "Class." },
