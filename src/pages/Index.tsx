@@ -158,7 +158,15 @@ const Index = () => {
         </div>
       </section>
 
-      <Marquee items={[t("marquee_rental"),"·",t("marquee_charter"),"·",t("marquee_empty"),"·",t("marquee_exec"),"·",t("marquee_acq"),"·",t("marquee_24"),"·",t("marquee_geo"),"·"]} />
+      {/* Static info strip — replaces the previous scrolling marquee for a calmer, more natural read */}
+      <div
+        className="bg-bg-3 border-y border-jade-soft py-5"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <p className="text-[0.8rem] md:text-[0.875rem] leading-relaxed text-fg-3 max-w-5xl mx-auto text-center">
+          {t("strip_text")}
+        </p>
+      </div>
 
       {/* SERVICES */}
       <section id="services" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
