@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ScrollVideoBackground } from "@/components/ScrollVideoBackground";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
-import { Marquee } from "@/components/Marquee";
+
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
 import { FAQSection } from "@/components/FAQSection";
