@@ -48,6 +48,10 @@ export const TRANSLATIONS = {
     es: "Renta de Jet Privado · Toluca · México · Las Américas",
     en: "Private Jet Charter · Toluca · Mexico · The Americas",
   },
+  hero_title_pre: {
+    es: "Renta de Jet Privado en Toluca, México",
+    en: "Private Jet Charter in Toluca, Mexico",
+  },
   hero_title_a: { es: "Beyond", en: "Beyond" },
   hero_title_em: { es: "First", en: "First" },
   hero_title_b: { es: "Class.", en: "Class." },
@@ -513,6 +517,53 @@ export const TRANSLATIONS = {
   un_confirm_btn: { es: "Confirmar baja", en: "Confirm unsubscribe" },
   un_done_help_a: { es: "Si fue un error, escríbenos a", en: "If this was a mistake, email us at" },
   un_back_home: { es: "← Volver al inicio", en: "← Back to home" },
+
+  // Static info strip (replaces marquee)
+  strip_text: {
+    es: "Renta de jet privado y charter ejecutivo desde el Aeropuerto Internacional de Toluca (MMTO) hacia México, Estados Unidos, el Caribe y Centroamérica. Empty legs, adquisición y consultoría de aeronaves. Cotización en menos de 2 horas, operación 24/7.",
+    en: "Private jet rental and executive charter from Toluca International Airport (MMTO) to Mexico, the United States, the Caribbean, and Central America. Empty legs, aircraft acquisition and consulting. Quote in under 2 hours, 24/7 operations.",
+  },
+
+  // Long-form SEO content block (Home)
+  seo_eyebrow: { es: "Guía Completa", en: "Complete Guide" },
+  seo_title_a: { es: "Por qué Numen Aviation es la mejor opción", en: "Why Numen Aviation is the best choice" },
+  seo_title_em: { es: "para renta de jet privado en México", en: "for private jet rental in Mexico" },
+
+  seo_h3_1: { es: "Charter privado sin fricciones desde Toluca (MMTO)", en: "Frictionless private charter from Toluca (MMTO)" },
+  seo_p_1: {
+    es: "El Aeropuerto Internacional de Toluca (MMTO) es el principal hub de aviación ejecutiva del Valle de México. A solo 40 minutos de Santa Fe, Polanco e Interlomas, ofrece terminales privadas (FBO) con acceso directo a pista, sin las filas, retrasos y restricciones del Aeropuerto Internacional de la Ciudad de México (AICM). En Numen Aviation coordinamos cada vuelo charter desde MMTO con tiempos de despacho de 15 minutos: usted llega, se identifica y aborda. Trabajamos con operadores certificados por AFAC que operan toda la gama de aeronaves — desde turbohélices ligeros como King Air 250 hasta jets ultra largo alcance como Gulfstream G550 — para que cada misión encuentre la aeronave correcta al precio justo.",
+    en: "Toluca International Airport (MMTO) is the main executive aviation hub of the Valley of Mexico. Just 40 minutes from Santa Fe, Polanco, and Interlomas, it offers private terminals (FBO) with direct ramp access — without the lines, delays, and slot restrictions of Mexico City International Airport (AICM). At Numen Aviation we coordinate every charter flight from MMTO with 15-minute departure times: you arrive, identify yourself, and board. We work with AFAC-certified operators flying the full aircraft range — from light turboprops like the King Air 250 to ultra-long-range jets like the Gulfstream G550 — so every mission gets the right aircraft at the right price.",
+  },
+
+  seo_h3_2: { es: "Empty legs: hasta 75% de descuento en vuelos reales", en: "Empty legs: up to 75% off real flights" },
+  seo_p_2: {
+    es: "Un empty leg (o trayecto vacío) es un vuelo de reposicionamiento que un operador necesita realizar para regresar una aeronave a su base o llevarla al siguiente cliente. Como ese segmento ya está pagado, puede ofrecerse al público con descuentos que típicamente van del 40% al 75% respecto a la tarifa regular de charter. Numen Aviation publica diariamente empty legs verificados en rutas como Toluca–Cancún, Toluca–Los Cabos, México–Miami, Querétaro–Houston y Monterrey–San Diego. Si su agenda tiene flexibilidad de fechas, es la forma más accesible de volar en jet privado sin sacrificar privacidad, seguridad ni comodidad.",
+    en: "An empty leg (or repositioning flight) is a ferry segment an operator must fly to return an aircraft to its base or position it for the next client. Because that leg is already paid for, it can be offered to the public with discounts that typically range from 40% to 75% off regular charter pricing. Numen Aviation publishes verified empty legs daily on routes such as Toluca–Cancun, Toluca–Los Cabos, Mexico City–Miami, Querétaro–Houston, and Monterrey–San Diego. If your schedule has date flexibility, it is the most accessible way to fly private without sacrificing privacy, safety, or comfort.",
+  },
+
+  seo_h3_3: { es: "Una correduría independiente — sin conflictos de interés", en: "An independent brokerage — no conflicts of interest" },
+  seo_p_3: {
+    es: "Numen Aviation no opera aeronaves propias. Somos una correduría independiente que compara objetivamente la disponibilidad de decenas de operadores certificados en México, Estados Unidos y Centroamérica para conseguir la mejor combinación de aeronave, seguridad y precio para cada misión. Esto elimina el incentivo de venderle la aeronave que el broker tiene en hangar — y lo sustituye por el incentivo correcto: encontrarle la aeronave correcta. Validamos seguros, certificaciones IS-BAO, historial del operador y curriculum de la tripulación antes de cada vuelo. Auditamos cada cotización para que el desglose sea transparente: horas de vuelo, ferry, handling, IVA, FBO. Sin cargos ocultos, sin sorpresas al cierre.",
+    en: "Numen Aviation does not operate its own aircraft. We are an independent brokerage that objectively compares the availability of dozens of certified operators across Mexico, the United States, and Central America to find the best combination of aircraft, safety, and price for each mission. This removes the incentive to sell you the aircraft sitting in the broker's hangar — and replaces it with the correct incentive: finding you the right aircraft. We validate insurance, IS-BAO certification, operator history, and crew résumés before every flight. We audit every quote so the breakdown is transparent: flight hours, ferry, handling, VAT, FBO. No hidden fees, no surprises at closing.",
+  },
+
+  seo_h3_4: { es: "Cobertura: México, Estados Unidos, el Caribe y Centroamérica", en: "Coverage: Mexico, U.S., Caribbean, and Central America" },
+  seo_p_4: {
+    es: "Operamos vuelos charter privados desde y hacia cualquier aeropuerto con pista pavimentada en territorio mexicano: Toluca (MMTO), Ciudad de México (MMMX), Cancún (MMUN), Los Cabos (MMSD), Monterrey (MMMY), Guadalajara (MMGL), Querétaro (MMQT), Mérida (MMMD) y más de 60 destinos regionales. Para vuelos internacionales coordinamos rutas frecuentes a Miami, Houston, Dallas, Las Vegas, Nueva York, Los Ángeles, Aspen, Punta Cana, La Habana, Panamá, San José y todo el Caribe. Tramitamos permisos AFAC, despacho de aduana y migración para que usted solo se preocupe por su agenda.",
+    en: "We operate private charter flights to and from every paved-runway airport in Mexican territory: Toluca (MMTO), Mexico City (MMMX), Cancun (MMUN), Los Cabos (MMSD), Monterrey (MMMY), Guadalajara (MMGL), Querétaro (MMQT), Mérida (MMMD), and over 60 regional destinations. For international missions we coordinate frequent routes to Miami, Houston, Dallas, Las Vegas, New York, Los Angeles, Aspen, Punta Cana, Havana, Panama, San José, and the entire Caribbean. We handle AFAC permits, customs, and immigration clearance so you only worry about your schedule.",
+  },
+
+  seo_h3_5: { es: "Asesoría de adquisición y gestión de aeronaves", en: "Aircraft acquisition and management advisory" },
+  seo_p_5: {
+    es: "Más allá del charter, asesoramos a family offices, empresarios y operadores en la adquisición, importación y gestión de aeronaves bajo bandera mexicana o extranjera. Cubrimos due diligence técnica (pre-purchase inspection, AD/SB review, historial de mantenimiento), estructura legal y fiscal (importación temporal, definitiva, leasing operativo), selección de operador para gestión Part 91 o Part 135 equivalente, y plan de utilización para maximizar el retorno de la inversión. Si está evaluando comprar su primer jet o renovar su flota, le ayudamos a tomar la decisión sin sesgo comercial.",
+    en: "Beyond charter, we advise family offices, entrepreneurs, and operators on the acquisition, importation, and management of aircraft under Mexican or foreign registry. We cover technical due diligence (pre-purchase inspection, AD/SB review, maintenance history), legal and tax structure (temporary import, permanent import, operating lease), operator selection for Part 91 or equivalent Part 135 management, and a utilization plan to maximize return on investment. If you are evaluating buying your first jet or renewing your fleet, we help you decide without commercial bias.",
+  },
+
+  seo_h3_6: { es: "Cómo solicitar su cotización", en: "How to request your quote" },
+  seo_p_6: {
+    es: "El proceso es directo: comparta origen, destino, fecha, número de pasajeros y cualquier requerimiento especial (catering, transporte terrestre, mascotas, equipaje voluminoso) por WhatsApp, teléfono o el formulario de esta página. En menos de 2 horas — habitualmente en 30 minutos — recibirá una propuesta con 2 o 3 opciones de aeronave, desglose de costos, fotos del interior y biografía de la tripulación. Operamos 24/7 los 365 días del año, incluyendo madrugadas, fines de semana y feriados.",
+    en: "The process is direct: share origin, destination, date, number of passengers, and any special requirements (catering, ground transport, pets, oversized luggage) via WhatsApp, phone, or the form on this page. In under 2 hours — usually within 30 minutes — you will receive a proposal with 2 or 3 aircraft options, cost breakdown, interior photos, and crew bio. We operate 24/7, 365 days a year, including overnights, weekends, and holidays.",
+  },
 } as const;
 
 export type TranslationKey = keyof typeof TRANSLATIONS;

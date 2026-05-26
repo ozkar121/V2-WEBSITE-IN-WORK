@@ -75,9 +75,13 @@ export function useSEO({
       content: noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large,max-snippet:-1",
     });
 
-    // Canonical + hreflang
+    // Canonical + hreflang (single URL serves both languages via client switcher;
+    // we advertise both locales + x-default so crawlers know the page is bilingual).
     upsertLink("canonical", url);
     upsertLink("alternate", url, { hreflang: "es-MX" });
+    upsertLink("alternate", url, { hreflang: "es" });
+    upsertLink("alternate", url, { hreflang: "en" });
+    upsertLink("alternate", url, { hreflang: "en-US" });
     upsertLink("alternate", url, { hreflang: "x-default" });
 
     // Open Graph

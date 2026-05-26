@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { ScrollVideoBackground } from "@/components/ScrollVideoBackground";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
-import { Marquee } from "@/components/Marquee";
+
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { FleetSection } from "@/components/FleetSection";
 import { FAQSection } from "@/components/FAQSection";
@@ -143,6 +143,9 @@ const Index = () => {
         </div>
 
         <h1 className="display-title relative z-10 max-w-3xl">
+          <span className="block text-[0.7rem] md:text-[0.78rem] uppercase font-sans font-medium text-jade mb-4 md:mb-5" style={{ letterSpacing: "0.28em" }}>
+            {t("hero_title_pre")}
+          </span>
           {t("hero_title_a")} <em>{t("hero_title_em")}</em><br />{t("hero_title_b")}
         </h1>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s", margin: "2rem 0" }} />
@@ -155,7 +158,15 @@ const Index = () => {
         </div>
       </section>
 
-      <Marquee items={[t("marquee_rental"),"·",t("marquee_charter"),"·",t("marquee_empty"),"·",t("marquee_exec"),"·",t("marquee_acq"),"·",t("marquee_24"),"·",t("marquee_geo"),"·"]} />
+      {/* Static info strip — replaces the previous scrolling marquee for a calmer, more natural read */}
+      <div
+        className="bg-bg-3 border-y border-jade-soft py-5"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <p className="text-[0.8rem] md:text-[0.875rem] leading-relaxed text-fg-3 max-w-5xl mx-auto text-center">
+          {t("strip_text")}
+        </p>
+      </div>
 
       {/* SERVICES */}
       <section id="services" className="py-28" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
@@ -229,6 +240,39 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* LONG-FORM SEO CONTENT — expands the homepage with natural, structured copy */}
+      <section
+        id="guide"
+        className="py-28"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="reveal max-w-3xl">
+          <p className="eyebrow mb-4">{t("seo_eyebrow")}</p>
+          <h2 className="section-title">
+            {t("seo_title_a")} <em>{t("seo_title_em")}</em>
+          </h2>
+          <div className="gold-rule" />
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-2 gap-x-14 gap-y-12 max-w-6xl">
+          {([
+            ["seo_h3_1", "seo_p_1"],
+            ["seo_h3_2", "seo_p_2"],
+            ["seo_h3_3", "seo_p_3"],
+            ["seo_h3_4", "seo_p_4"],
+            ["seo_h3_5", "seo_p_5"],
+            ["seo_h3_6", "seo_p_6"],
+          ] as const).map(([h, p]) => (
+            <article key={h} className="reveal">
+              <h3 className="font-serif font-light text-[1.5rem] md:text-[1.7rem] leading-snug text-foreground mb-4">
+                {t(h)}
+              </h3>
+              <p className="text-[0.9rem] leading-relaxed text-fg-3">{t(p)}</p>
+            </article>
+          ))}
         </div>
       </section>
 
