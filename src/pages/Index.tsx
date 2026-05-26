@@ -143,6 +143,9 @@ const Index = () => {
         </div>
 
         <h1 className="display-title relative z-10 max-w-3xl">
+          <span className="block text-[0.7rem] md:text-[0.78rem] uppercase font-sans font-medium text-jade mb-4 md:mb-5" style={{ letterSpacing: "0.28em" }}>
+            {t("hero_title_pre")}
+          </span>
           {t("hero_title_a")} <em>{t("hero_title_em")}</em><br />{t("hero_title_b")}
         </h1>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s", margin: "2rem 0" }} />
