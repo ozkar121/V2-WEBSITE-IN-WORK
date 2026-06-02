@@ -102,104 +102,88 @@ const Briefing = () => {
               {articlesLbl}
             </h2>
             <span className="text-[0.7rem] text-fg-3 tabular-nums">
-              {sorted.length.toString().padStart(2, "0")}
+              {(sorted.length + 2).toString().padStart(2, "0")}
             </span>
           </div>
 
-          <ul className="list-none p-0 m-0 divide-y divide-jade-soft">
-            {sorted.map((post) => (
-              <li key={post.slug}>
-                <Link
-                  to={`/briefing/${post.slug}`}
-                  className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4"
-                >
-                  <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
-                    <div>
-                      <div
-                        className="text-[0.65rem] uppercase text-jade mb-3"
-                        style={{ letterSpacing: "0.25em" }}
-                      >
-                        {localized(post.category, lang)}
-                      </div>
-                      <h3 className="text-xl md:text-2xl font-light text-foreground group-hover:text-jade-light transition-colors mb-3 leading-snug">
-                        {localized(post.title, lang)}
-                      </h3>
-                      <p className="text-sm text-fg-2 leading-relaxed max-w-2xl">
-                        {localized(post.excerpt, lang)}
-                      </p>
-                      <div className="flex items-center gap-4 mt-4 text-[0.7rem] text-fg-3">
-                        <span className="flex items-center gap-1.5">
-                          <Clock className="w-3 h-3" />
-                          {post.readMinutes} {minRead}
-                        </span>
-                        <span className="tabular-nums">{post.date}</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 text-[0.7rem] uppercase text-jade md:self-center" style={{ letterSpacing: "0.2em" }}>
-                      {readMore}
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {(() => {
+            const externals = [
+              {
+                href: "/guia-fbo-toluca.html",
+                date: "2026-06-02",
+                readMinutes: 8,
+                category: lang === "en" ? "Operations" : "Operación",
+                title: lang === "en"
+                  ? "FBO Guide at Toluca (MMTO): How a Private Jet Departure Works"
+                  : "Guía del FBO en Toluca (MMTO): Cómo Funciona la Salida en Jet Privado",
+                excerpt: lang === "en"
+                  ? "What an FBO is, the full boarding process from MMTO, timings, documentation, and why Toluca beats AICM."
+                  : "Qué es un FBO, el proceso completo de abordaje desde MMTO, tiempos, documentación y por qué Toluca supera al AICM.",
+              },
+              {
+                href: "/cuanto-cuesta-jet-privado-mexico-2026.html",
+                date: "2026-06-02",
+                readMinutes: 10,
+                category: lang === "en" ? "Pricing" : "Precios",
+                title: lang === "en"
+                  ? "How Much Does a Private Jet Cost in Mexico in 2026? Prices by Route"
+                  : "¿Cuánto Cuesta Volar en Jet Privado en México en 2026? Precios por Ruta",
+                excerpt: lang === "en"
+                  ? "Estimated one-way prices from Toluca (MMTO) to Cancún, Los Cabos, Monterrey, Mérida, Miami, Houston and Las Vegas on Learjet 35 and Hawker 800A."
+                  : "Precios estimados one-way desde Toluca (MMTO) a Cancún, Los Cabos, Monterrey, Mérida, Miami, Houston y Las Vegas en Learjet 35 y Hawker 800A.",
+              },
+            ];
 
-          {/* External guides (static HTML) */}
-          <div className="mt-16 pt-10 border-t border-jade-soft">
-            <h3
-              className="text-[0.7rem] uppercase text-fg-3 mb-6"
-              style={{ letterSpacing: "0.25em" }}
-            >
-              {lang === "en" ? "Guides" : "Guías"}
-            </h3>
-            <ul className="grid sm:grid-cols-2 gap-px bg-jade-soft list-none p-0 m-0">
-              {[
-                {
-                  href: "/guia-fbo-toluca.html",
-                  cat: lang === "en" ? "Operations" : "Operación",
-                  title: lang === "en"
-                    ? "FBO Guide at Toluca (MMTO)"
-                    : "Guía del FBO en Toluca (MMTO)",
-                  desc: lang === "en"
-                    ? "How private jet departures work from MMTO: process, timings and documents."
-                    : "Cómo funciona la salida en jet privado desde MMTO: proceso, tiempos y documentación.",
-                },
-                {
-                  href: "/cuanto-cuesta-jet-privado-mexico-2026.html",
-                  cat: lang === "en" ? "Pricing" : "Precios",
-                  title: lang === "en"
-                    ? "How much does a private jet cost in Mexico (2026)?"
-                    : "¿Cuánto cuesta volar en jet privado en México 2026?",
-                  desc: lang === "en"
-                    ? "Estimated one-way prices from Toluca on Learjet 35 and Hawker 800A."
-                    : "Precios estimados one-way desde Toluca en Learjet 35 y Hawker 800A.",
-                },
-              ].map((g) => (
-                <li key={g.href} className="bg-background">
-                  <a
-                    href={g.href}
-                    className="group block p-6 no-underline hover:bg-bg-3 transition-colors h-full"
-                  >
-                    <div
-                      className="text-[0.65rem] uppercase text-jade mb-3"
-                      style={{ letterSpacing: "0.25em" }}
-                    >
-                      {g.cat}
-                    </div>
-                    <h4 className="text-lg font-light text-foreground group-hover:text-jade-light transition-colors mb-2 leading-snug">
-                      {g.title}
-                    </h4>
-                    <p className="text-sm text-fg-2 leading-relaxed">{g.desc}</p>
-                    <div className="flex items-center gap-2 mt-4 text-[0.7rem] uppercase text-jade" style={{ letterSpacing: "0.2em" }}>
-                      {lang === "en" ? "Read guide" : "Leer guía"}
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </div>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            const ItemBody = ({ category, title, excerpt, readMinutes, date }: { category: string; title: string; excerpt: string; readMinutes: number; date: string; }) => (
+              <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
+                <div>
+                  <div className="text-[0.65rem] uppercase text-jade mb-3" style={{ letterSpacing: "0.25em" }}>
+                    {category}
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-light text-foreground group-hover:text-jade-light transition-colors mb-3 leading-snug">
+                    {title}
+                  </h3>
+                  <p className="text-sm text-fg-2 leading-relaxed max-w-2xl">{excerpt}</p>
+                  <div className="flex items-center gap-4 mt-4 text-[0.7rem] text-fg-3">
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3 h-3" />
+                      {readMinutes} {minRead}
+                    </span>
+                    <span className="tabular-nums">{date}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-[0.7rem] uppercase text-jade md:self-center" style={{ letterSpacing: "0.2em" }}>
+                  {readMore}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              </div>
+            );
+
+            return (
+              <ul className="list-none p-0 m-0 divide-y divide-jade-soft">
+                {externals.map((g) => (
+                  <li key={g.href}>
+                    <a href={g.href} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
+                      <ItemBody {...g} />
+                    </a>
+                  </li>
+                ))}
+                {sorted.map((post) => (
+                  <li key={post.slug}>
+                    <Link to={`/briefing/${post.slug}`} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
+                      <ItemBody
+                        category={localized(post.category, lang)}
+                        title={localized(post.title, lang)}
+                        excerpt={localized(post.excerpt, lang)}
+                        readMinutes={post.readMinutes}
+                        date={post.date}
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            );
+          })()}
         </div>
       </section>
 
