@@ -1,18 +1,44 @@
-import { createRoot, hydrateRoot } from "react-dom/client";
-import App from "./App.tsx";
+import { ViteReactSSG } from "vite-react-ssg";
+import { routes } from "./routes";
 import "./index.css";
 
-const rootElement = document.getElementById("root")!;
+// Static slugs we want fully prerendered. Briefing and route slugs are
+// listed here so each gets its own HTML file with baked SEO/JSON-LD.
+const BRIEFING_SLUGS = [
+  "tramites-aduanales-jet-privado-mexico",
+  "mejores-aeropuertos-aviacion-privada-mexico",
+  "toluca-vs-santa-lucia-vuelos-privados",
+  "aeronaves-usa-vuelos-domesticos-mexico",
+  "mejores-jets-medianos-mexico-usa",
+  "como-funcionan-empty-legs",
+  "renta-helicoptero-ciudad-de-mexico",
+];
 
-// react-snap prerenders each route at build time, dumping the full React tree
-// into #root. When the page boots, we hydrate that tree so crawlers + users see
-// the real content with zero flash. Without prerender, #root only contains our
-// LCP snapshot (id="lcp-snapshot"), so we render normally and React replaces it.
-const isPrerendered =
-  rootElement.hasChildNodes() && !rootElement.querySelector("#lcp-snapshot");
+const ROUTE_SLUGS = [
+  "cdmx-cancun",
+  "cdmx-los-cabos",
+  "cdmx-miami",
+  "cdmx-monterrey",
+];
 
-if (isPrerendered) {
-  hydrateRoot(rootElement, <App />);
-} else {
-  createRoot(rootElement).render(<App />);
-}
+export const createRoot = ViteReactSSG(
+  {
+    routes,
+    basename: "/",
+  },
+  undefined,
+  {
+    // Expand wildcard/dynamic routes into concrete URLs to prerender.
+    includedRoutes(paths) {
+      const dynamic = [
+        ...BRIEFING_SLUGS.map((s) => `/briefing/${s}`),
+        ...ROUTE_SLUGS.map((s) => `/rutas/${s}`),
+      ];
+      // Drop catch-all "/*" — replace with the real list of routes we own.
+      const staticOnly = paths.filter(
+        (p) => !p.includes(":") && !p.includes("*"),
+      );
+      return Array.from(new Set([...staticOnly, ...dynamic]));
+    },
+  },
+);
