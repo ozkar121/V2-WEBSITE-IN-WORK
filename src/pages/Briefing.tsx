@@ -134,6 +134,19 @@ const Briefing = () => {
               },
             ];
 
+            const allPosts = [
+              ...externals.map((g) => ({ type: "external" as const, ...g })),
+              ...sorted.map((post) => ({
+                type: "internal" as const,
+                slug: post.slug,
+                date: post.date,
+                readMinutes: post.readMinutes,
+                category: localized(post.category, lang),
+                title: localized(post.title, lang),
+                excerpt: localized(post.excerpt, lang),
+              })),
+            ].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
             const ItemBody = ({ category, title, excerpt, readMinutes, date }: { category: string; title: string; excerpt: string; readMinutes: number; date: string; }) => (
               <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
                 <div>
@@ -161,26 +174,33 @@ const Briefing = () => {
 
             return (
               <ul className="list-none p-0 m-0 divide-y divide-jade-soft">
-                {externals.map((g) => (
-                  <li key={g.href}>
-                    <a href={g.href} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
-                      <ItemBody {...g} />
-                    </a>
-                  </li>
-                ))}
-                {sorted.map((post) => (
-                  <li key={post.slug}>
-                    <Link to={`/briefing/${post.slug}`} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
-                      <ItemBody
-                        category={localized(post.category, lang)}
-                        title={localized(post.title, lang)}
-                        excerpt={localized(post.excerpt, lang)}
-                        readMinutes={post.readMinutes}
-                        date={post.date}
-                      />
-                    </Link>
-                  </li>
-                ))}
+                {allPosts.map((item) =>
+                  item.type === "external" ? (
+                    <li key={item.href}>
+                      <a href={item.href} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
+                        <ItemBody
+                          category={item.category}
+                          title={item.title}
+                          excerpt={item.excerpt}
+                          readMinutes={item.readMinutes}
+                          date={item.date}
+                        />
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={item.slug}>
+                      <Link to={`/briefing/${item.slug}`} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
+                        <ItemBody
+                          category={item.category}
+                          title={item.title}
+                          excerpt={item.excerpt}
+                          readMinutes={item.readMinutes}
+                          date={item.date}
+                        />
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             );
           })()}
