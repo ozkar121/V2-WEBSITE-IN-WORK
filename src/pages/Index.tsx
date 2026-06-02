@@ -117,7 +117,7 @@ const Index = () => {
       <section
         id="hero"
         className="relative min-h-screen flex flex-col justify-end overflow-hidden"
-        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingBottom: "6rem", minHeight: 680 }}
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)", paddingTop: "clamp(7rem, 14vh, 10rem)", paddingBottom: "6rem", minHeight: 680 }}
       >
         {/* El fondo de avión con scroll está montado a nivel de página (ScrollVideoBackground).
             En el hero dejamos transparente para que el video se vea protagónico. */}
