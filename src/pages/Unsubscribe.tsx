@@ -12,7 +12,7 @@ type State = "loading" | "valid" | "already" | "invalid" | "submitting" | "done"
 
 const Unsubscribe = () => {
   const { t } = useLang();
-  useSEO({ title: t("un_seo_title"), description: t("un_seo_desc") });
+  const seo = useSEO({ title: t("un_seo_title"), description: t("un_seo_desc") });
   const [params] = useSearchParams();
   const token = params.get("token");
   const [state, setState] = useState<State>("loading");
@@ -53,6 +53,7 @@ const Unsubscribe = () => {
 
   return (
     <>
+      {seo}
       <Navbar />
       <main className="min-h-screen flex items-center justify-center px-6 py-32">
         <div className="max-w-md w-full bg-bg-2/45 border border-foreground/10 p-10 text-center">

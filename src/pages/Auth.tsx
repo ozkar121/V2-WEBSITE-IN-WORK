@@ -14,7 +14,7 @@ const schema = z.object({
 });
 
 const Auth = () => {
-  useSEO({ title: "Acceso · Numen Aviation", noindex: true });
+  const seo = useSEO({ title: "Acceso · Numen Aviation", noindex: true });
   const { session, loading } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -88,6 +88,7 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6 py-12">
+      {seo}
       <Link to="/" className="flex items-center gap-2.5 mb-12">
         <img src={logoIcon} alt="Numen Aviation" className="h-4 w-auto" />
         <span className="text-[0.78rem] uppercase text-foreground font-light" style={{ letterSpacing: "0.25em" }}>

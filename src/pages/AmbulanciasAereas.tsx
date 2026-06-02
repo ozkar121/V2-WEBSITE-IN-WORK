@@ -17,7 +17,7 @@ const AmbulanciasAereas = () => {
   const { lang } = useLang();
   const isEs = lang === "es";
 
-  useSEO({
+  const seo = useSEO({
     title: isEs
       ? "Ambulancia Aérea México — Learjet 35 · Respuesta en 4 Horas | Numen Aviation"
       : "Air Ambulance Mexico — Learjet 35 · 4-Hour Response | Numen Aviation",
@@ -188,6 +188,7 @@ const AmbulanciasAereas = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {seo}
       <Navbar />
 
       <nav

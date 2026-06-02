@@ -26,7 +26,7 @@ const BriefingPost = () => {
   const idx = sorted.findIndex((p) => p.slug === post.slug);
   const next = sorted[idx + 1];
 
-  useSEO({
+  const seo = useSEO({
     title: `${title} | The Numen Briefing`,
     description,
     path: `/briefing/${post.slug}`,
@@ -73,6 +73,7 @@ const BriefingPost = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {seo}
       <Navbar />
 
       <article

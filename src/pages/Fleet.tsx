@@ -87,7 +87,7 @@ const Fleet = () => {
   const totalLbl = lang === "en" ? "aircraft" : "aeronaves";
   const categoriesLbl = lang === "en" ? "categories" : "categorías";
 
-  useSEO({
+  const seo = useSEO({
     title:
       lang === "en"
         ? "Private Jet Fleet | Numen Aviation"
@@ -130,6 +130,7 @@ const Fleet = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {seo}
       <Navbar />
 
       {/* Hero */}

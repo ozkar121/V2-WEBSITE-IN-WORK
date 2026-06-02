@@ -76,7 +76,7 @@ const EMPTY_LEGS_JSONLD = [
 const EmptyLegs = () => {
   useReveal();
   const { t, lang } = useLang();
-  useSEO({
+  const seo = useSEO({
     title: t("seo_el_title"),
     description: t("seo_el_desc"),
     path: "/empty-legs",
@@ -132,6 +132,7 @@ const EmptyLegs = () => {
 
   return (
     <>
+      {seo}
       <Navbar />
 
       {/* Breadcrumb */}

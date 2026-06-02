@@ -17,7 +17,7 @@ const ChartersGrupos = () => {
   const { lang } = useLang();
   const isEs = lang === "es";
 
-  useSEO({
+  const seo = useSEO({
     title: isEs
       ? "Vuelos Charter para Grupos en México — Hasta 50 Pasajeros | Numen Aviation"
       : "Group Charter Flights Mexico — Up to 50 Passengers | Numen Aviation",
@@ -170,6 +170,7 @@ const ChartersGrupos = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {seo}
       <Navbar />
 
       <nav
