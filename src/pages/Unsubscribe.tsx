@@ -12,7 +12,7 @@ type State = "loading" | "valid" | "already" | "invalid" | "submitting" | "done"
 
 const Unsubscribe = () => {
   const { t } = useLang();
-  useSEO({ title: t("un_seo_title"), description: t("un_seo_desc") });
+  const seo = useSEO({ title: t("un_seo_title"), description: t("un_seo_desc") });
   const [params] = useSearchParams();
   const token = params.get("token");
   const [state, setState] = useState<State>("loading");

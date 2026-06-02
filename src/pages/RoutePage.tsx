@@ -56,7 +56,7 @@ const RoutePage = () => {
       ]
     : undefined;
 
-  useSEO({
+  const seo = useSEO({
     title: route?.title ?? t("rt_seo_default_title"),
     description: route?.description,
     path,

@@ -87,7 +87,7 @@ const Fleet = () => {
   const totalLbl = lang === "en" ? "aircraft" : "aeronaves";
   const categoriesLbl = lang === "en" ? "categories" : "categorías";
 
-  useSEO({
+  const seo = useSEO({
     title:
       lang === "en"
         ? "Private Jet Fleet | Numen Aviation"

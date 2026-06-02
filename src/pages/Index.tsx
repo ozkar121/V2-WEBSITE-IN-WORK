@@ -93,7 +93,7 @@ const Index = () => {
     { num: "IV", title: t("why_04_t"), desc: t("why_04_d") },
   ];
 
-  useSEO({
+  const seo = useSEO({
     title:
       lang === "en"
         ? "Private Jet Charter in Toluca and Mexico | Numen Aviation"
@@ -108,6 +108,7 @@ const Index = () => {
 
   return (
     <>
+      {seo}
       <ScrollVideoBackground src="/plane-scroll.mp4" />
       <Navbar />
       <main>

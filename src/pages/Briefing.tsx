@@ -31,7 +31,7 @@ const Briefing = () => {
 
   const sorted = [...BRIEFING_POSTS].sort((a, b) => a.order - b.order);
 
-  useSEO({
+  const seo = useSEO({
     title:
       lang === "en"
         ? "The Numen Briefing — Private Aviation Insights | Numen Aviation"

@@ -82,7 +82,7 @@ const Cargo = () => {
     { lKey: "cg_op_std_6l", vKey: "cg_op_std_6v" },
   ];
 
-  useSEO({
+  const seo = useSEO({
     title: t("seo_cg_title"),
     description: t("seo_cg_desc"),
     path: "/vuelos-de-carga",
