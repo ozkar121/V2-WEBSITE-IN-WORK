@@ -84,6 +84,7 @@ const RoutePage = () => {
 
   return (
     <div key={slug} className="animate-fade-in">
+      {seo}
 
       <Navbar />
 

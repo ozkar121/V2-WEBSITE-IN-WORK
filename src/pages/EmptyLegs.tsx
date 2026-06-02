@@ -132,6 +132,7 @@ const EmptyLegs = () => {
 
   return (
     <>
+      {seo}
       <Navbar />
 
       {/* Breadcrumb */}

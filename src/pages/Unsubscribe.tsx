@@ -53,6 +53,7 @@ const Unsubscribe = () => {
 
   return (
     <>
+      {seo}
       <Navbar />
       <main className="min-h-screen flex items-center justify-center px-6 py-32">
         <div className="max-w-md w-full bg-bg-2/45 border border-foreground/10 p-10 text-center">

@@ -124,6 +124,7 @@ const AdminEmptyLegs = () => {
 
   return (
     <>
+      {seo}
       <Navbar />
       <section
         className="pt-36 pb-20"
