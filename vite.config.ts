@@ -47,9 +47,15 @@ export default defineConfig(({ mode }) => ({
         ...BRIEFING_SLUGS.map((s) => `/briefing/${s}`),
         ...ROUTE_SLUGS.map((s) => `/rutas/${s}`),
       ];
-      // Drop catch-all "*" and unresolved ":param" routes.
+      // Drop catch-all "*", unresolved ":param", and private SPA routes.
+      const blocked = new Set(["/auth", "auth"]);
       const staticOnly = paths.filter(
-        (p: string) => !p.includes(":") && !p.includes("*"),
+        (p: string) =>
+          !p.includes(":") &&
+          !p.includes("*") &&
+          !blocked.has(p) &&
+          !p.startsWith("/admin") &&
+          !p.startsWith("admin"),
       );
       return Array.from(new Set([...staticOnly, ...dynamic]));
     },
