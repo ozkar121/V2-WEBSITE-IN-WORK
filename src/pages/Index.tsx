@@ -142,12 +142,12 @@ const Index = () => {
           <span className="text-[0.62rem] uppercase text-jade" style={{ letterSpacing: "0.3em" }}>{t("hero_badge")}</span>
         </div>
 
-        <h1 className="display-title relative z-10 max-w-3xl">
-          <span className="block text-[0.7rem] md:text-[0.78rem] uppercase font-sans font-medium text-jade mb-4 md:mb-5" style={{ letterSpacing: "0.28em" }}>
-            {t("hero_title_pre")}
-          </span>
-          {t("hero_title_a")} <em>{t("hero_title_em")}</em><br />{t("hero_title_b")}
+        <h1 className="relative z-10 max-w-3xl font-serif font-light text-foreground" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.15, marginBottom: "1.25rem" }}>
+          {t("hero_title_pre")}
         </h1>
+        <p className="display-title relative z-10 max-w-3xl" aria-hidden="false">
+          {t("hero_title_a")} <em>{t("hero_title_em")}</em><br />{t("hero_title_b")}
+        </p>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s", margin: "2rem 0" }} />
         <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-md mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>
           {t("hero_subtitle")}
