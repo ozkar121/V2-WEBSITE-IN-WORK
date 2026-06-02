@@ -145,7 +145,7 @@ const Briefing = () => {
                 title: localized(post.title, lang),
                 excerpt: localized(post.excerpt, lang),
               })),
-            ].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+            ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
             const ItemBody = ({ category, title, excerpt, readMinutes, date }: { category: string; title: string; excerpt: string; readMinutes: number; date: string; }) => (
               <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
