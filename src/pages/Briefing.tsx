@@ -144,6 +144,62 @@ const Briefing = () => {
               </li>
             ))}
           </ul>
+
+          {/* External guides (static HTML) */}
+          <div className="mt-16 pt-10 border-t border-jade-soft">
+            <h3
+              className="text-[0.7rem] uppercase text-fg-3 mb-6"
+              style={{ letterSpacing: "0.25em" }}
+            >
+              {lang === "en" ? "Guides" : "Guías"}
+            </h3>
+            <ul className="grid sm:grid-cols-2 gap-px bg-jade-soft list-none p-0 m-0">
+              {[
+                {
+                  href: "/guia-fbo-toluca.html",
+                  cat: lang === "en" ? "Operations" : "Operación",
+                  title: lang === "en"
+                    ? "FBO Guide at Toluca (MMTO)"
+                    : "Guía del FBO en Toluca (MMTO)",
+                  desc: lang === "en"
+                    ? "How private jet departures work from MMTO: process, timings and documents."
+                    : "Cómo funciona la salida en jet privado desde MMTO: proceso, tiempos y documentación.",
+                },
+                {
+                  href: "/cuanto-cuesta-jet-privado-mexico-2026.html",
+                  cat: lang === "en" ? "Pricing" : "Precios",
+                  title: lang === "en"
+                    ? "How much does a private jet cost in Mexico (2026)?"
+                    : "¿Cuánto cuesta volar en jet privado en México 2026?",
+                  desc: lang === "en"
+                    ? "Estimated one-way prices from Toluca on Learjet 35 and Hawker 800A."
+                    : "Precios estimados one-way desde Toluca en Learjet 35 y Hawker 800A.",
+                },
+              ].map((g) => (
+                <li key={g.href} className="bg-background">
+                  <a
+                    href={g.href}
+                    className="group block p-6 no-underline hover:bg-bg-3 transition-colors h-full"
+                  >
+                    <div
+                      className="text-[0.65rem] uppercase text-jade mb-3"
+                      style={{ letterSpacing: "0.25em" }}
+                    >
+                      {g.cat}
+                    </div>
+                    <h4 className="text-lg font-light text-foreground group-hover:text-jade-light transition-colors mb-2 leading-snug">
+                      {g.title}
+                    </h4>
+                    <p className="text-sm text-fg-2 leading-relaxed">{g.desc}</p>
+                    <div className="flex items-center gap-2 mt-4 text-[0.7rem] uppercase text-jade" style={{ letterSpacing: "0.2em" }}>
+                      {lang === "en" ? "Read guide" : "Leer guía"}
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
