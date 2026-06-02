@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import { SITE_URL, SITE_NAME, SITE_LOCALE, DEFAULT_OG_IMAGE } from "@/lib/site";
 
 export interface SEOProps {
@@ -16,9 +16,9 @@ export interface SEOProps {
 }
 
 /**
- * Declarative <head> tags via react-helmet-async — picked up by
- * vite-react-ssg at build time so every prerendered route ships with
- * baked title, description, canonical, hreflang, OG, Twitter and JSON-LD.
+ * Per-route <head> tags via vite-react-ssg's <Head>. Unlike react-helmet-async,
+ * <Head> is collected during SSG so titles, canonicals, OG/Twitter meta and
+ * JSON-LD are baked into the static HTML of each prerendered route.
  */
 export const SEO = ({
   title,
@@ -40,7 +40,7 @@ export const SEO = ({
     : [];
 
   return (
-    <Helmet>
+    <Head>
       <title>{title}</title>
       {description && <meta name="description" content={description} />}
       <meta
@@ -81,7 +81,7 @@ export const SEO = ({
           {JSON.stringify(item)}
         </script>
       ))}
-    </Helmet>
+    </Head>
   );
 };
 
