@@ -16,6 +16,13 @@
   "reactSnap": {
     "source": "dist",
     "destination": "dist",
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "inlineCss": false,
+    "skipThirdPartyRequests": true,
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
     "include": [
       "/",
       "/flota",
@@ -35,11 +42,7 @@
       "/rutas/cdmx-los-cabos",
       "/rutas/cdmx-miami",
       "/rutas/cdmx-monterrey"
-    ],
-    "skipThirdPartyRequests": true,
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-    "inlineCss": false,
-    "minifyHtml": { "collapseWhitespace": false, "removeComments": false }
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -81,6 +84,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
+    "puppeteer": "^25.1.0",
     "react": "^18.3.1",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
