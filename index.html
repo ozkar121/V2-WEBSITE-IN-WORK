@@ -179,8 +179,11 @@
   <body style="margin:0;background:#080907;color:#f5f3ee;font-family:'DM Sans',system-ui,-apple-system,sans-serif">
     <div id="root">
       <!-- Critical LCP snapshot: paints instantly before the JS bundle parses.
-           React replaces this on mount. Keep text in sync with hero_title_* keys. -->
-      <div style="position:fixed;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem clamp(1.5rem,4vw,4rem) 6rem;background:#080907">
+           React replaces this on mount. After react-snap prerender this block is
+           replaced with the real React tree, which is how main.tsx tells the two
+           apart (presence of #lcp-snapshot => not prerendered => render, not hydrate).
+           Keep text in sync with hero_title_* keys. -->
+      <div id="lcp-snapshot" style="position:fixed;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem clamp(1.5rem,4vw,4rem) 6rem;background:#080907">
         <div style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.4rem 0.85rem;border:1px solid rgba(158,197,184,0.25);background:rgba(158,197,184,0.06);width:fit-content;margin-bottom:1.75rem;letter-spacing:0.3em">
           <span style="width:6px;height:6px;border-radius:50%;background:#9ec5b8;display:inline-block"></span>
           <span style="font-size:0.62rem;text-transform:uppercase;color:#9ec5b8">Renta de Jet Privado · Toluca · México · Las Américas</span>
