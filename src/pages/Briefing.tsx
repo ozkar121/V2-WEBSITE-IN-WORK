@@ -110,7 +110,7 @@ const Briefing = () => {
             const externals = [
               {
                 href: "/guia-fbo-toluca.html",
-                date: "2026-06-02",
+                date: "2026-05-28",
                 readMinutes: 8,
                 category: lang === "en" ? "Operations" : "Operación",
                 title: lang === "en"
