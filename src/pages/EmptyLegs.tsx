@@ -165,9 +165,12 @@ const EmptyLegs = () => {
         <p className="relative z-10 eyebrow mb-5 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           {t("el_eyebrow")}
         </p>
-        <h1 className="relative z-10 display-title max-w-2xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
-          {t("el_hero_title_a")} <em>{t("el_hero_title_em")}</em><br />{t("el_hero_title_b")}
+        <h1 className="relative z-10 font-serif font-light text-foreground max-w-3xl animate-fade-up" style={{ animationDelay: "0.5s", fontSize: "clamp(2rem, 4.2vw, 3.25rem)", lineHeight: 1.1, marginBottom: "1.25rem" }}>
+          {lang === "en" ? "Empty Legs and Repositioning Flights in Mexico" : "Empty Legs y Trayectos Vacíos en México"}
         </h1>
+        <p className="display-title relative z-10 max-w-2xl animate-fade-up" style={{ animationDelay: "0.6s" }}>
+          {t("el_hero_title_a")} <em>{t("el_hero_title_em")}</em><br />{t("el_hero_title_b")}
+        </p>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s" }} />
         <p
           className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-xl mb-10 animate-fade-up"
