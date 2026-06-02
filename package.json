@@ -5,44 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "prerender": "react-snap",
+    "build": "vite-react-ssg build",
+    "build:dev": "vite-react-ssg build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "destination": "dist",
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-    "inlineCss": false,
-    "skipThirdPartyRequests": true,
-    "minifyHtml": {
-      "collapseWhitespace": false,
-      "removeComments": false
-    },
-    "include": [
-      "/",
-      "/flota",
-      "/empty-legs",
-      "/vuelos-de-carga",
-      "/ambulancia-aerea",
-      "/charters-grupales",
-      "/briefing",
-      "/briefing/tramites-aduanales-jet-privado-mexico",
-      "/briefing/mejores-aeropuertos-aviacion-privada-mexico",
-      "/briefing/toluca-vs-santa-lucia-vuelos-privados",
-      "/briefing/aeronaves-usa-vuelos-domesticos-mexico",
-      "/briefing/mejores-jets-medianos-mexico-usa",
-      "/briefing/como-funcionan-empty-legs",
-      "/briefing/renta-helicoptero-ciudad-de-mexico",
-      "/rutas/cdmx-cancun",
-      "/rutas/cdmx-los-cabos",
-      "/rutas/cdmx-miami",
-      "/rutas/cdmx-monterrey"
-    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
