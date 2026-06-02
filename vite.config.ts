@@ -42,14 +42,14 @@ export default defineConfig(({ mode }) => ({
   ssgOptions: {
     script: "async",
     formatting: "minify",
-    includedRoutes(paths) {
+    includedRoutes(paths: string[]) {
       const dynamic = [
         ...BRIEFING_SLUGS.map((s) => `/briefing/${s}`),
         ...ROUTE_SLUGS.map((s) => `/rutas/${s}`),
       ];
       // Drop catch-all "*" and unresolved ":param" routes.
       const staticOnly = paths.filter(
-        (p) => !p.includes(":") && !p.includes("*"),
+        (p: string) => !p.includes(":") && !p.includes("*"),
       );
       return Array.from(new Set([...staticOnly, ...dynamic]));
     },
