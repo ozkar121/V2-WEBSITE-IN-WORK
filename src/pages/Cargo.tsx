@@ -195,15 +195,21 @@ const Cargo = () => {
         </div>
 
         <h1
+          className="font-serif font-light text-foreground max-w-[820px]"
+          style={{ fontSize: "clamp(2rem, 4.2vw, 3.25rem)", lineHeight: 1.1, marginBottom: "1.25rem" }}
+        >
+          Vuelos de Carga Privados
+        </h1>
+        <p
           className="font-serif font-light leading-[1.05] text-foreground max-w-[820px]"
-          style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+          style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}
         >
           {t("cg_hero_a")} <em className="italic text-jade-light">{t("cg_hero_em")}</em>
           <br />
           {t("cg_hero_b")}
           <br />
           {t("cg_hero_c")}
-        </h1>
+        </p>
         <div className="w-[60px] h-px bg-jade my-8" />
         <p className="text-[0.95rem] font-light leading-[1.7] text-fg-3 max-w-[520px] mb-10">
           {t("cg_hero_sub")}

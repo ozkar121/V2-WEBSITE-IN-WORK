@@ -96,7 +96,6 @@
     <title>Renta de Jet Privado en Toluca y México | Numen Aviation</title>
     <meta name="description" content="Renta de jet privado y charter bajo demanda desde Toluca (MMTO). Empty legs, consultoría y adquisición. Cotización en menos de 2 horas. 24/7.">
     <meta name="author" content="Numen Aviation" />
-    <meta name="keywords" content="renta de jet privado, renta de avión privado, vuelos privados Toluca, jet privado México, charter privado México, aviación ejecutiva, empty legs México, trayectos vacíos, vuelos privados CDMX, jet privado Cancún, vuelos privados Los Cabos, jet privado Miami, adquisición de aeronaves, brokerage aeronaves México, FBO Toluca, MMTO, Numen Aviation" />
     <!-- Canonical is set per-route by useSEO (src/hooks/useSEO.ts) so /briefing and articles get their own self-referencing canonical instead of pointing to the home. -->
 
     <!-- Open Graph -->
@@ -139,6 +138,35 @@
       "sameAs": []
     }
     </script>
+
+    <!-- LocalBusiness JSON-LD (sitewide; relevant because we operate from a physical FBO at MMTO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Numen Aviation",
+      "url": "https://numen-aviation.com/",
+      "image": "https://numen-aviation.com/og-image.jpg",
+      "telephone": "+52-444-234-8942",
+      "email": "operaciones@numen-aviation.com",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Aeropuerto Internacional de Toluca (MMTO)",
+        "addressLocality": "Toluca",
+        "addressRegion": "Estado de México",
+        "postalCode": "50200",
+        "addressCountry": "MX"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "areaServed": ["MX","US","Caribbean"]
+    }
+    </script>
     
   
   
@@ -151,14 +179,17 @@
   <body style="margin:0;background:#080907;color:#f5f3ee;font-family:'DM Sans',system-ui,-apple-system,sans-serif">
     <div id="root">
       <!-- Critical LCP snapshot: paints instantly before the JS bundle parses.
-           React replaces this on mount. Keep text in sync with hero_title_* keys. -->
-      <div style="position:fixed;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem clamp(1.5rem,4vw,4rem) 6rem;background:#080907">
+           React replaces this on mount. After react-snap prerender this block is
+           replaced with the real React tree, which is how main.tsx tells the two
+           apart (presence of #lcp-snapshot => not prerendered => render, not hydrate).
+           Keep text in sync with hero_title_* keys. -->
+      <div id="lcp-snapshot" style="position:fixed;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem clamp(1.5rem,4vw,4rem) 6rem;background:#080907">
         <div style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.4rem 0.85rem;border:1px solid rgba(158,197,184,0.25);background:rgba(158,197,184,0.06);width:fit-content;margin-bottom:1.75rem;letter-spacing:0.3em">
           <span style="width:6px;height:6px;border-radius:50%;background:#9ec5b8;display:inline-block"></span>
           <span style="font-size:0.62rem;text-transform:uppercase;color:#9ec5b8">Renta de Jet Privado · Toluca · México · Las Américas</span>
         </div>
-        <div style="font-family:'DM Sans',system-ui,sans-serif;font-size:0.72rem;text-transform:uppercase;color:#9ec5b8;letter-spacing:0.28em;margin-bottom:1.1rem;font-weight:500">Renta de Jet Privado en Toluca, México</div>
-        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(3rem,7vw,6rem);line-height:1.05;margin:0;max-width:48rem;color:#f5f3ee">Beyond <em style="font-style:italic;color:#9ec5b8">First</em><br/>Class.</h1>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 1.25rem;max-width:48rem;color:#f5f3ee">Renta de Jet Privado en Toluca, México</h1>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-style:italic;font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;margin:0;max-width:48rem;color:#f5f3ee">Beyond <em style="color:#9ec5b8">First</em> Class.</p>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>

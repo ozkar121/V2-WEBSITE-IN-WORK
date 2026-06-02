@@ -152,7 +152,10 @@ const Fleet = () => {
           >
             {lang === "en" ? "The Fleet" : "La Flota"}
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-light tracking-tight text-foreground mb-8 leading-[1.05]">
+          <h1 className="font-serif text-3xl md:text-5xl font-light tracking-tight text-foreground mb-4 leading-[1.1]">
+            {lang === "en" ? "Private Jet Fleet" : "Flota de Jets Privados"}
+          </h1>
+          <p className="font-serif text-5xl md:text-7xl font-light tracking-tight text-foreground mb-8 leading-[1.05]">
             {lang === "en" ? (
               <>
                 Aircraft for every<br />
@@ -164,7 +167,7 @@ const Fleet = () => {
                 <em className="text-jade-light">misión.</em>
               </>
             )}
-          </h1>
+          </p>
           <p className="text-base md:text-lg text-fg-2 max-w-2xl leading-relaxed mb-10">
             {lang === "en"
               ? "From single-engine helicopters to intercontinental heavy jets — the complete Numen Aviation fleet, curated and operated to the highest safety standards."
