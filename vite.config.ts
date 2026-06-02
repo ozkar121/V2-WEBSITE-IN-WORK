@@ -48,12 +48,14 @@ export default defineConfig(({ mode }) => ({
         ...ROUTE_SLUGS.map((s) => `/rutas/${s}`),
       ];
       // Drop catch-all "*", unresolved ":param", and private SPA routes.
+      const blocked = new Set(["/auth", "auth", "/unsubscribe", "unsubscribe"]);
       const staticOnly = paths.filter(
         (p: string) =>
           !p.includes(":") &&
           !p.includes("*") &&
-          p !== "/auth" &&
-          !p.startsWith("/admin/"),
+          !blocked.has(p) &&
+          !p.startsWith("/admin") &&
+          !p.startsWith("admin"),
       );
       return Array.from(new Set([...staticOnly, ...dynamic]));
     },
