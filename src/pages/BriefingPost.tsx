@@ -31,20 +31,34 @@ const BriefingPost = () => {
     description,
     path: `/briefing/${post.slug}`,
     type: "article",
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: title,
-      description,
-      datePublished: post.date,
-      author: { "@type": "Organization", name: SITE_NAME },
-      publisher: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title,
+        description,
+        datePublished: post.date,
+        dateModified: post.date,
+        image: [`${SITE_URL}/og-image.jpg`],
+        author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon-numen.png` },
+        },
+        mainEntityOfPage: `${SITE_URL}/briefing/${post.slug}`,
       },
-      mainEntityOfPage: `${SITE_URL}/briefing/${post.slug}`,
-    },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Briefing", item: `${SITE_URL}/briefing` },
+          { "@type": "ListItem", position: 3, name: title, item: `${SITE_URL}/briefing/${post.slug}` },
+        ],
+      },
+    ],
   });
 
   const backLbl = lang === "en" ? "Back to Briefing" : "Volver al Briefing";
