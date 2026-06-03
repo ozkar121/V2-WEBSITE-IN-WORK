@@ -217,6 +217,58 @@ const RoutePage = () => {
         </div>
       </section>
 
+      {/* LONG-FORM SECTIONS (SEO copy) */}
+      {route.sections && route.sections.length > 0 && (
+        <section
+          className="py-24"
+          style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+        >
+          <div className="max-w-3xl mx-auto space-y-14">
+            {route.sections.map((s) => (
+              <article key={s.heading} className="reveal">
+                <h2 className="font-serif text-2xl md:text-3xl font-light text-foreground mb-5 leading-tight">
+                  {s.heading}
+                </h2>
+                <div className="gold-rule mb-6" />
+                {s.body.split("\n\n").map((p, i) => (
+                  <p key={i} className="text-[0.95rem] text-fg-2 leading-relaxed mb-4 last:mb-0">
+                    {p}
+                  </p>
+                ))}
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {route.faq && route.faq.length > 0 && (
+        <section
+          className="bg-bg-2 py-24 border-y border-jade-soft"
+          style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="reveal mb-10">
+              <p className="eyebrow mb-4">FAQ</p>
+              <h2 className="section-title">
+                Preguntas <em>frecuentes</em>
+              </h2>
+              <div className="gold-rule" />
+            </div>
+            <dl className="divide-y divide-jade-soft border-y border-jade-soft">
+              {route.faq.map((f) => (
+                <div key={f.q} className="py-6 reveal">
+                  <dt className="font-serif text-lg md:text-xl font-light text-foreground mb-2">
+                    {f.q}
+                  </dt>
+                  <dd className="text-[0.92rem] text-fg-2 leading-relaxed">{f.a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
       {/* RELATED — internal links to other routes & related briefing */}
       <section className="py-20" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
