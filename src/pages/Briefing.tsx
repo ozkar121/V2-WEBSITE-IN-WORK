@@ -7,6 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { useLang } from "@/i18n/LanguageContext";
 import { BRIEFING_POSTS, localized } from "@/data/briefingPosts";
 import { ROUTES, SITE_URL, SITE_NAME } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 
 const Briefing = () => {
   const { lang } = useLang();
