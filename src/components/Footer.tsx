@@ -8,6 +8,7 @@ const POPULAR_ROUTES = [
   { to: "/rutas/cdmx-los-cabos", label: "CDMX → Los Cabos" },
   { to: "/rutas/cdmx-miami", label: "CDMX → Miami" },
   { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
+  { to: "/rutas/toluca-acapulco", label: "Toluca → Acapulco" },
 ];
 
 const SERVICES_LINKS = [

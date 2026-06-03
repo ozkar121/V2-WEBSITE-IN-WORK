@@ -12,6 +12,16 @@ export interface RouteWhy {
   desc: string;
 }
 
+export interface RouteSection {
+  heading: string;
+  body: string; // soporta saltos de línea con \n\n
+}
+
+export interface RouteFAQ {
+  q: string;
+  a: string;
+}
+
 export interface RouteData {
   slug: string;
   title: string; // SEO title
@@ -26,6 +36,10 @@ export interface RouteData {
   aircraft: RouteAircraft[];
   why: RouteWhy[];
   ctaCity: string;
+  /** Secciones largas de copy SEO (opcional). */
+  sections?: RouteSection[];
+  /** Preguntas frecuentes — si existen se renderiza FAQ visible + JSON-LD FAQPage. */
+  faq?: RouteFAQ[];
 }
 
 export const ROUTE_DATA: Record<string, RouteData> = {
@@ -140,5 +154,115 @@ export const ROUTE_DATA: Record<string, RouteData> = {
       { num: "04", title: "Cuentas corporativas", desc: "Facturación mensual, reservas recurrentes y administración de cuenta dedicada disponibles." },
     ],
     ctaCity: "Monterrey",
+  },
+  "toluca-acapulco": {
+    slug: "toluca-acapulco",
+    title: "Renta de Jet Privado Toluca–Acapulco | Numen Aviation",
+    description:
+      "Renta de jet privado de Toluca (MMTO) a Acapulco en ~45 min. Learjet 35 y Hawker 800, empty legs y cotización en menos de 2 horas. 24/7.",
+    tagline: "Toluca · Acapulco",
+    heroFromCity: "Toluca",
+    heroToCity: "Acapulco",
+    heroSubtitle:
+      "Acapulco a 45 minutos de la pista. Sin escalas, sin filas y sin el desgaste de la Autopista del Sol — desde Toluca (MMTO), el hub ejecutivo de la Ciudad de México, directo a la bahía.",
+    waMessage:
+      "Hola, quisiera cotizar un vuelo privado de Toluca a Acapulco.",
+    stats: {
+      distance: "≈ 290 km",
+      time: "45 min",
+      price: "Desde $5,950",
+      aircraft: "Light / Midsize",
+    },
+    airports: {
+      departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
+      arrival: "Acapulco International (MMAA) — FBO ICCS, IS-BAH Etapa III",
+    },
+    aircraft: [
+      {
+        category: "Jet Ligero",
+        name: "Learjet 35",
+        pax: "6–7",
+        range: "3,800 km",
+        note: "Desde $5,950 USD + IVA (one-way). Ágil y eficiente: la opción más recurrente en esta ruta corta.",
+      },
+      {
+        category: "Jet Mediano",
+        name: "Hawker 800",
+        pax: "8",
+        range: "4,600 km",
+        note: "Desde $7,550 USD + IVA (one-way). Cabina de pie, galera completa y espacio sobrado para fin de semana en familia.",
+      },
+    ],
+    why: [
+      {
+        num: "01",
+        title: "45 minutos en el aire",
+        desc: "Frente a las casi 4 horas de la Autopista del Sol o las conexiones de un vuelo comercial. Una llamada por la mañana y por la tarde ya está en la arena.",
+      },
+      {
+        num: "02",
+        title: "Toluca (MMTO), el hub ejecutivo de la CDMX",
+        desc: "A 40 minutos de Santa Fe, Polanco e Interlomas. Despacho ágil desde el FBO, sin terminales comerciales.",
+      },
+      {
+        num: "03",
+        title: "Pernocta o regreso, lo más conveniente",
+        desc: "Para estancias de 1 a 3 días suele convenir que la aeronave pernocte. Cotizamos ambos escenarios para que elija el de mejor relación costo-beneficio.",
+      },
+      {
+        num: "04",
+        title: "Empty legs frecuentes",
+        desc: "Acapulco genera flujo constante de empty legs en ambos sentidos. Con flexibilidad de fechas, descuentos importantes sobre la tarifa regular.",
+      },
+    ],
+    ctaCity: "Acapulco",
+    sections: [
+      {
+        heading: "El vuelo más corto hacia el descanso",
+        body:
+          "Toluca y Acapulco están separados por apenas ~290 km. En jet privado el trayecto toma alrededor de 45 minutos en el aire, frente a las casi 4 horas de la carretera o las conexiones y esperas de un vuelo comercial. Es, de todas las rutas que operamos, la que mejor traduce tiempo en descanso: una llamada por la mañana y por la tarde ya está en la arena.\n\nEs un vuelo pensado para desconectar. La mayoría de nuestros clientes en esta ruta son empresarios que se escapan el fin de semana con familia o amigos —poco trabajo, mucho mar—. Por eso lo resolvemos para que lo único que tenga que decidir sea a qué hora quiere despegar.",
+      },
+      {
+        heading: "¿Viaje redondo o que la aeronave se quede?",
+        body:
+          "Al ser un trayecto tan breve, en estancias de 1, 2 o hasta 3 días suele convenir que la aeronave pernocte en Acapulco con usted en lugar de regresar vacía y volver por usted. Cada noche de pernocta tiene un costo adicional, pero en fines de semana cortos frecuentemente resulta la opción más eficiente. En su cotización le presentamos ambos escenarios —redondo con regreso de la aeronave vs. pernocta— para que elija el de mejor relación costo-beneficio.",
+      },
+      {
+        heading: "Empty legs a Acapulco: la forma más accesible de volar",
+        body:
+          "Acapulco genera un flujo constante de empty legs (trayectos de reposicionamiento) tanto de ida como de regreso. Si su agenda tiene flexibilidad de fechas, estos vuelos ofrecen descuentos importantes sobre la tarifa regular de charter. Publicamos disponibilidad actualizada; pregunte por los empty legs vigentes en la ruta Toluca–Acapulco y le avisamos en cuanto aparezca uno que embone con sus planes.",
+      },
+      {
+        heading: "Llegada en Acapulco: FBO ICCS (MMAA)",
+        body:
+          "Su vuelo aterriza en el Aeropuerto Internacional de Acapulco (MMAA / ACA), donde la operación ejecutiva se atiende a través del FBO de ICCS. Es la terminal privada de referencia en la bahía: instalaciones con salas ejecutivas, áreas de tripulación, comisariato propio y certificación internacional IS-BAH Etapa III, con acceso ágil a pista para que el desembarque sea tan fluido como el despegue. Desde ahí, su transporte terrestre a la zona Diamante o Costera lo coordinamos como parte del servicio.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de Toluca a Acapulco?",
+        a: "Depende de la aeronave y la fecha. Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 5,950 USD + IVA, y en Hawker 800 (hasta 8 pasajeros) desde 7,550 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Acapulco en jet privado?",
+        a: "Alrededor de 45 minutos en el aire, frente a cerca de 4 horas por la Autopista del Sol. Con el despacho ágil desde el FBO de Toluca, el trayecto puerta a puerta es una fracción del tiempo de cualquier alternativa.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta Toluca–Acapulco?",
+        a: "Las más frecuentes son el Learjet 35 (light jet, hasta 7 pasajeros) y el Hawker 800 (midsize jet, hasta 8 pasajeros). Para grupos o requerimientos específicos cotizamos otras opciones de la red de operadores certificados.",
+      },
+      {
+        q: "¿Conviene que la aeronave pernocte en Acapulco?",
+        a: "En estancias de 1 a 3 días suele ser más eficiente que la aeronave pernocte con usted en lugar de hacer dos viajes de reposicionamiento. Cada noche tiene un costo adicional; en la cotización comparamos ese escenario contra el viaje redondo.",
+      },
+      {
+        q: "¿Hay empty legs disponibles a Acapulco?",
+        a: "Sí, es una ruta con flujo frecuente de empty legs en ambos sentidos. Con flexibilidad de fechas se puede acceder a descuentos importantes sobre la tarifa regular de charter.",
+      },
+      {
+        q: "¿Puedo salir desde la Ciudad de México hacia Acapulco?",
+        a: "Sí. La ruta opera desde el Aeropuerto Internacional de Toluca (MMTO), el principal hub de aviación ejecutiva del Valle de México, a unos 40 minutos de Santa Fe, Polanco e Interlomas, y es la base habitual para vuelos privados desde la Ciudad de México.",
+      },
+    ],
   },
 };
