@@ -78,6 +78,7 @@ const RoutePage = () => {
   if (loading) {
     return (
       <>
+        {seo}
         <Navbar />
         <RouteSkeleton />
       </>
