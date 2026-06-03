@@ -110,7 +110,7 @@ const Briefing = () => {
           {(() => {
             const externals = [
               {
-                href: "/guia-fbo-toluca.html",
+                href: "/guia-fbo-toluca",
                 date: "2026-05-28",
                 readMinutes: 8,
                 category: lang === "en" ? "Operations" : "Operación",
@@ -122,7 +122,7 @@ const Briefing = () => {
                   : "Qué es un FBO, el proceso completo de abordaje desde MMTO, tiempos, documentación y por qué Toluca supera al AICM.",
               },
               {
-                href: "/cuanto-cuesta-jet-privado-mexico-2026.html",
+                href: "/cuanto-cuesta-jet-privado-mexico-2026",
                 date: "2026-06-02",
                 readMinutes: 10,
                 category: lang === "en" ? "Pricing" : "Precios",
