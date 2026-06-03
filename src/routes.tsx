@@ -19,6 +19,8 @@ import Rutas from "./pages/Rutas.tsx";
 import Briefing from "./pages/Briefing.tsx";
 import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
+import GuiaFboToluca from "./pages/GuiaFboToluca.tsx";
+import CuantoCuestaJetPrivado from "./pages/CuantoCuestaJetPrivado.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
 import AdminEmptyLegs from "./pages/AdminEmptyLegs.tsx";
@@ -61,6 +63,8 @@ export const routes: RouteRecord[] = [
       { path: "rutas/:slug", element: <RoutePage /> },
       { path: "briefing", element: <Briefing /> },
       { path: "briefing/:slug", element: <BriefingPost /> },
+      { path: "guia-fbo-toluca", element: <GuiaFboToluca /> },
+      { path: "cuanto-cuesta-jet-privado-mexico-2026", element: <CuantoCuestaJetPrivado /> },
       { path: "auth", element: <Auth /> },
       { path: "unsubscribe", element: <Unsubscribe /> },
       {
