@@ -50,11 +50,24 @@ const RoutePage = () => {
           trail: [
             { name: "Rutas", item: `${SITE_URL}/rutas` },
             {
-              name: `${route.heroFromCity} → ${route.heroToCity}`,
+              name: `${route.heroFromCity} a ${route.heroToCity}`,
               item: `${SITE_URL}${path}`,
             },
           ],
         })!,
+        ...(route.faq && route.faq.length > 0
+          ? [
+              {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: route.faq.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              },
+            ]
+          : []),
       ]
     : undefined;
 
