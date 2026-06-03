@@ -7,6 +7,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, PHONE_NUMBER, PHONE_TEL, SITE_URL } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import type { TranslationKey } from "@/i18n/translations";
 import heroCargo from "@/assets/hero-cargo.png";
@@ -116,15 +117,7 @@ const Cargo = () => {
           closes: "23:59",
         },
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE_URL}/#services` },
-          { "@type": "ListItem", position: 3, name: "Vuelos de Carga", item: `${SITE_URL}/vuelos-de-carga` },
-        ],
-      },
+      buildBreadcrumb({ path: "/vuelos-de-carga" })!,
     ],
   });
 

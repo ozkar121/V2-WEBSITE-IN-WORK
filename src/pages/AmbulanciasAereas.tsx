@@ -6,6 +6,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_URL, EMAIL, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import heroAmbulancia from "@/assets/hero-ambulancia.png";
 
@@ -48,19 +49,7 @@ const AmbulanciasAereas = () => {
           description: "Critical patient air transport via Learjet 35 from MMTO",
         },
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: isEs ? "Inicio" : "Home", item: `${SITE_URL}/` },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: isEs ? "Ambulancia Aérea" : "Air Ambulance",
-            item: `${SITE_URL}/ambulancia-aerea`,
-          },
-        ],
-      },
+      buildBreadcrumb({ path: "/ambulancia-aerea" })!,
     ],
   });
 

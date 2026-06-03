@@ -47,6 +47,54 @@ const HOME_JSONLD = [
     name: "Numen Aviation",
     inLanguage: "es-MX",
   },
+  // Service: describe el servicio principal del negocio (renta de jet privado).
+  // No reemplaza al LocalBusiness — lo complementa para resultados enriquecidos
+  // de tipo "Service" en Google.
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}/#service`,
+    name: "Charter de Jet Privado — Numen Aviation",
+    serviceType: "Renta de Jet Privado",
+    description:
+      "Renta de jet privado bajo demanda desde el Aeropuerto Internacional de Toluca (MMTO). Vuelos nacionales e internacionales, empty legs, ambulancia aérea, vuelos de carga y charters grupales. Cotización en menos de 2 horas, operación 24/7.",
+    provider: { "@id": `${SITE_URL}/#business` },
+    areaServed: [
+      { "@type": "Country", name: "Mexico" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Place", name: "Caribbean" },
+      { "@type": "Place", name: "Central America" },
+    ],
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: SITE_URL,
+      availableLanguage: ["Spanish", "English"],
+    },
+    hoursAvailable: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "23:59",
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: SITE_URL,
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Servicios Numen Aviation",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Charter Bajo Demanda", url: SITE_URL } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Empty Legs", url: `${SITE_URL}/empty-legs` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Vuelos de Carga", url: `${SITE_URL}/vuelos-de-carga` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ambulancia Aérea", url: `${SITE_URL}/ambulancia-aerea` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Charters Grupales", url: `${SITE_URL}/charters-grupales` } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Flota", url: `${SITE_URL}/flota` } },
+      ],
+    },
+  },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
