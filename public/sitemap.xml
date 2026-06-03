@@ -76,6 +76,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://numen-aviation.com/rutas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://numen-aviation.com/rutas/cdmx-cancun</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
