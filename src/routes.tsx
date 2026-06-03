@@ -15,6 +15,7 @@ import Cargo from "./pages/Cargo.tsx";
 import AmbulanciasAereas from "./pages/AmbulanciasAereas.tsx";
 import ChartersGrupos from "./pages/ChartersGrupos.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
+import Rutas from "./pages/Rutas.tsx";
 import Briefing from "./pages/Briefing.tsx";
 import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
