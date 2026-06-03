@@ -27,7 +27,7 @@ const RouteSkeleton = () => (
 
 const RoutePage = () => {
   const { slug } = useParams();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const { t } = useLang();
   useReveal();
   const route = slug ? ROUTE_DATA[slug] : undefined;
