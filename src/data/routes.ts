@@ -12,6 +12,16 @@ export interface RouteWhy {
   desc: string;
 }
 
+export interface RouteSection {
+  heading: string;
+  body: string; // soporta saltos de línea con \n\n
+}
+
+export interface RouteFAQ {
+  q: string;
+  a: string;
+}
+
 export interface RouteData {
   slug: string;
   title: string; // SEO title
@@ -26,6 +36,10 @@ export interface RouteData {
   aircraft: RouteAircraft[];
   why: RouteWhy[];
   ctaCity: string;
+  /** Secciones largas de copy SEO (opcional). */
+  sections?: RouteSection[];
+  /** Preguntas frecuentes — si existen se renderiza FAQ visible + JSON-LD FAQPage. */
+  faq?: RouteFAQ[];
 }
 
 export const ROUTE_DATA: Record<string, RouteData> = {
