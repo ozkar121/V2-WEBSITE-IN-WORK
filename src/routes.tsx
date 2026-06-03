@@ -63,6 +63,8 @@ export const routes: RouteRecord[] = [
       { path: "rutas/:slug", element: <RoutePage /> },
       { path: "briefing", element: <Briefing /> },
       { path: "briefing/:slug", element: <BriefingPost /> },
+      { path: "guia-fbo-toluca", element: <GuiaFboToluca /> },
+      { path: "cuanto-cuesta-jet-privado-mexico-2026", element: <CuantoCuestaJetPrivado /> },
       { path: "auth", element: <Auth /> },
       { path: "unsubscribe", element: <Unsubscribe /> },
       {
