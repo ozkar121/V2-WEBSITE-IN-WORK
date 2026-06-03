@@ -15,6 +15,7 @@ import Cargo from "./pages/Cargo.tsx";
 import AmbulanciasAereas from "./pages/AmbulanciasAereas.tsx";
 import ChartersGrupos from "./pages/ChartersGrupos.tsx";
 import RoutePage from "./pages/RoutePage.tsx";
+import Rutas from "./pages/Rutas.tsx";
 import Briefing from "./pages/Briefing.tsx";
 import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
@@ -56,6 +57,7 @@ export const routes: RouteRecord[] = [
       // Legacy redirects (kept as direct renders)
       { path: "servicios/ambulancias-aereas", element: <AmbulanciasAereas /> },
       { path: "servicios/charters-grupos", element: <ChartersGrupos /> },
+      { path: "rutas", element: <Rutas /> },
       { path: "rutas/:slug", element: <RoutePage /> },
       { path: "briefing", element: <Briefing /> },
       { path: "briefing/:slug", element: <BriefingPost /> },

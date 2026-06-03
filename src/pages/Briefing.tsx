@@ -7,6 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { useLang } from "@/i18n/LanguageContext";
 import { BRIEFING_POSTS, localized } from "@/data/briefingPosts";
 import { ROUTES, SITE_URL, SITE_NAME } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 
 const Briefing = () => {
   const { lang } = useLang();
@@ -42,25 +43,28 @@ const Briefing = () => {
         : "Apuntes sobre aviación privada en México: aduanas, aeropuertos, regulación, flota y rutas, por Numen Aviation.",
     path: "/briefing",
     type: "website",
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      name: "The Numen Briefing",
-      url: `${SITE_URL}/briefing`,
-      publisher: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "The Numen Briefing",
+        url: `${SITE_URL}/briefing`,
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+        blogPost: sorted.map((p) => ({
+          "@type": "BlogPosting",
+          headline: localized(p.title, lang),
+          description: localized(p.description, lang),
+          url: `${SITE_URL}/briefing/${p.slug}`,
+          datePublished: p.date,
+          author: { "@type": "Organization", name: SITE_NAME },
+        })),
       },
-      blogPost: sorted.map((p) => ({
-        "@type": "BlogPosting",
-        headline: localized(p.title, lang),
-        description: localized(p.description, lang),
-        url: `${SITE_URL}/briefing/${p.slug}`,
-        datePublished: p.date,
-        author: { "@type": "Organization", name: SITE_NAME },
-      })),
-    },
+      buildBreadcrumb({ path: "/briefing" })!,
+    ],
   });
 
   return (

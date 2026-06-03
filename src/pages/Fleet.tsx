@@ -11,6 +11,7 @@ import { sbImage, sbImageSrcSet } from "@/lib/img";
 import { useLang } from "@/i18n/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import type { TranslationKey } from "@/i18n/translations";
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
@@ -98,34 +99,37 @@ const Fleet = () => {
         : "Explora la flota Numen Aviation: helicópteros, turbohélices, jets ligeros, medianos y pesados para charter desde Toluca (MMTO) en México, EUA, Caribe y Centroamérica.",
     path: "/flota",
     type: "website",
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      name: lang === "en" ? "Numen Aviation Fleet" : "Flota Numen Aviation",
-      url: `${SITE_URL}/flota`,
-      publisher: {
-        "@type": "Organization",
-        name: SITE_NAME,
-        url: SITE_URL,
-        logo: `${SITE_URL}/og-image.jpg`,
-      },
-      mainEntity: {
-        "@type": "ItemList",
-        numberOfItems: aircraft.length,
-        itemListElement: aircraft.map((a, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          url: `${SITE_URL}/flota#${a.id}`,
-          item: {
-            "@type": "Vehicle",
-            "@id": `${SITE_URL}/flota#${a.id}`,
-            name: a.name,
-            vehicleConfiguration: CATEGORY_LABELS[a.category],
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: lang === "en" ? "Numen Aviation Fleet" : "Flota Numen Aviation",
+        url: `${SITE_URL}/flota`,
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: `${SITE_URL}/og-image.jpg`,
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: aircraft.length,
+          itemListElement: aircraft.map((a, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
             url: `${SITE_URL}/flota#${a.id}`,
-          },
-        })),
+            item: {
+              "@type": "Vehicle",
+              "@id": `${SITE_URL}/flota#${a.id}`,
+              name: a.name,
+              vehicleConfiguration: CATEGORY_LABELS[a.category],
+              url: `${SITE_URL}/flota#${a.id}`,
+            },
+          })),
+        },
       },
-    },
+      buildBreadcrumb({ path: "/flota" })!,
+    ],
   });
 
   return (

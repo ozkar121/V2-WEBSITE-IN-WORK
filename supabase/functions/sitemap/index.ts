@@ -11,6 +11,7 @@ const STATIC_PAGES: { path: string; priority: string; changefreq: string }[] = [
   { path: "/vuelos-de-carga", priority: "0.9", changefreq: "monthly" },
   { path: "/ambulancia-aerea", priority: "0.9", changefreq: "monthly" },
   { path: "/charters-grupales", priority: "0.9", changefreq: "monthly" },
+  { path: "/rutas", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/cdmx-cancun", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/cdmx-los-cabos", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/cdmx-miami", priority: "0.8", changefreq: "monthly" },
