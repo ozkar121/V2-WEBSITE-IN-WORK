@@ -27,4 +27,5 @@ export const ROUTES = [
   { slug: "cdmx-los-cabos", label: "CDMX → Los Cabos" },
   { slug: "cdmx-miami", label: "CDMX → Miami" },
   { slug: "cdmx-monterrey", label: "CDMX → Monterrey" },
+  { slug: "toluca-acapulco", label: "Toluca → Acapulco" },
 ];
