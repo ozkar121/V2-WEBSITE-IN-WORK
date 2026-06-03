@@ -21,6 +21,7 @@ const ROUTE_SLUGS = [
   "cdmx-los-cabos",
   "cdmx-miami",
   "cdmx-monterrey",
+  "toluca-acapulco",
 ];
 
 // https://vitejs.dev/config/
