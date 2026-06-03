@@ -16,6 +16,7 @@ const STATIC_PAGES: { path: string; priority: string; changefreq: string }[] = [
   { path: "/rutas/cdmx-los-cabos", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/cdmx-miami", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/cdmx-monterrey", priority: "0.8", changefreq: "monthly" },
+  { path: "/rutas/toluca-acapulco", priority: "0.8", changefreq: "monthly" },
 ];
 
 const corsHeaders = {
