@@ -57,6 +57,7 @@ export const routes: RouteRecord[] = [
       // Legacy redirects (kept as direct renders)
       { path: "servicios/ambulancias-aereas", element: <AmbulanciasAereas /> },
       { path: "servicios/charters-grupos", element: <ChartersGrupos /> },
+      { path: "rutas", element: <Rutas /> },
       { path: "rutas/:slug", element: <RoutePage /> },
       { path: "briefing", element: <Briefing /> },
       { path: "briefing/:slug", element: <BriefingPost /> },
