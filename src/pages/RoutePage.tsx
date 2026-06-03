@@ -13,7 +13,6 @@ import { useLang } from "@/i18n/LanguageContext";
 
 const RoutePage = () => {
   const { slug } = useParams();
-  const [loading, setLoading] = useState(false);
   const { t } = useLang();
   useReveal();
   const route = slug ? ROUTE_DATA[slug] : undefined;
@@ -66,23 +65,13 @@ const RoutePage = () => {
   });
 
   useEffect(() => {
-    setLoading(true);
-    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-    const timer = setTimeout(() => setLoading(false), 250);
-    return () => clearTimeout(timer);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    }
   }, [slug]);
 
   if (!route) return <Navigate to="/" replace />;
 
-  if (loading) {
-    return (
-      <>
-        {seo}
-        <Navbar />
-        <RouteSkeleton />
-      </>
-    );
-  }
 
   return (
     <div key={slug} className="animate-fade-in">
