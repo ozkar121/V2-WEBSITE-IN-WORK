@@ -111,22 +111,25 @@ const Fleet = () => {
           url: SITE_URL,
           logo: `${SITE_URL}/og-image.jpg`,
         },
-        mainEntity: {
-          "@type": "ItemList",
-          numberOfItems: aircraft.length,
-          itemListElement: aircraft.map((a, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            url: `${SITE_URL}/flota#${a.id}`,
-            item: {
-              "@type": "Vehicle",
-              "@id": `${SITE_URL}/flota#${a.id}`,
-              name: a.name,
-              vehicleConfiguration: CATEGORY_LABELS[a.category],
-              url: `${SITE_URL}/flota#${a.id}`,
-            },
-          })),
-        },
+        mainEntity:
+          aircraft.length > 0
+            ? {
+                "@type": "ItemList",
+                numberOfItems: aircraft.length,
+                itemListElement: aircraft.map((a, i) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  url: `${SITE_URL}/flota#${a.id}`,
+                  item: {
+                    "@type": "Vehicle",
+                    "@id": `${SITE_URL}/flota#${a.id}`,
+                    name: a.name,
+                    vehicleConfiguration: CATEGORY_LABELS[a.category],
+                    url: `${SITE_URL}/flota#${a.id}`,
+                  },
+                })),
+              }
+            : undefined,
       },
       buildBreadcrumb({ path: "/flota" })!,
     ],
