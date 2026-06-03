@@ -11,6 +11,7 @@ import { sbImage, sbImageSrcSet } from "@/lib/img";
 import { useLang } from "@/i18n/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import type { TranslationKey } from "@/i18n/translations";
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
