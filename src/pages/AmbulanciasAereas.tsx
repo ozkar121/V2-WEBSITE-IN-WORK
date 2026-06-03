@@ -148,7 +148,6 @@ const AmbulanciasAereas = () => {
     "Guatemala City",
     "San José, CR",
     "Bogotá",
-    "La Habana",
   ];
 
   const AUDIENCES = [
