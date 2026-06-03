@@ -9,6 +9,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { useLang } from "@/i18n/LanguageContext";
 import { BRIEFING_POSTS, getBriefingPost, localized } from "@/data/briefingPosts";
 import { SITE_URL, SITE_NAME, waLink } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import NotFound from "@/pages/NotFound";
 
 const BriefingPost = () => {
@@ -49,15 +50,13 @@ const BriefingPost = () => {
         },
         mainEntityOfPage: `${SITE_URL}/briefing/${post.slug}`,
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Briefing", item: `${SITE_URL}/briefing` },
-          { "@type": "ListItem", position: 3, name: title, item: `${SITE_URL}/briefing/${post.slug}` },
+      buildBreadcrumb({
+        path: `/briefing/${post.slug}`,
+        trail: [
+          { name: "Briefing", item: `${SITE_URL}/briefing` },
+          { name: title, item: `${SITE_URL}/briefing/${post.slug}` },
         ],
-      },
+      })!,
     ],
   });
 

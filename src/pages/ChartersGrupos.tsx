@@ -6,6 +6,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import heroCharters from "@/assets/hero-charters.png";
 
@@ -35,19 +36,7 @@ const ChartersGrupos = () => {
         serviceType: "Group Aircraft Charter",
         areaServed: ["Mexico", "United States", "Caribbean", "Central America"],
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: isEs ? "Inicio" : "Home", item: `${SITE_URL}/` },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: isEs ? "Charters Grupales" : "Group Charters",
-            item: `${SITE_URL}/charters-grupales`,
-          },
-        ],
-      },
+      buildBreadcrumb({ path: "/charters-grupales" })!,
     ],
   });
 

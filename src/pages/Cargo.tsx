@@ -116,15 +116,7 @@ const Cargo = () => {
           closes: "23:59",
         },
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Servicios", item: `${SITE_URL}/#services` },
-          { "@type": "ListItem", position: 3, name: "Vuelos de Carga", item: `${SITE_URL}/vuelos-de-carga` },
-        ],
-      },
+      buildBreadcrumb({ path: "/vuelos-de-carga" })!,
     ],
   });
 

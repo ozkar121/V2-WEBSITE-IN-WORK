@@ -7,6 +7,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
 import { ROUTE_DATA } from "@/data/routes";
 import { waLink, SITE_URL } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 
 const RouteSkeleton = () => (
@@ -44,15 +45,16 @@ const RoutePage = () => {
           description: route.description,
           url: `${SITE_URL}${path}`,
         },
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: "Rutas", item: `${SITE_URL}/#fleet` },
-            { "@type": "ListItem", position: 3, name: route.tagline.replace(" · ", " → "), item: `${SITE_URL}${path}` },
+        buildBreadcrumb({
+          path,
+          trail: [
+            { name: "Rutas", item: `${SITE_URL}/rutas` },
+            {
+              name: `${route.heroFromCity} → ${route.heroToCity}`,
+              item: `${SITE_URL}${path}`,
+            },
           ],
-        },
+        })!,
       ]
     : undefined;
 

@@ -9,6 +9,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { supabase } from "@/integrations/supabase/client";
 import { type AircraftCategory } from "@/data/aircraft";
 import { waLink, SITE_URL } from "@/lib/site";
+import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import type { TranslationKey } from "@/i18n/translations";
 
@@ -63,14 +64,7 @@ const EMPTY_LEGS_JSONLD = [
       },
     ],
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Empty Legs", item: `${SITE_URL}/empty-legs` },
-    ],
-  },
+  buildBreadcrumb({ path: "/empty-legs" })!,
 ];
 
 const EmptyLegs = () => {
