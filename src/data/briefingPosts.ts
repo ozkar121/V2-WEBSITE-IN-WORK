@@ -219,6 +219,30 @@ export const BRIEFING_POSTS: BriefingPost[] = [
     readMinutes: 8,
     body: make({ es: helicopterES, en: helicopterEN }),
   },
+  {
+    slug: "helicopter-charter-toluca-cdmx",
+    order: 0,
+    date: "2026-06-04",
+    category: { es: "Servicios de Aviación Privada", en: "Private Aviation Services" },
+    title: {
+      es: "Helicóptero Charter Toluca ↔ CDMX (MMTO): Traslados Ejecutivos y Tours",
+      en: "Helicopter Charter Toluca ↔ Mexico City (MMTO): Executive Transfers & Tours",
+    },
+    description: {
+      es: "Renta de helicópteros ejecutivos y panorámicos entre Toluca (MMTO) y la CDMX. Traslados puerta a puerta en 12–18 min, flota Agusta 109E, Bell 505 y Bell 206. Desde $4,000 USD.",
+      en: "Executive and scenic helicopter charter between Toluca (MMTO) and Mexico City. Door-to-door transfers in 12–18 min, Agusta 109E, Bell 505 and Bell 206 fleet. From $4,000 USD.",
+    },
+    excerpt: {
+      es: "Traslados puerta a puerta Toluca ↔ CDMX en 12–18 minutos y conexión inmediata con tu jet privado en MMTO.",
+      en: "Door-to-door Toluca ↔ CDMX transfers in 12–18 minutes with an immediate connection to your private jet at MMTO.",
+    },
+    keywords: {
+      es: "helicóptero Toluca CDMX, renta helicóptero MMTO, traslado helicóptero Santa Fe, helipuerto Polanco, Agusta 109E, Bell 505",
+      en: "helicopter charter Toluca CDMX, MMTO helicopter transfer, Santa Fe helipad, Polanco helipad, Agusta 109E, Bell 505",
+    },
+    readMinutes: 9,
+    body: make({ es: heliCharterES, en: heliCharterEN }),
+  },
 ];
 
 export const getBriefingPost = (slug: string): BriefingPost | undefined =>
