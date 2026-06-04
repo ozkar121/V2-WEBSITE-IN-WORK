@@ -14,6 +14,7 @@ const BRIEFING_SLUGS = [
   "mejores-jets-medianos-mexico-usa",
   "como-funcionan-empty-legs",
   "renta-helicoptero-ciudad-de-mexico",
+  "helicopter-charter-toluca-cdmx",
 ];
 
 const ROUTE_SLUGS = [
