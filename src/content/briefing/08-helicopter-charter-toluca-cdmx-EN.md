@@ -42,7 +42,6 @@ Mexico City has one of the densest helipad networks in Latin America, with more 
 - **Polanco.** High-rise helipads over the corridor's corporate towers; ideal for business meetings.
 - **Paseo de la Reforma.** Helipads atop the financial-corridor towers, with prior authorization.
 - **Interlomas and the western zone.** Helipads for daytime operations and twin-engine aircraft.
-- **Public helipad.** Primary arrival point for transfers into the city center.
 
 ## Our helicopter fleet
 

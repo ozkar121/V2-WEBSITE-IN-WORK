@@ -42,7 +42,6 @@ La CDMX cuenta con una de las redes de helipuertos más densas de América Latin
 - **Polanco.** Helipuertos en altura sobre los corporativos del corredor; ideal para reuniones de negocios.
 - **Paseo de la Reforma.** Helipuertos sobre las torres del corredor financiero, con autorización previa.
 - **Interlomas y zona poniente.** Helipuertos para operación diurna y aeronaves bimotor.
-- **Helipuerto público.** Punto de llegada principal para transferencias hacia el centro de la ciudad.
 
 ## Nuestra flota de helicópteros
 
