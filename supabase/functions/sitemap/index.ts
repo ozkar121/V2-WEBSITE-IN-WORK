@@ -17,6 +17,8 @@ const STATIC_PAGES: { path: string; priority: string; changefreq: string }[] = [
   { path: "/rutas/cdmx-miami", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/cdmx-monterrey", priority: "0.8", changefreq: "monthly" },
   { path: "/rutas/toluca-acapulco", priority: "0.8", changefreq: "monthly" },
+  { path: "/briefing", priority: "0.8", changefreq: "weekly" },
+  { path: "/briefing/helicopter-charter-toluca-cdmx", priority: "0.8", changefreq: "monthly" },
 ];
 
 const corsHeaders = {
