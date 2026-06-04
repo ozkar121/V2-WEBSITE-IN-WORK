@@ -16,6 +16,8 @@ import emptyLegsES from "@/content/briefing/06-empty-legs-ES.md?raw";
 import emptyLegsEN from "@/content/briefing/06-empty-legs-EN.md?raw";
 import helicopterES from "@/content/briefing/07-helicopter-cdmx-ES.md?raw";
 import helicopterEN from "@/content/briefing/07-helicopter-cdmx-EN.md?raw";
+import heliCharterES from "@/content/briefing/08-helicopter-charter-toluca-cdmx-ES.md?raw";
+import heliCharterEN from "@/content/briefing/08-helicopter-charter-toluca-cdmx-EN.md?raw";
 
 import type { Lang } from "@/i18n/translations";
 
