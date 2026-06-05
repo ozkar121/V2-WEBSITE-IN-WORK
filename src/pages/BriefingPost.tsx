@@ -8,6 +8,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useSEO } from "@/hooks/useSEO";
 import { useLang } from "@/i18n/LanguageContext";
 import { BRIEFING_POSTS, getBriefingPost, localized } from "@/data/briefingPosts";
+import { RelatedLinks } from "@/components/RelatedLinks";
 import { SITE_URL, SITE_NAME, waLink } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import NotFound from "@/pages/NotFound";
@@ -110,6 +111,8 @@ const BriefingPost = () => {
           <div className="briefing-prose">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
           </div>
+
+          <RelatedLinks path={`/briefing/${post.slug}`} />
 
           {/* CTA */}
           <div className="mt-16 p-8 border border-jade-soft bg-bg-3/40">

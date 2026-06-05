@@ -8,6 +8,7 @@ import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useSEO } from "@/hooks/useSEO";
 import { SITE_URL, SITE_NAME, waLink } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
+import { RelatedLinks } from "@/components/RelatedLinks";
 
 const PATH = "/guia-fbo-toluca";
 const TITLE = "Guía del FBO en Toluca (MMTO)";
@@ -210,6 +211,8 @@ const GuiaFboToluca = () => {
           <div className="briefing-prose">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{BODY}</ReactMarkdown>
           </div>
+
+          <RelatedLinks path={PATH} />
 
           {/* CTA */}
           <div className="mt-16 p-8 border border-jade-soft bg-bg-3/40">
