@@ -16,7 +16,6 @@ export const Navbar = () => {
   const navLinks = [
     { label: t("nav_fleet"), href: "/flota" },
     { label: t("nav_empty_legs"), href: "/empty-legs" },
-    { label: t("nav_briefing"), href: "/briefing" },
     { label: t("nav_about"), href: "/#why" },
     { label: t("nav_contact"), href: "/#contact" },
   ];
@@ -25,6 +24,21 @@ export const Navbar = () => {
     { label: t("nav_cargo"), to: "/vuelos-de-carga" },
     { label: t("nav_svc_ambulance"), to: "/ambulancia-aerea" },
     { label: t("nav_svc_groups"), to: "/charters-grupales" },
+  ];
+
+  const guides = [
+    { label: "Briefing", to: "/briefing" },
+    { label: "Guía del FBO en Toluca", to: "/guia-fbo-toluca" },
+    { label: "Cuánto cuesta un jet privado 2026", to: "/cuanto-cuesta-jet-privado-mexico-2026" },
+  ];
+
+  const routes = [
+    { label: "CDMX → Cancún", to: "/rutas/cdmx-cancun" },
+    { label: "CDMX → Los Cabos", to: "/rutas/cdmx-los-cabos" },
+    { label: "CDMX → Miami", to: "/rutas/cdmx-miami" },
+    { label: "CDMX → Monterrey", to: "/rutas/cdmx-monterrey" },
+    { label: "Toluca → Acapulco", to: "/rutas/toluca-acapulco" },
+    { label: "Todas las rutas", to: "/rutas" },
   ];
 
   useEffect(() => {
@@ -96,6 +110,48 @@ export const Navbar = () => {
                   style={{ letterSpacing: "0.15em" }}
                 >
                   {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li className="relative group">
+          <button
+            className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            {t("nav_routes")} <ChevronDown className="w-3 h-3" />
+          </button>
+          <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[240px] py-2 list-none">
+            {routes.map((r) => (
+              <li key={r.to}>
+                <Link
+                  to={r.to}
+                  className="block px-5 py-3 text-[0.72rem] uppercase text-fg-3 hover:text-jade-light hover:bg-bg-3 transition-colors no-underline border-b border-jade-soft last:border-b-0 whitespace-nowrap"
+                  style={{ letterSpacing: "0.15em" }}
+                >
+                  {r.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li className="relative group">
+          <button
+            className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            Guías <ChevronDown className="w-3 h-3" />
+          </button>
+          <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[300px] py-2 list-none">
+            {guides.map((g) => (
+              <li key={g.to}>
+                <Link
+                  to={g.to}
+                  className="block px-5 py-3 text-[0.72rem] uppercase text-fg-3 hover:text-jade-light hover:bg-bg-3 transition-colors no-underline border-b border-jade-soft last:border-b-0 whitespace-nowrap"
+                  style={{ letterSpacing: "0.15em" }}
+                >
+                  {g.label}
                 </Link>
               </li>
             ))}
@@ -198,6 +254,42 @@ export const Navbar = () => {
                     style={{ letterSpacing: "0.15em" }}
                   >
                     {s.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
+            <details className="group">
+              <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
+                {t("nav_routes")} <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="flex flex-col gap-3 items-center mt-4">
+                {routes.map((r) => (
+                  <Link
+                    key={r.to}
+                    to={r.to}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light text-center px-4"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {r.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
+            <details className="group">
+              <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
+                Guías <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="flex flex-col gap-3 items-center mt-4">
+                {guides.map((g) => (
+                  <Link
+                    key={g.to}
+                    to={g.to}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light text-center px-4"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {g.label}
                   </Link>
                 ))}
               </div>
