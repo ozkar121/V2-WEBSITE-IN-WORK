@@ -115,6 +115,48 @@ export const Navbar = () => {
             ))}
           </ul>
         </li>
+        <li className="relative group">
+          <button
+            className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            {t("nav_routes")} <ChevronDown className="w-3 h-3" />
+          </button>
+          <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[240px] py-2 list-none">
+            {routes.map((r) => (
+              <li key={r.to}>
+                <Link
+                  to={r.to}
+                  className="block px-5 py-3 text-[0.72rem] uppercase text-fg-3 hover:text-jade-light hover:bg-bg-3 transition-colors no-underline border-b border-jade-soft last:border-b-0 whitespace-nowrap"
+                  style={{ letterSpacing: "0.15em" }}
+                >
+                  {r.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li className="relative group">
+          <button
+            className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            Guías <ChevronDown className="w-3 h-3" />
+          </button>
+          <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[300px] py-2 list-none">
+            {guides.map((g) => (
+              <li key={g.to}>
+                <Link
+                  to={g.to}
+                  className="block px-5 py-3 text-[0.72rem] uppercase text-fg-3 hover:text-jade-light hover:bg-bg-3 transition-colors no-underline border-b border-jade-soft last:border-b-0 whitespace-nowrap"
+                  style={{ letterSpacing: "0.15em" }}
+                >
+                  {g.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </li>
         <li>
           <LanguageSwitcher />
         </li>
