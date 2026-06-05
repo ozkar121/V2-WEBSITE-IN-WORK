@@ -16,7 +16,6 @@ export const Navbar = () => {
   const navLinks = [
     { label: t("nav_fleet"), href: "/flota" },
     { label: t("nav_empty_legs"), href: "/empty-legs" },
-    { label: t("nav_briefing"), href: "/briefing" },
     { label: t("nav_about"), href: "/#why" },
     { label: t("nav_contact"), href: "/#contact" },
   ];
@@ -25,6 +24,21 @@ export const Navbar = () => {
     { label: t("nav_cargo"), to: "/vuelos-de-carga" },
     { label: t("nav_svc_ambulance"), to: "/ambulancia-aerea" },
     { label: t("nav_svc_groups"), to: "/charters-grupales" },
+  ];
+
+  const guides = [
+    { label: "Briefing", to: "/briefing" },
+    { label: "Guía del FBO en Toluca", to: "/guia-fbo-toluca" },
+    { label: "Cuánto cuesta un jet privado 2026", to: "/cuanto-cuesta-jet-privado-mexico-2026" },
+  ];
+
+  const routes = [
+    { label: "CDMX → Cancún", to: "/rutas/cdmx-cancun" },
+    { label: "CDMX → Los Cabos", to: "/rutas/cdmx-los-cabos" },
+    { label: "CDMX → Miami", to: "/rutas/cdmx-miami" },
+    { label: "CDMX → Monterrey", to: "/rutas/cdmx-monterrey" },
+    { label: "Toluca → Acapulco", to: "/rutas/toluca-acapulco" },
+    { label: "Todas las rutas", to: "/rutas" },
   ];
 
   useEffect(() => {

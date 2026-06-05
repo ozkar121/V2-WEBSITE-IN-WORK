@@ -9,18 +9,21 @@ const POPULAR_ROUTES = [
   { to: "/rutas/cdmx-miami", label: "CDMX → Miami" },
   { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
   { to: "/rutas/toluca-acapulco", label: "Toluca → Acapulco" },
+  { to: "/rutas", label: "Todas las rutas" },
 ];
 
 const SERVICES_LINKS = [
   { to: "/flota", label: "Flota" },
   { to: "/empty-legs", label: "Empty Legs" },
-  { to: "/charters-grupales", label: "Charters de Grupos" },
-  { to: "/vuelos-de-carga", label: "Cargo" },
-  { to: "/ambulancia-aerea", label: "Ambulancias Aéreas" },
+  { to: "/charters-grupales", label: "Charters Grupales" },
+  { to: "/vuelos-de-carga", label: "Vuelos de Carga" },
+  { to: "/ambulancia-aerea", label: "Ambulancia Aérea" },
 ];
 
 const RESOURCES_LINKS = [
   { to: "/briefing", label: "Briefing" },
+  { to: "/guia-fbo-toluca", label: "Guía del FBO en Toluca" },
+  { to: "/cuanto-cuesta-jet-privado-mexico-2026", label: "Cuánto cuesta un jet privado 2026" },
   { to: "/briefing/tramites-aduanales-jet-privado-mexico", label: "Trámites Aduanales en México" },
 ];
 
@@ -137,7 +140,7 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Recursos
+            Guías y Briefing
           </h4>
           <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
             {RESOURCES_LINKS.map((l) => (
