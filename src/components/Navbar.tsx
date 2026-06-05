@@ -258,6 +258,42 @@ export const Navbar = () => {
                 ))}
               </div>
             </details>
+            <details className="group">
+              <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
+                {t("nav_routes")} <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="flex flex-col gap-3 items-center mt-4">
+                {routes.map((r) => (
+                  <Link
+                    key={r.to}
+                    to={r.to}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light text-center px-4"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {r.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
+            <details className="group">
+              <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
+                Guías <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="flex flex-col gap-3 items-center mt-4">
+                {guides.map((g) => (
+                  <Link
+                    key={g.to}
+                    to={g.to}
+                    onClick={() => setOpen(false)}
+                    className="text-sm uppercase text-jade-light text-center px-4"
+                    style={{ letterSpacing: "0.15em" }}
+                  >
+                    {g.label}
+                  </Link>
+                ))}
+              </div>
+            </details>
             <a
               href={`tel:${PHONE_TEL}`}
               onClick={() => setOpen(false)}
