@@ -102,37 +102,30 @@ const Fleet = () => {
     jsonLd: [
       {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        name: lang === "en" ? "Numen Aviation Fleet" : "Flota Numen Aviation",
+        "@type": "ItemList",
+        name: lang === "en" ? "Numen Aviation Fleet" : "Flota de Numen Aviation",
         url: `${SITE_URL}/flota`,
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_URL,
-          logo: `${SITE_URL}/og-image.jpg`,
-        },
-        mainEntity:
-          aircraft.length > 0
-            ? {
-                "@type": "ItemList",
-                numberOfItems: aircraft.length,
-                itemListElement: aircraft.map((a, i) => ({
-                  "@type": "ListItem",
-                  position: i + 1,
-                  url: `${SITE_URL}/flota#${a.id}`,
-                  item: {
-                    "@type": "Vehicle",
-                    "@id": `${SITE_URL}/flota#${a.id}`,
-                    name: a.name,
-                    vehicleConfiguration: CATEGORY_LABELS[a.category],
-                    url: `${SITE_URL}/flota#${a.id}`,
-                  },
-                })),
-              }
-            : undefined,
+        numberOfItems: aircraft.length,
+        itemListElement: aircraft.map((a, i) => {
+          const img = photos[a.id];
+          return {
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Thing",
+              name: a.name,
+              ...(img ? { image: sbImage(img, 1200) } : {}),
+              description:
+                lang === "en"
+                  ? `${CATEGORY_LABELS[a.category]} available for private charter from Toluca (MMTO).`
+                  : `${CATEGORY_LABELS[a.category]} disponible para charter privado desde Toluca (MMTO).`,
+            },
+          };
+        }),
       },
       buildBreadcrumb({ path: "/flota" })!,
     ],
+
   });
 
   return (
