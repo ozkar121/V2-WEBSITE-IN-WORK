@@ -13,6 +13,10 @@ import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import type { TranslationKey } from "@/i18n/translations";
+import aircraftSnapshot from "@/data/aircraftSnapshot.json";
+
+const SNAPSHOT_AIRCRAFT = aircraftSnapshot.aircraft as Aircraft[];
+const SNAPSHOT_PHOTOS = aircraftSnapshot.photos as Record<string, string>;
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
   turbo: "cat_turbo",
@@ -47,9 +51,9 @@ const CAT_DESC: Record<AircraftCategory, { es: string; en: string }> = {
 
 const Fleet = () => {
   const { t, lang } = useLang();
-  const [aircraft, setAircraft] = useState<Aircraft[]>([]);
-  const [photos, setPhotos] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState(true);
+  const [aircraft, setAircraft] = useState<Aircraft[]>(SNAPSHOT_AIRCRAFT);
+  const [photos, setPhotos] = useState<Record<string, string>>(SNAPSHOT_PHOTOS);
+  const [loading, setLoading] = useState(SNAPSHOT_AIRCRAFT.length === 0);
 
   useEffect(() => {
     let cancelled = false;
