@@ -6,6 +6,9 @@ import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
+import founderPhoto from "@/assets/oscar-cadena.webp";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/oscar-cadena-numen/";
 
 const Nosotros = () => {
   useReveal();
@@ -29,6 +32,14 @@ const Nosotros = () => {
           name: SITE_NAME,
           url: SITE_URL,
           logo: `${SITE_URL}/favicon-numen.png`,
+          founder: {
+            "@type": "Person",
+            name: "Oscar Cadena",
+            jobTitle: en ? "Founder" : "Fundador",
+            sameAs: LINKEDIN_URL,
+            alumniOf: "Tecnológico de Monterrey",
+            worksFor: { "@type": "Organization", name: SITE_NAME },
+          },
           areaServed: ["México", "Estados Unidos", "Caribe", "Centroamérica"],
           address: [
             {
@@ -212,6 +223,66 @@ const Nosotros = () => {
               <p className="text-[0.82rem] text-fg-3 leading-relaxed">
                 17350 State Hwy 249, Ste 220 #35286, Houston, TX 77064 · +1 737 372 4548
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section
+        className="py-24"
+        style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="max-w-5xl mx-auto">
+          <div className="reveal">
+            <p className="eyebrow mb-4">{en ? "The founder" : "El fundador"}</p>
+            <h2 className="section-title">
+              {en ? <>A face behind <em>every flight.</em></> : <>Una cara detrás de <em>cada vuelo.</em></>}
+            </h2>
+            <div className="gold-rule" />
+          </div>
+          <div className="grid md:grid-cols-[minmax(260px,380px)_1fr] gap-10 lg:gap-14 mt-12 items-start reveal">
+            <div className="relative border border-jade-soft p-2 bg-bg-2">
+              <img
+                src={founderPhoto}
+                alt="Oscar Cadena — Fundador de Numen Aviation"
+                width={900}
+                height={900}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="font-serif text-3xl font-light text-foreground mb-1">Oscar Cadena</h3>
+              <div className="text-[0.68rem] uppercase text-jade mb-6" style={{ letterSpacing: "0.25em" }}>
+                {en ? "Founder · Numen Aviation" : "Fundador · Numen Aviation"}
+              </div>
+              {(en
+                ? [
+                    "Founder of Numen Aviation, an independent private aviation advisory based at Toluca International Airport (MMTO). After 7+ years managing operations in Mexico's executive aviation industry, Oscar launched Numen to offer something the market was missing: unbiased, client-first charter brokerage with no fleet ties and no hidden fees.",
+                    "Previously Operations Manager at Fly Select, where he oversaw fleet operations, client coordination and commercial strategy for 7 years. He holds a BBA in Finance from Tecnológico de Monterrey.",
+                    "Today he leads every Numen engagement personally: on-demand charter, empty legs, aviation consulting and aircraft acquisition across Mexico, the U.S., the Caribbean and Central America. One dedicated advisor, available 24/7.",
+                  ]
+                : [
+                    "Fundador de Numen Aviation, asesoría independiente de aviación privada con base en el Aeropuerto Internacional de Toluca (MMTO). Tras más de 7 años dirigiendo operaciones en la aviación ejecutiva mexicana, Oscar lanzó Numen para ofrecer lo que faltaba en el mercado: una correduría imparcial, con el cliente primero, sin ataduras de flota ni cargos ocultos.",
+                    "Antes fue Operations Manager en Fly Select, donde supervisó operaciones de flota, coordinación de clientes y estrategia comercial durante 7 años. Es Licenciado en Administración Financiera por el Tecnológico de Monterrey.",
+                    "Hoy lidera personalmente cada encargo de Numen: charter bajo demanda, empty legs, consultoría aeronáutica y adquisición de aeronaves en México, EUA, el Caribe y Centroamérica. Un asesor dedicado, disponible 24/7.",
+                  ]
+              ).map((p, i) => (
+                <p key={i} className="text-[0.95rem] text-fg-2 leading-relaxed mb-4">
+                  {p}
+                </p>
+              ))}
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[0.7rem] uppercase text-jade hover:text-jade-light transition-colors no-underline mt-2"
+                style={{ letterSpacing: "0.2em" }}
+              >
+                LinkedIn →
+              </a>
             </div>
           </div>
         </div>
