@@ -96,22 +96,8 @@
     <meta name="author" content="Numen Aviation" />
     <!-- Canonical is set per-route by useSEO (src/hooks/useSEO.ts) so /briefing and articles get their own self-referencing canonical instead of pointing to the home. -->
 
-    <!-- Open Graph -->
-    
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://numen-aviation.com/" />
-    <meta property="og:site_name" content="Numen Aviation" />
-    <meta property="og:locale" content="es_MX" />
-    <meta property="og:image" content="https://numen-aviation.com/og-image.jpg">
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    
-    
-    <meta name="twitter:image" content="https://numen-aviation.com/og-image.jpg">
+    <!-- Open Graph / Twitter: inyectados por ruta vía SEO.tsx (vite-react-ssg <Head>).
+         No declarar tags estáticos aquí — duplican y pisan los correctos por página. -->
 
     <!-- Organization JSON-LD (sitewide baseline) -->
     <script type="application/ld+json">

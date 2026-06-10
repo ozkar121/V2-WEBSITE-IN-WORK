@@ -53,10 +53,9 @@ export const SEO = ({
       />
 
       <link rel="canonical" href={url} />
+      {/* Solo es-MX + x-default: el contenido indexable es español. Cuando existan
+          URLs /en/ prerenderizadas, agregar hreflang en apuntando a esas URLs. */}
       <link rel="alternate" href={url} hrefLang="es-MX" />
-      <link rel="alternate" href={url} hrefLang="es" />
-      <link rel="alternate" href={url} hrefLang="en" />
-      <link rel="alternate" href={url} hrefLang="en-US" />
       <link rel="alternate" href={url} hrefLang="x-default" />
 
       {/* Open Graph */}
