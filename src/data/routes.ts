@@ -265,4 +265,461 @@ export const ROUTE_DATA: Record<string, RouteData> = {
       },
     ],
   },
+  "toluca-guadalajara": {
+    slug: "toluca-guadalajara",
+    title: "Renta de Jet Privado Toluca–Guadalajara | Numen Aviation",
+    description:
+      "Renta de jet privado de Toluca (MMTO) a Guadalajara (MMGL) en ~55 min. Turbohélice y jets ligeros, regresos el mismo día. Cotización en menos de 2 horas. 24/7.",
+    tagline: "Toluca · Guadalajara",
+    heroFromCity: "Toluca",
+    heroToCity: "Guadalajara",
+    heroSubtitle:
+      "El corredor de negocios del occidente en 55 minutos. Despega de Toluca (MMTO) en tu horario, cierra en Guadalajara y regresa el mismo día — sin filas, sin conexiones, sin noches de hotel innecesarias.",
+    waMessage: "Hola, quisiera cotizar un vuelo privado de Toluca a Guadalajara.",
+    stats: {
+      distance: "≈ 430 km",
+      time: "55 min",
+      price: "Desde $5,500",
+      aircraft: "Turboprop / Light",
+    },
+    airports: {
+      departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
+      arrival: "Miguel Hidalgo y Costilla (MMGL) — Guadalajara, terminal de aviación ejecutiva",
+    },
+    aircraft: [
+      {
+        category: "Turbohélice",
+        name: "Piper M500",
+        pax: "4–5",
+        range: "1,520 km",
+        note: "Desde $5,500 USD + IVA (one-way). La opción más eficiente para 1–4 pasajeros en este salto corto.",
+      },
+      {
+        category: "Jet Ligero",
+        name: "Learjet 35",
+        pax: "6–7",
+        range: "3,800 km",
+        note: "Desde $6,950 USD + IVA (one-way). Velocidad jet: menos de una hora en el aire, ideal para agendas apretadas.",
+      },
+      {
+        category: "Jet Mediano",
+        name: "Learjet 45",
+        pax: "7–9",
+        range: "3,700 km",
+        note: "Desde $8,400 USD + IVA (one-way). Cabina más amplia para equipos de trabajo completos.",
+      },
+    ],
+    why: [
+      {
+        num: "01",
+        title: "55 minutos vs. 6 horas de carretera",
+        desc: "La autopista México–Guadalajara consume el día entero. En jet privado desayunas en CDMX, comes en Providencia y cenas de vuelta en casa.",
+      },
+      {
+        num: "02",
+        title: "Regresos el mismo día",
+        desc: "Despegue 07:30, junta en Zapopan a las 10:00, regreso a las 18:00. Una aeronave, un día completo de trabajo, cero hoteles.",
+      },
+      {
+        num: "03",
+        title: "Toluca (MMTO), el hub ejecutivo de la CDMX",
+        desc: "A 40 minutos de Santa Fe, Polanco e Interlomas. Despacho en 15 minutos desde el FBO, sin terminales comerciales.",
+      },
+      {
+        num: "04",
+        title: "Flexibilidad de horario real",
+        desc: "Si la junta se alarga, la aeronave espera. Sin cargos por cambio de itinerario en la mayoría de los casos.",
+      },
+    ],
+    ctaCity: "Guadalajara",
+    sections: [
+      {
+        heading: "La ruta de negocios del occidente mexicano",
+        body:
+          "Guadalajara es la segunda economía urbana del país: tecnología en Zapopan, manufactura en El Salto, agroindustria en los Altos y un ecosistema de eventos —Expo Guadalajara, FIL, Expo Ferretera— que mueve ejecutivos todo el año. En jet privado, el trayecto desde Toluca (MMTO) toma alrededor de 55 minutos en el aire, frente a más de 6 horas por autopista o las 4–5 horas reales que consume un vuelo comercial puerta a puerta entre filas, anticipación y traslados.\n\nPara quien viaja por trabajo, la cuenta es simple: la ruta en privado convierte un viaje con pernocta en un día de oficina normal que termina en casa.",
+      },
+      {
+        heading: "¿Turbohélice o jet? Depende del grupo",
+        body:
+          "En distancias cortas como Toluca–Guadalajara, el turbohélice Piper M500 es imbatible en costo para 1–4 pasajeros: la diferencia de tiempo contra un jet es de apenas 20–25 minutos. Para grupos de 5 o más, o cuando la agenda exige la máxima velocidad, el Learjet 35 o el Learjet 45 hacen el tramo en menos de una hora con cabina jet completa.\n\nEn su cotización le presentamos ambos escenarios con desglose transparente para que elija por costo, tiempo o comodidad.",
+      },
+      {
+        heading: "Llegada en Guadalajara (MMGL)",
+        body:
+          "Su vuelo aterriza en el Aeropuerto Internacional Miguel Hidalgo y Costilla (MMGL / GDL), con atención en la zona de aviación ejecutiva: migración y despacho ágil, acceso directo de su transporte terrestre a la plataforma y salida hacia Providencia, Andares o Zapopan en minutos. Coordinamos el transporte terrestre como parte del servicio para que la llegada sea tan fluida como el despegue.",
+      },
+      {
+        heading: "Empty legs y vuelos frecuentes en el corredor",
+        body:
+          "El flujo constante de aviación ejecutiva entre el Valle de México y Guadalajara genera empty legs (tramos de reposicionamiento) con regularidad en ambos sentidos. Si sus fechas tienen flexibilidad, pregunte por la disponibilidad vigente: los descuentos sobre la tarifa regular pueden ser considerables. Para empresas con viajes recurrentes en este corredor ofrecemos facturación mensual y administración de cuenta dedicada.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de Toluca a Guadalajara?",
+        a: "Un viaje sencillo en turbohélice Piper M500 (hasta 4–5 pasajeros) comienza desde 5,500 USD + IVA; en Learjet 35 (hasta 7 pasajeros) desde 6,950 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Guadalajara en jet privado?",
+        a: "Alrededor de 55 minutos en jet y aproximadamente 1 hora 20 minutos en turbohélice, frente a más de 6 horas por autopista. Puerta a puerta, el ahorro frente a un vuelo comercial es de 2 a 3 horas por trayecto.",
+      },
+      {
+        q: "¿Puedo ir y regresar el mismo día?",
+        a: "Sí, es el uso más común de esta ruta. La aeronave espera en Guadalajara y regresa cuando usted termine. Cotizamos el día completo con espera incluida para que compare contra dos vuelos sencillos.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta Toluca–Guadalajara?",
+        a: "Turbohélices como el Piper M500 para grupos pequeños, y jets ligeros y medianos como Learjet 35 y Learjet 45 para grupos de hasta 9 pasajeros o agendas que exigen máxima velocidad.",
+      },
+      {
+        q: "¿Hay empty legs entre CDMX y Guadalajara?",
+        a: "Sí, es un corredor con flujo frecuente de reposicionamientos en ambos sentidos. Con flexibilidad de fechas se puede acceder a descuentos importantes sobre la tarifa regular.",
+      },
+      {
+        q: "¿Desde dónde salen los vuelos privados a Guadalajara?",
+        a: "Desde el Aeropuerto Internacional de Toluca (MMTO), el principal hub de aviación ejecutiva del Valle de México, a unos 40 minutos de Santa Fe, Polanco e Interlomas.",
+      },
+    ],
+  },
+  "toluca-puerto-vallarta": {
+    slug: "toluca-puerto-vallarta",
+    title: "Renta de Jet Privado Toluca–Puerto Vallarta | Numen Aviation",
+    description:
+      "Renta de jet privado de Toluca (MMTO) a Puerto Vallarta (MMPR) en ~1h 05m. Learjet 35 y Hawker 800, empty legs y cotización en menos de 2 horas. 24/7.",
+    tagline: "Toluca · Puerto Vallarta",
+    heroFromCity: "Toluca",
+    heroToCity: "Puerto Vallarta",
+    heroSubtitle:
+      "La bahía de Banderas a una hora de la pista. Despega de Toluca (MMTO) después del desayuno y come frente al mar — sin escalas, sin filas, con tu agenda intacta.",
+    waMessage: "Hola, quisiera cotizar un vuelo privado de Toluca a Puerto Vallarta.",
+    stats: {
+      distance: "≈ 620 km",
+      time: "1h 05m",
+      price: "Desde $7,450",
+      aircraft: "Light / Midsize",
+    },
+    airports: {
+      departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
+      arrival: "Lic. Gustavo Díaz Ordaz (MMPR) — Puerto Vallarta, terminal de aviación general",
+    },
+    aircraft: [
+      {
+        category: "Jet Ligero",
+        name: "Learjet 35",
+        pax: "6–7",
+        range: "3,800 km",
+        note: "Desde $7,450 USD + IVA (one-way). La opción más recurrente: rápido, eficiente y con espacio para equipaje de playa.",
+      },
+      {
+        category: "Jet Mediano",
+        name: "Hawker 800",
+        pax: "8",
+        range: "4,600 km",
+        note: "Desde $9,650 USD + IVA (one-way). Cabina de pie y bodega generosa: ideal para familias y fines de semana largos.",
+      },
+    ],
+    why: [
+      {
+        num: "01",
+        title: "Una hora al Pacífico",
+        desc: "Frente a las 8+ horas de carretera o un vuelo comercial con anticipación y filas. Sales después del desayuno y comes frente a la bahía.",
+      },
+      {
+        num: "02",
+        title: "Puerta de entrada a Punta Mita y Riviera Nayarit",
+        desc: "Del FBO a Punta Mita, Sayulita o la Marina en transporte coordinado por nosotros. Llegada directa a villa, hotel o yate.",
+      },
+      {
+        num: "03",
+        title: "Pernocta para fines de semana",
+        desc: "En estancias de 1 a 3 días suele convenir que la aeronave pernocte. Cotizamos ambos escenarios para que elija el más eficiente.",
+      },
+      {
+        num: "04",
+        title: "Empty legs en temporada",
+        desc: "Vallarta genera reposicionamientos constantes, sobre todo en invierno y vacaciones. Con fechas flexibles, los descuentos son importantes.",
+      },
+    ],
+    ctaCity: "Puerto Vallarta",
+    sections: [
+      {
+        heading: "El acceso directo a la bahía de Banderas",
+        body:
+          "Puerto Vallarta y la Riviera Nayarit concentran algunas de las propiedades de descanso más importantes del país: Punta Mita, Conchas Chinas, la Marina y los desarrollos de la costa nayarita. En jet privado, el trayecto desde Toluca (MMTO) toma alrededor de 1 hora 5 minutos en el aire — el tiempo justo de un café — frente a un día completo de carretera o las 4 horas reales de un vuelo comercial puerta a puerta.\n\nLa mayoría de nuestros clientes en esta ruta vuela en familia o con invitados: el vuelo privado permite llevar equipaje sin restricciones, mascotas en cabina y horarios que se acomodan a la casa, no a la aerolínea.",
+      },
+      {
+        heading: "De la pista a Punta Mita sin fricciones",
+        body:
+          "Su vuelo aterriza en el Aeropuerto Internacional Lic. Gustavo Díaz Ordaz (MMPR / PVR), en la zona de aviación general, a minutos de la Marina y la zona hotelera. Desde ahí coordinamos el transporte terrestre a Punta Mita (45 minutos), Sayulita o su villa como parte del servicio, o el traslado directo a su yate en la Marina. El desembarque toma minutos: sin bandas de equipaje, sin filas de taxi.",
+      },
+      {
+        heading: "¿Viaje redondo o pernocta de la aeronave?",
+        body:
+          "Como en todas las rutas cortas de playa, en estancias de 1 a 3 días frecuentemente conviene que la aeronave pernocte en Vallarta con usted en lugar de regresar vacía y volver a recogerlo. Cada noche tiene un costo adicional, pero en fines de semana cortos suele resultar la opción más eficiente. En su cotización comparamos ambos escenarios con desglose transparente.",
+      },
+      {
+        heading: "Temporada alta: reserve con anticipación",
+        body:
+          "De noviembre a abril —y especialmente en puentes, Navidad y Semana Santa— la demanda de aviación privada hacia Vallarta y Punta Mita se multiplica. Aseguramos aeronave y slots con semanas de anticipación para fechas pico, y publicamos los empty legs que genera el flujo constante de la temporada. Si sus fechas son flexibles, pregunte por la disponibilidad vigente.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de Toluca a Puerto Vallarta?",
+        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 7,450 USD + IVA, y en Hawker 800 (hasta 8 pasajeros) desde 9,650 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Puerto Vallarta en jet privado?",
+        a: "Alrededor de 1 hora 5 minutos en el aire. Puerta a puerta, desde Santa Fe o Polanco hasta su villa en la bahía, el trayecto completo ronda las 2.5 horas.",
+      },
+      {
+        q: "¿Puedo llegar directo a Punta Mita o la Riviera Nayarit?",
+        a: "El vuelo aterriza en Puerto Vallarta (MMPR) y coordinamos el transporte terrestre a Punta Mita (~45 min), Sayulita o cualquier punto de la Riviera Nayarit como parte del servicio.",
+      },
+      {
+        q: "¿Puedo viajar con mascotas y equipaje de playa?",
+        a: "Sí. En vuelo privado las mascotas viajan en cabina y el equipaje —palos de golf, equipo de pesca, sombrillas— no tiene las restricciones de una aerolínea comercial.",
+      },
+      {
+        q: "¿Hay empty legs a Puerto Vallarta?",
+        a: "Sí, especialmente en temporada alta (noviembre a abril). Con flexibilidad de fechas se puede acceder a descuentos importantes sobre la tarifa regular de charter.",
+      },
+      {
+        q: "¿Desde dónde salen los vuelos privados a Puerto Vallarta?",
+        a: "Desde el Aeropuerto Internacional de Toluca (MMTO), el principal hub de aviación ejecutiva del Valle de México, a unos 40 minutos de Santa Fe, Polanco e Interlomas.",
+      },
+    ],
+  },
+  "toluca-houston": {
+    slug: "toluca-houston",
+    title: "Renta de Jet Privado Toluca–Houston | Numen Aviation",
+    description:
+      "Renta de jet privado de Toluca (MMTO) a Houston (KHOU) en ~2h 10m. Manejo internacional completo, jets ligeros y medianos. Desde $16,500 USD. 24/7.",
+    tagline: "Toluca · Houston",
+    heroFromCity: "Toluca",
+    heroToCity: "Houston",
+    heroSubtitle:
+      "Negocios, medicina y compras en 2 horas 10 minutos. Manejo internacional completo desde Toluca (MMTO): salida AFAC, llegada CBP, sin terminales comerciales ni conexiones.",
+    waMessage: "Hola, quisiera cotizar un vuelo privado de Toluca a Houston.",
+    stats: {
+      distance: "≈ 1,220 km",
+      time: "2h 10m",
+      price: "Desde $16,500",
+      aircraft: "Light / Midsize",
+    },
+    airports: {
+      departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
+      arrival: "William P. Hobby (KHOU) — Houston, FBO ejecutivo con CBP en sitio",
+    },
+    aircraft: [
+      {
+        category: "Jet Ligero",
+        name: "Learjet 35",
+        pax: "6–7",
+        range: "3,800 km",
+        note: "Desde $16,500 USD + IVA (one-way). La opción más económica para esta ruta internacional con margen de alcance holgado.",
+      },
+      {
+        category: "Jet Mediano",
+        name: "Hawker 800A",
+        pax: "8–9",
+        range: "4,600 km",
+        note: "Desde $19,800 USD + IVA (one-way). Cabina de pie y galera completa: el estándar del corredor México–Texas.",
+      },
+      {
+        category: "Jet Pesado",
+        name: "Challenger 601",
+        pax: "10–12",
+        range: "6,300 km",
+        note: "Desde $26,500 USD + IVA (one-way). Para equipos directivos completos o familias con agenda médica.",
+      },
+    ],
+    why: [
+      {
+        num: "01",
+        title: "Cumplimiento internacional integral",
+        desc: "Plan de vuelo AFAC, eAPIS, despacho CBP a la llegada y coordinación FBO en ambos lados. Usted solo presenta su pasaporte.",
+      },
+      {
+        num: "02",
+        title: "Hobby (KHOU), no IAH",
+        desc: "Los FBO de Hobby están a 20–25 minutos del Texas Medical Center, downtown y el Galleria. IAH agrega 45 minutos de tráfico.",
+      },
+      {
+        num: "03",
+        title: "La ruta médica de referencia",
+        desc: "MD Anderson, Houston Methodist y el Texas Medical Center. Coordinamos llegadas con transporte directo y discreción absoluta.",
+      },
+      {
+        num: "04",
+        title: "Ida y vuelta en un día",
+        desc: "Despega 07:00, junta o consulta a mediodía, de regreso en CDMX para la cena. Sin conexiones ni noches fuera.",
+      },
+    ],
+    ctaCity: "Houston",
+    sections: [
+      {
+        heading: "El puente ejecutivo México–Texas",
+        body:
+          "Houston es el destino internacional más frecuente de la aviación ejecutiva mexicana: energía, banca, medicina y comercio mueven vuelos todos los días de la semana. En jet privado, el trayecto desde Toluca (MMTO) toma alrededor de 2 horas 10 minutos sin escalas, frente a las 5–6 horas reales de un vuelo comercial puerta a puerta entre anticipación internacional, migración y filas.\n\nNuestro servicio incluye el manejo internacional completo: plan de vuelo y salida AFAC en Toluca, eAPIS y manifiestos para CBP, y despacho migratorio a la llegada directamente en el FBO — sin pisar una terminal comercial en ningún momento.",
+      },
+      {
+        heading: "Hobby (KHOU): la llegada correcta en Houston",
+        body:
+          "Recomendamos William P. Hobby (KHOU) sobre el aeropuerto intercontinental (KIAH) para casi todas las misiones: sus FBO ejecutivos cuentan con CBP en sitio para despacho internacional en minutos, y está a 20–25 minutos del Texas Medical Center, downtown y la zona del Galleria. Coordinamos su transporte terrestre directo a la plataforma para que el tiempo en tierra sea mínimo.",
+      },
+      {
+        heading: "Vuelos médicos: discreción y logística",
+        body:
+          "Una parte importante de nuestros vuelos a Houston tiene motivo médico: tratamientos y consultas en MD Anderson, Houston Methodist o el Texas Medical Center. Coordinamos horarios alrededor de las citas, transporte terrestre directo, equipaje médico y acompañantes, con total discreción. Si el paciente requiere asistencia especializada a bordo, nuestra división de ambulancia aérea ofrece aeronaves con equipamiento médico y personal de vuelo certificado.",
+      },
+      {
+        heading: "Documentación para volar a Estados Unidos",
+        body:
+          "Para vuelos privados a EUA cada pasajero requiere pasaporte vigente y visa americana (o ESTA según nacionalidad). Nosotros transmitimos el manifiesto eAPIS a CBP, gestionamos el permiso de sobrevuelo y aterrizaje, y verificamos la documentación antes del despegue para que no haya sorpresas. El despacho migratorio a la llegada se realiza en el propio FBO en cuestión de minutos.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de Toluca a Houston?",
+        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 16,500 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 19,800 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Houston en jet privado?",
+        a: "Alrededor de 2 horas 10 minutos sin escalas. Puerta a puerta, el ahorro frente a un vuelo comercial internacional es de 3 a 4 horas por trayecto.",
+      },
+      {
+        q: "¿Qué documentos necesito para volar en privado a Houston?",
+        a: "Pasaporte vigente y visa americana (o ESTA según su nacionalidad). Nosotros gestionamos eAPIS, permisos de sobrevuelo y la coordinación CBP; usted solo presenta su documentación al abordar.",
+      },
+      {
+        q: "¿En qué aeropuerto de Houston aterriza el vuelo?",
+        a: "Recomendamos William P. Hobby (KHOU), cuyos FBO tienen despacho CBP en sitio y están a 20–25 minutos del Texas Medical Center, downtown y el Galleria. KIAH está disponible si su agenda lo requiere.",
+      },
+      {
+        q: "¿Manejan vuelos por motivos médicos a Houston?",
+        a: "Sí, es una de nuestras especialidades: coordinamos horarios alrededor de citas en MD Anderson o Houston Methodist, transporte directo y acompañantes. Para pacientes que requieren asistencia a bordo ofrecemos ambulancia aérea dedicada.",
+      },
+      {
+        q: "¿Puedo ir y regresar el mismo día?",
+        a: "Sí. Con despegue a las 07:00 puede tener 4–5 horas en Houston y estar de regreso en el Valle de México la misma noche. La aeronave espera en el FBO durante su agenda.",
+      },
+    ],
+  },
+  "toluca-punta-cana": {
+    slug: "toluca-punta-cana",
+    title: "Renta de Jet Privado Toluca–Punta Cana | Numen Aviation",
+    description:
+      "Renta de jet privado de Toluca (MMTO) a Punta Cana (MDPC) en ~4 horas. Jets medianos y pesados, manejo internacional completo. Desde $42,000 USD. 24/7.",
+    tagline: "Toluca · Punta Cana",
+    heroFromCity: "Toluca",
+    heroToCity: "Punta Cana",
+    heroSubtitle:
+      "El Caribe oriental sin escalas. De Toluca (MMTO) a la arena de Punta Cana en ~4 horas, con manejo internacional completo y llegada directa a la terminal ejecutiva.",
+    waMessage: "Hola, quisiera cotizar un vuelo privado de Toluca a Punta Cana.",
+    stats: {
+      distance: "≈ 3,300 km",
+      time: "4h 00m",
+      price: "Desde $42,000",
+      aircraft: "Midsize / Heavy",
+    },
+    airports: {
+      departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
+      arrival: "Punta Cana International (MDPC) — Terminal FBO ejecutiva",
+    },
+    aircraft: [
+      {
+        category: "Jet Mediano",
+        name: "Hawker 800A",
+        pax: "8",
+        range: "4,600 km",
+        note: "Desde $42,000 USD + IVA (one-way). La opción más eficiente para grupos de hasta 8 con margen de alcance adecuado.",
+      },
+      {
+        category: "Jet Pesado",
+        name: "Challenger 601",
+        pax: "10–12",
+        range: "6,300 km",
+        note: "Desde $48,500 USD + IVA (one-way). Cabina ancha y alcance sobrado: el equilibrio ideal en esta ruta sobre el Caribe.",
+      },
+      {
+        category: "Jet Pesado",
+        name: "Gulfstream G450",
+        pax: "12–14",
+        range: "7,800 km",
+        note: "Desde $55,000 USD + IVA (one-way). Ultra-premium para grupos grandes, con espacio para descansar en vuelo.",
+      },
+    ],
+    why: [
+      {
+        num: "01",
+        title: "Sin escalas ni conexiones por Panamá o Miami",
+        desc: "Comercialmente, Punta Cana desde CDMX casi siempre implica conexión. En privado son 4 horas directas de pista a pista.",
+      },
+      {
+        num: "02",
+        title: "Manejo internacional integral",
+        desc: "Salida AFAC, permisos de sobrevuelo, migración dominicana a la llegada y coordinación FBO completa. Usted solo aborda.",
+      },
+      {
+        num: "03",
+        title: "Grupos, bodas y golf",
+        desc: "Cap Cana, Casa de Campo y los resorts de la costa este. Coordinamos equipaje voluminoso, palos de golf y catering a bordo.",
+      },
+      {
+        num: "04",
+        title: "Llegada a terminal ejecutiva",
+        desc: "MDPC cuenta con FBO dedicado: migración privada en minutos y transporte directo a su resort o villa.",
+      },
+    ],
+    ctaCity: "Punta Cana",
+    sections: [
+      {
+        heading: "El Caribe oriental, directo desde el Valle de México",
+        body:
+          "Punta Cana, Cap Cana y Casa de Campo se han consolidado como los destinos caribeños preferidos para bodas, golf y escapadas de lujo. El problema es llegar: comercialmente desde Ciudad de México casi siempre implica conexión en Panamá, Miami o Bogotá, convirtiendo el viaje en un día completo. En jet privado, el vuelo desde Toluca (MMTO) es directo: alrededor de 4 horas de pista a pista, con su grupo completo, su equipaje sin restricciones y su horario.\n\nEs la ruta favorita para eventos: despedidas, aniversarios y torneos de golf donde el grupo viaja junto y la experiencia empieza desde el abordaje.",
+      },
+      {
+        heading: "Qué aeronave conviene para cruzar el Caribe",
+        body:
+          "Para un vuelo de ~3,300 km sobre agua recomendamos jets medianos con alcance holgado o jets pesados. El Hawker 800A cubre la misión con eficiencia para grupos de hasta 8; el Challenger 601 y el Gulfstream G450 agregan cabina ancha, mayor velocidad de crucero y espacio para descansar en vuelo — diferencia que se agradece en 4 horas de trayecto. En su cotización comparamos las opciones disponibles con desglose completo.",
+      },
+      {
+        heading: "Llegada en Punta Cana (MDPC): terminal ejecutiva",
+        body:
+          "El Aeropuerto Internacional de Punta Cana (MDPC / PUJ) cuenta con terminal FBO dedicada para aviación privada: migración y aduana dominicana en minutos, salas privadas y acceso directo del transporte terrestre a la plataforma. Desde ahí, su traslado a Cap Cana toma 15 minutos y a los resorts de la costa este entre 10 y 30 minutos — todo coordinado por nosotros como parte del servicio.",
+      },
+      {
+        heading: "Documentación y permisos para República Dominicana",
+        body:
+          "Para vuelos privados a República Dominicana cada pasajero requiere pasaporte vigente; los ciudadanos mexicanos no requieren visa para estancias turísticas. Nosotros gestionamos los permisos de sobrevuelo y aterrizaje internacionales, el plan de vuelo AFAC de salida y la coordinación con el FBO de destino, verificando toda la documentación antes del despegue.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de Toluca a Punta Cana?",
+        a: "Un viaje sencillo en Hawker 800A (hasta 8 pasajeros) comienza desde 42,000 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 48,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Punta Cana en jet privado?",
+        a: "Alrededor de 4 horas sin escalas, frente a las 8–10 horas reales que implica un itinerario comercial con conexión en Panamá o Miami.",
+      },
+      {
+        q: "¿Necesito visa para volar a Punta Cana?",
+        a: "Los ciudadanos mexicanos no requieren visa para turismo en República Dominicana, solo pasaporte vigente. Para otras nacionalidades verificamos los requisitos como parte del servicio.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta Toluca–Punta Cana?",
+        a: "Jets medianos con alcance holgado como el Hawker 800A y jets pesados como Challenger 601 y Gulfstream G450, que agregan cabina ancha y comodidad para las 4 horas de vuelo.",
+      },
+      {
+        q: "¿Pueden llevar a un grupo grande para una boda o evento?",
+        a: "Sí. Para grupos que exceden la capacidad de una aeronave coordinamos vuelos en formación de dos jets o aeronaves de mayor capacidad. También gestionamos catering, equipaje voluminoso y palos de golf.",
+      },
+      {
+        q: "¿Desde dónde salen los vuelos privados a Punta Cana?",
+        a: "Desde el Aeropuerto Internacional de Toluca (MMTO), el principal hub de aviación ejecutiva del Valle de México, con manejo internacional completo: AFAC, permisos de sobrevuelo y coordinación FBO en destino.",
+      },
+    ],
+  },
 };

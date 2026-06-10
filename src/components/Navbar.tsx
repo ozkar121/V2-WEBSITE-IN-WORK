@@ -38,6 +38,10 @@ export const Navbar = () => {
     { label: "CDMX → Miami", to: "/rutas/cdmx-miami" },
     { label: "CDMX → Monterrey", to: "/rutas/cdmx-monterrey" },
     { label: "Toluca → Acapulco", to: "/rutas/toluca-acapulco" },
+    { label: "Toluca → Guadalajara", to: "/rutas/toluca-guadalajara" },
+    { label: "Toluca → Puerto Vallarta", to: "/rutas/toluca-puerto-vallarta" },
+    { label: "Toluca → Houston", to: "/rutas/toluca-houston" },
+    { label: "Toluca → Punta Cana", to: "/rutas/toluca-punta-cana" },
     { label: "Todas las rutas", to: "/rutas" },
   ];
 

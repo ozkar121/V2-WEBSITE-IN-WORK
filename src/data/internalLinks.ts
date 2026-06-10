@@ -28,6 +28,10 @@ export const LINK_LABELS: Record<string, { es: string; en: string }> = {
   "/rutas/cdmx-miami": { es: "Ruta Toluca/CDMX → Miami", en: "Toluca/CDMX → Miami route" },
   "/rutas/cdmx-monterrey": { es: "Ruta Toluca/CDMX → Monterrey", en: "Toluca/CDMX → Monterrey route" },
   "/rutas/toluca-acapulco": { es: "Ruta Toluca → Acapulco", en: "Toluca → Acapulco route" },
+  "/rutas/toluca-guadalajara": { es: "Ruta Toluca → Guadalajara", en: "Toluca → Guadalajara route" },
+  "/rutas/toluca-puerto-vallarta": { es: "Ruta Toluca → Puerto Vallarta", en: "Toluca → Puerto Vallarta route" },
+  "/rutas/toluca-houston": { es: "Ruta Toluca → Houston", en: "Toluca → Houston route" },
+  "/rutas/toluca-punta-cana": { es: "Ruta Toluca → Punta Cana", en: "Toluca → Punta Cana route" },
   "/briefing/tramites-aduanales-jet-privado-mexico": {
     es: "Trámites aduanales para jets privados en México",
     en: "Private jet customs in Mexico",

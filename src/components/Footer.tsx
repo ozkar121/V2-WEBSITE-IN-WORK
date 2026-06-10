@@ -9,6 +9,10 @@ const POPULAR_ROUTES = [
   { to: "/rutas/cdmx-miami", label: "CDMX → Miami" },
   { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
   { to: "/rutas/toluca-acapulco", label: "Toluca → Acapulco" },
+  { to: "/rutas/toluca-guadalajara", label: "Toluca → Guadalajara" },
+  { to: "/rutas/toluca-puerto-vallarta", label: "Toluca → Puerto Vallarta" },
+  { to: "/rutas/toluca-houston", label: "Toluca → Houston" },
+  { to: "/rutas/toluca-punta-cana", label: "Toluca → Punta Cana" },
   { to: "/rutas", label: "Todas las rutas" },
 ];
 

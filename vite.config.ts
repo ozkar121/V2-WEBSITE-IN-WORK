@@ -23,6 +23,10 @@ const ROUTE_SLUGS = [
   "cdmx-miami",
   "cdmx-monterrey",
   "toluca-acapulco",
+  "toluca-guadalajara",
+  "toluca-puerto-vallarta",
+  "toluca-houston",
+  "toluca-punta-cana",
 ];
 
 // https://vitejs.dev/config/
