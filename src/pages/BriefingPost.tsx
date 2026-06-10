@@ -15,7 +15,7 @@ import NotFound from "@/pages/NotFound";
 
 const BriefingPost = () => {
   const { slug = "" } = useParams<{ slug: string }>();
-  const { lang } = useLang();
+  const { lang, lp } = useLang();
   const post = getBriefingPost(slug);
 
   if (!post) return <NotFound />;
@@ -82,7 +82,7 @@ const BriefingPost = () => {
       >
         <div className="max-w-3xl mx-auto">
           <Link
-            to="/briefing"
+            to={lp("/briefing")}
             className="inline-flex items-center gap-2 text-[0.7rem] uppercase text-fg-3 hover:text-jade transition-colors no-underline mb-12"
             style={{ letterSpacing: "0.2em" }}
           >
@@ -143,7 +143,7 @@ const BriefingPost = () => {
           {/* Next */}
           {next && (
             <Link
-              to={`/briefing/${next.slug}`}
+              to={lp(`/briefing/${next.slug}`)}
               className="group block mt-12 pt-8 border-t border-jade-soft no-underline"
             >
               <div

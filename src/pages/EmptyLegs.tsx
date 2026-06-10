@@ -74,7 +74,7 @@ const EMPTY_LEGS_JSONLD = [
 
 const EmptyLegs = () => {
   useReveal();
-  const { t, lang } = useLang();
+  const { t, lang, lp } = useLang();
   const seo = useSEO({
     title: t("seo_el_title"),
     description: t("seo_el_desc"),
@@ -146,7 +146,7 @@ const EmptyLegs = () => {
           className="flex items-center gap-2 list-none text-[0.65rem] uppercase text-fg-3"
           style={{ letterSpacing: "0.15em" }}
         >
-          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">{t("common_home")}</Link></li>
+          <li><Link to={lp("/")} className="text-fg-3 hover:text-jade no-underline">{t("common_home")}</Link></li>
           <li className="text-jade opacity-50">›</li>
           <li className="text-jade">{t("el_breadcrumb")}</li>
         </ol>

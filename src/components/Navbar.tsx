@@ -11,38 +11,38 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   
   const location = useLocation();
-  const { t } = useLang();
+  const { t, lang, lp } = useLang();
 
   const navLinks = [
-    { label: t("nav_fleet"), href: "/flota" },
-    { label: t("nav_empty_legs"), href: "/empty-legs" },
-    { label: t("nav_about"), href: "/#why" },
-    { label: t("nav_contact"), href: "/#contact" },
+    { label: t("nav_fleet"), href: lp("/flota") },
+    { label: t("nav_empty_legs"), href: lp("/empty-legs") },
+    { label: t("nav_about"), href: lp("/nosotros") },
+    { label: t("nav_contact"), href: lp("/#contact") },
   ];
 
   const services = [
-    { label: t("nav_cargo"), to: "/vuelos-de-carga" },
-    { label: t("nav_svc_ambulance"), to: "/ambulancia-aerea" },
-    { label: t("nav_svc_groups"), to: "/charters-grupales" },
+    { label: t("nav_cargo"), to: lp("/vuelos-de-carga") },
+    { label: t("nav_svc_ambulance"), to: lp("/ambulancia-aerea") },
+    { label: t("nav_svc_groups"), to: lp("/charters-grupales") },
   ];
 
   const guides = [
-    { label: "Briefing", to: "/briefing" },
-    { label: "Guía del FBO en Toluca", to: "/guia-fbo-toluca" },
-    { label: "Cuánto cuesta un jet privado 2026", to: "/cuanto-cuesta-jet-privado-mexico-2026" },
+    { label: "Briefing", to: lp("/briefing") },
+    { label: lang === "en" ? "Toluca FBO Guide (ES)" : "Guía del FBO en Toluca", to: lp("/guia-fbo-toluca") },
+    { label: lang === "en" ? "Private jet cost 2026 (ES)" : "Cuánto cuesta un jet privado 2026", to: lp("/cuanto-cuesta-jet-privado-mexico-2026") },
   ];
 
   const routes = [
-    { label: "CDMX → Cancún", to: "/rutas/cdmx-cancun" },
-    { label: "CDMX → Los Cabos", to: "/rutas/cdmx-los-cabos" },
-    { label: "CDMX → Miami", to: "/rutas/cdmx-miami" },
-    { label: "CDMX → Monterrey", to: "/rutas/cdmx-monterrey" },
-    { label: "Toluca → Acapulco", to: "/rutas/toluca-acapulco" },
-    { label: "Toluca → Guadalajara", to: "/rutas/toluca-guadalajara" },
-    { label: "Toluca → Puerto Vallarta", to: "/rutas/toluca-puerto-vallarta" },
-    { label: "Toluca → Houston", to: "/rutas/toluca-houston" },
-    { label: "Toluca → Punta Cana", to: "/rutas/toluca-punta-cana" },
-    { label: "Todas las rutas", to: "/rutas" },
+    { label: "CDMX → Cancún", to: lp("/rutas/cdmx-cancun") },
+    { label: "CDMX → Los Cabos", to: lp("/rutas/cdmx-los-cabos") },
+    { label: "CDMX → Miami", to: lp("/rutas/cdmx-miami") },
+    { label: "CDMX → Monterrey", to: lp("/rutas/cdmx-monterrey") },
+    { label: "Toluca → Acapulco", to: lp("/rutas/toluca-acapulco") },
+    { label: "Toluca → Guadalajara", to: lp("/rutas/toluca-guadalajara") },
+    { label: "Toluca → Puerto Vallarta", to: lp("/rutas/toluca-puerto-vallarta") },
+    { label: "Toluca → Houston", to: lp("/rutas/toluca-houston") },
+    { label: "Toluca → Punta Cana", to: lp("/rutas/toluca-punta-cana") },
+    { label: lang === "en" ? "All routes" : "Todas las rutas", to: lp("/rutas") },
   ];
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export const Navbar = () => {
       }`}
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
-      <Link to="/" className="flex items-center gap-2.5" aria-label="Numen Aviation home">
+      <Link to={lp("/")} className="flex items-center gap-2.5" aria-label="Numen Aviation home">
         <img src={logoIcon} alt="Numen Aviation" className="h-3 md:h-4 w-auto" />
         <span
           className="text-[0.7rem] md:text-[0.78rem] uppercase text-foreground font-light"
@@ -145,7 +145,7 @@ export const Navbar = () => {
             className="flex items-center gap-1 text-[0.75rem] uppercase text-fg-3 hover:text-foreground transition-colors"
             style={{ letterSpacing: "0.15em" }}
           >
-            Guías <ChevronDown className="w-3 h-3" />
+            {lang === "en" ? "Guides" : "Guías"} <ChevronDown className="w-3 h-3" />
           </button>
           <ul className="absolute top-full left-1/2 -translate-x-1/2 hidden group-hover:block group-focus-within:block bg-background/95 backdrop-blur-md border border-jade-soft min-w-[300px] py-2 list-none">
             {guides.map((g) => (
@@ -215,7 +215,7 @@ export const Navbar = () => {
             className="flex items-center justify-between px-6 py-6 border-b border-jade-soft"
             onClick={(e) => e.stopPropagation()}
           >
-            <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
+            <Link to={lp("/")} onClick={() => setOpen(false)} className="flex items-center gap-2.5">
               <img src={logoIcon} alt="Numen Aviation" className="h-3 w-auto" />
               <span className="text-[0.7rem] uppercase text-foreground font-light" style={{ letterSpacing: "0.25em" }}>
                 Numen Aviation
@@ -282,7 +282,7 @@ export const Navbar = () => {
             </details>
             <details className="group">
               <summary className="flex items-center justify-center gap-1 text-base uppercase text-fg-2 cursor-pointer list-none" style={{ letterSpacing: "0.15em" }}>
-                Guías <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
+                {lang === "en" ? "Guides" : "Guías"} <ChevronDown className="w-4 h-4 transition-transform group-open:rotate-180" />
               </summary>
               <div className="flex flex-col gap-3 items-center mt-4">
                 {guides.map((g) => (

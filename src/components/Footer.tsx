@@ -32,7 +32,26 @@ const RESOURCES_LINKS = [
 ];
 
 export const Footer = () => {
-  const { t } = useLang();
+  const { t, lang, lp } = useLang();
+
+  const servicesLinks = SERVICES_LINKS.map((l) => ({
+    ...l,
+    to: lp(l.to),
+    label: lang === "en"
+      ? ({ "/flota": "Fleet", "/empty-legs": "Empty Legs", "/charters-grupales": "Group Charters", "/vuelos-de-carga": "Cargo Flights", "/ambulancia-aerea": "Air Ambulance" }[l.to] ?? l.label)
+      : l.label,
+  }));
+  const popularRoutes = POPULAR_ROUTES.map((r) => ({
+    ...r,
+    to: lp(r.to),
+    label: r.to === "/rutas" && lang === "en" ? "All routes" : r.label,
+  }));
+  const resourcesLinks = RESOURCES_LINKS.map((l) => ({
+    ...l,
+    to: lp(l.to),
+    label: lang === "en" && l.to === "/briefing/tramites-aduanales-jet-privado-mexico" ? "Private Jet Customs in Mexico" : l.label,
+  }));
+  const aboutLink = { to: lp("/nosotros"), label: lang === "en" ? "About Us" : "Nosotros" };
 
   const offices = [
     {
@@ -104,10 +123,10 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Servicios
+            {lang === "en" ? "Services" : "Servicios"}
           </h4>
           <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
-            {SERVICES_LINKS.map((l) => (
+            {[...servicesLinks, aboutLink].map((l) => (
               <li key={l.to}>
                 <Link
                   to={l.to}
@@ -124,10 +143,10 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Rutas Populares
+            {lang === "en" ? "Popular Routes" : "Rutas Populares"}
           </h4>
           <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
-            {POPULAR_ROUTES.map((r) => (
+            {popularRoutes.map((r) => (
               <li key={r.to}>
                 <Link
                   to={r.to}
@@ -144,10 +163,10 @@ export const Footer = () => {
             className="text-[0.62rem] uppercase text-jade mb-3 font-normal"
             style={{ letterSpacing: "0.25em" }}
           >
-            Guías y Briefing
+            {lang === "en" ? "Guides & Briefing" : "Guías y Briefing"}
           </h4>
           <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
-            {RESOURCES_LINKS.map((l) => (
+            {resourcesLinks.map((l) => (
               <li key={l.to}>
                 <Link
                   to={l.to}

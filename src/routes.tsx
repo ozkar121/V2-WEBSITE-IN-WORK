@@ -21,6 +21,7 @@ import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
 import GuiaFboToluca from "./pages/GuiaFboToluca.tsx";
 import CuantoCuestaJetPrivado from "./pages/CuantoCuestaJetPrivado.tsx";
+import Nosotros from "./pages/Nosotros.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
 import AdminEmptyLegs from "./pages/AdminEmptyLegs.tsx";
@@ -44,6 +45,22 @@ const Layout = () => (
   </QueryClientProvider>
 );
 
+// Rutas con versión en inglés bajo /en/ (mismo componente; el idioma se deriva
+// de la URL en LanguageProvider). Las páginas solo-español (ambulancia,
+// charters, guías) NO se montan bajo /en hasta que estén traducidas.
+const EN_CHILDREN: RouteRecord[] = [
+  { index: true, element: <Index /> },
+  { path: "flota", element: <Fleet /> },
+  { path: "fleet", element: <Fleet /> },
+  { path: "empty-legs", element: <EmptyLegs /> },
+  { path: "vuelos-de-carga", element: <Cargo /> },
+  { path: "rutas", element: <Rutas /> },
+  { path: "rutas/:slug", element: <RoutePage /> },
+  { path: "briefing", element: <Briefing /> },
+  { path: "briefing/:slug", element: <BriefingPost /> },
+  { path: "nosotros", element: <Nosotros /> },
+];
+
 export const routes: RouteRecord[] = [
   {
     path: "/",
@@ -65,6 +82,8 @@ export const routes: RouteRecord[] = [
       { path: "briefing/:slug", element: <BriefingPost /> },
       { path: "guia-fbo-toluca", element: <GuiaFboToluca /> },
       { path: "cuanto-cuesta-jet-privado-mexico-2026", element: <CuantoCuestaJetPrivado /> },
+      { path: "nosotros", element: <Nosotros /> },
+      { path: "en", children: EN_CHILDREN },
       { path: "auth", element: <Auth /> },
       { path: "unsubscribe", element: <Unsubscribe /> },
       {

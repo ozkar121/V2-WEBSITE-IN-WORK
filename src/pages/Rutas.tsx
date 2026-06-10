@@ -5,14 +5,14 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { useSEO } from "@/hooks/useSEO";
-import { ROUTE_DATA } from "@/data/routes";
+import { ROUTE_DATA, localizeRoute } from "@/data/routes";
 import { SITE_URL, SITE_NAME, waLink } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 
 const Rutas = () => {
-  const { lang } = useLang();
-  const routes = Object.values(ROUTE_DATA);
+  const { lang, lp } = useLang();
+  const routes = Object.values(ROUTE_DATA).map((r) => localizeRoute(r, lang));
 
   const seo = useSEO({
     title:
@@ -94,7 +94,7 @@ const Rutas = () => {
             {routes.map((r) => (
               <Link
                 key={r.slug}
-                to={`/rutas/${r.slug}`}
+                to={lp(`/rutas/${r.slug}`)}
                 className="group bg-bg-2 hover:bg-bg-3 transition-colors p-10 no-underline flex flex-col gap-5"
               >
                 <div

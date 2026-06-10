@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useReveal } from "@/hooks/useReveal";
 import { useSEO } from "@/hooks/useSEO";
-import { ROUTE_DATA } from "@/data/routes";
+import { ROUTE_DATA, localizeRoute } from "@/data/routes";
 import { waLink, SITE_URL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
@@ -13,22 +13,27 @@ import { useLang } from "@/i18n/LanguageContext";
 
 const RoutePage = () => {
   const { slug } = useParams();
-  const { t } = useLang();
+  const { t, lang, lp } = useLang();
   useReveal();
-  const route = slug ? ROUTE_DATA[slug] : undefined;
+  const rawRoute = slug ? ROUTE_DATA[slug] : undefined;
+  const route = rawRoute ? localizeRoute(rawRoute, lang) : undefined;
 
   const path = `/rutas/${slug}`;
+  const schemaUrl = `${SITE_URL}${lang === "en" ? `/en${path}` : path}`;
   const jsonLd = route
     ? [
         {
           "@context": "https://schema.org",
           "@type": "Service",
-          serviceType: "Charter de Jet Privado",
+          serviceType: lang === "en" ? "Private Jet Charter" : "Charter de Jet Privado",
           provider: { "@type": "Organization", name: "Numen Aviation", url: SITE_URL },
           areaServed: [route.heroFromCity, route.heroToCity, "México"],
-          name: `Vuelo Privado ${route.heroFromCity} → ${route.heroToCity}`,
+          name:
+            lang === "en"
+              ? `Private Flight ${route.heroFromCity} → ${route.heroToCity}`
+              : `Vuelo Privado ${route.heroFromCity} → ${route.heroToCity}`,
           description: route.description,
-          url: `${SITE_URL}${path}`,
+          url: schemaUrl,
         },
         buildBreadcrumb({
           path,
@@ -82,7 +87,7 @@ const RoutePage = () => {
       {/* Breadcrumb */}
       <nav aria-label="breadcrumb" className="absolute top-24 z-10" style={{ left: "clamp(1.5rem, 4vw, 4rem)" }}>
         <ol className="flex items-center gap-2 list-none text-[0.65rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>
-          <li><Link to="/" className="text-fg-3 hover:text-jade no-underline">{t("common_home")}</Link></li>
+          <li><Link to={lp("/")} className="text-fg-3 hover:text-jade no-underline">{t("common_home")}</Link></li>
           <li className="text-jade opacity-50">›</li>
           <li>{t("rt_breadcrumb_routes")}</li>
           <li className="text-jade opacity-50">›</li>
@@ -97,7 +102,7 @@ const RoutePage = () => {
         }} />
         <p className="relative z-10 eyebrow mb-5 animate-fade-up" style={{ animationDelay: "0.3s" }}>{route.tagline}</p>
         <h1 className="relative z-10 display-title max-w-2xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
-          {route.heroFromCity}<br />a <em>{route.heroToCity}.</em>
+          {route.heroFromCity}<br />{lang === "en" ? "to" : "a"} <em>{route.heroToCity}.</em>
         </h1>
         <div className="gold-rule relative z-10 animate-fade-up" style={{ animationDelay: "0.7s" }} />
         <p className="relative z-10 text-[0.95rem] text-fg-3 leading-relaxed max-w-lg mb-10 animate-fade-up" style={{ animationDelay: "0.85s" }}>{route.heroSubtitle}</p>
@@ -226,7 +231,7 @@ const RoutePage = () => {
             <div className="reveal mb-10">
               <p className="eyebrow mb-4">FAQ</p>
               <h2 className="section-title">
-                Preguntas <em>frecuentes</em>
+                {lang === "en" ? <>Frequently <em>asked questions</em></> : <>Preguntas <em>frecuentes</em></>}
               </h2>
               <div className="gold-rule" />
             </div>
@@ -247,17 +252,18 @@ const RoutePage = () => {
       {/* RELATED — internal links to other routes & related briefing */}
       <section className="py-20" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
-          <p className="eyebrow mb-4">Explora</p>
-          <h2 className="section-title">Otras <em>rutas</em></h2>
+          <p className="eyebrow mb-4">{lang === "en" ? "Explore" : "Explora"}</p>
+          <h2 className="section-title">{lang === "en" ? <>Other <em>routes</em></> : <>Otras <em>rutas</em></>}</h2>
           <div className="gold-rule" />
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-jade-soft mt-12 border border-jade-soft reveal">
           {Object.values(ROUTE_DATA)
             .filter((r) => r.slug !== slug)
+            .map((raw) => localizeRoute(raw, lang))
             .map((r) => (
               <Link
                 key={r.slug}
-                to={`/rutas/${r.slug}`}
+                to={lp(`/rutas/${r.slug}`)}
                 className="bg-bg-2 hover:bg-bg-3 transition-colors p-6 no-underline group"
               >
                 <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>{r.tagline}</div>
@@ -268,24 +274,24 @@ const RoutePage = () => {
               </Link>
             ))}
           <Link
-            to="/briefing/tramites-aduanales-jet-privado-mexico"
+            to={lp("/briefing/tramites-aduanales-jet-privado-mexico")}
             className="bg-bg-2 hover:bg-bg-3 transition-colors p-6 no-underline group"
           >
             <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>Briefing</div>
             <div className="font-serif text-xl font-light text-foreground group-hover:text-jade-light transition-colors">
-              Trámites Aduanales en México
+              {lang === "en" ? "Private Jet Customs in Mexico" : "Trámites Aduanales en México"}
             </div>
-            <div className="text-[0.78rem] text-fg-3 mt-2">Guía para vuelos internacionales en jet privado</div>
+            <div className="text-[0.78rem] text-fg-3 mt-2">{lang === "en" ? "Guide for international private jet flights" : "Guía para vuelos internacionales en jet privado"}</div>
           </Link>
           <Link
-            to="/flota"
+            to={lp("/flota")}
             className="bg-bg-2 hover:bg-bg-3 transition-colors p-6 no-underline group"
           >
-            <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>Flota</div>
+            <div className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.2em" }}>{lang === "en" ? "Fleet" : "Flota"}</div>
             <div className="font-serif text-xl font-light text-foreground group-hover:text-jade-light transition-colors">
-              Ver flota completa
+              {lang === "en" ? "View full fleet" : "Ver flota completa"}
             </div>
-            <div className="text-[0.78rem] text-fg-3 mt-2">Turbohélices, jets ligeros, medianos y pesados</div>
+            <div className="text-[0.78rem] text-fg-3 mt-2">{lang === "en" ? "Turboprops, light, midsize and heavy jets" : "Turbohélices, jets ligeros, medianos y pesados"}</div>
           </Link>
         </div>
       </section>
@@ -300,7 +306,7 @@ const RoutePage = () => {
           <p className="text-[0.9rem] text-fg-3 mb-10">{t("rt_cta_sub")}</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={waLink(route.waMessage)} target="_blank" rel="noopener noreferrer" className="btn-primary">{t("common_whatsapp_now")}</a>
-            <a href="/#contact" className="btn-secondary">{t("common_send_form")}</a>
+            <a href={lp("/#contact")} className="btn-secondary">{t("common_send_form")}</a>
           </div>
         </div>
       </section>

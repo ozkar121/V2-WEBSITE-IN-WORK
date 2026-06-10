@@ -52,6 +52,9 @@ export default defineConfig(({ mode }) => ({
       const dynamic = [
         ...BRIEFING_SLUGS.map((s) => `/briefing/${s}`),
         ...ROUTE_SLUGS.map((s) => `/rutas/${s}`),
+        // Versión en inglés
+        ...BRIEFING_SLUGS.map((s) => `/en/briefing/${s}`),
+        ...ROUTE_SLUGS.map((s) => `/en/rutas/${s}`),
       ];
       // Drop catch-all "*", unresolved ":param", and private SPA routes.
       const blocked = new Set(["/auth", "auth"]);

@@ -42,6 +42,16 @@ export interface RouteData {
   faq?: RouteFAQ[];
 }
 
+export type RouteDataEn = Partial<Omit<RouteData, "slug">>;
+
+import { ROUTE_DATA_EN } from "./routesEn";
+
+/** Devuelve la ruta con los campos en inglés aplicados cuando lang === "en". */
+export const localizeRoute = (r: RouteData, lang: string): RouteData =>
+  lang === "en" && ROUTE_DATA_EN[r.slug]
+    ? ({ ...r, ...ROUTE_DATA_EN[r.slug] } as RouteData)
+    : r;
+
 export const ROUTE_DATA: Record<string, RouteData> = {
   "cdmx-cancun": {
     slug: "cdmx-cancun",

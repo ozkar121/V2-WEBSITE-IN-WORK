@@ -23,6 +23,7 @@ export const LINK_LABELS: Record<string, { es: string; en: string }> = {
     en: "How much does a private jet cost in Mexico? (2026)",
   },
   "/rutas": { es: "Todas las rutas desde Toluca", en: "All routes from Toluca" },
+  "/nosotros": { es: "Nosotros — Numen Aviation", en: "About Numen Aviation" },
   "/rutas/cdmx-cancun": { es: "Ruta Toluca/CDMX → Cancún", en: "Toluca/CDMX → Cancún route" },
   "/rutas/cdmx-los-cabos": { es: "Ruta Toluca/CDMX → Los Cabos", en: "Toluca/CDMX → Los Cabos route" },
   "/rutas/cdmx-miami": { es: "Ruta Toluca/CDMX → Miami", en: "Toluca/CDMX → Miami route" },

@@ -1,5 +1,6 @@
 import { Head } from "vite-react-ssg";
-import { SITE_URL, SITE_NAME, SITE_LOCALE, DEFAULT_OG_IMAGE } from "@/lib/site";
+import { SITE_URL, SITE_NAME, DEFAULT_OG_IMAGE } from "@/lib/site";
+import { useLang, stripEn, ES_ONLY_PATHS } from "@/i18n/LanguageContext";
 
 export interface SEOProps {
   title: string;
@@ -16,9 +17,9 @@ export interface SEOProps {
 }
 
 /**
- * Per-route <head> tags via vite-react-ssg's <Head>. Unlike react-helmet-async,
- * <Head> is collected during SSG so titles, canonicals, OG/Twitter meta and
- * JSON-LD are baked into the static HTML of each prerendered route.
+ * Per-route <head> tags via vite-react-ssg's <Head>. Bilingüe: el canonical y
+ * los hreflang se calculan según el idioma actual (derivado de la URL).
+ * Páginas en ES_ONLY_PATHS no declaran alternate en inglés.
  */
 export const SEO = ({
   title,
@@ -29,9 +30,14 @@ export const SEO = ({
   noindex = false,
   jsonLd,
 }: SEOProps) => {
+  const { lang } = useLang();
   const resolvedPath =
     path ?? (typeof window !== "undefined" ? window.location.pathname : "/");
-  const url = `${SITE_URL}${resolvedPath}`;
+  const basePath = stripEn(resolvedPath);
+  const esUrl = `${SITE_URL}${basePath}`;
+  const enUrl = `${SITE_URL}${basePath === "/" ? "/en" : `/en${basePath}`}`;
+  const hasEn = !ES_ONLY_PATHS.has(basePath) && !basePath.startsWith("/admin");
+  const url = lang === "en" && hasEn ? enUrl : esUrl;
 
   const jsonLdItems = jsonLd
     ? Array.isArray(jsonLd)
@@ -53,10 +59,9 @@ export const SEO = ({
       />
 
       <link rel="canonical" href={url} />
-      {/* Solo es-MX + x-default: el contenido indexable es español. Cuando existan
-          URLs /en/ prerenderizadas, agregar hreflang en apuntando a esas URLs. */}
-      <link rel="alternate" href={url} hrefLang="es-MX" />
-      <link rel="alternate" href={url} hrefLang="x-default" />
+      <link rel="alternate" href={esUrl} hrefLang="es-MX" />
+      {hasEn && <link rel="alternate" href={enUrl} hrefLang="en" />}
+      <link rel="alternate" href={esUrl} hrefLang="x-default" />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />
@@ -64,7 +69,7 @@ export const SEO = ({
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content={SITE_LOCALE} />
+      <meta property="og:locale" content={lang === "en" ? "en_US" : "es_MX"} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />

@@ -50,7 +50,7 @@ const CAT_DESC: Record<AircraftCategory, { es: string; en: string }> = {
 };
 
 const Fleet = () => {
-  const { t, lang } = useLang();
+  const { t, lang, lp } = useLang();
   const [aircraft, setAircraft] = useState<Aircraft[]>(SNAPSHOT_AIRCRAFT);
   const [photos, setPhotos] = useState<Record<string, string>>(SNAPSHOT_PHOTOS);
   const [loading, setLoading] = useState(SNAPSHOT_AIRCRAFT.length === 0);
@@ -372,7 +372,7 @@ const Fleet = () => {
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              to="/empty-legs"
+              to={lp("/empty-legs")}
               className="inline-flex items-center gap-2 text-[0.72rem] uppercase text-foreground border border-jade-soft px-7 py-4 hover:border-jade hover:text-jade-light transition-all no-underline"
               style={{ letterSpacing: "0.2em" }}
             >

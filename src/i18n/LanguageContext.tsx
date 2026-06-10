@@ -1,31 +1,59 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, ReactNode } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { TRANSLATIONS, type Lang, type TranslationKey } from "./translations";
 
 interface LanguageContextValue {
   lang: Lang;
   setLang: (l: Lang) => void;
   t: (key: TranslationKey) => string;
+  /** Localiza un path interno según el idioma actual: lp("/flota") → "/en/flota" en inglés. */
+  lp: (path: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 const STORAGE_KEY = "numen-lang";
 
-const getInitialLang = (): Lang => {
-  if (typeof window === "undefined") return "es";
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === "es" || stored === "en") return stored;
-  const nav = window.navigator.language?.toLowerCase() ?? "";
-  return nav.startsWith("en") ? "en" : "es";
+/** Páginas que aún NO tienen versión en inglés (contenido hardcodeado en español). */
+export const ES_ONLY_PATHS = new Set<string>([
+  "/ambulancia-aerea",
+  "/charters-grupales",
+  "/servicios/ambulancias-aereas",
+  "/servicios/charters-grupos",
+  "/guia-fbo-toluca",
+  "/cuanto-cuesta-jet-privado-mexico-2026",
+  "/auth",
+  "/unsubscribe",
+]);
+
+/** Quita el prefijo /en de un pathname. */
+export const stripEn = (pathname: string): string => {
+  if (pathname === "/en" || pathname === "/en/") return "/";
+  if (pathname.startsWith("/en/")) return pathname.slice(3);
+  return pathname;
+};
+
+/** Deriva el idioma desde el pathname. La URL es la fuente de verdad. */
+export const langFromPath = (pathname: string): Lang =>
+  pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es";
+
+/** Devuelve el path equivalente en el idioma dado. */
+export const localizePath = (path: string, lang: Lang): string => {
+  const [p, hash] = path.split("#");
+  const base = stripEn(p || "/");
+  let out = base;
+  if (lang === "en" && !ES_ONLY_PATHS.has(base) && !base.startsWith("/admin")) {
+    out = base === "/" ? "/en" : `/en${base}`;
+  }
+  return hash ? `${out}#${hash}` : out;
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLangState] = useState<Lang>("es");
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  // Hydrate after mount to avoid SSR mismatch
-  useEffect(() => {
-    setLangState(getInitialLang());
-  }, []);
+  // La URL manda: /en/* = inglés, todo lo demás = español.
+  const lang: Lang = langFromPath(pathname);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -33,12 +61,22 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [lang]);
 
-  const setLang = useCallback((l: Lang) => {
-    setLangState(l);
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(STORAGE_KEY, l);
-    }
-  }, []);
+  const setLang = useCallback(
+    (l: Lang) => {
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(STORAGE_KEY, l);
+      }
+      if (l === lang) return;
+      const base = stripEn(pathname);
+      if (l === "en" && (ES_ONLY_PATHS.has(base) || base.startsWith("/admin"))) {
+        // Sin versión EN todavía: llevar al home en inglés.
+        navigate("/en");
+        return;
+      }
+      navigate(localizePath(base, l));
+    },
+    [lang, pathname, navigate]
+  );
 
   const t = useCallback(
     (key: TranslationKey) => {
@@ -48,7 +86,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     [lang]
   );
 
-  const value = useMemo(() => ({ lang, setLang, t }), [lang, setLang, t]);
+  const lp = useCallback((path: string) => localizePath(path, lang), [lang]);
+
+  const value = useMemo(() => ({ lang, setLang, t, lp }), [lang, setLang, t, lp]);
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 };
@@ -65,5 +105,6 @@ export const useLang = (): LanguageContextValue => {
       const entry = TRANSLATIONS[key];
       return entry ? entry.es : (key as string);
     },
+    lp: (path) => path,
   };
 };

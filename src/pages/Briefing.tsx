@@ -10,7 +10,7 @@ import { ROUTES, SITE_URL, SITE_NAME } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 
 const Briefing = () => {
-  const { lang } = useLang();
+  const { lang, lp } = useLang();
 
   const heading =
     lang === "en"
@@ -194,7 +194,7 @@ const Briefing = () => {
                     </li>
                   ) : (
                     <li key={item.slug}>
-                      <Link to={`/briefing/${item.slug}`} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
+                      <Link to={lp(`/briefing/${item.slug}`)} className="group block py-8 no-underline hover:bg-bg-3/30 transition-colors -mx-4 px-4">
                         <ItemBody
                           category={item.category}
                           title={item.title}
@@ -234,7 +234,7 @@ const Briefing = () => {
             {ROUTES.map((r) => (
               <li key={r.slug} className="bg-background">
                 <Link
-                  to={`/rutas/${r.slug}`}
+                  to={lp(`/rutas/${r.slug}`)}
                   className="group flex items-center justify-between gap-4 px-6 py-6 no-underline hover:bg-bg-3 transition-colors"
                 >
                   <div className="flex items-center gap-4">
