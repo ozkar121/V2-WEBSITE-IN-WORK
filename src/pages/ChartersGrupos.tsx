@@ -15,7 +15,7 @@ const WA_GROUP =
 
 const ChartersGrupos = () => {
   useReveal();
-  const { lang } = useLang();
+  const { lang, lp } = useLang();
   const isEs = lang === "es";
 
   const seo = useSEO({
@@ -169,7 +169,7 @@ const ChartersGrupos = () => {
       >
         <ol className="flex items-center gap-2 list-none p-0">
           <li className="text-[0.65rem] uppercase text-fg-3" style={{ letterSpacing: "0.15em" }}>
-            <Link to="/" className="hover:text-jade transition-colors">
+            <Link to={lp("/")} className="hover:text-jade transition-colors">
               {isEs ? "Inicio" : "Home"}
             </Link>
           </li>

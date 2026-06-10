@@ -28,8 +28,8 @@ export const Navbar = () => {
 
   const guides = [
     { label: "Briefing", to: lp("/briefing") },
-    { label: lang === "en" ? "Toluca FBO Guide (ES)" : "Guía del FBO en Toluca", to: lp("/guia-fbo-toluca") },
-    { label: lang === "en" ? "Private jet cost 2026 (ES)" : "Cuánto cuesta un jet privado 2026", to: lp("/cuanto-cuesta-jet-privado-mexico-2026") },
+    { label: lang === "en" ? "Toluca FBO Guide" : "Guía del FBO en Toluca", to: lp("/guia-fbo-toluca") },
+    { label: lang === "en" ? "Private jet cost 2026" : "Cuánto cuesta un jet privado 2026", to: lp("/cuanto-cuesta-jet-privado-mexico-2026") },
   ];
 
   const routes = [

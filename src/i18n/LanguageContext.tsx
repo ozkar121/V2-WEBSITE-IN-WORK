@@ -14,14 +14,10 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 const STORAGE_KEY = "numen-lang";
 
-/** Páginas que aún NO tienen versión en inglés (contenido hardcodeado en español). */
+/** Páginas que NO tienen versión en inglés (legacy redirects y privadas). */
 export const ES_ONLY_PATHS = new Set<string>([
-  "/ambulancia-aerea",
-  "/charters-grupales",
   "/servicios/ambulancias-aereas",
   "/servicios/charters-grupos",
-  "/guia-fbo-toluca",
-  "/cuanto-cuesta-jet-privado-mexico-2026",
   "/auth",
   "/unsubscribe",
 ]);

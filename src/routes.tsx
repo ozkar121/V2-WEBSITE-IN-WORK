@@ -54,10 +54,14 @@ const EN_CHILDREN: RouteRecord[] = [
   { path: "fleet", element: <Fleet /> },
   { path: "empty-legs", element: <EmptyLegs /> },
   { path: "vuelos-de-carga", element: <Cargo /> },
+  { path: "ambulancia-aerea", element: <AmbulanciasAereas /> },
+  { path: "charters-grupales", element: <ChartersGrupos /> },
   { path: "rutas", element: <Rutas /> },
   { path: "rutas/:slug", element: <RoutePage /> },
   { path: "briefing", element: <Briefing /> },
   { path: "briefing/:slug", element: <BriefingPost /> },
+  { path: "guia-fbo-toluca", element: <GuiaFboToluca /> },
+  { path: "cuanto-cuesta-jet-privado-mexico-2026", element: <CuantoCuestaJetPrivado /> },
   { path: "nosotros", element: <Nosotros /> },
 ];
 
