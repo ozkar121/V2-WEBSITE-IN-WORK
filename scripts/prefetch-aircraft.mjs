@@ -43,3 +43,16 @@ writeFileSync(
   JSON.stringify(out, null, 2),
 );
 console.log(`[prefetch-aircraft] wrote ${aircraft.length} aircraft, ${Object.keys(photoMap).length} photos`);
+
+// Empty legs: snapshot de vuelos activos con fecha >= hoy, para que la página
+// /empty-legs renderice la disponibilidad en el HTML estático (SEO). El
+// cliente la refresca desde Supabase al hidratar.
+const today = new Date().toISOString().slice(0, 10);
+const emptyLegs = await get(
+  `empty_legs?select=id,from_city,from_iata,to_city,to_iata,flight_date,aircraft,category,seats,price,is_featured,is_new&is_active=eq.true&flight_date=gte.${today}&order=flight_date.asc`,
+);
+writeFileSync(
+  resolve(__dirname, "../src/data/emptyLegsSnapshot.json"),
+  JSON.stringify({ generated: today, legs: emptyLegs }, null, 2),
+);
+console.log(`[prefetch-aircraft] wrote ${emptyLegs.length} empty legs (>= ${today})`);

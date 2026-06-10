@@ -12,6 +12,7 @@ import { waLink, SITE_URL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import type { TranslationKey } from "@/i18n/translations";
+import emptyLegsSnapshot from "@/data/emptyLegsSnapshot.json";
 
 interface DbLeg {
   id: string;
@@ -29,6 +30,10 @@ interface DbLeg {
 }
 
 type Filter = "all" | AircraftCategory;
+
+// Snapshot generado al build (scripts/prefetch-aircraft.mjs): permite que el
+// SSG renderice los vuelos en el HTML estático. El cliente refresca al hidratar.
+const SNAPSHOT_LEGS = (emptyLegsSnapshot.legs ?? []) as DbLeg[];
 
 const formatPrice = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
@@ -78,8 +83,8 @@ const EmptyLegs = () => {
   });
 
   const [filter, setFilter] = useState<Filter>("all");
-  const [legs, setLegs] = useState<DbLeg[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [legs, setLegs] = useState<DbLeg[]>(SNAPSHOT_LEGS);
+  const [loading, setLoading] = useState(SNAPSHOT_LEGS.length === 0);
 
   const formatDate = (iso: string) =>
     new Date(iso + "T00:00:00").toLocaleDateString(lang === "en" ? "en-US" : "es-MX", {
@@ -114,10 +119,12 @@ const EmptyLegs = () => {
       });
   }, []);
 
-  const visible = useMemo(
-    () => (filter === "all" ? legs : legs.filter((l) => l.category === filter)),
-    [filter, legs]
-  );
+  const visible = useMemo(() => {
+    // Nunca mostrar vuelos con fecha pasada (el snapshot puede tener días de antigüedad)
+    const today = new Date().toISOString().slice(0, 10);
+    const current = legs.filter((l) => l.flight_date >= today);
+    return filter === "all" ? current : current.filter((l) => l.category === filter);
+  }, [filter, legs]);
 
   const catLabel = (c: string) => {
     const key = `cat_${c}` as TranslationKey;

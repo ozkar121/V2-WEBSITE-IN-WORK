@@ -1,0 +1,19 @@
+{
+  "generated": "2026-06-10",
+  "legs": [
+    {
+      "id": "2da35cb9-78ca-41a4-9a2e-a3d8291dc2b8",
+      "from_city": "Toluca",
+      "from_iata": "MMTO",
+      "to_city": "Guadalajara",
+      "to_iata": "MMGL",
+      "flight_date": "2026-06-11",
+      "aircraft": "Learjet 35",
+      "category": "light",
+      "seats": 6,
+      "price": 2000,
+      "is_featured": false,
+      "is_new": true
+    }
+  ]
+}
