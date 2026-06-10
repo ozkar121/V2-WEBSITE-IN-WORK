@@ -81,11 +81,11 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
   "cdmx-los-cabos": {
     title: "Private Jet Mexico City to Los Cabos | Numen Aviation",
     description:
-      "Private jet charter from Toluca (MMTO) to Los Cabos (MMSD) in under 2 hours. Nonstop. From $16,000 USD. Available 24/7.",
+      "Private jet charter from Toluca (MMTO) to Los Cabos (MMSD) in under 2 hours. Nonstop. From $12,750 USD. Available 24/7.",
     heroSubtitle:
       "Nonstop in under 2 hours. Depart from Toluca (MMTO) — straight to your destination, no commercial terminals.",
     waMessage: "Hi, I'd like to quote a private flight Mexico City → Los Cabos.",
-    stats: { distance: "≈ 1,530 km", time: "2h 00m", price: "From $16,000", aircraft: "Light / Midsize" },
+    stats: { distance: "≈ 1,530 km", time: "2h 00m", price: "From $12,750", aircraft: "Light / Midsize" },
     airports: {
       departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
       arrival: "Los Cabos International (MMSD) — Private FBO ramp — Los Cabos Executive Terminal",
@@ -126,7 +126,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Mexico City to Los Cabos cost?",
-        a: "A one-way flight on a light jet (Learjet 31 or 35, up to 7 passengers) starts at 16,000 USD + tax; on a Hawker 800A (up to 9 passengers) from 19,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way flight on a light jet (Learjet 31 or 35, up to 7 passengers) starts at 12,750 USD + tax; on a Hawker 800A (up to 9 passengers) from 19,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
       },
       {
         q: "How long is the flight from Toluca to Los Cabos by private jet?",
@@ -153,11 +153,11 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
   "cdmx-miami": {
     title: "Private Jet Mexico City to Miami | Numen Aviation",
     description:
-      "Private jet charter from Toluca (MMTO) to Miami (KMIA / KOPF) in 3.5 hours. Nonstop, no commercial terminals. From $38,000 USD. Available 24/7.",
+      "Private jet charter from Toluca (MMTO) to Miami (KMIA / KOPF) in 3.5 hours. Nonstop, no commercial terminals. From $25,300 USD. Available 24/7.",
     heroSubtitle:
       "Nonstop in 3.5 hours. Full international handling from MMTO — AFAC departure, FAA arrival, no commercial terminals, no connections.",
     waMessage: "Hi, I'd like to quote a private flight Mexico City → Miami.",
-    stats: { distance: "≈ 2,720 km", time: "3h 30m", price: "From $38,000", aircraft: "Midsize / Heavy" },
+    stats: { distance: "≈ 2,720 km", time: "3h 30m", price: "From $25,300", aircraft: "Midsize / Heavy" },
     airports: {
       departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
       arrival: "Miami International (KMIA) — Commercial & private FBO / Opa-locka Executive (KOPF) — Preferred private arrival",
@@ -198,7 +198,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Mexico City to Miami cost?",
-        a: "A one-way flight on a Hawker 800A (up to 9 passengers) starts at 38,000 USD + tax; on a Challenger 601 (up to 12 passengers) from 44,000 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way flight on a Hawker 800A (up to 9 passengers) starts at 25,300 USD + tax; on a Challenger 601 (up to 12 passengers) from 44,000 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
       },
       {
         q: "How long is the flight from Toluca to Miami by private jet?",
@@ -522,7 +522,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     },
     aircraft: [
       { category: "Light Jet", name: "Learjet 35", pax: "6–7", range: "3,800 km", note: "From $14,500 USD + tax (one-way). The most economical option for this international route with ample range margin." },
-      { category: "Midsize Jet", name: "Hawker 800A", pax: "8–9", range: "4,600 km", note: "From $16,800 USD + tax (one-way). Stand-up cabin and full galley: the Mexico–Texas corridor standard." },
+      { category: "Midsize Jet", name: "Hawker 800A", pax: "8–9", range: "4,600 km", note: "From $16,300 USD + tax (one-way). Stand-up cabin and full galley: the Mexico–Texas corridor standard." },
       { category: "Heavy Jet", name: "Challenger 601", pax: "10–12", range: "6,300 km", note: "From $26,500 USD + tax (one-way). For full executive teams or families with medical agendas." },
     ],
     why: [
@@ -556,7 +556,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Toluca to Houston cost?",
-        a: "A one-way on a Learjet 35 (up to 6–7 passengers) starts at 14,500 USD + tax; on a Hawker 800A (up to 9 passengers) from 16,800 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way on a Learjet 35 (up to 6–7 passengers) starts at 14,500 USD + tax; on a Hawker 800A (up to 9 passengers) from 16,300 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
       },
       {
         q: "How long is the flight from Toluca to Houston by private jet?",

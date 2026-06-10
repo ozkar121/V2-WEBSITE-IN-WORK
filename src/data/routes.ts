@@ -132,14 +132,14 @@ export const ROUTE_DATA: Record<string, RouteData> = {
   "cdmx-los-cabos": {
     slug: "cdmx-los-cabos",
     title: "Jet Privado CDMX a Los Cabos | Numen Aviation",
-    description: "Charter de jet privado de Toluca (MMTO) a Los Cabos (MMSD) en menos de 2 horas. Sin escalas. Desde $16,000 USD. Disponible 24/7.",
+    description: "Charter de jet privado de Toluca (MMTO) a Los Cabos (MMSD) en menos de 2 horas. Sin escalas. Desde $12,750 USD. Disponible 24/7.",
     tagline: "Toluca · Los Cabos",
     heroFromCity: "Toluca",
     heroToCity: "Los Cabos",
     heroSubtitle:
       "Sin escalas en menos de 2 horas. Despega desde Toluca (MMTO) — directo a tu destino, sin terminales comerciales.",
     waMessage: "Hola, me gustaría cotizar un vuelo privado CDMX → Los Cabos.",
-    stats: { distance: "≈ 1,530 km", time: "2h 00m", price: "Desde $16,000", aircraft: "Light / Midsize" },
+    stats: { distance: "≈ 1,530 km", time: "2h 00m", price: "Desde $12,750", aircraft: "Light / Midsize" },
     airports: {
       departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
       arrival: "Los Cabos International (MMSD) — Rampa FBO privada — Terminal Ejecutiva Los Cabos",
@@ -181,7 +181,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de CDMX a Los Cabos?",
-        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 16,000 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 19,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 12,750 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 19,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Los Cabos en jet privado?",
@@ -208,14 +208,14 @@ export const ROUTE_DATA: Record<string, RouteData> = {
   "cdmx-miami": {
     slug: "cdmx-miami",
     title: "Jet Privado CDMX a Miami | Numen Aviation",
-    description: "Charter de jet privado de Toluca (MMTO) a Miami (KMIA / KOPF) en 3.5 horas. Sin escalas, sin terminales comerciales. Desde $38,000 USD. Disponible 24/7.",
+    description: "Charter de jet privado de Toluca (MMTO) a Miami (KMIA / KOPF) en 3.5 horas. Sin escalas, sin terminales comerciales. Desde $25,300 USD. Disponible 24/7.",
     tagline: "Toluca · Miami",
     heroFromCity: "Toluca",
     heroToCity: "Miami",
     heroSubtitle:
       "Sin escalas en 3.5 horas. Manejo internacional completo desde MMTO — salida AFAC, llegada FAA, sin terminales comerciales, sin conexiones.",
     waMessage: "Hola, me gustaría cotizar un vuelo privado CDMX → Miami.",
-    stats: { distance: "≈ 2,720 km", time: "3h 30m", price: "Desde $38,000", aircraft: "Midsize / Heavy" },
+    stats: { distance: "≈ 2,720 km", time: "3h 30m", price: "Desde $25,300", aircraft: "Midsize / Heavy" },
     airports: {
       departure: "Licenciado Adolfo López Mateos (MMTO) — Toluca",
       arrival: "Miami International (KMIA) — Comercial y FBO privado / Opa-locka Executive (KOPF) — Llegada privada preferida",
@@ -257,7 +257,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de CDMX a Miami?",
-        a: "Un viaje sencillo en Hawker 800A (hasta 9 pasajeros) comienza desde 38,000 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 44,000 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en Hawker 800A (hasta 9 pasajeros) comienza desde 25,300 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 44,000 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Miami en jet privado?",
@@ -726,7 +726,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
         name: "Hawker 800A",
         pax: "8–9",
         range: "4,600 km",
-        note: "Desde $16,800 USD + IVA (one-way). Cabina de pie y galera completa: el estándar del corredor México–Texas.",
+        note: "Desde $16,300 USD + IVA (one-way). Cabina de pie y galera completa: el estándar del corredor México–Texas.",
       },
       {
         category: "Jet Pesado",
@@ -784,7 +784,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de Toluca a Houston?",
-        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 14,500 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 16,800 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 14,500 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 16,300 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Houston en jet privado?",

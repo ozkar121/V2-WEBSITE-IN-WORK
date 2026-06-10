@@ -32,10 +32,10 @@ El Learjet 35 es un light jet ágil y veloz, ideal para vuelos dentro de México
 
 | Ruta (desde Toluca) | Tiempo de vuelo | Desde (one-way)    |
 |---------------------|-----------------|--------------------|
-| Toluca → Cancún     | 2h 15m          | $14,050 USD + IVA  |
+| Toluca → Cancún     | 2h 15m          | $12,000 USD + IVA  |
 | Toluca → Los Cabos  | 2h 00m          | $12,750 USD + IVA  |
 | Toluca → Mérida     | 1h 45m          | $11,450 USD + IVA  |
-| Toluca → Monterrey  | 1h 30m          | $9,800 USD + IVA   |
+| Toluca → Monterrey  | 1h 30m          | $9,500 USD + IVA   |
 | Toluca → Acapulco   | ~0h 35m         | $5,950 USD + IVA   |
 
 Precios estimados one-way en Learjet 35. Capacidad hasta 7 pax (recomendado máx. 6). Sujetos a disponibilidad y cotización.
@@ -73,7 +73,7 @@ Conoce más detalles de cada destino en nuestras páginas de ruta: [Cancún](/ru
 ## Preguntas frecuentes
 
 ### ¿Cuánto cuesta volar en jet privado en México en 2026?
-Los precios estimados desde Toluca (MMTO) en un Learjet 35 inician en aproximadamente $5,950 USD + IVA a Acapulco, $9,800 USD + IVA a Monterrey y $14,050 USD + IVA a Cancún. En vuelos internacionales con Hawker 800A, desde $16,300 USD + IVA a Houston y $25,300 USD + IVA a Miami. Todos son precios one-way estimados; cada viaje se cotiza a la medida.
+Los precios estimados desde Toluca (MMTO) en un Learjet 35 inician en aproximadamente $5,950 USD + IVA a Acapulco, $9,500 USD + IVA a Monterrey y $12,000 USD + IVA a Cancún. En vuelos internacionales con Hawker 800A, desde $16,300 USD + IVA a Houston y $25,300 USD + IVA a Miami. Todos son precios one-way estimados; cada viaje se cotiza a la medida.
 
 ### ¿El precio del jet privado es por trayecto o por viaje redondo?
 Las tarifas publicadas son por trayecto sencillo (one-way). Si el cliente desea viaje redondo en el mismo día, el costo aproximado se duplica. Si la estancia incluye pernoctas, se cobra por noche, equivalente generalmente a media hora de vuelo por noche (algunas aeronaves cobran una hora completa).
@@ -95,10 +95,10 @@ The Learjet 35 is an agile, fast light jet, ideal for flights within Mexico. It 
 
 | Route (from Toluca) | Flight time | From (one-way)     |
 |---------------------|-------------|--------------------|
-| Toluca → Cancún     | 2h 15m      | $14,050 USD + tax  |
+| Toluca → Cancún     | 2h 15m      | $12,000 USD + tax  |
 | Toluca → Los Cabos  | 2h 00m      | $12,750 USD + tax  |
 | Toluca → Mérida     | 1h 45m      | $11,450 USD + tax  |
-| Toluca → Monterrey  | 1h 30m      | $9,800 USD + tax   |
+| Toluca → Monterrey  | 1h 30m      | $9,500 USD + tax   |
 | Toluca → Acapulco   | ~0h 35m     | $5,950 USD + tax   |
 
 Estimated one-way prices on a Learjet 35. Seats up to 7 pax (6 recommended). Subject to availability and quotation.
@@ -136,7 +136,7 @@ Find more detail on each destination on our route pages: [Cancún](/en/rutas/cdm
 ## Frequently asked questions
 
 ### How much does it cost to fly private in Mexico in 2026?
-Estimated prices from Toluca (MMTO) on a Learjet 35 start at approximately $5,950 USD + tax to Acapulco, $9,800 USD + tax to Monterrey and $14,050 USD + tax to Cancún. On international flights with a Hawker 800A, from $16,300 USD + tax to Houston and $25,300 USD + tax to Miami. All are estimated one-way prices; every trip is quoted to measure.
+Estimated prices from Toluca (MMTO) on a Learjet 35 start at approximately $5,950 USD + tax to Acapulco, $9,500 USD + tax to Monterrey and $12,000 USD + tax to Cancún. On international flights with a Hawker 800A, from $16,300 USD + tax to Houston and $25,300 USD + tax to Miami. All are estimated one-way prices; every trip is quoted to measure.
 
 ### Is the private jet price per leg or round trip?
 Published rates are one-way. For a same-day round trip, the approximate cost doubles. If the stay includes overnights, a nightly fee applies — generally equal to half a flight hour per night (some aircraft charge a full hour).
@@ -157,7 +157,7 @@ const FAQ_LD_ES = {
       name: "¿Cuánto cuesta volar en jet privado en México en 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los precios estimados desde Toluca (MMTO) en un Learjet 35 inician en aproximadamente $5,950 USD + IVA a Acapulco, $9,800 USD + IVA a Monterrey y $14,050 USD + IVA a Cancún. En vuelos internacionales con Hawker 800A, desde $16,300 USD + IVA a Houston y $25,300 USD + IVA a Miami. Todos son precios one-way estimados; cada viaje se cotiza a la medida.",
+        text: "Los precios estimados desde Toluca (MMTO) en un Learjet 35 inician en aproximadamente $5,950 USD + IVA a Acapulco, $9,500 USD + IVA a Monterrey y $12,000 USD + IVA a Cancún. En vuelos internacionales con Hawker 800A, desde $16,300 USD + IVA a Houston y $25,300 USD + IVA a Miami. Todos son precios one-way estimados; cada viaje se cotiza a la medida.",
       },
     },
     {
@@ -196,7 +196,7 @@ const FAQ_LD_EN = {
       name: "How much does it cost to fly private in Mexico in 2026?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Estimated prices from Toluca (MMTO) on a Learjet 35 start at approximately $5,950 USD + tax to Acapulco, $9,800 USD + tax to Monterrey and $14,050 USD + tax to Cancún. On international flights with a Hawker 800A, from $16,300 USD + tax to Houston and $25,300 USD + tax to Miami. All are estimated one-way prices; every trip is quoted to measure.",
+        text: "Estimated prices from Toluca (MMTO) on a Learjet 35 start at approximately $5,950 USD + tax to Acapulco, $9,500 USD + tax to Monterrey and $12,000 USD + tax to Cancún. On international flights with a Hawker 800A, from $16,300 USD + tax to Houston and $25,300 USD + tax to Miami. All are estimated one-way prices; every trip is quoted to measure.",
       },
     },
     {
