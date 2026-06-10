@@ -206,7 +206,7 @@ export const Footer = () => {
 
       {/* Bottom strip */}
       <div className="flex justify-between items-center pt-6 border-t border-jade-soft flex-wrap gap-4">
-        <p className="text-[0.7rem] text-fg-3">{t("footer_rights")}</p>
+        <p className="text-[0.7rem] text-fg-3">© {new Date().getFullYear()} {t("footer_rights")}</p>
         <div className="flex gap-3">
           {["México", "AFAC", "24/7"].map((b) => (
             <span

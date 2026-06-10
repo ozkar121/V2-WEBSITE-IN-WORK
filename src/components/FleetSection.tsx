@@ -4,8 +4,15 @@ import { Aircraft, AircraftCategory, CATEGORY_ORDER } from "@/data/aircraft";
 import { supabase } from "@/integrations/supabase/client";
 import { CornerBrackets } from "@/components/CornerBrackets";
 import { useLang } from "@/i18n/LanguageContext";
+import { useAuth } from "@/hooks/useAuth";
 import { sbImage, sbImageSrcSet } from "@/lib/img";
 import type { TranslationKey } from "@/i18n/translations";
+import aircraftSnapshot from "@/data/aircraftSnapshot.json";
+
+// Snapshot generado al build (scripts/prefetch-aircraft.mjs) para que el SSG
+// renderice la flota en el HTML estático; el cliente la refresca desde Supabase.
+const SNAPSHOT_AIRCRAFT = aircraftSnapshot.aircraft as Aircraft[];
+const SNAPSHOT_PHOTOS = aircraftSnapshot.photos as Record<string, string>;
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
   turbo: "cat_turbo",
@@ -17,9 +24,10 @@ const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
 
 export const FleetSection = () => {
   const { t } = useLang();
+  const { isAdmin } = useAuth();
   const [active, setActive] = useState<AircraftCategory>("midsize");
-  const [aircraft, setAircraft] = useState<Aircraft[]>([]);
-  const [photos, setPhotos] = useState<Record<string, string>>({});
+  const [aircraft, setAircraft] = useState<Aircraft[]>(SNAPSHOT_AIRCRAFT);
+  const [photos, setPhotos] = useState<Record<string, string>>(SNAPSHOT_PHOTOS);
 
   useEffect(() => {
     let cancelled = false;
@@ -67,13 +75,15 @@ export const FleetSection = () => {
           </h2>
           <div className="gold-rule" />
         </div>
-        <Link
-          to="/admin/aeronaves"
-          className="text-[0.62rem] uppercase text-fg-3 hover:text-jade no-underline"
-          style={{ letterSpacing: "0.25em" }}
-        >
-          {t("fleet_manage")}
-        </Link>
+        {isAdmin && (
+          <Link
+            to="/admin/aeronaves"
+            className="text-[0.62rem] uppercase text-fg-3 hover:text-jade no-underline"
+            style={{ letterSpacing: "0.25em" }}
+          >
+            {t("fleet_manage")}
+          </Link>
+        )}
       </div>
 
       {/* Tabs */}

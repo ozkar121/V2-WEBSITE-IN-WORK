@@ -38,8 +38,8 @@ export const TRANSLATIONS = {
   footer_offices_us_phone: { es: "+1 737 372 4548", en: "+1 737 372 4548" },
   footer_contact: { es: "Contacto", en: "Contact" },
   footer_rights: {
-    es: "© 2025 Numen Aviation. Todos los derechos reservados.",
-    en: "© 2025 Numen Aviation. All rights reserved.",
+    es: "Numen Aviation. Todos los derechos reservados.",
+    en: "Numen Aviation. All rights reserved.",
   },
   footer_hub: { es: "MMTO — Toluca, México", en: "MMTO — Toluca, Mexico" },
 
