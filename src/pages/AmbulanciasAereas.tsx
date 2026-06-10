@@ -8,7 +8,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { SITE_URL, EMAIL, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
-import heroAmbulancia from "@/assets/hero-ambulancia.png";
+import heroAmbulancia from "@/assets/hero-ambulancia.webp";
 
 const WA_AMB =
   "https://wa.me/524442348942?text=Emergencia%20m%C3%A9dica%2C%20necesito%20ambulancia%20a%C3%A9rea";

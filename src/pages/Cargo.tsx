@@ -10,7 +10,7 @@ import { waLink, PHONE_NUMBER, PHONE_TEL, SITE_URL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import type { TranslationKey } from "@/i18n/translations";
-import heroCargo from "@/assets/hero-cargo.png";
+import heroCargo from "@/assets/hero-cargo.webp";
 
 const Cargo = () => {
   useReveal();

@@ -8,7 +8,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { waLink, SITE_URL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
-import heroCharters from "@/assets/hero-charters.png";
+import heroCharters from "@/assets/hero-charters.webp";
 
 const WA_GROUP =
   "https://wa.me/524442348942?text=Hola%2C%20me%20interesa%20un%20charter%20grupal";
