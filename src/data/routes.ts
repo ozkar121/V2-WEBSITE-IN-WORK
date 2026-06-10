@@ -70,6 +70,54 @@ export const ROUTE_DATA: Record<string, RouteData> = {
       { num: "04", title: "Regresa en tu propio horario", desc: "Reserva el regreso abierto. Sin cargos por cambio, sin penalizaciones." },
     ],
     ctaCity: "Cancún",
+    sections: [
+      {
+        heading: "La ruta de placer más volada de México",
+        body:
+          "Cancún y la Riviera Maya concentran la mayor demanda de aviación privada del país: casas en Puerto Cancún, desarrollos en Playa del Carmen y Tulum, y una temporada alta que satura los vuelos comerciales de diciembre a abril. En jet privado, el trayecto desde Toluca (MMTO) toma 2 horas 15 minutos sin escalas, con su grupo completo y su horario.\n\nFrente al vuelo comercial, el ahorro real es mayor de lo que parece: sin anticipación de 2 horas, sin filas de documentación ni bandas de equipaje, la diferencia puerta a puerta supera las 3 horas — y el viaje empieza descansado, no desgastado.",
+      },
+      {
+        heading: "Llegada en Cancún (MMUN): rampa privada",
+        body:
+          "Su vuelo aterriza en el Aeropuerto Internacional de Cancún (MMUN / CUN) con atención en la rampa privada y FBO, lejos de las terminales comerciales. El desembarque toma minutos: su transporte terrestre accede directo a la plataforma y sale hacia la Zona Hotelera (20 minutos), Playa del Carmen (45 minutos) o Tulum (90 minutos) — traslados que coordinamos como parte del servicio.",
+      },
+      {
+        heading: "Temporada alta: la diferencia la hace la anticipación",
+        body:
+          "De diciembre a abril, y en especial en Navidad, Año Nuevo y Semana Santa, la disponibilidad de aeronaves hacia Cancún se agota con semanas de anticipación. Reservar temprano garantiza la aeronave correcta al precio correcto; sobre la fecha, las opciones se reducen y los precios suben. Para fechas pico recomendamos asegurar el vuelo con 3 a 4 semanas de anticipación.",
+      },
+      {
+        heading: "Empty legs Toluca–Cancún: la ruta con más oportunidades",
+        body:
+          "Por su volumen, el corredor Valle de México–Cancún es el que más empty legs genera en el país, en ambos sentidos. Si sus fechas tienen flexibilidad de uno o dos días, los descuentos sobre la tarifa regular pueden llegar al 50–75%. Publicamos la disponibilidad vigente en nuestra página de empty legs y avisamos por WhatsApp cuando aparece un tramo que embona con su ruta.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de CDMX a Cancún?",
+        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 18,000 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 21,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Cancún en jet privado?",
+        a: "2 horas 15 minutos sin escalas. Puerta a puerta, el ahorro frente a un vuelo comercial supera las 3 horas entre anticipación, filas y equipaje.",
+      },
+      {
+        q: "¿Puedo llegar directo a Playa del Carmen o Tulum?",
+        a: "El vuelo aterriza en Cancún (MMUN) y coordinamos transporte terrestre directo a Playa del Carmen (~45 min) o Tulum (~90 min). Para Tulum también podemos cotizar llegada al aeropuerto de Tulum (MMTU) según la aeronave.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta CDMX–Cancún?",
+        a: "Las más frecuentes son Learjet 31 y 35 (jets ligeros, hasta 7 pasajeros) y Hawker 800A (midsize, hasta 9 pasajeros con cabina de pie). Para grupos grandes cotizamos jets pesados.",
+      },
+      {
+        q: "¿Hay empty legs entre CDMX y Cancún?",
+        a: "Es la ruta con más empty legs de México, en ambos sentidos. Con flexibilidad de fechas, los descuentos van del 40% al 75% sobre la tarifa regular.",
+      },
+      {
+        q: "¿Desde dónde salen los vuelos privados a Cancún?",
+        a: "Desde el Aeropuerto Internacional de Toluca (MMTO), el principal hub de aviación ejecutiva del Valle de México, a unos 40 minutos de Santa Fe, Polanco e Interlomas.",
+      },
+    ],
   },
   "cdmx-los-cabos": {
     slug: "cdmx-los-cabos",
@@ -98,6 +146,54 @@ export const ROUTE_DATA: Record<string, RouteData> = {
       { num: "04", title: "Empty legs en esta ruta", desc: "Frecuentemente tenemos vuelos de reposicionamiento CDMX→Cabos con descuentos. Pregúntanos." },
     ],
     ctaCity: "Los Cabos",
+    sections: [
+      {
+        heading: "Baja California Sur sin escalas",
+        body:
+          "Los Cabos es el destino de descanso por excelencia del Pacífico mexicano: golf de campeonato, pesca deportiva, villas en el corredor y la marina de Cabo San Lucas. En jet privado, el trayecto desde Toluca (MMTO) toma 2 horas en punto, sin escalas y sin las conexiones que frecuentemente impone el itinerario comercial en temporada.\n\nLa mayoría de nuestros clientes vuela en grupo —familia, invitados, foursomes de golf— y el vuelo privado resuelve lo que la aerolínea complica: equipaje deportivo sin restricciones, mascotas en cabina y horarios que se acomodan al plan, no al revés.",
+      },
+      {
+        heading: "Llegada en Los Cabos (MMSD): terminal ejecutiva",
+        body:
+          "Su vuelo aterriza en el Aeropuerto Internacional de Los Cabos (MMSD / SJD) con atención en la terminal ejecutiva y rampa FBO privada: migración ágil cuando aplica, transporte terrestre directo en plataforma y salida hacia el corredor turístico, Palmilla o Cabo San Lucas en minutos. El equipaje —palos de golf, cañas, hieleras— viaja con usted y se entrega en mano.",
+      },
+      {
+        heading: "Golf, pesca y yate: logística incluida",
+        body:
+          "Coordinamos la logística completa del viaje deportivo: transporte de equipo de golf y pesca, hielo y catering a bordo, traslados a los campos del corredor (Quivira, Palmilla, Diamante) y conexión con su yate o charter de pesca en la marina. Dígalo en la cotización y lo dejamos resuelto antes del despegue.",
+      },
+      {
+        heading: "Diciembre y Semana Santa se agotan: reserve temprano",
+        body:
+          "Los Cabos es, junto con Cancún, el destino que más rápido agota disponibilidad de aviación privada en fechas pico. Para Navidad, Año Nuevo y Semana Santa recomendamos asegurar aeronave con 4 a 6 semanas de anticipación. El resto del año la ruta genera empty legs frecuentes en ambos sentidos — con fechas flexibles, los descuentos son considerables.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de CDMX a Los Cabos?",
+        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 16,000 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 19,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Los Cabos en jet privado?",
+        a: "Alrededor de 2 horas sin escalas. Puerta a puerta —de Santa Fe o Polanco a su villa en el corredor— el trayecto completo ronda las 3.5 horas.",
+      },
+      {
+        q: "¿Puedo llevar palos de golf y equipo de pesca?",
+        a: "Sí, sin las restricciones de una aerolínea. El Hawker 800A es el favorito de los grupos de golf por su bodega generosa; el equipo viaja con usted y se entrega en plataforma.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta CDMX–Los Cabos?",
+        a: "Learjet 31 y 35 (jets ligeros, hasta 7 pasajeros) y Hawker 800A (midsize, hasta 9 pasajeros con cabina de pie). Para grupos grandes cotizamos jets pesados.",
+      },
+      {
+        q: "¿Hay empty legs a Los Cabos?",
+        a: "Sí, la ruta genera reposicionamientos frecuentes en ambos sentidos, especialmente alrededor de fines de semana y temporada alta. Con fechas flexibles los descuentos son importantes.",
+      },
+      {
+        q: "¿Desde dónde salen los vuelos privados a Los Cabos?",
+        a: "Desde el Aeropuerto Internacional de Toluca (MMTO), el principal hub de aviación ejecutiva del Valle de México, a unos 40 minutos de Santa Fe, Polanco e Interlomas.",
+      },
+    ],
   },
   "cdmx-miami": {
     slug: "cdmx-miami",
@@ -126,6 +222,54 @@ export const ROUTE_DATA: Record<string, RouteData> = {
       { num: "04", title: "Mascotas, efectivo, joyería — sin fricción", desc: "Salida privada significa cero restricciones de seguridad comercial sobre objetos de valor o acompañantes." },
     ],
     ctaCity: "Miami",
+    sections: [
+      {
+        heading: "México–Miami: la ruta internacional de referencia",
+        body:
+          "Miami es el puente natural entre México y el mundo financiero, inmobiliario y náutico de la costa este: Brickell, Coral Gables, los bancos privados y las temporadas de Art Basel y los boat shows. En jet privado, el trayecto desde Toluca (MMTO) toma 3 horas 30 minutos sin escalas, con manejo internacional completo en ambos extremos.\n\nNuestro servicio cubre el plan de vuelo y salida AFAC, el manifiesto eAPIS para CBP y el despacho migratorio a la llegada directamente en el FBO — usted no pisa una terminal comercial en ningún momento del viaje.",
+      },
+      {
+        heading: "Opa-locka (KOPF) vs. Miami International (KMIA)",
+        body:
+          "Para la mayoría de las misiones recomendamos Opa-locka Executive (KOPF): es el aeropuerto ejecutivo de referencia de Miami, sin la congestión de MIA y 20 minutos más cerca de Brickell, Coral Gables y Miami Beach. KMIA queda disponible cuando la agenda lo requiere — por ejemplo, conexiones con vuelos comerciales internacionales del resto del grupo. En ambos casos el despacho CBP se realiza en el FBO en minutos.",
+      },
+      {
+        heading: "Negocios y compras sin restricciones comerciales",
+        body:
+          "La salida privada elimina las fricciones del vuelo comercial que más pesan en esta ruta: objetos de valor, joyería, arte, efectivo declarado y mascotas viajan con usted en cabina, con la documentación correcta que nosotros verificamos antes del despegue. Al regreso, coordinamos el despacho aduanal mexicano en Toluca con la misma agilidad.",
+      },
+      {
+        heading: "Documentación para volar a Estados Unidos",
+        body:
+          "Cada pasajero requiere pasaporte vigente y visa americana (o ESTA según nacionalidad). Nosotros transmitimos el manifiesto eAPIS a CBP, gestionamos permisos de sobrevuelo y aterrizaje y verificamos la documentación de todo el grupo antes del despegue. Para menores de edad y mascotas aplican requisitos adicionales que validamos como parte del servicio.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de CDMX a Miami?",
+        a: "Un viaje sencillo en Hawker 800A (hasta 9 pasajeros) comienza desde 38,000 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 44,000 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Miami en jet privado?",
+        a: "3 horas 30 minutos sin escalas. Frente a un itinerario comercial con anticipación internacional y migración, el ahorro puerta a puerta supera las 3 horas.",
+      },
+      {
+        q: "¿En qué aeropuerto de Miami aterriza el vuelo?",
+        a: "Recomendamos Opa-locka Executive (KOPF), el aeropuerto ejecutivo de Miami: sin congestión y 20 minutos más cerca de Brickell y Miami Beach. KMIA está disponible si su agenda lo requiere.",
+      },
+      {
+        q: "¿Qué documentos necesito para volar en privado a Miami?",
+        a: "Pasaporte vigente y visa americana (o ESTA según nacionalidad). Nosotros gestionamos eAPIS, permisos y coordinación CBP; el despacho migratorio se hace en el FBO en minutos.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta CDMX–Miami?",
+        a: "Hawker 800A (midsize, la opción más económica), Challenger 601 (el benchmark de la ruta, cabina de pie) y Gulfstream G450 para grupos grandes o máximo confort.",
+      },
+      {
+        q: "¿Puedo viajar con mascotas, arte o joyería?",
+        a: "Sí. La salida privada elimina las restricciones comerciales: mascotas en cabina y objetos de valor con usted, con la documentación correcta que verificamos antes del despegue.",
+      },
+    ],
   },
   "cdmx-monterrey": {
     slug: "cdmx-monterrey",
@@ -154,6 +298,54 @@ export const ROUTE_DATA: Record<string, RouteData> = {
       { num: "04", title: "Cuentas corporativas", desc: "Facturación mensual, reservas recurrentes y administración de cuenta dedicada disponibles." },
     ],
     ctaCity: "Monterrey",
+    sections: [
+      {
+        heading: "El corredor de negocios más importante del país",
+        body:
+          "CDMX–Monterrey es la ruta ejecutiva por excelencia de México: corporativos en San Pedro Garza García, manufactura en Apodaca y Santa Catarina, y un flujo constante de consejos, cierres y visitas de planta. En jet privado, el trayecto desde Toluca (MMTO) toma 1 hora 30 minutos — y a diferencia del vuelo comercial, despega cuando usted lo decide.\n\nEs nuestra ruta más volada y la operamos semanalmente: slots preferenciales, operadores de confianza y una logística que ya está resuelta antes de que usted la pida.",
+      },
+      {
+        heading: "Del Norte (MMAN) o Escobedo (MMMY): elija por su agenda",
+        body:
+          "Monterrey tiene dos llegadas posibles y la elección importa: el Aeropuerto del Norte (MMAN) está a 15 minutos de Valle Oriente y San Pedro Garza García — ideal para agenda en la zona corporativa —, mientras que Mariano Escobedo (MMMY) conviene para la zona de Apodaca y el aeropuerto de carga. En su cotización le recomendamos la llegada óptima según sus reuniones; la diferencia puede ser de 30 a 40 minutos de tráfico.",
+      },
+      {
+        heading: "Ida y vuelta el mismo día, sin hotel",
+        body:
+          "El uso clásico de esta ruta: despegue de Toluca a las 07:00, primera junta en San Pedro a las 09:30, comida de trabajo, y regreso a las 18:00 para cenar en casa. La aeronave espera en plataforma durante su agenda y el regreso se ajusta si la junta se alarga. Cotizamos el día completo con espera incluida — frecuentemente más eficiente que dos vuelos sencillos.",
+      },
+      {
+        heading: "Cuentas corporativas: la ruta que justifica el programa",
+        body:
+          "Para empresas con viajes recurrentes en el corredor CDMX–Monterrey ofrecemos cuentas corporativas con facturación mensual, tarifas preferentes por volumen, reservas con un solo mensaje y administración dedicada. Si su equipo directivo vuela esta ruta dos o más veces al mes, el programa corporativo reduce costo y fricción de manera medible.",
+      },
+    ],
+    faq: [
+      {
+        q: "¿Cuánto cuesta rentar un jet privado de CDMX a Monterrey?",
+        a: "Un viaje sencillo en turbohélice Piper M500 (1–4 pasajeros) comienza desde 9,500 USD + IVA; en Learjet 35 (hasta 7 pasajeros) desde 12,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+      },
+      {
+        q: "¿Cuánto dura el vuelo de Toluca a Monterrey en jet privado?",
+        a: "1 hora 30 minutos en jet y alrededor de 2 horas en turbohélice. Puerta a puerta, el ahorro frente al vuelo comercial es de 2 a 3 horas por trayecto.",
+      },
+      {
+        q: "¿Conviene llegar a Del Norte (MMAN) o a Escobedo (MMMY)?",
+        a: "Para agenda en San Pedro Garza García y Valle Oriente, MMAN está a 15 minutos. MMMY conviene para Apodaca y la zona industrial. Le recomendamos la llegada óptima en su cotización.",
+      },
+      {
+        q: "¿Puedo ir y regresar el mismo día?",
+        a: "Es el uso más común de la ruta: la aeronave espera durante su agenda y el regreso se ajusta si la junta se alarga. Cotizamos el día completo con espera incluida.",
+      },
+      {
+        q: "¿Qué aeronaves operan la ruta CDMX–Monterrey?",
+        a: "Piper M500 (turbohélice, el más económico para 1–4 pasajeros), Learjet 35 y Learjet 75 (jets ligeros, hasta 8 pasajeros con aviónica moderna y cabina silenciosa).",
+      },
+      {
+        q: "¿Ofrecen tarifas corporativas para vuelos recurrentes?",
+        a: "Sí: facturación mensual, tarifas por volumen y administración de cuenta dedicada. Es el programa ideal para equipos que vuelan el corredor CDMX–Monterrey con regularidad.",
+      },
+    ],
   },
   "toluca-acapulco": {
     slug: "toluca-acapulco",
