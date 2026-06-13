@@ -5,13 +5,13 @@
 
 # --- 301 del sitio anterior (.html) -> V2 ---
 # Preserva el SEO y los backlinks de las páginas ya indexadas.
-/empty-legs.html                              /empty-legs                                    301!
-/guia-fbo-toluca.html                         /guia-fbo-toluca                               301!
-/cuanto-cuesta-jet-privado-mexico-2026.html   /cuanto-cuesta-jet-privado-mexico-2026         301!
-/vuelos-de-carga.html                         /vuelos-de-carga                               301!
-/ruta-cdmx-cancun.html                        /rutas/cdmx-cancun                             301!
-/ruta-cdmx-los-cabos.html                     /rutas/cdmx-los-cabos                          301!
-/ruta-cdmx-miami.html                         /rutas/cdmx-miami                              301!
-/ruta-cdmx-monterrey.html                     /rutas/cdmx-monterrey                          301!
-/helicopter-charter-toluca-cdmx.html          /briefing/helicopter-charter-toluca-cdmx       301!
-/helicoptero-toluca-cdmx.html                 /briefing/renta-helicoptero-ciudad-de-mexico   301!
+/empty-legs.html                              /empty-legs                                    301
+/guia-fbo-toluca.html                         /guia-fbo-toluca                               301
+/cuanto-cuesta-jet-privado-mexico-2026.html   /cuanto-cuesta-jet-privado-mexico-2026         301
+/vuelos-de-carga.html                         /vuelos-de-carga                               301
+/ruta-cdmx-cancun.html                        /rutas/cdmx-cancun                             301
+/ruta-cdmx-los-cabos.html                     /rutas/cdmx-los-cabos                          301
+/ruta-cdmx-miami.html                         /rutas/cdmx-miami                              301
+/ruta-cdmx-monterrey.html                     /rutas/cdmx-monterrey                          301
+/helicopter-charter-toluca-cdmx.html          /briefing/helicopter-charter-toluca-cdmx       301
+/helicoptero-toluca-cdmx.html                 /briefing/renta-helicoptero-ciudad-de-mexico   301
