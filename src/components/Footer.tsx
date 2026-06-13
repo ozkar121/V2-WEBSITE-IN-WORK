@@ -3,18 +3,21 @@ import { useLang } from "@/i18n/LanguageContext";
 import { Link } from "react-router-dom";
 import logoIcon from "@/assets/numen-symbol.svg";
 
+// Salida siempre desde Toluca (MMTO) — exclusividad de marca.
+// Las URLs (slugs cdmx-*) se conservan para no romper el SEO existente.
 const POPULAR_ROUTES = [
-  { to: "/rutas/cdmx-cancun", label: "CDMX → Cancún" },
-  { to: "/rutas/cdmx-los-cabos", label: "CDMX → Los Cabos" },
-  { to: "/rutas/cdmx-miami", label: "CDMX → Miami" },
-  { to: "/rutas/cdmx-monterrey", label: "CDMX → Monterrey" },
+  { to: "/rutas/cdmx-cancun", label: "Toluca → Cancún" },
+  { to: "/rutas/cdmx-los-cabos", label: "Toluca → Los Cabos" },
+  { to: "/rutas/cdmx-monterrey", label: "Toluca → Monterrey" },
   { to: "/rutas/toluca-acapulco", label: "Toluca → Acapulco" },
   { to: "/rutas/toluca-guadalajara", label: "Toluca → Guadalajara" },
   { to: "/rutas/toluca-puerto-vallarta", label: "Toluca → Puerto Vallarta" },
+  { to: "/rutas/cdmx-miami", label: "Toluca → Miami" },
   { to: "/rutas/toluca-houston", label: "Toluca → Houston" },
   { to: "/rutas/toluca-punta-cana", label: "Toluca → Punta Cana" },
-  { to: "/rutas", label: "Todas las rutas" },
 ];
+
+const ALL_ROUTES_LINK = { to: "/rutas", label: "Todas las rutas" };
 
 const SERVICES_LINKS = [
   { to: "/flota", label: "Flota" },
@@ -41,11 +44,11 @@ export const Footer = () => {
       ? ({ "/flota": "Fleet", "/empty-legs": "Empty Legs", "/charters-grupales": "Group Charters", "/vuelos-de-carga": "Cargo Flights", "/ambulancia-aerea": "Air Ambulance" }[l.to] ?? l.label)
       : l.label,
   }));
-  const popularRoutes = POPULAR_ROUTES.map((r) => ({
-    ...r,
-    to: lp(r.to),
-    label: r.to === "/rutas" && lang === "en" ? "All routes" : r.label,
-  }));
+  const popularRoutes = POPULAR_ROUTES.map((r) => ({ ...r, to: lp(r.to) }));
+  const allRoutesLink = {
+    to: lp(ALL_ROUTES_LINK.to),
+    label: lang === "en" ? "All routes" : ALL_ROUTES_LINK.label,
+  };
   const resourcesLinks = RESOURCES_LINKS.map((l) => ({
     ...l,
     to: lp(l.to),
@@ -145,18 +148,25 @@ export const Footer = () => {
           >
             {lang === "en" ? "Popular Routes" : "Rutas Populares"}
           </h4>
-          <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 list-none p-0 m-0">
             {popularRoutes.map((r) => (
               <li key={r.to}>
                 <Link
                   to={r.to}
-                  className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline"
+                  className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline whitespace-nowrap"
                 >
                   {r.label}
                 </Link>
               </li>
             ))}
           </ul>
+          <Link
+            to={allRoutesLink.to}
+            className="inline-block mt-4 text-[0.72rem] uppercase text-jade hover:text-foreground no-underline"
+            style={{ letterSpacing: "0.15em" }}
+          >
+            {allRoutesLink.label} →
+          </Link>
         </div>
         <div>
           <h4
