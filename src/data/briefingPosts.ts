@@ -18,6 +18,8 @@ import helicopterES from "@/content/briefing/07-helicopter-cdmx-ES.md?raw";
 import helicopterEN from "@/content/briefing/07-helicopter-cdmx-EN.md?raw";
 import heliCharterES from "@/content/briefing/08-helicopter-charter-toluca-cdmx-ES.md?raw";
 import heliCharterEN from "@/content/briefing/08-helicopter-charter-toluca-cdmx-EN.md?raw";
+import operatorSafetyES from "@/content/briefing/09-operator-safety-ES.md?raw";
+import operatorSafetyEN from "@/content/briefing/09-operator-safety-EN.md?raw";
 
 import type { Lang } from "@/i18n/translations";
 
@@ -51,6 +53,30 @@ const make = (raw: { es: string; en: string }) => ({
 });
 
 export const BRIEFING_POSTS: BriefingPost[] = [
+  {
+    slug: "como-elegir-operador-jet-privado-seguro-mexico",
+    order: -1,
+    date: "2026-06-13",
+    category: { es: "Seguridad Operacional", en: "Operational Safety" },
+    title: {
+      es: "Cómo Elegir un Operador de Jet Privado Seguro en México: AFAC, Certificaciones y Seguros",
+      en: "How to Choose a Safe Private Jet Operator in Mexico: AFAC, Certifications and Insurance",
+    },
+    description: {
+      es: "Cómo verificar la seguridad de un operador de jet privado en México: certificación AFAC (AOC), IS-BAO/ARGUS/Wyvern, seguros y tripulación. Checklist antes de reservar.",
+      en: "How to verify a private jet operator's safety in Mexico: AFAC certification (AOC), IS-BAO/ARGUS/Wyvern, insurance and crew. A checklist before you book.",
+    },
+    excerpt: {
+      es: "AFAC, IS-BAO, seguros y tripulación: cómo saber si un charter es seguro antes de pagar.",
+      en: "AFAC, IS-BAO, insurance and crew — how to know a charter is safe before you pay.",
+    },
+    keywords: {
+      es: "operador jet privado seguro México, certificación AFAC, AOC taxi aéreo, IS-BAO, ARGUS, Wyvern, seguros aviación privada",
+      en: "safe private jet operator Mexico, AFAC certification, air taxi AOC, IS-BAO, ARGUS, Wyvern, private aviation insurance",
+    },
+    readMinutes: 9,
+    body: make({ es: operatorSafetyES, en: operatorSafetyEN }),
+  },
   {
     slug: "tramites-aduanales-jet-privado-mexico",
     order: 7,

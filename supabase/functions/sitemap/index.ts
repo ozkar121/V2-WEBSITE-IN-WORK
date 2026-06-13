@@ -21,6 +21,7 @@ const STATIC_PAGES: { path: string; priority: string; changefreq: string }[] = [
   { path: "/guia-fbo-toluca", priority: "0.8", changefreq: "monthly" },
   { path: "/cuanto-cuesta-jet-privado-mexico-2026", priority: "0.8", changefreq: "monthly" },
   { path: "/briefing", priority: "0.8", changefreq: "weekly" },
+  { path: "/briefing/como-elegir-operador-jet-privado-seguro-mexico", priority: "0.8", changefreq: "monthly" },
   { path: "/briefing/tramites-aduanales-jet-privado-mexico", priority: "0.7", changefreq: "monthly" },
   { path: "/briefing/mejores-aeropuertos-aviacion-privada-mexico", priority: "0.7", changefreq: "monthly" },
   { path: "/briefing/toluca-vs-santa-lucia-vuelos-privados", priority: "0.7", changefreq: "monthly" },

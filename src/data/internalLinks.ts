@@ -33,6 +33,10 @@ export const LINK_LABELS: Record<string, { es: string; en: string }> = {
   "/rutas/toluca-puerto-vallarta": { es: "Ruta Toluca → Puerto Vallarta", en: "Toluca → Puerto Vallarta route" },
   "/rutas/toluca-houston": { es: "Ruta Toluca → Houston", en: "Toluca → Houston route" },
   "/rutas/toluca-punta-cana": { es: "Ruta Toluca → Punta Cana", en: "Toluca → Punta Cana route" },
+  "/briefing/como-elegir-operador-jet-privado-seguro-mexico": {
+    es: "Cómo elegir un operador de jet privado seguro",
+    en: "How to choose a safe private jet operator",
+  },
   "/briefing/tramites-aduanales-jet-privado-mexico": {
     es: "Trámites aduanales para jets privados en México",
     en: "Private jet customs in Mexico",
@@ -69,6 +73,12 @@ export const LINK_LABELS: Record<string, { es: string; en: string }> = {
 
 // path -> list of related paths (3-4 each)
 export const RELATED_MAP: Record<string, string[]> = {
+  "/briefing/como-elegir-operador-jet-privado-seguro-mexico": [
+    "/briefing/aeronaves-usa-vuelos-domesticos-mexico",
+    "/cuanto-cuesta-jet-privado-mexico-2026",
+    "/flota",
+    "/",
+  ],
   "/guia-fbo-toluca": [
     "/briefing/toluca-vs-santa-lucia-vuelos-privados",
     "/briefing/mejores-aeropuertos-aviacion-privada-mexico",
@@ -79,7 +89,7 @@ export const RELATED_MAP: Record<string, string[]> = {
     "/flota",
     "/empty-legs",
     "/briefing/mejores-jets-medianos-mexico-usa",
-    "/guia-fbo-toluca",
+    "/briefing/como-elegir-operador-jet-privado-seguro-mexico",
   ],
   "/briefing/tramites-aduanales-jet-privado-mexico": ["/vuelos-de-carga", "/rutas/cdmx-miami", "/"],
   "/briefing/mejores-aeropuertos-aviacion-privada-mexico": [
@@ -105,7 +115,7 @@ export const RELATED_MAP: Record<string, string[]> = {
   "/briefing/como-funcionan-empty-legs": [
     "/empty-legs",
     "/cuanto-cuesta-jet-privado-mexico-2026",
-    "/",
+    "/briefing/como-elegir-operador-jet-privado-seguro-mexico",
   ],
   "/briefing/helicopter-charter-toluca-cdmx": [
     "/briefing/renta-helicoptero-ciudad-de-mexico",
