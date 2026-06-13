@@ -28,11 +28,14 @@ const BriefingPost = () => {
   const idx = sorted.findIndex((p) => p.slug === post.slug);
   const next = sorted[idx + 1];
 
+  const ogImage = `${SITE_URL}${post.ogImage ?? "/og-image.jpg"}`;
+
   const seo = useSEO({
     title: `${title} | The Numen Briefing`,
     description,
     path: `/briefing/${post.slug}`,
     type: "article",
+    image: ogImage,
     jsonLd: [
       {
         "@context": "https://schema.org",
@@ -41,7 +44,7 @@ const BriefingPost = () => {
         description,
         datePublished: post.date,
         dateModified: post.date,
-        image: [`${SITE_URL}/og-image.jpg`],
+        image: [ogImage],
         author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
         publisher: {
           "@type": "Organization",

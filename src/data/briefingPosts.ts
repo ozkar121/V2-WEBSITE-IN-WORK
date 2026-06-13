@@ -36,6 +36,8 @@ export interface BriefingPost {
   excerpt: { es: string; en: string };
   keywords: { es: string; en: string };
   readMinutes: number;
+  /** Optional per-post OG image (absolute path from site root, e.g. "/og-...jpg"). */
+  ogImage?: string;
   body: { es: string; en: string };
 }
 
@@ -75,6 +77,7 @@ export const BRIEFING_POSTS: BriefingPost[] = [
       en: "safe private jet operator Mexico, AFAC certification, air taxi AOC, IS-BAO, ARGUS, Wyvern, private aviation insurance",
     },
     readMinutes: 9,
+    ogImage: "/og-como-elegir-operador-jet-privado-seguro-mexico.jpg",
     body: make({ es: operatorSafetyES, en: operatorSafetyEN }),
   },
   {
