@@ -32,14 +32,15 @@ export const Navbar = () => {
     { label: lang === "en" ? "Private jet cost 2026" : "Cuánto cuesta un jet privado 2026", to: lp("/cuanto-cuesta-jet-privado-mexico-2026") },
   ];
 
+  // Salida siempre desde Toluca (MMTO). Los slugs cdmx-* se conservan por SEO/indexación.
   const routes = [
-    { label: "CDMX → Cancún", to: lp("/rutas/cdmx-cancun") },
-    { label: "CDMX → Los Cabos", to: lp("/rutas/cdmx-los-cabos") },
-    { label: "CDMX → Miami", to: lp("/rutas/cdmx-miami") },
-    { label: "CDMX → Monterrey", to: lp("/rutas/cdmx-monterrey") },
+    { label: "Toluca → Cancún", to: lp("/rutas/cdmx-cancun") },
+    { label: "Toluca → Los Cabos", to: lp("/rutas/cdmx-los-cabos") },
+    { label: "Toluca → Monterrey", to: lp("/rutas/cdmx-monterrey") },
     { label: "Toluca → Acapulco", to: lp("/rutas/toluca-acapulco") },
     { label: "Toluca → Guadalajara", to: lp("/rutas/toluca-guadalajara") },
     { label: "Toluca → Puerto Vallarta", to: lp("/rutas/toluca-puerto-vallarta") },
+    { label: "Toluca → Miami", to: lp("/rutas/cdmx-miami") },
     { label: "Toluca → Houston", to: lp("/rutas/toluca-houston") },
     { label: "Toluca → Punta Cana", to: lp("/rutas/toluca-punta-cana") },
     { label: lang === "en" ? "All routes" : "Todas las rutas", to: lp("/rutas") },

@@ -22,10 +22,11 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "/#contact" },
 ];
 
+// Salida siempre desde Toluca (MMTO). Los slugs cdmx-* se conservan por SEO/indexación.
 export const ROUTES = [
-  { slug: "cdmx-cancun", label: "CDMX → Cancún" },
-  { slug: "cdmx-los-cabos", label: "CDMX → Los Cabos" },
-  { slug: "cdmx-miami", label: "CDMX → Miami" },
-  { slug: "cdmx-monterrey", label: "CDMX → Monterrey" },
+  { slug: "cdmx-cancun", label: "Toluca → Cancún" },
+  { slug: "cdmx-los-cabos", label: "Toluca → Los Cabos" },
+  { slug: "cdmx-miami", label: "Toluca → Miami" },
+  { slug: "cdmx-monterrey", label: "Toluca → Monterrey" },
   { slug: "toluca-acapulco", label: "Toluca → Acapulco" },
 ];

@@ -148,9 +148,9 @@ export const Footer = () => {
           >
             {lang === "en" ? "Popular Routes" : "Rutas Populares"}
           </h4>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 list-none p-0 m-0">
+          <ul className="columns-1 sm:columns-2 gap-x-8 list-none p-0 m-0">
             {popularRoutes.map((r) => (
-              <li key={r.to}>
+              <li key={r.to} className="mb-1.5 break-inside-avoid">
                 <Link
                   to={r.to}
                   className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline whitespace-nowrap"
