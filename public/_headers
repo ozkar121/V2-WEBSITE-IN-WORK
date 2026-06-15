@@ -1,0 +1,14 @@
+# Cache headers para Cloudflare Pages.
+# Evita el error "Unexpected token '<' ... is not valid JSON":
+# tras un redespliegue cambian los hashes de /assets/*; si el navegador reusa
+# un index.html viejo, pide un chunk que ya no existe y se devuelve HTML.
+# El HTML se revalida siempre; los assets hasheados se cachean a largo plazo.
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
