@@ -18,8 +18,8 @@ export const TRANSLATIONS = {
 
   // Footer
   footer_description: {
-    es: "Renta de jet privado y aviación ejecutiva con base en el Aeropuerto Internacional de Toluca (MMTO). Charter bajo demanda, empty legs, consultoría y adquisición de aeronaves para México, Estados Unidos, el Caribe y Centroamérica. Cotización en menos de 2 horas, operación 24/7.",
-    en: "Private jet charter and executive aviation based at Toluca International Airport (MMTO). On-demand charter, empty legs, consulting, and aircraft acquisition across Mexico, the United States, the Caribbean, and Central America. Quotes in under 2 hours, 24/7 operations.",
+    es: "Renta de jet privado y aviación ejecutiva con base en el Aeropuerto Internacional de Toluca (MMTO). Charter bajo demanda, empty legs, consultoría y adquisición de aeronaves para México, Estados Unidos, el Caribe y Centroamérica. Cotización en menos de 30 minutos, operación 24/7.",
+    en: "Private jet charter and executive aviation based at Toluca International Airport (MMTO). On-demand charter, empty legs, consulting, and aircraft acquisition across Mexico, the United States, the Caribbean, and Central America. Quotes in under 30 minutes, 24/7 operations.",
   },
   footer_aviation_center: { es: "Centro de Aviación", en: "Aviation Hub" },
   footer_aviation_center_l1: { es: "Aeropuerto Intl. de Toluca", en: "Toluca Intl. Airport" },
@@ -61,6 +61,11 @@ export const TRANSLATIONS = {
   },
   hero_cta_quote: { es: "Solicitar Cotización", en: "Request a Quote" },
   hero_cta_fleet: { es: "Ver Nuestra Flota", en: "View Our Fleet" },
+  // Hero trust signals (above the fold) — reduce bounce showing value + proof fast
+  hero_trust_1: { es: "Respuesta en menos de 30 min", en: "Reply in under 30 min" },
+  hero_trust_2: { es: "Operadores certificados", en: "Certified operators" },
+  hero_trust_3: { es: "Broker independiente · sin conflicto de interés", en: "Independent broker · no conflict of interest" },
+  hero_trust_4: { es: "Operación 24/7", en: "24/7 operations" },
 
   // Services section
   services_eyebrow: { es: "Lo Que Ofrecemos", en: "What We Offer" },
@@ -146,8 +151,8 @@ export const TRANSLATIONS = {
   cta_band_title_a: { es: "¿Listo para volar?", en: "Ready to fly?" },
   cta_band_title_em: { es: "Cotiza tu jet privado.", en: "Quote your private jet." },
   cta_band_sub: {
-    es: "Empty legs, charter bajo demanda y aviación ejecutiva desde Toluca. Respuesta en menos de 2 horas, 24/7.",
-    en: "Empty legs, on-demand charter, and executive aviation from Toluca. Reply in under 2 hours, 24/7.",
+    es: "Empty legs, charter bajo demanda y aviación ejecutiva desde Toluca. Respuesta en menos de 30 minutos, 24/7.",
+    en: "Empty legs, on-demand charter, and executive aviation from Toluca. Reply in under 30 minutes, 24/7.",
   },
   cta_whatsapp: { es: "WhatsApp", en: "WhatsApp" },
   cta_send_request: { es: "Enviar Solicitud", en: "Send Request" },
@@ -193,8 +198,8 @@ export const TRANSLATIONS = {
   qf_submit: { es: "Solicitar cotización →", en: "Request quote →" },
   qf_submitting: { es: "Enviando...", en: "Sending..." },
   qf_disclaimer: {
-    es: "Te respondemos en menos de 2 horas. Tus datos solo se usan para esta cotización.",
-    en: "We reply in under 2 hours. Your data is used only for this quote.",
+    es: "Te respondemos en menos de 30 minutos. Tus datos solo se usan para esta cotización.",
+    en: "We reply in under 30 minutes. Your data is used only for this quote.",
   },
   qf_success_eyebrow: { es: "Solicitud recibida", en: "Request received" },
   qf_success_title: {
@@ -202,8 +207,8 @@ export const TRANSLATIONS = {
     en: "Thank you — your request is under review.",
   },
   qf_success_body: {
-    es: "Nuestro equipo de operaciones se pondrá en contacto contigo en menos de 2 horas. Te enviamos una confirmación a tu correo con el resumen de la solicitud.",
-    en: "Our operations team will contact you in under 2 hours. We've sent a confirmation to your email with the request summary.",
+    es: "Nuestro equipo de operaciones se pondrá en contacto contigo en menos de 30 minutos. Te enviamos una confirmación a tu correo con el resumen de la solicitud.",
+    en: "Our operations team will contact you in under 30 minutes. We've sent a confirmation to your email with the request summary.",
   },
   qf_send_another: { es: "Enviar otra solicitud →", en: "Send another request →" },
   qf_error_title: {
@@ -520,8 +525,8 @@ export const TRANSLATIONS = {
 
   // Static info strip (replaces marquee)
   strip_text: {
-    es: "Renta de jet privado y charter ejecutivo desde el Aeropuerto Internacional de Toluca (MMTO) hacia México, Estados Unidos, el Caribe y Centroamérica. Empty legs, adquisición y consultoría de aeronaves. Cotización en menos de 2 horas, operación 24/7.",
-    en: "Private jet rental and executive charter from Toluca International Airport (MMTO) to Mexico, the United States, the Caribbean, and Central America. Empty legs, aircraft acquisition and consulting. Quote in under 2 hours, 24/7 operations.",
+    es: "Renta de jet privado y charter ejecutivo desde el Aeropuerto Internacional de Toluca (MMTO) hacia México, Estados Unidos, el Caribe y Centroamérica. Empty legs, adquisición y consultoría de aeronaves. Cotización en menos de 30 minutos, operación 24/7.",
+    en: "Private jet rental and executive charter from Toluca International Airport (MMTO) to Mexico, the United States, the Caribbean, and Central America. Empty legs, aircraft acquisition and consulting. Quote in under 30 minutes, 24/7 operations.",
   },
 
   // Long-form SEO content block (Home)
@@ -561,8 +566,8 @@ export const TRANSLATIONS = {
 
   seo_h3_6: { es: "Cómo solicitar su cotización", en: "How to request your quote" },
   seo_p_6: {
-    es: "El proceso es directo: comparta origen, destino, fecha, número de pasajeros y cualquier requerimiento especial (catering, transporte terrestre, mascotas, equipaje voluminoso) por WhatsApp, teléfono o el formulario de esta página. En menos de 2 horas — habitualmente en 30 minutos — recibirá una propuesta con 2 o 3 opciones de aeronave, desglose de costos, fotos del interior y biografía de la tripulación. Operamos 24/7 los 365 días del año, incluyendo madrugadas, fines de semana y feriados.",
-    en: "The process is direct: share origin, destination, date, number of passengers, and any special requirements (catering, ground transport, pets, oversized luggage) via WhatsApp, phone, or the form on this page. In under 2 hours — usually within 30 minutes — you will receive a proposal with 2 or 3 aircraft options, cost breakdown, interior photos, and crew bio. We operate 24/7, 365 days a year, including overnights, weekends, and holidays.",
+    es: "El proceso es directo: comparta origen, destino, fecha, número de pasajeros y cualquier requerimiento especial (catering, transporte terrestre, mascotas, equipaje voluminoso) por WhatsApp, teléfono o el formulario de esta página. En menos de 30 minutos recibirá una propuesta con 2 o 3 opciones de aeronave, desglose de costos, fotos del interior y biografía de la tripulación. Operamos 24/7 los 365 días del año, incluyendo madrugadas, fines de semana y feriados.",
+    en: "The process is direct: share origin, destination, date, number of passengers, and any special requirements (catering, ground transport, pets, oversized luggage) via WhatsApp, phone, or the form on this page. In under 30 minutes you will receive a proposal with 2 or 3 aircraft options, cost breakdown, interior photos, and crew bio. We operate 24/7, 365 days a year, including overnights, weekends, and holidays.",
   },
 } as const;
 

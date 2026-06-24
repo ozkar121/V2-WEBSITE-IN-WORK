@@ -353,7 +353,7 @@ const Fleet = () => {
           </h2>
           <p className="text-base text-fg-2 max-w-xl mx-auto mb-10 leading-relaxed">
             {lang === "en"
-              ? "Tell us your route, dates, and passengers. We'll match you with the best aircraft and quote in under 2 hours."
+              ? "Tell us your route, dates, and passengers. We'll match you with the best aircraft and quote in under 30 minutes."
               : "Cuéntanos tu ruta, fechas y pasajeros. Te recomendamos la mejor aeronave y cotizamos en menos de 2 horas."}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

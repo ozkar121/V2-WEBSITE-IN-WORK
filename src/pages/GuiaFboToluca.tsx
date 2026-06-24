@@ -353,8 +353,8 @@ const GuiaFboToluca = () => {
             <h3 className="text-xl font-light text-foreground mb-2">{en ? "Ready to fly?" : "¿Listo para volar?"}</h3>
             <p className="text-sm text-fg-2 mb-5">
               {en
-                ? "Quotes in under 2 hours. 24/7 operation from MMTO Toluca."
-                : "Cotización en menos de 2 horas. Operación 24/7 desde MMTO Toluca."}
+                ? "Quotes in under 30 minutes. 24/7 operation from MMTO Toluca."
+                : "Cotización en menos de 30 minutos. Operación 24/7 desde MMTO Toluca."}
             </p>
             <a
               href={waLink(en ? "Hi, I'd like to quote a private flight from Toluca." : "Hola, quisiera cotizar un vuelo privado desde Toluca.")}

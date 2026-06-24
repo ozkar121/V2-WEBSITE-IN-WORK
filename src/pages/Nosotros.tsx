@@ -68,7 +68,7 @@ const Nosotros = () => {
     ? [
         "Numen Aviation was built by operators, not salespeople. Before brokering our first charter, we spent years on the operational side of Mexican executive aviation: dispatching flights, coordinating FBOs, negotiating with operators and learning, mission by mission, what separates a good flight from a flawless one.",
         "That experience defined our model. We don't own aircraft — on purpose. As an independent brokerage based at Toluca International Airport (MMTO), the executive aviation hub of the Valley of Mexico, we compare dozens of AFAC-certified operators objectively and put the right aircraft on each mission, at the right price, with no inventory bias.",
-        "Today we coordinate charters across Mexico, the United States, the Caribbean and Central America: on-demand flights, empty legs, cargo, air ambulance and aircraft acquisition. One dedicated advisor per client, quotes in under 2 hours, operating 24/7 — every day of the year.",
+        "Today we coordinate charters across Mexico, the United States, the Caribbean and Central America: on-demand flights, empty legs, cargo, air ambulance and aircraft acquisition. One dedicated advisor per client, quotes in under 30 minutes, operating 24/7 — every day of the year.",
       ]
     : [
         "Numen Aviation fue construida por operadores, no por vendedores. Antes de intermediar nuestro primer charter pasamos años del lado operativo de la aviación ejecutiva mexicana: despachando vuelos, coordinando FBOs, negociando con operadores y aprendiendo, misión por misión, qué separa un buen vuelo de uno impecable.",
@@ -303,7 +303,7 @@ const Nosotros = () => {
           </h2>
           <p className="text-[0.9rem] text-fg-3 mb-10">
             {en
-              ? "Tell us your route, dates and passengers. A dedicated advisor responds in under 2 hours, 24/7."
+              ? "Tell us your route, dates and passengers. A dedicated advisor responds in under 30 minutes, 24/7."
               : "Cuéntanos tu ruta, fechas y pasajeros. Un asesor dedicado te responde en menos de 2 horas, 24/7."}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">

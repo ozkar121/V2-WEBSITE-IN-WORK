@@ -57,7 +57,7 @@ const HOME_JSONLD = [
     name: "Charter de Jet Privado — Numen Aviation",
     serviceType: "Renta de Jet Privado",
     description:
-      "Renta de jet privado bajo demanda desde el Aeropuerto Internacional de Toluca (MMTO). Vuelos nacionales e internacionales, empty legs, ambulancia aérea, vuelos de carga y charters grupales. Cotización en menos de 2 horas, operación 24/7.",
+      "Renta de jet privado bajo demanda desde el Aeropuerto Internacional de Toluca (MMTO). Vuelos nacionales e internacionales, empty legs, ambulancia aérea, vuelos de carga y charters grupales. Cotización en menos de 30 minutos, operación 24/7.",
     provider: { "@id": `${SITE_URL}/#business` },
     areaServed: [
       { "@type": "Country", name: "Mexico" },
@@ -129,7 +129,7 @@ const Index = () => {
 
   const stats = [
     { val: "24/7", label: t("stat_24_7") },
-    { val: "< 2h", label: t("stat_2h") },
+    { val: "< 30min", label: t("stat_2h") },
     { val: "150+", label: t("stat_routes") },
     { val: "100%", label: t("stat_safety") },
   ];
@@ -148,8 +148,8 @@ const Index = () => {
         : "Renta de Jet Privado en Toluca y México | Numen Aviation",
     description:
       lang === "en"
-        ? "Private jet charter on demand from Toluca Airport (MMTO). Empty legs, consulting and acquisition. Quote in under 2 hours. 24/7 service."
-        : "Renta de jet privado y charter bajo demanda desde Toluca (MMTO). Empty legs, consultoría y adquisición. Cotización en menos de 2 horas. 24/7.",
+        ? "Private jet charter on demand from Toluca Airport (MMTO). Empty legs, consulting and acquisition. Quote in under 30 minutes. 24/7 service."
+        : "Renta de jet privado y charter bajo demanda desde Toluca (MMTO). Empty legs, consultoría y adquisición. Cotización en menos de 30 minutos. 24/7.",
     path: "/",
     jsonLd: HOME_JSONLD,
   });
@@ -205,6 +205,18 @@ const Index = () => {
           <a href={waLink("Hola, me gustaría solicitar una cotización de charter.")} target="_blank" rel="noopener noreferrer" className="btn-primary">{t("hero_cta_quote")}</a>
           <a href="#fleet" className="btn-secondary">{t("hero_cta_fleet")}</a>
         </div>
+
+        {/* Trust signals — visibles sin scroll para reducir rebote en tráfico pagado */}
+        <ul className="relative z-10 flex flex-wrap gap-x-5 gap-y-2.5 mt-8 animate-fade-up list-none p-0" style={{ animationDelay: "1.15s" }}>
+          {[t("hero_trust_1"), t("hero_trust_2"), t("hero_trust_3"), t("hero_trust_4")].map((item) => (
+            <li key={item} className="flex items-center gap-2 text-[0.72rem] text-fg-3">
+              <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 flex-shrink-0" style={{ color: "hsl(var(--jade))" }} aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Static info strip — replaces the previous scrolling marquee for a calmer, more natural read */}

@@ -152,7 +152,7 @@ const Rutas = () => {
           </h2>
           <p className="text-fg-2 mb-8">
             {lang === "en"
-              ? "We operate on demand to any airport. Tell us your route and we'll quote in under 2 hours."
+              ? "We operate on demand to any airport. Tell us your route and we'll quote in under 30 minutes."
               : "Operamos bajo demanda a cualquier aeropuerto. Cuéntanos tu ruta y cotizamos en menos de 2 horas."}
           </p>
           <a

@@ -54,7 +54,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Mexico City to Cancún cost?",
-        a: "A one-way flight on a light jet (Learjet 31 or 35, up to 7 passengers) starts at 12,000 USD + tax; on a Hawker 800A (up to 9 passengers) from 21,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way flight on a light jet (Learjet 31 or 35, up to 7 passengers) starts at 12,000 USD + tax; on a Hawker 800A (up to 9 passengers) from 21,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Cancún by private jet?",
@@ -126,7 +126,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Mexico City to Los Cabos cost?",
-        a: "A one-way flight on a light jet (Learjet 31 or 35, up to 7 passengers) starts at 12,750 USD + tax; on a Hawker 800A (up to 9 passengers) from 19,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way flight on a light jet (Learjet 31 or 35, up to 7 passengers) starts at 12,750 USD + tax; on a Hawker 800A (up to 9 passengers) from 19,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Los Cabos by private jet?",
@@ -198,7 +198,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Mexico City to Miami cost?",
-        a: "A one-way flight on a Hawker 800A (up to 9 passengers) starts at 25,300 USD + tax; on a Challenger 601 (up to 12 passengers) from 44,000 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way flight on a Hawker 800A (up to 9 passengers) starts at 25,300 USD + tax; on a Challenger 601 (up to 12 passengers) from 44,000 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Miami by private jet?",
@@ -270,7 +270,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Mexico City to Monterrey cost?",
-        a: "A one-way flight on a Piper M500 turboprop (1–4 passengers) starts at 9,500 USD + tax; on a Learjet 35 (up to 7 passengers) from 12,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way flight on a Piper M500 turboprop (1–4 passengers) starts at 9,500 USD + tax; on a Learjet 35 (up to 7 passengers) from 12,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Monterrey by private jet?",
@@ -297,7 +297,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
   "toluca-acapulco": {
     title: "Private Jet Toluca to Acapulco | Numen Aviation",
     description:
-      "Private jet charter from Toluca (MMTO) to Acapulco in ~45 min. Learjet 35 and Hawker 800, empty legs and quotes in under 2 hours. 24/7.",
+      "Private jet charter from Toluca (MMTO) to Acapulco in ~45 min. Learjet 35 and Hawker 800, empty legs and quotes in under 30 minutes. 24/7.",
     heroSubtitle:
       "Acapulco 45 minutes from the runway. No stops, no lines and no Autopista del Sol fatigue — from Toluca (MMTO), Mexico City's executive hub, straight to the bay.",
     waMessage: "Hi, I'd like to quote a private flight from Toluca to Acapulco.",
@@ -341,7 +341,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Toluca to Acapulco cost?",
-        a: "It depends on the aircraft and date. A one-way on a Learjet 35 (up to 6–7 passengers) starts at 5,950 USD + tax, and on a Hawker 800 (up to 8 passengers) at 7,550 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "It depends on the aircraft and date. A one-way on a Learjet 35 (up to 6–7 passengers) starts at 5,950 USD + tax, and on a Hawker 800 (up to 8 passengers) at 7,550 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Acapulco by private jet?",
@@ -368,7 +368,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
   "toluca-guadalajara": {
     title: "Private Jet Toluca to Guadalajara | Numen Aviation",
     description:
-      "Private jet charter from Toluca (MMTO) to Guadalajara (MMGL) in ~55 min. Turboprop and light jets, same-day returns. Quotes in under 2 hours. 24/7.",
+      "Private jet charter from Toluca (MMTO) to Guadalajara (MMGL) in ~55 min. Turboprop and light jets, same-day returns. Quotes in under 30 minutes. 24/7.",
     heroSubtitle:
       "Western Mexico's business corridor in 55 minutes. Take off from Toluca (MMTO) on your schedule, close in Guadalajara and return the same day — no lines, no connections, no unnecessary hotel nights.",
     waMessage: "Hi, I'd like to quote a private flight from Toluca to Guadalajara.",
@@ -413,7 +413,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Toluca to Guadalajara cost?",
-        a: "A one-way on a Piper M500 turboprop (up to 4–5 passengers) starts at 5,500 USD + tax; on a Learjet 35 (up to 7 passengers) from 6,950 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way on a Piper M500 turboprop (up to 4–5 passengers) starts at 5,500 USD + tax; on a Learjet 35 (up to 7 passengers) from 6,950 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Guadalajara by private jet?",
@@ -440,7 +440,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
   "toluca-puerto-vallarta": {
     title: "Private Jet Toluca to Puerto Vallarta | Numen Aviation",
     description:
-      "Private jet charter from Toluca (MMTO) to Puerto Vallarta (MMPR) in ~1h 15m. Learjet 35 and Hawker 800, empty legs and quotes in under 2 hours. 24/7.",
+      "Private jet charter from Toluca (MMTO) to Puerto Vallarta (MMPR) in ~1h 15m. Learjet 35 and Hawker 800, empty legs and quotes in under 30 minutes. 24/7.",
     heroSubtitle:
       "Banderas Bay 75 minutes from the runway. Take off from Toluca (MMTO) after breakfast and have lunch by the sea — no stops, no lines, your agenda intact.",
     waMessage: "Hi, I'd like to quote a private flight from Toluca to Puerto Vallarta.",
@@ -484,7 +484,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Toluca to Puerto Vallarta cost?",
-        a: "A one-way on a Learjet 35 (up to 6–7 passengers) starts at 7,450 USD + tax, and on a Hawker 800 (up to 8 passengers) at 9,650 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way on a Learjet 35 (up to 6–7 passengers) starts at 7,450 USD + tax, and on a Hawker 800 (up to 8 passengers) at 9,650 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Puerto Vallarta by private jet?",
@@ -556,7 +556,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Toluca to Houston cost?",
-        a: "A one-way on a Learjet 35 (up to 6–7 passengers) starts at 14,500 USD + tax; on a Hawker 800A (up to 9 passengers) from 16,300 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way on a Learjet 35 (up to 6–7 passengers) starts at 14,500 USD + tax; on a Hawker 800A (up to 9 passengers) from 16,300 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Houston by private jet?",
@@ -628,7 +628,7 @@ export const ROUTE_DATA_EN: Record<string, RouteDataEn> = {
     faq: [
       {
         q: "How much does a private jet from Toluca to Punta Cana cost?",
-        a: "A one-way on a Hawker 800A (up to 8 passengers) starts at 42,000 USD + tax; on a Challenger 601 (up to 12 passengers) from 52,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 2 hours.",
+        a: "A one-way on a Hawker 800A (up to 8 passengers) starts at 42,000 USD + tax; on a Challenger 601 (up to 12 passengers) from 52,500 USD + tax. Prices are estimates subject to availability; we deliver a fully itemized quote in under 30 minutes.",
       },
       {
         q: "How long is the flight from Toluca to Punta Cana by private jet?",

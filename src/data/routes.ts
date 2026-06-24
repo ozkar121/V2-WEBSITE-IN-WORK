@@ -105,7 +105,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de CDMX a Cancún?",
-        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 12,000 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 21,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 12,000 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 21,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Cancún en jet privado?",
@@ -181,7 +181,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de CDMX a Los Cabos?",
-        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 12,750 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 19,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en jet ligero (Learjet 31 o 35, hasta 7 pasajeros) comienza desde 12,750 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 19,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Los Cabos en jet privado?",
@@ -257,7 +257,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de CDMX a Miami?",
-        a: "Un viaje sencillo en Hawker 800A (hasta 9 pasajeros) comienza desde 25,300 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 44,000 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en Hawker 800A (hasta 9 pasajeros) comienza desde 25,300 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 44,000 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Miami en jet privado?",
@@ -333,7 +333,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de CDMX a Monterrey?",
-        a: "Un viaje sencillo en turbohélice Piper M500 (1–4 pasajeros) comienza desde 9,500 USD + IVA; en Learjet 35 (hasta 7 pasajeros) desde 12,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en turbohélice Piper M500 (1–4 pasajeros) comienza desde 9,500 USD + IVA; en Learjet 35 (hasta 7 pasajeros) desde 12,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Monterrey en jet privado?",
@@ -361,7 +361,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     slug: "toluca-acapulco",
     title: "Renta de Jet Privado Toluca–Acapulco | Numen Aviation",
     description:
-      "Renta de jet privado de Toluca (MMTO) a Acapulco en ~45 min. Learjet 35 y Hawker 800, empty legs y cotización en menos de 2 horas. 24/7.",
+      "Renta de jet privado de Toluca (MMTO) a Acapulco en ~45 min. Learjet 35 y Hawker 800, empty legs y cotización en menos de 30 minutos. 24/7.",
     tagline: "Toluca · Acapulco",
     heroFromCity: "Toluca",
     heroToCity: "Acapulco",
@@ -443,7 +443,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de Toluca a Acapulco?",
-        a: "Depende de la aeronave y la fecha. Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 5,950 USD + IVA, y en Hawker 800 (hasta 8 pasajeros) desde 7,550 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Depende de la aeronave y la fecha. Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 5,950 USD + IVA, y en Hawker 800 (hasta 8 pasajeros) desde 7,550 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Acapulco en jet privado?",
@@ -471,7 +471,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     slug: "toluca-guadalajara",
     title: "Renta de Jet Privado Toluca–Guadalajara | Numen Aviation",
     description:
-      "Renta de jet privado de Toluca (MMTO) a Guadalajara (MMGL) en ~55 min. Turbohélice y jets ligeros, regresos el mismo día. Cotización en menos de 2 horas. 24/7.",
+      "Renta de jet privado de Toluca (MMTO) a Guadalajara (MMGL) en ~55 min. Turbohélice y jets ligeros, regresos el mismo día. Cotización en menos de 30 minutos. 24/7.",
     tagline: "Toluca · Guadalajara",
     heroFromCity: "Toluca",
     heroToCity: "Guadalajara",
@@ -559,7 +559,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de Toluca a Guadalajara?",
-        a: "Un viaje sencillo en turbohélice Piper M500 (hasta 4–5 pasajeros) comienza desde 5,500 USD + IVA; en Learjet 35 (hasta 7 pasajeros) desde 6,950 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en turbohélice Piper M500 (hasta 4–5 pasajeros) comienza desde 5,500 USD + IVA; en Learjet 35 (hasta 7 pasajeros) desde 6,950 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Guadalajara en jet privado?",
@@ -587,7 +587,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     slug: "toluca-puerto-vallarta",
     title: "Renta de Jet Privado Toluca–Puerto Vallarta | Numen Aviation",
     description:
-      "Renta de jet privado de Toluca (MMTO) a Puerto Vallarta (MMPR) en ~1h 15m. Learjet 35 y Hawker 800, empty legs y cotización en menos de 2 horas. 24/7.",
+      "Renta de jet privado de Toluca (MMTO) a Puerto Vallarta (MMPR) en ~1h 15m. Learjet 35 y Hawker 800, empty legs y cotización en menos de 30 minutos. 24/7.",
     tagline: "Toluca · Puerto Vallarta",
     heroFromCity: "Toluca",
     heroToCity: "Puerto Vallarta",
@@ -668,7 +668,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de Toluca a Puerto Vallarta?",
-        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 7,450 USD + IVA, y en Hawker 800 (hasta 8 pasajeros) desde 9,650 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 7,450 USD + IVA, y en Hawker 800 (hasta 8 pasajeros) desde 9,650 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Puerto Vallarta en jet privado?",
@@ -784,7 +784,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de Toluca a Houston?",
-        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 14,500 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 16,300 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en Learjet 35 (hasta 6–7 pasajeros) comienza desde 14,500 USD + IVA; en Hawker 800A (hasta 9 pasajeros) desde 16,300 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Houston en jet privado?",
@@ -900,7 +900,7 @@ export const ROUTE_DATA: Record<string, RouteData> = {
     faq: [
       {
         q: "¿Cuánto cuesta rentar un jet privado de Toluca a Punta Cana?",
-        a: "Un viaje sencillo en Hawker 800A (hasta 8 pasajeros) comienza desde 42,000 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 52,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 2 horas.",
+        a: "Un viaje sencillo en Hawker 800A (hasta 8 pasajeros) comienza desde 42,000 USD + IVA; en Challenger 601 (hasta 12 pasajeros) desde 52,500 USD + IVA. Son precios estimados sujetos a disponibilidad; entregamos cotización con desglose completo en menos de 30 minutos.",
       },
       {
         q: "¿Cuánto dura el vuelo de Toluca a Punta Cana en jet privado?",

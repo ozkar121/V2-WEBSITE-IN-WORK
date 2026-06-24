@@ -69,8 +69,8 @@ const BriefingPost = () => {
   const ctaTitle = lang === "en" ? "Ready to fly?" : "¿Listo para volar?";
   const ctaCopy =
     lang === "en"
-      ? "Quotes in under 2 hours. Operations 24/7 from MMTO Toluca."
-      : "Cotización en menos de 2 horas. Operación 24/7 desde MMTO Toluca.";
+      ? "Quotes in under 30 minutes. Operations 24/7 from MMTO Toluca."
+      : "Cotización en menos de 30 minutos. Operación 24/7 desde MMTO Toluca.";
   const ctaBtn = lang === "en" ? "Request a quote" : "Solicitar cotización";
   const nextLbl = lang === "en" ? "Next article" : "Siguiente artículo";
 
