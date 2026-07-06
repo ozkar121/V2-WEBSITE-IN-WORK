@@ -101,7 +101,7 @@ const RoutePage = () => {
         <div className="absolute inset-0" style={{
           background: "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.07) 0%, transparent 70%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
         }} />
-        <DotPattern origin="right" seed={11} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
+        <DotPattern origin="right" seed={11} opacity={0.7} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
         <p className="relative z-10 eyebrow mb-5 animate-fade-up" style={{ animationDelay: "0.3s" }}>{route.tagline}</p>
         <h1 className="relative z-10 display-title max-w-2xl animate-fade-up" style={{ animationDelay: "0.5s" }}>
           {route.heroFromCity}<br />{lang === "en" ? "to" : "a"} <em>{route.heroToCity}.</em>

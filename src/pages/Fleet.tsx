@@ -143,7 +143,7 @@ const Fleet = () => {
         className="pt-40 pb-24 border-b border-jade-soft relative overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
-        <DotPattern origin="right" seed={31} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
+        <DotPattern origin="top" seed={31} opacity={0.7} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{

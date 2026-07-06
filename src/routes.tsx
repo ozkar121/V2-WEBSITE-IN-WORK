@@ -8,6 +8,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { ProtectedAdminRoute } from "@/components/ProtectedAdminRoute";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { DotPattern } from "@/components/DotPattern";
 
 import Index from "./pages/Index.tsx";
 import EmptyLegs from "./pages/EmptyLegs.tsx";
@@ -38,6 +39,10 @@ const Layout = () => (
       <LanguageProvider>
         <AuthProvider>
           <ScrollToTop />
+          {/* Textura de puntos global (Brand Book: dotted patterns en gris sobre negro) */}
+          <div aria-hidden="true" className="fixed inset-0 -z-10 pointer-events-none">
+            <DotPattern origin="uniform" color="hsl(var(--fg-4))" opacity={0.4} gap={36} maxR={1.7} seed={99} className="w-full h-full" />
+          </div>
           <Outlet />
         </AuthProvider>
       </LanguageProvider>

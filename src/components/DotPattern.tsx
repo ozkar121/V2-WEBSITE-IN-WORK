@@ -11,8 +11,8 @@ import { useMemo, type CSSProperties } from "react";
  */
 
 type Props = {
-  /** Dirección hacia la que crece la densidad del patrón */
-  origin?: "left" | "right" | "top" | "bottom";
+  /** Dirección hacia la que crece la densidad del patrón ("uniform" = campo parejo) */
+  origin?: "left" | "right" | "top" | "bottom" | "uniform";
   /** Color CSS de los puntos (default: verde de marca) */
   color?: string;
   /** Opacidad global del patrón (mantener sutil como fondo) */
@@ -64,9 +64,10 @@ export const DotPattern = ({
           case "left": t = 1 - x / VW; break;
           case "top": t = 1 - y / VH; break;
           case "bottom": t = y / VH; break;
+          case "uniform": t = 0.55; break;
           default: t = x / VW;
         }
-        t = Math.pow(t, 1.6); // easing como el generador (ease-in)
+        if (origin !== "uniform") t = Math.pow(t, 1.6); // easing como el generador (ease-in)
         if (rnd() > t * 0.9) continue; // densidad crece con t
         out.push({
           x,

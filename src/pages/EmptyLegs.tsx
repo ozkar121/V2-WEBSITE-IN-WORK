@@ -165,7 +165,7 @@ const EmptyLegs = () => {
               "radial-gradient(ellipse 80% 60% at 70% 40%, hsl(var(--jade) / 0.07) 0%, transparent 70%), linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--bg-2)) 50%, hsl(var(--background)) 100%)",
           }}
         />
-        <DotPattern origin="right" seed={17} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
+        <DotPattern origin="bottom" seed={17} opacity={0.7} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
         <p className="relative z-10 eyebrow mb-5 animate-fade-up" style={{ animationDelay: "0.3s" }}>
           {t("el_eyebrow")}
         </p>

@@ -77,7 +77,7 @@ export const Navbar = () => {
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
       <Link to={lp("/")} className="flex items-center" aria-label="Numen Aviation home">
-        <img src={logoWordmark} alt="Numen Aviation" className="h-14 md:h-[4.5rem] w-auto" />
+        <img src={logoWordmark} alt="Numen Aviation" className="h-10 md:h-[4.5rem] w-auto" />
       </Link>
 
       {/* Desktop nav */}
@@ -211,7 +211,7 @@ export const Navbar = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <Link to={lp("/")} onClick={() => setOpen(false)} className="flex items-center">
-              <img src={logoWordmark} alt="Numen Aviation" className="h-14 w-auto" />
+              <img src={logoWordmark} alt="Numen Aviation" className="h-10 w-auto" />
             </Link>
             <button
               onClick={() => setOpen(false)}

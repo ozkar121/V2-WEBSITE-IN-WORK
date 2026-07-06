@@ -232,7 +232,7 @@ const Index = () => {
 
       {/* SERVICES */}
       <section id="services" className="py-28 relative overflow-hidden" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
-        <DotPattern origin="right" seed={7} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
+        <DotPattern origin="right" seed={7} opacity={0.7} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
         <div className="reveal relative">
           <p className="eyebrow mb-4">{t("services_eyebrow")}</p>
           <h2 className="section-title">{t("services_title_a")}<br />{t("services_title_b")}<br /><em>{t("services_title_em")}</em></h2>
