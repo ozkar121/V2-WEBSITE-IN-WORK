@@ -46,9 +46,9 @@ const VH = 600;
 export const DotPattern = ({
   origin = "right",
   color = "hsl(var(--jade))",
-  opacity = 0.35,
+  opacity = 0.55,
   gap = 26,
-  maxR = 2.8,
+  maxR = 3.2,
   seed = 12345,
   className = "",
   style,

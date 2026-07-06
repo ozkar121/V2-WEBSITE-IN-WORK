@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Users, Gauge, Navigation } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import { DotPattern } from "@/components/DotPattern";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { CornerBrackets } from "@/components/CornerBrackets";
@@ -142,6 +143,7 @@ const Fleet = () => {
         className="pt-40 pb-24 border-b border-jade-soft relative overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
+        <DotPattern origin="right" seed={31} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{

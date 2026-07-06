@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { DotPattern } from "@/components/DotPattern";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFAB } from "@/components/WhatsAppFAB";
 import { useReveal } from "@/hooks/useReveal";
@@ -104,9 +105,10 @@ const Nosotros = () => {
 
       {/* Hero */}
       <section
-        className="pt-40 pb-20 border-b border-jade-soft"
+        className="pt-40 pb-20 border-b border-jade-soft relative overflow-hidden"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
+        <DotPattern origin="right" seed={29} className="absolute top-0 right-0 h-full w-1/2 md:w-1/3" />
         <div className="max-w-5xl mx-auto">
           <div className="text-[0.7rem] uppercase text-jade mb-6" style={{ letterSpacing: "0.3em" }}>
             {en ? "About Us" : "Nosotros"}

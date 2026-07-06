@@ -266,7 +266,7 @@ const Index = () => {
       <FleetSection />
 
       <section id="why" className="py-28 grid md:grid-cols-2 gap-16 items-center relative overflow-hidden" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
-        <DotPattern origin="left" color="hsl(var(--fg-3))" opacity={0.22} seed={21} className="absolute top-0 left-0 h-full w-1/2 md:w-1/4" />
+        <DotPattern origin="left" color="hsl(var(--fg-3))" opacity={0.35} seed={21} className="absolute top-0 left-0 h-full w-1/2 md:w-1/4" />
         <div className="reveal relative h-[420px] hidden md:block">
           <div className="absolute inset-0 bg-bg-2 border border-jade-soft overflow-hidden">
             <img
@@ -358,7 +358,7 @@ const Index = () => {
 
       {/* CONTACT — placeholder simple, full form in next iteration */}
       <section id="contact" className="py-28 relative overflow-hidden" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
-        <DotPattern origin="bottom" seed={42} opacity={0.25} className="absolute bottom-0 right-0 h-2/3 w-1/2 md:w-1/3" />
+        <DotPattern origin="bottom" seed={42} opacity={0.45} className="absolute bottom-0 right-0 h-2/3 w-1/2 md:w-1/3" />
         <div className="reveal relative">
           <p className="eyebrow mb-4">{t("contact_eyebrow")}</p>
           <h2 className="section-title">{t("contact_title_a")} <em>{t("contact_title_em")}</em></h2>
