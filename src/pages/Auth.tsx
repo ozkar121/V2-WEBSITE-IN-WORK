@@ -6,7 +6,7 @@ import { lovable } from "@/integrations/lovable";
 import { useAuth } from "@/hooks/useAuth";
 import { useSEO } from "@/hooks/useSEO";
 import { toast } from "sonner";
-import logoIcon from "@/assets/numen-symbol.svg";
+import logoIcon from "@/assets/brand/numen-logo-secondary-white.svg";
 
 const schema = z.object({
   email: z.string().trim().email("Email inválido").max(255),

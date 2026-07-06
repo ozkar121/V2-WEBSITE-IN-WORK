@@ -12,8 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["'Cormorant Garamond'", "Georgia", "serif"],
-        sans: ["'DM Sans'", "system-ui", "sans-serif"],
+        // Brand Book 2026: Aeonik (fallback Inter mientras se compra licencia)
+        serif: ["'Aeonik'", "'Inter'", "system-ui", "sans-serif"],
+        sans: ["'Aeonik'", "'Inter'", "system-ui", "sans-serif"],
+        mono: ["'Aeonik Mono'", "'IBM Plex Mono'", "ui-monospace", "monospace"],
       },
       colors: {
         border: "hsl(var(--border) / 0.22)",

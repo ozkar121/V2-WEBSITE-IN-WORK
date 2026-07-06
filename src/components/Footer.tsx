@@ -1,7 +1,7 @@
 import { EMAIL, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
 import { Link } from "react-router-dom";
-import logoIcon from "@/assets/numen-symbol.svg";
+import logoWordmark from "@/assets/brand/numen-logo-primary-white.svg";
 
 // Salida siempre desde Toluca (MMTO) — exclusividad de marca.
 // Las URLs (slugs cdmx-*) se conservan para no romper el SEO existente.
@@ -84,14 +84,8 @@ export const Footer = () => {
       {/* Top: brand on left, two offices on right */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-14 mb-10">
         {/* Brand block */}
-        <div className="flex items-center gap-3">
-          <img src={logoIcon} alt="Numen Aviation" className="h-4 w-auto" />
-          <span
-            className="text-[0.75rem] uppercase text-foreground font-light"
-            style={{ letterSpacing: "0.25em" }}
-          >
-            Numen Aviation
-          </span>
+        <div className="flex items-center">
+          <img src={logoWordmark} alt="Numen Aviation" className="h-12 w-auto" />
         </div>
 
         {/* Offices grid */}

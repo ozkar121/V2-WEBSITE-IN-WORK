@@ -5,29 +5,31 @@
 @tailwind utilities;
 
 /* ============================================================
-   Numen Aviation — Design System
-   Dark luxury · jade accent · Cormorant + DM Sans
+   Numen Aviation — Design System (Brand Book 2026, atla.design)
+   Black #121212 · White #FAFAFA · Green #00C573
+   Type: Aeonik + Aeonik Mono (fallback Inter + IBM Plex Mono)
    All colors HSL.
    ============================================================ */
 
 @layer base {
   :root {
-    /* Backgrounds (layered near-black) */
-    --background: 80 12% 3%;        /* #080907 */
-    --bg-2: 90 11% 5%;              /* #0C0E0B */
-    --bg-3: 96 14% 7%;              /* #121510 */
-    --bg-4: 91 16% 11%;             /* #1A1F17 */
+    /* Backgrounds (Black + UI grays del Brand Book) */
+    --background: 0 0% 7%;          /* #121212 Black */
+    --bg-2: 0 0% 10%;               /* #1A1A1A capa intermedia */
+    --bg-3: 0 0% 14%;               /* #242424 Gray 01 */
+    --bg-4: 0 0% 18%;               /* #2E2E2E Gray 02 */
 
-    /* Foreground */
-    --foreground: 120 9% 94%;       /* #EEF2EE */
-    --fg-2: 120 6% 80%;             /* #C8CFC8 - mejor contraste */
-    --fg-3: 138 8% 62%;             /* #94A498 - WCAG AA sobre fondos oscuros */
-    --fg-4: 110 8% 24%;             /* #3A4239 */
+    /* Foreground (White + grays) */
+    --foreground: 0 0% 98%;         /* #FAFAFA White */
+    --fg-2: 0 0% 71%;               /* #B4B4B4 Gray 06 */
+    --fg-3: 0 0% 54%;               /* #898989 Gray 05 - AA sobre fondos oscuros */
+    --fg-4: 0 0% 30%;               /* #4D4D4D Gray 04 */
 
-    /* Accent: Jade */
-    --jade: 162 55% 36%;            /* #2A8F72 */
-    --jade-light: 162 51% 53%;      /* #47C4A1 */
-    --jade-dark: 162 60% 21%;       /* #165640 */
+    /* Accent: Brand Green (se mantiene el alias "jade" por compatibilidad) */
+    --jade: 155 100% 39%;           /* #00C573 Green */
+    --jade-light: 155 66% 73%;      /* #8BE7C0 Green 01 */
+    --jade-dark: 155 100% 19%;      /* #006239 Green 02 */
+    --green-deep: 153 42% 21%;      /* #1F4B37 Green 03 */
 
     /* Shadcn aliases mapped to Numen palette */
     --card: var(--bg-2);
@@ -35,7 +37,7 @@
     --popover: var(--bg-2);
     --popover-foreground: var(--foreground);
     --primary: var(--jade);
-    --primary-foreground: 80 12% 3%;
+    --primary-foreground: 0 0% 7%;
     --secondary: var(--bg-3);
     --secondary-foreground: var(--foreground);
     --muted: var(--bg-3);
@@ -44,7 +46,7 @@
     --accent-foreground: var(--jade);
     --destructive: 11 51% 53%;
     --destructive-foreground: var(--foreground);
-    --border: 162 55% 36%;          /* used with /22 alpha via utility */
+    --border: 155 100% 39%;         /* used with /22 alpha via utility */
     --input: var(--bg-2);
     --ring: var(--jade);
     --radius: 0;
@@ -52,7 +54,7 @@
     --sidebar-background: var(--bg-2);
     --sidebar-foreground: var(--foreground);
     --sidebar-primary: var(--jade);
-    --sidebar-primary-foreground: 80 12% 3%;
+    --sidebar-primary-foreground: 0 0% 7%;
     --sidebar-accent: var(--bg-3);
     --sidebar-accent-foreground: var(--jade);
     --sidebar-border: var(--jade);
@@ -74,7 +76,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'Aeonik', 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -94,8 +96,11 @@
 }
 
 @layer components {
-  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-  .font-sans  { font-family: 'DM Sans', system-ui, sans-serif; }
+  /* Brand Book 2026: sistema 100% sans (Aeonik). .font-serif se mantiene
+     como alias para no tocar todos los componentes, pero ya apunta a Aeonik. */
+  .font-serif { font-family: 'Aeonik', 'Inter', system-ui, sans-serif; }
+  .font-sans  { font-family: 'Aeonik', 'Inter', system-ui, sans-serif; }
+  .font-mono  { font-family: 'Aeonik Mono', 'IBM Plex Mono', ui-monospace, monospace; }
 
   /* Eyebrow / section tag */
   .eyebrow {
@@ -130,7 +135,7 @@
 
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-jade text-[#07070E] font-medium uppercase no-underline transition-all;
+    @apply inline-flex items-center gap-2 bg-jade text-[#121212] font-medium uppercase no-underline transition-all;
     font-size: 0.72rem;
     letter-spacing: 0.18em;
     padding: 0.9rem 2rem;
@@ -250,7 +255,7 @@
   margin: 2.5rem 0;
 }
 .briefing-prose code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: 'Aeonik Mono', 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.9em;
   background: hsl(var(--bg-3));
   padding: 0.1rem 0.35rem;

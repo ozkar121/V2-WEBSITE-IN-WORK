@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import logoIcon from "@/assets/numen-symbol.svg";
+import logoWordmark from "@/assets/brand/numen-logo-primary-white.svg";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -76,14 +76,8 @@ export const Navbar = () => {
       }`}
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
-      <Link to={lp("/")} className="flex items-center gap-2.5" aria-label="Numen Aviation home">
-        <img src={logoIcon} alt="Numen Aviation" className="h-3 md:h-4 w-auto" />
-        <span
-          className="text-[0.7rem] md:text-[0.78rem] uppercase text-foreground font-light"
-          style={{ letterSpacing: "0.25em" }}
-        >
-          Numen Aviation
-        </span>
+      <Link to={lp("/")} className="flex items-center" aria-label="Numen Aviation home">
+        <img src={logoWordmark} alt="Numen Aviation" className="h-8 md:h-9 w-auto" />
       </Link>
 
       {/* Desktop nav */}
@@ -216,11 +210,8 @@ export const Navbar = () => {
             className="flex items-center justify-between px-6 py-6 border-b border-jade-soft"
             onClick={(e) => e.stopPropagation()}
           >
-            <Link to={lp("/")} onClick={() => setOpen(false)} className="flex items-center gap-2.5">
-              <img src={logoIcon} alt="Numen Aviation" className="h-3 w-auto" />
-              <span className="text-[0.7rem] uppercase text-foreground font-light" style={{ letterSpacing: "0.25em" }}>
-                Numen Aviation
-              </span>
+            <Link to={lp("/")} onClick={() => setOpen(false)} className="flex items-center">
+              <img src={logoWordmark} alt="Numen Aviation" className="h-8 w-auto" />
             </Link>
             <button
               onClick={() => setOpen(false)}
