@@ -396,9 +396,9 @@ const AmbulanciasAereas = () => {
           </h2>
           <div className="w-10 h-px bg-jade my-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px mt-12 border border-jade-soft bg-jade-soft reveal">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 border-t border-l border-jade-soft reveal">
           {EQUIPMENT.map((item) => (
-            <div key={item} className="bg-background p-5 flex items-center gap-3">
+            <div key={item} className="p-5 flex items-center gap-3 border-r border-b border-jade-soft">
               <span className="w-1.5 h-1.5 bg-jade flex-shrink-0" />
               <span className="text-[0.88rem] text-foreground">{item}</span>
             </div>
@@ -430,15 +430,16 @@ const AmbulanciasAereas = () => {
           <div className="w-10 h-px bg-jade my-6" />
         </div>
 
-        <ol className="mt-12 reveal list-none border-l border-jade-soft ml-3">
+        {/* Línea de tiempo horizontal: llena el ancho completo, un paso por columna */}
+        <ol className="mt-12 reveal list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10">
           {PROTOCOL.map((step) => (
-            <li key={step.time} className="relative pl-8 pb-10 last:pb-0">
-              <span className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-jade" />
-              <p className="text-[0.65rem] uppercase text-jade mb-2 font-medium" style={{ letterSpacing: "0.25em" }}>
+            <li key={step.time} className="relative pt-6 border-t border-jade-soft">
+              <span className="absolute top-[-1px] left-0 w-10 h-[2px] bg-jade" />
+              <p className="text-[0.65rem] uppercase text-jade mb-2.5 font-medium" style={{ letterSpacing: "0.25em" }}>
                 {step.time}
               </p>
-              <h3 className="font-serif text-[1.3rem] font-light text-foreground mb-2">{step.t}</h3>
-              <p className="text-[0.88rem] leading-[1.7] text-fg-3 max-w-[640px]">{step.d}</p>
+              <h3 className="font-serif text-[1.1rem] font-light text-foreground mb-2">{step.t}</h3>
+              <p className="text-[0.82rem] leading-[1.7] text-fg-3">{step.d}</p>
             </li>
           ))}
         </ol>
@@ -484,7 +485,7 @@ const AmbulanciasAereas = () => {
       <section style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
-            {isEs ? "Con Quién Trabajamos" : "Who We Work With"}
+            {isEs ? "Clientes" : "Clients"}
           </p>
           <h2
             className="font-serif font-light leading-[1.1] text-foreground"
@@ -498,9 +499,9 @@ const AmbulanciasAereas = () => {
           </h2>
           <div className="w-10 h-px bg-jade my-6" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-12 border border-jade-soft bg-jade-soft reveal">
+        <div className="grid grid-cols-1 md:grid-cols-3 mt-12 border-t border-l border-jade-soft reveal">
           {AUDIENCES.map(({ Icon, t, d }) => (
-            <article key={t} className="bg-bg-2 p-8">
+            <article key={t} className="p-8 border-r border-b border-jade-soft">
               <Icon className="w-7 h-7 text-jade mb-5" strokeWidth={1.2} />
               <h3 className="text-[0.82rem] font-medium uppercase text-foreground mb-3" style={{ letterSpacing: "0.12em" }}>
                 {t}

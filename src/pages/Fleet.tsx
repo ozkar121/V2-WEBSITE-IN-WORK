@@ -258,14 +258,14 @@ const Fleet = () => {
                   </p>
                 </div>
 
-                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-jade-soft border border-jade-soft">
+                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-jade-soft">
                   <CornerBrackets />
                   {list.map((a) => {
                     const img = photos[a.id];
                     return (
                       <article
                         key={a.id}
-                        className="group bg-bg-2 hover:bg-bg-3 transition-colors flex flex-col"
+                        className="group hover:bg-bg-2/50 transition-colors flex flex-col border-r border-b border-jade-soft"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden bg-bg-3">
                           {img ? (

@@ -216,7 +216,7 @@ const Briefing = () => {
 
       {/* Routes */}
       <section
-        className="py-20 border-t border-jade-soft bg-bg-3/30"
+        className="py-20 border-t border-jade-soft"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
         <div className="max-w-5xl mx-auto">

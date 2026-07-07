@@ -121,7 +121,7 @@ export const FleetSection = () => {
           return (
             <article
               key={a.id}
-              className="bg-bg-2 hover:bg-bg-3 transition-colors flex flex-col border-r border-b border-jade-soft"
+              className="hover:bg-bg-2/50 transition-colors flex flex-col border-r border-b border-jade-soft"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-bg-3 border-b border-jade-soft">
                 {img ? (

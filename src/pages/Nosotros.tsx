@@ -174,7 +174,7 @@ const Nosotros = () => {
         </div>
         <div className="grid md:grid-cols-2 mt-12 border border-jade-soft">
           {values.map((w) => (
-            <div key={w.num} className="bg-bg-2 p-10 border-r border-b border-jade-soft last:border-r-0 reveal">
+            <div key={w.num} className="p-10 border-r border-b border-jade-soft last:border-r-0 reveal">
               <div className="font-serif text-3xl font-light mb-3" style={{ color: "hsl(var(--jade) / 0.15)" }}>{w.num}</div>
               <div className="text-[0.78rem] uppercase font-medium text-foreground mb-2.5" style={{ letterSpacing: "0.12em" }}>{w.title}</div>
               <p className="text-[0.875rem] leading-relaxed text-fg-3">{w.desc}</p>
