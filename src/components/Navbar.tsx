@@ -83,7 +83,7 @@ export const Navbar = () => {
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden lg:flex items-center gap-8 list-none ml-auto pl-8 xl:pl-12">
+      <ul className="hidden lg:flex items-center gap-4 xl:gap-7 list-none ml-auto pl-6 xl:pl-10">
         {navLinks.map((l) => (
           <li key={l.href}>
             <a
@@ -169,7 +169,8 @@ export const Navbar = () => {
             aria-label={`Llamar a ${PHONE_NUMBER}`}
           >
             <Phone className="w-3.5 h-3.5" />
-            {PHONE_NUMBER}
+            {/* número visible solo en pantallas anchas; en lg queda el ícono */}
+            <span className="hidden xl:inline">{PHONE_NUMBER}</span>
           </a>
         </li>
         <li>
@@ -177,7 +178,7 @@ export const Navbar = () => {
             href={waLink("Hola, me gustaría solicitar una cotización de charter.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-flex items-center gap-2 whitespace-nowrap text-[0.72rem] uppercase text-background bg-jade px-6 py-3 hover:bg-jade-light transition-all no-underline shadow-[0_0_24px_-4px_hsl(var(--jade)/0.6)] hover:shadow-[0_0_32px_-2px_hsl(var(--jade)/0.85)] hover:-translate-y-0.5"
+            className="relative inline-flex items-center gap-2 whitespace-nowrap text-[0.72rem] uppercase text-background bg-jade px-4 xl:px-6 py-3 hover:bg-jade-light transition-all no-underline shadow-[0_0_24px_-4px_hsl(var(--jade)/0.6)] hover:shadow-[0_0_32px_-2px_hsl(var(--jade)/0.85)] hover:-translate-y-0.5"
             style={{ letterSpacing: "0.2em" }}
           >
             <span className="relative flex h-2 w-2">
