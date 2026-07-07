@@ -77,7 +77,8 @@ export const Navbar = () => {
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
       <Link to={lp("/")} className="flex items-center" aria-label="Numen Aviation home">
-        <img src={logoWordmark} alt="Numen Aviation" className="h-10 md:h-[4.5rem] w-auto" />
+        {/* Tamaño fluido: nunca baja de 40px y crece con el viewport hasta 84px */}
+        <img src={logoWordmark} alt="Numen Aviation" className="w-auto" style={{ height: "clamp(2.5rem, 6.5vw, 5.25rem)" }} />
       </Link>
 
       {/* Desktop nav */}

@@ -41,7 +41,7 @@ const Layout = () => (
           <ScrollToTop />
           {/* Textura de puntos global (Brand Book: dotted patterns en gris sobre negro) */}
           <div aria-hidden="true" className="fixed inset-0 -z-10 pointer-events-none">
-            <DotPattern origin="uniform" color="hsl(var(--fg-3))" opacity={0.5} gap={32} maxR={2.2} seed={99} className="w-full h-full" />
+            <DotPattern origin="uniform" color="hsl(var(--fg-3))" opacity={0.75} gap={28} maxR={2.6} seed={99} className="w-full h-full" />
           </div>
           <Outlet />
         </AuthProvider>
