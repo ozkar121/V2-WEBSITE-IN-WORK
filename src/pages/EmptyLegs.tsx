@@ -359,7 +359,7 @@ const EmptyLegs = () => {
 
       {/* HOW IT WORKS */}
       <section
-        className="bg-bg-2 py-24"
+        className="py-24"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
         <div className="reveal">
@@ -393,7 +393,7 @@ const EmptyLegs = () => {
 
       {/* CTA */}
       <section
-        className="bg-bg-3 border-y border-jade-soft py-20 text-center"
+        className="border-y border-jade-soft py-20 text-center"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
         <div className="reveal">

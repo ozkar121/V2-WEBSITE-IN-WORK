@@ -130,7 +130,7 @@ const RoutePage = () => {
       </div>
 
       {/* AIRPORTS */}
-      <section className="bg-bg-2 py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+      <section className="py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <p className="eyebrow mb-4">{t("rt_details_eyebrow")}</p>
           <h2 className="section-title">{t("rt_details_title_a")} <em>{t("rt_details_title_em")}</em></h2>
@@ -182,7 +182,7 @@ const RoutePage = () => {
       </section>
 
       {/* WHY */}
-      <section className="bg-bg-2 py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+      <section className="py-24" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <p className="eyebrow mb-4">{t("rt_why_eyebrow")}</p>
           <h2 className="section-title">{t("rt_why_title_a")} <em>{t("rt_why_title_em")}</em></h2>
@@ -226,7 +226,7 @@ const RoutePage = () => {
       {/* FAQ */}
       {route.faq && route.faq.length > 0 && (
         <section
-          className="bg-bg-2 py-24 border-y border-jade-soft"
+          className="py-24 border-y border-jade-soft"
           style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
         >
           <div className="max-w-3xl mx-auto">
@@ -300,7 +300,7 @@ const RoutePage = () => {
 
       {/* CTA */}
 
-      <section className="bg-bg-3 border-y border-jade-soft py-20 text-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+      <section className="border-y border-jade-soft py-20 text-center" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <h2 className="font-serif font-light text-foreground mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
             {t("rt_cta_a")}<br /><em className="italic text-jade-light">{route.ctaCity}?</em>

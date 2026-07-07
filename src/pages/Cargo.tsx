@@ -412,7 +412,7 @@ const Cargo = () => {
 
       {/* CTA BAND */}
       <section
-        className="bg-bg-3 border-y border-jade-soft text-center"
+        className="border-y border-jade-soft text-center"
         style={{ padding: "5rem clamp(1.5rem, 4vw, 4rem)" }}
       >
         <h2

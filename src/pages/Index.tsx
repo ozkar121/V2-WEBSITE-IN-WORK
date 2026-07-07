@@ -222,7 +222,7 @@ const Index = () => {
 
       {/* Static info strip — replaces the previous scrolling marquee for a calmer, more natural read */}
       <div
-        className="bg-bg-3 border-y border-jade-soft py-5"
+        className="border-y border-jade-soft py-5"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
         <p className="text-[0.8rem] md:text-[0.875rem] leading-relaxed text-fg-3 max-w-5xl mx-auto text-center">
@@ -251,7 +251,7 @@ const Index = () => {
       </section>
 
       {/* STATS */}
-      <div className="bg-bg-3 border-y border-jade-soft py-16" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
+      <div className="border-y border-jade-soft py-16" style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="grid grid-cols-2 md:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="text-center px-6 py-6 border-r border-jade-soft last:border-r-0 reveal">

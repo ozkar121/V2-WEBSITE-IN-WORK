@@ -185,7 +185,7 @@ const Nosotros = () => {
 
       {/* Offices */}
       <section
-        className="bg-bg-2 py-24 border-y border-jade-soft"
+        className="py-24 border-y border-jade-soft"
         style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
       >
         <div className="max-w-5xl mx-auto">

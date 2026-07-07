@@ -513,7 +513,7 @@ const AmbulanciasAereas = () => {
 
       {/* CTA FINAL — URGENT */}
       <section
-        className="bg-bg-3 border-y-2 border-jade text-center"
+        className="border-y-2 border-jade text-center"
         style={{ padding: "5rem clamp(1.5rem, 4vw, 4rem)" }}
       >
         <h2

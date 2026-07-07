@@ -76,13 +76,14 @@ export const Navbar = () => {
       }`}
       style={{ paddingLeft: "clamp(1.5rem, 4vw, 4rem)", paddingRight: "clamp(1.5rem, 4vw, 4rem)" }}
     >
-      <Link to={lp("/")} className="flex items-center" aria-label="Numen Aviation home">
-        {/* Tamaño fluido: nunca baja de 40px y crece con el viewport hasta 84px */}
-        <img src={logoWordmark} alt="Numen Aviation" className="w-auto" style={{ height: "clamp(2.5rem, 6.5vw, 5.25rem)" }} />
+      {/* shrink-0: sin esto el menú flex aplasta el logo en desktop */}
+      <Link to={lp("/")} className="flex items-center shrink-0" aria-label="Numen Aviation home">
+        {/* Tamaño fluido: 40px en móvil, hasta 72px en pantallas grandes */}
+        <img src={logoWordmark} alt="Numen Aviation" className="w-auto max-w-none" style={{ height: "clamp(2.5rem, 5vw, 4.5rem)" }} />
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden lg:flex items-center gap-8 list-none ml-auto pl-12 xl:pl-20">
+      <ul className="hidden lg:flex items-center gap-8 list-none ml-auto pl-8 xl:pl-12">
         {navLinks.map((l) => (
           <li key={l.href}>
             <a
