@@ -20,6 +20,8 @@ import heliCharterES from "@/content/briefing/08-helicopter-charter-toluca-cdmx-
 import heliCharterEN from "@/content/briefing/08-helicopter-charter-toluca-cdmx-EN.md?raw";
 import operatorSafetyES from "@/content/briefing/09-operator-safety-ES.md?raw";
 import operatorSafetyEN from "@/content/briefing/09-operator-safety-EN.md?raw";
+import airAmbulanceCostES from "@/content/briefing/10-air-ambulance-cost-ES.md?raw";
+import airAmbulanceCostEN from "@/content/briefing/10-air-ambulance-cost-EN.md?raw";
 
 import type { Lang } from "@/i18n/translations";
 
@@ -55,6 +57,31 @@ const make = (raw: { es: string; en: string }) => ({
 });
 
 export const BRIEFING_POSTS: BriefingPost[] = [
+  {
+    slug: "cuanto-cuesta-ambulancia-aerea-mexico",
+    order: -2,
+    date: "2026-07-06",
+    category: { es: "Ambulancia Aérea", en: "Air Ambulance" },
+    title: {
+      es: "¿Cuánto Cuesta una Ambulancia Aérea en México? Precios Reales 2026",
+      en: "How Much Does an Air Ambulance Cost in Mexico? Real 2026 Prices",
+    },
+    description: {
+      es: "Precios reales de ambulancia aérea en México 2026: traslados nacionales desde $8,000 USD y México–EUA desde $22,000 USD. Qué incluye la cotización, seguros y cómo pagar menos.",
+      en: "Real air ambulance prices in Mexico 2026: domestic transfers from $8,000 USD and Mexico–US from $22,000 USD. What the quote includes, insurance, and how to pay less.",
+    },
+    excerpt: {
+      es: "Rangos reales por ruta, qué incluye una cotización seria y cuándo lo cubre el seguro.",
+      en: "Real ranges by route, what a serious quote includes, and when insurance covers it.",
+    },
+    keywords: {
+      es: "cuánto cuesta ambulancia aérea, ambulancia aérea precio México, traslado aeromédico costo, avión ambulancia México",
+      en: "air ambulance cost Mexico, medical flight price, air ambulance Mexico to US, aeromedical transfer cost",
+    },
+    readMinutes: 8,
+    ogImage: "/og-cuanto-cuesta-ambulancia-aerea-mexico.jpg",
+    body: make({ es: airAmbulanceCostES, en: airAmbulanceCostEN }),
+  },
   {
     slug: "como-elegir-operador-jet-privado-seguro-mexico",
     order: -1,

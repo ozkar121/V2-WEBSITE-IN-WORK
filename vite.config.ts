@@ -7,6 +7,7 @@ import { componentTagger } from "lovable-tagger";
 // baked SEO/JSON-LD. Kept here so vite-react-ssg expands the dynamic
 // /briefing/:slug and /rutas/:slug entries at build time.
 const BRIEFING_SLUGS = [
+  "cuanto-cuesta-ambulancia-aerea-mexico",
   "como-elegir-operador-jet-privado-seguro-mexico",
   "tramites-aduanales-jet-privado-mexico",
   "mejores-aeropuertos-aviacion-privada-mexico",
