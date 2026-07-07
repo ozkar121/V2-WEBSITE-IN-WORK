@@ -79,7 +79,7 @@ export const Navbar = () => {
       {/* shrink-0: sin esto el menú flex aplasta el logo en desktop */}
       <Link to={lp("/")} className="flex items-center shrink-0" aria-label="Numen Aviation home">
         {/* Tamaño fluido: 40px en móvil, hasta 72px en pantallas grandes */}
-        <img src={logoWordmark} alt="Numen Aviation" className="w-auto max-w-none" style={{ height: "clamp(2.5rem, 5vw, 4.5rem)" }} />
+        <img src={logoWordmark} alt="Numen Aviation" className="w-auto max-w-none" style={{ height: "clamp(2.25rem, 3.5vw, 3.5rem)" }} />
       </Link>
 
       {/* Desktop nav */}

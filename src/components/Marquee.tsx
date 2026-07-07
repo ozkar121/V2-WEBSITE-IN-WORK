@@ -7,7 +7,7 @@ export const Marquee = ({ items }: MarqueeProps) => {
   const doubled = [...items, ...items];
 
   return (
-    <div className="overflow-hidden bg-bg-3 border-y border-jade-soft py-3.5">
+    <div className="overflow-hidden border-y border-jade-soft py-3.5">
       <div className="flex animate-marquee whitespace-nowrap">
         {doubled.map((item, i) => (
           <span

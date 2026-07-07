@@ -342,7 +342,7 @@ const ChartersGrupos = () => {
       </section>
 
       {/* USE CASES */}
-      <section className="bg-bg-2" style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}>
+      <section style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}>
         <div className="reveal">
           <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
             {isEs ? "Para Quién Es Esto" : "Who This Is For"}

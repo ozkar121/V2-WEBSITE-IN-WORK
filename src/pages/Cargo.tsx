@@ -247,7 +247,6 @@ const Cargo = () => {
       </div>
 
       <section
-        className="bg-bg-2"
         id="operador"
         style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}
       >
@@ -351,7 +350,6 @@ const Cargo = () => {
       {/* PROCESO */}
       <section
         id="proceso"
-        className="bg-bg-2"
         style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}
       >
         <div className="reveal">
