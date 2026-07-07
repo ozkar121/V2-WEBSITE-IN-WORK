@@ -41,7 +41,8 @@ const Layout = () => (
           <ScrollToTop />
           {/* Textura de puntos global (Brand Book: dotted patterns en gris sobre negro) */}
           <div aria-hidden="true" className="fixed inset-0 -z-10 pointer-events-none">
-            <DotPattern origin="uniform" color="hsl(var(--fg-3))" opacity={0.75} gap={28} maxR={2.6} seed={99} className="w-full h-full" />
+            {/* gap/maxR chicos: el viewBox se estira al viewport (~2.5x), así los puntos quedan finos */}
+            <DotPattern origin="uniform" color="hsl(var(--fg-3))" opacity={0.75} gap={19} maxR={1.4} seed={99} className="w-full h-full" />
           </div>
           <Outlet />
         </AuthProvider>
