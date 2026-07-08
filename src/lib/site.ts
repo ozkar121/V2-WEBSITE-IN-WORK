@@ -1,5 +1,7 @@
 // Centralized site config — change SITE_URL once when domain changes.
-export const WHATSAPP_NUMBER = "524442348942";
+// WhatsApp: línea de negocio EUA (Miami). Llamadas (tel:) siguen en el número MX
+// hasta tener línea mexicana de empresa — entonces se actualizan tel + GBP + schema juntos.
+export const WHATSAPP_NUMBER = "17868461440";
 export const PHONE_NUMBER = "+52 444 234 8942";
 export const PHONE_TEL = "+524442348942";
 export const EMAIL = "operaciones@numen-aviation.com";

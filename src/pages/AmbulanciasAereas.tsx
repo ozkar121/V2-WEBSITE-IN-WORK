@@ -11,7 +11,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import heroAmbulancia from "@/assets/hero-ambulancia.webp";
 
 const WA_AMB =
-  "https://wa.me/524442348942?text=Emergencia%20m%C3%A9dica%2C%20necesito%20ambulancia%20a%C3%A9rea";
+  "https://wa.me/17868461440?text=Emergencia%20m%C3%A9dica%2C%20necesito%20ambulancia%20a%C3%A9rea";
 
 const AmbulanciasAereas = () => {
   useReveal();

@@ -11,7 +11,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import heroCharters from "@/assets/hero-charters.webp";
 
 const WA_GROUP =
-  "https://wa.me/524442348942?text=Hola%2C%20me%20interesa%20un%20charter%20grupal";
+  "https://wa.me/17868461440?text=Hola%2C%20me%20interesa%20un%20charter%20grupal";
 
 const ChartersGrupos = () => {
   useReveal();
