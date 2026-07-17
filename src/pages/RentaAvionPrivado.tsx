@@ -33,7 +33,7 @@ const RentaAvionPrivado = () => {
         },
         {
           q: "¿Con cuánta anticipación debo reservar?",
-          a: "Lo ideal es reservar con 24 a 48 horas de anticipación. En casos urgentes podemos activar un vuelo el mismo día, sujeto a disponibilidad de aeronave y permisos. Nuestra cotización llega en menos de 2 horas, 24/7.",
+          a: "Lo ideal es reservar con 24 a 48 horas de anticipación. En casos urgentes podemos activar un vuelo el mismo día, sujeto a disponibilidad de aeronave y permisos. Nuestra cotización llega en 30 minutos, 24/7.",
         },
         {
           q: "¿De qué aeropuerto salen los vuelos?",
@@ -55,7 +55,7 @@ const RentaAvionPrivado = () => {
         },
         {
           q: "How far in advance should I book?",
-          a: "Ideally 24 to 48 hours in advance. For urgent cases we can activate a same-day flight, subject to aircraft availability and clearances. Our quote arrives in under 2 hours, 24/7.",
+          a: "Ideally 24 to 48 hours in advance. For urgent cases we can activate a same-day flight, subject to aircraft availability and clearances. Our quote arrives in 30 minutes, 24/7.",
         },
         {
           q: "Which airport do flights depart from?",
@@ -69,11 +69,11 @@ const RentaAvionPrivado = () => {
 
   const seo = useSEO({
     title: isEs
-      ? "Renta de Avión Privado en México — Cotiza en 2 Horas | Numen Aviation"
-      : "Private Aircraft Charter in Mexico — Quote in 2 Hours | Numen Aviation",
+      ? "Renta de Avión Privado en México — Cotiza en 30 Min | Numen Aviation"
+      : "Private Aircraft Charter in Mexico — Quote in 30 Min | Numen Aviation",
     description: isEs
-      ? "Renta de aviones privados desde Toluca (MMTO) a todo México, EUA, Caribe y Centroamérica. Turbohélices, Learjet, Hawker y jets de largo alcance. Precios desde $5,950 USD one-way. Cotización en menos de 2 horas, 24/7."
-      : "Private aircraft charter from Toluca (MMTO) to Mexico, the USA, the Caribbean and Central America. Turboprops, Learjet, Hawker and long-range jets. Prices from $5,950 USD one-way. Quote in under 2 hours, 24/7.",
+      ? "Renta de aviones privados desde Toluca (MMTO) a todo México, EUA, Caribe y Centroamérica. Turbohélices, Learjet, Hawker y jets de largo alcance. Precios desde $5,950 USD one-way. Cotización en 30 minutos, 24/7."
+      : "Private aircraft charter from Toluca (MMTO) to Mexico, the USA, the Caribbean and Central America. Turboprops, Learjet, Hawker and long-range jets. Prices from $5,950 USD one-way. Quote in 30 minutes, 24/7.",
     path: PATH,
     image: `${SITE_URL}/og-renta-de-avion-privado.jpg`,
     jsonLd: [
@@ -125,7 +125,7 @@ const RentaAvionPrivado = () => {
   });
 
   const STATS = [
-    { val: "< 2 hrs", lbl: isEs ? "Tiempo de Cotización" : "Quote Turnaround" },
+    { val: "30 min", lbl: isEs ? "Tiempo de Cotización" : "Quote Turnaround" },
     { val: "24 / 7", lbl: isEs ? "Operaciones" : "Operations" },
     { val: "MMTO", lbl: isEs ? "Base Exclusiva · Toluca" : "Exclusive Base · Toluca" },
     { val: "AFAC", lbl: isEs ? "Operadores Certificados" : "Certified Operators" },
@@ -185,7 +185,7 @@ const RentaAvionPrivado = () => {
     },
     {
       n: "02",
-      t: isEs ? "Recibe opciones en menos de 2 horas" : "Get options in under 2 hours",
+      t: isEs ? "Recibe opciones en 30 minutos" : "Get options in 30 minutes",
       d: isEs
         ? "Comparamos operadores certificados por AFAC y te presentamos las mejores aeronaves con precio cerrado — sin sesgo de flota propia."
         : "We compare AFAC-certified operators and present the best aircraft at a firm price — no fleet bias.",
@@ -216,10 +216,10 @@ const RentaAvionPrivado = () => {
     },
     {
       Icon: Clock,
-      t: isEs ? "Respuesta en menos de 2 horas" : "Response in under 2 hours",
+      t: isEs ? "Respuesta en 30 minutos" : "Response in 30 minutes",
       d: isEs
-        ? "Cotización formal con opciones de aeronave y precio cerrado en menos de 2 horas, cualquier día, a cualquier hora."
-        : "A formal quote with aircraft options and a firm price in under 2 hours, any day, any time.",
+        ? "Cotización formal con opciones de aeronave y precio cerrado en 30 minutos, cualquier día, a cualquier hora."
+        : "A formal quote with aircraft options and a firm price in 30 minutes, any day, any time.",
     },
   ];
 
@@ -301,8 +301,8 @@ const RentaAvionPrivado = () => {
         <div className="w-[60px] h-px bg-jade my-8" />
         <p className="text-[0.95rem] font-light leading-[1.7] text-fg-3 max-w-[560px] mb-10">
           {isEs
-            ? "Renta de aviones privados desde el Aeropuerto Internacional de Toluca (MMTO) a todo México, Estados Unidos, el Caribe y Centroamérica. Turbohélices, jets ligeros, medianos y de largo alcance — cotización a la medida en menos de 2 horas."
-            : "Private aircraft charter from Toluca International Airport (MMTO) to Mexico, the United States, the Caribbean and Central America. Turboprops, light, midsize and long-range jets — a tailor-made quote in under 2 hours."}
+            ? "Renta de aviones privados desde el Aeropuerto Internacional de Toluca (MMTO) a todo México, Estados Unidos, el Caribe y Centroamérica. Turbohélices, jets ligeros, medianos y de largo alcance — cotización a la medida en 30 minutos."
+            : "Private aircraft charter from Toluca International Airport (MMTO) to Mexico, the United States, the Caribbean and Central America. Turboprops, light, midsize and long-range jets — a tailor-made quote in 30 minutes."}
         </p>
         <div className="flex gap-4 flex-wrap">
           <a
@@ -323,6 +323,41 @@ const RentaAvionPrivado = () => {
           </a>
         </div>
       </section>
+
+      {/* URGENCY STRIP — contacto inmediato para tráfico de Google */}
+      <div
+        className="bg-jade/10 border-y border-jade/40"
+        style={{ padding: "1rem clamp(1.5rem, 4vw, 4rem)" }}
+      >
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 justify-center text-center">
+          <span className="text-[0.7rem] uppercase text-jade-light font-medium" style={{ letterSpacing: "0.2em" }}>
+            {isEs ? "Cotización en 30 Minutos" : "Quote in 30 Minutes"}
+          </span>
+          <span className="text-jade/40 hidden md:inline">·</span>
+          <a
+            href={waLink(isEs ? WA_TEXT_ES : WA_TEXT_EN)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[0.7rem] uppercase text-jade-light font-medium hover:text-foreground transition-colors underline underline-offset-4"
+            style={{ letterSpacing: "0.2em" }}
+          >
+            {isEs ? "WhatsApp Directo" : "Direct WhatsApp"}
+          </a>
+          <span className="text-jade/40 hidden md:inline">·</span>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="inline-flex items-center gap-1.5 text-[0.7rem] uppercase text-jade-light font-medium hover:text-foreground transition-colors"
+            style={{ letterSpacing: "0.2em" }}
+          >
+            <Phone className="w-3.5 h-3.5" />
+            {PHONE_NUMBER}
+          </a>
+          <span className="text-jade/40 hidden md:inline">·</span>
+          <span className="text-[0.7rem] uppercase text-jade-light font-medium" style={{ letterSpacing: "0.2em" }}>
+            24 / 7 · MMTO
+          </span>
+        </div>
+      </div>
 
       {/* STATS */}
       <div
@@ -563,8 +598,8 @@ const RentaAvionPrivado = () => {
         </h2>
         <p className="text-[0.9rem] text-fg-3 max-w-[540px] mx-auto leading-[1.7] mb-10">
           {isEs
-            ? "Cuéntanos tu ruta, fechas y pasajeros. Recibe opciones de aeronave con precio cerrado en menos de 2 horas."
-            : "Tell us your route, dates and passengers. Get aircraft options with a firm price in under 2 hours."}
+            ? "Cuéntanos tu ruta, fechas y pasajeros. Recibe opciones de aeronave con precio cerrado en 30 minutos."
+            : "Tell us your route, dates and passengers. Get aircraft options with a firm price in 30 minutes."}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a
@@ -597,7 +632,36 @@ const RentaAvionPrivado = () => {
       </section>
 
       <Footer />
-      <WhatsAppFAB />
+      <div className="hidden md:block">
+        <WhatsAppFAB />
+      </div>
+
+      {/* STICKY MOBILE CTA — siempre visible para contacto en un tap */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 md:hidden border-t border-jade/50"
+        style={{ background: "hsl(var(--background) / 0.97)", paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        <a
+          href={waLink(isEs ? WA_TEXT_ES : WA_TEXT_EN)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 bg-jade text-background py-4 text-[0.72rem] uppercase font-medium"
+          style={{ letterSpacing: "0.15em" }}
+        >
+          {isEs ? "WhatsApp" : "WhatsApp"}
+          <ArrowRight className="w-3.5 h-3.5" />
+        </a>
+        <a
+          href={`tel:${PHONE_TEL}`}
+          className="flex items-center justify-center gap-2 text-foreground py-4 text-[0.72rem] uppercase font-medium border-l border-jade/30"
+          style={{ letterSpacing: "0.15em" }}
+        >
+          <Phone className="w-3.5 h-3.5" />
+          {isEs ? "Llamar" : "Call"}
+        </a>
+      </div>
+      {/* Espacio para que la barra fija no tape el footer en móvil */}
+      <div className="h-14 md:hidden" />
     </div>
   );
 };
