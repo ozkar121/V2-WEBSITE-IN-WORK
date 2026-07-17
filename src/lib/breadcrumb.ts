@@ -30,6 +30,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   "empty-legs": "Empty Legs",
   "vuelos-de-carga": "Vuelos de Carga",
   "ambulancia-aerea": "Ambulancia Aérea",
+  "renta-de-avion-privado": "Renta de Avión Privado",
   "charters-grupales": "Charters de Grupos",
   briefing: "Briefing",
   rutas: "Rutas",

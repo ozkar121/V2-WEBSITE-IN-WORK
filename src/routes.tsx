@@ -22,6 +22,7 @@ import Fleet from "./pages/Fleet.tsx";
 import BriefingPost from "./pages/BriefingPost.tsx";
 import GuiaFboToluca from "./pages/GuiaFboToluca.tsx";
 import CuantoCuestaJetPrivado from "./pages/CuantoCuestaJetPrivado.tsx";
+import RentaAvionPrivado from "./pages/RentaAvionPrivado.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminAircraft from "./pages/AdminAircraft.tsx";
@@ -61,6 +62,7 @@ const EN_CHILDREN: RouteRecord[] = [
   { path: "empty-legs", element: <EmptyLegs /> },
   { path: "vuelos-de-carga", element: <Cargo /> },
   { path: "ambulancia-aerea", element: <AmbulanciasAereas /> },
+  { path: "renta-de-avion-privado", element: <RentaAvionPrivado /> },
   { path: "charters-grupales", element: <ChartersGrupos /> },
   { path: "rutas", element: <Rutas /> },
   { path: "rutas/:slug", element: <RoutePage /> },
@@ -82,6 +84,7 @@ export const routes: RouteRecord[] = [
       { path: "empty-legs", element: <EmptyLegs /> },
       { path: "vuelos-de-carga", element: <Cargo /> },
       { path: "ambulancia-aerea", element: <AmbulanciasAereas /> },
+      { path: "renta-de-avion-privado", element: <RentaAvionPrivado /> },
       { path: "charters-grupales", element: <ChartersGrupos /> },
       // Legacy redirects (kept as direct renders)
       { path: "servicios/ambulancias-aereas", element: <AmbulanciasAereas /> },

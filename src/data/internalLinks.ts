@@ -16,6 +16,10 @@ export const LINK_LABELS: Record<string, { es: string; en: string }> = {
   "/charters-grupales": { es: "Charters para grupos grandes", en: "Large group charters" },
   "/vuelos-de-carga": { es: "Vuelos de carga aérea", en: "Air cargo flights" },
   "/ambulancia-aerea": { es: "Ambulancias aéreas", en: "Air ambulance" },
+  "/renta-de-avion-privado": {
+    es: "Renta de avión privado en México",
+    en: "Private aircraft charter in Mexico",
+  },
   "/briefing": { es: "The Numen Briefing", en: "The Numen Briefing" },
   "/guia-fbo-toluca": { es: "Guía del FBO en Toluca (MMTO)", en: "FBO guide at Toluca (MMTO)" },
   "/cuanto-cuesta-jet-privado-mexico-2026": {
@@ -73,6 +77,12 @@ export const LINK_LABELS: Record<string, { es: string; en: string }> = {
 
 // path -> list of related paths (3-4 each)
 export const RELATED_MAP: Record<string, string[]> = {
+  "/renta-de-avion-privado": [
+    "/cuanto-cuesta-jet-privado-mexico-2026",
+    "/empty-legs",
+    "/flota",
+    "/guia-fbo-toluca",
+  ],
   "/briefing/como-elegir-operador-jet-privado-seguro-mexico": [
     "/briefing/aeronaves-usa-vuelos-domesticos-mexico",
     "/cuanto-cuesta-jet-privado-mexico-2026",
@@ -86,6 +96,7 @@ export const RELATED_MAP: Record<string, string[]> = {
     "/flota",
   ],
   "/cuanto-cuesta-jet-privado-mexico-2026": [
+    "/renta-de-avion-privado",
     "/flota",
     "/empty-legs",
     "/briefing/mejores-jets-medianos-mexico-usa",

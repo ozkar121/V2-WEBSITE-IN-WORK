@@ -6,6 +6,7 @@ Numen Aviation es un broker de aviación privada con sede en Toluca, México. Co
 
 ## Servicios principales
 
+- **Renta de avión privado**: [Renta de aviones privados](/renta-de-avion-privado) desde Toluca (MMTO): turbohélices, light jets, midsize y largo alcance. Cotización en menos de 2 horas.
 - **Charter ejecutivo on-demand**: Jet privado por trayecto, sin membresías ni cuotas fijas. Flexibilidad total de horarios y aeropuertos.
 - **Empty legs**: Vuelos en jet privado con hasta 75% de descuento al aprovechar trayectos de retorno vacíos. Disponibilidad cambia diariamente.
 - **Vuelos de carga urgente**: Charter de carga (hot shot / AOG) para repuestos críticos, equipos médicos o envíos time-sensitive en México, EUA y Caribe.

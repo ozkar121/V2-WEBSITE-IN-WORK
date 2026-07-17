@@ -20,6 +20,7 @@ const POPULAR_ROUTES = [
 const ALL_ROUTES_LINK = { to: "/rutas", label: "Todas las rutas" };
 
 const SERVICES_LINKS = [
+  { to: "/renta-de-avion-privado", label: "Renta de Avión Privado" },
   { to: "/flota", label: "Flota" },
   { to: "/empty-legs", label: "Empty Legs" },
   { to: "/charters-grupales", label: "Charters Grupales" },
@@ -41,7 +42,7 @@ export const Footer = () => {
     ...l,
     to: lp(l.to),
     label: lang === "en"
-      ? ({ "/flota": "Fleet", "/empty-legs": "Empty Legs", "/charters-grupales": "Group Charters", "/vuelos-de-carga": "Cargo Flights", "/ambulancia-aerea": "Air Ambulance" }[l.to] ?? l.label)
+      ? ({ "/renta-de-avion-privado": "Private Aircraft Charter", "/flota": "Fleet", "/empty-legs": "Empty Legs", "/charters-grupales": "Group Charters", "/vuelos-de-carga": "Cargo Flights", "/ambulancia-aerea": "Air Ambulance" }[l.to] ?? l.label)
       : l.label,
   }));
   const popularRoutes = POPULAR_ROUTES.map((r) => ({ ...r, to: lp(r.to) }));
