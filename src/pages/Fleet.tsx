@@ -24,9 +24,6 @@ import lj75a from "@/assets/photos/fleet-lj75-1.webp";
 import lj75b from "@/assets/photos/fleet-lj75-2.webp";
 import hawkerB from "@/assets/photos/fleet-hawker-2.webp";
 import hawkerC from "@/assets/photos/fleet-hawker-3.webp";
-import challengerA from "@/assets/photos/fleet-challenger-1.webp";
-import g450b from "@/assets/photos/fleet-g450-2.webp";
-import g450c from "@/assets/photos/fleet-g450-3.webp";
 import legacyA from "@/assets/photos/fleet-legacy-1.webp";
 import legacyB from "@/assets/photos/fleet-legacy-2.webp";
 import bellA from "@/assets/photos/fleet-bell505-1.webp";
@@ -46,8 +43,7 @@ const EXTRA_PHOTOS: Record<string, string[]> = {
   "Learjet 45": [lj45a],
   "Learjet 75": [lj75a, lj75b],
   "Hawker 800": [hawkerB, hawkerC],
-  "Challenger 601": [challengerA],
-  "Gulfstream G450": [g450b, g450c],
+  // Challenger 601 y Gulfstream G450: fotos en pausa — Lobo preparará mejores
   "Legacy 600": [legacyA, legacyB],
   "Bell 505": [bellA, bellB, bellC],
   "Agusta 109 E": [agustaA, agustaB],
