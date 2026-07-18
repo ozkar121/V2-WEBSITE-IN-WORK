@@ -10,6 +10,14 @@ import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useLang } from "@/i18n/LanguageContext";
 import heroToluca from "@/assets/toluca-aerial.jpg";
+import imgTbm from "@/assets/photos/aircraft-tbm.webp";
+import imgLearjet35 from "@/assets/photos/aircraft-learjet35.webp";
+import imgHawker800 from "@/assets/photos/aircraft-hawker800.webp";
+import imgG450 from "@/assets/photos/aircraft-g450.webp";
+import imgInterior from "@/assets/photos/exp-interior-lj75.webp";
+import imgVentana from "@/assets/photos/exp-ventana.webp";
+import imgEscalera from "@/assets/photos/exp-giv-escalera.webp";
+import imgAtardecer from "@/assets/photos/exp-atardecer.webp";
 
 const PATH = "/renta-de-avion-privado";
 
@@ -135,6 +143,8 @@ const RentaAvionPrivado = () => {
     {
       cat: isEs ? "Turbohélice" : "Turboprop",
       name: "Piper M500",
+      img: imgTbm,
+      alt: isEs ? "Turbohélice ejecutivo en plataforma del aeropuerto de Toluca" : "Executive turboprop on the ramp at Toluca airport",
       pax: "4–5 pax",
       d: isEs
         ? "Rutas cortas y regionales — Monterrey, Guadalajara, San Miguel de Allende. La opción más eficiente para 1 a 2 horas de vuelo."
@@ -143,6 +153,8 @@ const RentaAvionPrivado = () => {
     {
       cat: isEs ? "Light Jet" : "Light Jet",
       name: "Learjet 35",
+      img: imgLearjet35,
+      alt: isEs ? "Learjet 35 para renta de avión privado desde Toluca (MMTO)" : "Learjet 35 for private aircraft charter from Toluca (MMTO)",
       pax: isEs ? "Hasta 7 pax" : "Up to 7 pax",
       d: isEs
         ? "Ágil y veloz para vuelos nacionales — Cancún, Los Cabos, Mérida, Acapulco. 867 km/h de crucero."
@@ -151,6 +163,8 @@ const RentaAvionPrivado = () => {
     {
       cat: "Midsize Jet",
       name: "Hawker 800A",
+      img: imgHawker800,
+      alt: isEs ? "Hawker 800 midsize jet en renta para vuelos internacionales" : "Hawker 800 midsize jet for international charter flights",
       pax: isEs ? "8 pax + baño" : "8 pax + lavatory",
       d: isEs
         ? "Cabina amplia y baño a bordo para rutas internacionales — Miami, Houston, Las Vegas, Caribe."
@@ -159,6 +173,8 @@ const RentaAvionPrivado = () => {
     {
       cat: isEs ? "Largo Alcance" : "Long Range",
       name: "Challenger 601 · G450",
+      img: imgG450,
+      alt: isEs ? "Gulfstream G450 de largo alcance para vuelos transcontinentales" : "Long-range Gulfstream G450 for transcontinental flights",
       pax: "8–13 pax",
       d: isEs
         ? "Vuelos transcontinentales y grupos grandes con máximo confort — Sudamérica, costa este de EUA, Europa."
@@ -402,8 +418,16 @@ const RentaAvionPrivado = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-12 border-t border-l border-jade-soft reveal">
           {AIRCRAFT.map((a) => (
-            <article key={a.name} className="p-8 border-r border-b border-jade-soft">
-              <Plane className="w-6 h-6 text-jade mb-5" strokeWidth={1.2} />
+            <article key={a.name} className="border-r border-b border-jade-soft">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={a.img}
+                  alt={a.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-8 pt-6">
               <p className="text-[0.62rem] uppercase text-jade mb-2" style={{ letterSpacing: "0.25em" }}>
                 {a.cat}
               </p>
@@ -412,7 +436,45 @@ const RentaAvionPrivado = () => {
                 {a.pax}
               </p>
               <p className="text-[0.85rem] leading-[1.7] text-fg-3">{a.d}</p>
+              </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      {/* GALLERY — LA EXPERIENCIA */}
+      <section style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
+            {isEs ? "La Experiencia" : "The Experience"}
+          </p>
+          <h2
+            className="font-serif font-light leading-[1.1] text-foreground"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+          >
+            {isEs ? (
+              <>Así se vuela <em className="italic text-jade-light">en privado.</em></>
+            ) : (
+              <>This is <em className="italic text-jade-light">flying private.</em></>
+            )}
+          </h2>
+          <div className="w-10 h-px bg-jade my-6" />
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-12 reveal">
+          {[
+            { src: imgInterior, alt: isEs ? "Interior de cabina de jet privado Learjet 75" : "Learjet 75 private jet cabin interior" },
+            { src: imgVentana, alt: isEs ? "Vista desde la ventana de un jet privado en vuelo" : "View from a private jet window in flight" },
+            { src: imgEscalera, alt: isEs ? "Gulfstream con escalera lista para abordar" : "Gulfstream with boarding stairs ready" },
+            { src: imgAtardecer, alt: isEs ? "Jet privado al atardecer en plataforma" : "Private jet at sunset on the ramp" },
+          ].map((g) => (
+            <div key={g.alt} className="aspect-[3/4] overflow-hidden border border-jade-soft">
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
           ))}
         </div>
       </section>

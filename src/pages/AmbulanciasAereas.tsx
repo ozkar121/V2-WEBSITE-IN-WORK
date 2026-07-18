@@ -9,6 +9,8 @@ import { SITE_URL, EMAIL, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import heroAmbulancia from "@/assets/hero-ambulancia.webp";
+import ambulanciaReal1 from "@/assets/photos/ambulancia-real-1.webp";
+import ambulanciaReal2 from "@/assets/photos/ambulancia-real-2.webp";
 
 const WA_AMB =
   "https://wa.me/17868461440?text=Emergencia%20m%C3%A9dica%2C%20necesito%20ambulancia%20a%C3%A9rea";
@@ -409,6 +411,46 @@ const AmbulanciasAereas = () => {
             ? "La configuración del equipo varía según el perfil del vuelo y las necesidades del paciente. Inventario completo confirmado al momento de la reserva."
             : "Equipment configuration varies by mission profile and patient needs. Full inventory confirmed at time of booking."}
         </p>
+      </section>
+
+      {/* OPERACIÓN REAL — fotos propias */}
+      <section style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
+            {isEs ? "Operación Real" : "Real Operations"}
+          </p>
+          <h2
+            className="font-serif font-light leading-[1.1] text-foreground"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+          >
+            {isEs ? (
+              <>Traslados que <em className="italic text-jade-light">ya coordinamos.</em></>
+            ) : (
+              <>Transfers we've <em className="italic text-jade-light">already coordinated.</em></>
+            )}
+          </h2>
+          <div className="w-10 h-px bg-jade my-6" />
+          <p className="text-[0.9rem] text-fg-3 leading-[1.7] max-w-[640px]">
+            {isEs
+              ? "Transferencia de paciente entre el Learjet 35 y la ambulancia terrestre en plataforma — coordinación aire-tierra puerta a puerta."
+              : "Patient transfer between the Learjet 35 and the ground ambulance on the ramp — door-to-door air-to-ground coordination."}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-12 reveal max-w-[820px]">
+          {[
+            { src: ambulanciaReal1, alt: isEs ? "Learjet 35 ambulancia aérea con ambulancia terrestre en plataforma" : "Learjet 35 air ambulance with ground ambulance on the ramp" },
+            { src: ambulanciaReal2, alt: isEs ? "Transferencia de paciente de ambulancia aérea a terrestre" : "Patient transfer from air to ground ambulance" },
+          ].map((g) => (
+            <div key={g.alt} className="aspect-[3/4] overflow-hidden border border-jade-soft">
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* 4-HOUR PROTOCOL */}

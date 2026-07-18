@@ -11,10 +11,14 @@ import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import type { TranslationKey } from "@/i18n/translations";
 import heroCargo from "@/assets/hero-cargo.webp";
+import cargoRampa from "@/assets/photos/cargo-rampa.webp";
+import cargoOperacion from "@/assets/photos/cargo-operacion.webp";
+import cargoPallets from "@/assets/photos/cargo-pallets.webp";
 
 const Cargo = () => {
   useReveal();
-  const { t } = useLang();
+  const { t, lang } = useLang();
+  const isEs = lang === "es";
 
   const STATS = [
     { val: "24/7/365", lbl: t("cg_stat_avail") },
@@ -377,6 +381,42 @@ const Cargo = () => {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* OPERACIÓN REAL — fotos propias */}
+      <section style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem)" }}>
+        <div className="reveal">
+          <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
+            {isEs ? "Operación Real" : "Real Operations"}
+          </p>
+          <h2
+            className="font-serif font-light leading-[1.1] text-foreground"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+          >
+            {isEs ? (
+              <>Carga que <em className="italic text-jade-light">ya volamos.</em></>
+            ) : (
+              <>Cargo we've <em className="italic text-jade-light">already flown.</em></>
+            )}
+          </h2>
+          <div className="w-10 h-px bg-jade my-6" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-12 reveal">
+          {[
+            { src: cargoRampa, alt: isEs ? "Dos aviones de carga con pallets en rampa" : "Two cargo aircraft with pallets on the ramp" },
+            { src: cargoOperacion, alt: isEs ? "Operación de carga aérea en plataforma" : "Air cargo operation on the apron" },
+            { src: cargoPallets, alt: isEs ? "Pallets de carga listos para embarque en avión" : "Cargo pallets ready for aircraft loading" },
+          ].map((g) => (
+            <div key={g.alt} className="aspect-[4/3] overflow-hidden border border-jade-soft">
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* INDUSTRIAS */}
