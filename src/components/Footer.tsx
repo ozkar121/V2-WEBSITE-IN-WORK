@@ -1,4 +1,4 @@
-import { EMAIL, waLink, PHONE_NUMBER, PHONE_TEL } from "@/lib/site";
+import { EMAIL, waLink, PHONE_NUMBER, PHONE_TEL, WHATSAPP_DISPLAY } from "@/lib/site";
 import { useLang } from "@/i18n/LanguageContext";
 import { Link } from "react-router-dom";
 import logoWordmark from "@/assets/brand/numen-logo-primary-white.svg";
@@ -59,6 +59,13 @@ export const Footer = () => {
 
   const offices = [
     {
+      title: lang === "en" ? "Operations Base" : "Base de Operaciones",
+      lines:
+        lang === "en"
+          ? ["Toluca International Airport (MMTO)", "Private FBO terminal", "Quotes in 30 min · 24/7"]
+          : ["Aeropuerto Internacional de Toluca (MMTO)", "Terminal privada (FBO)", "Cotización en 30 min · 24/7"],
+    },
+    {
       title: t("footer_offices_mx"),
       lines: [
         t("footer_offices_mx_l1"),
@@ -90,7 +97,7 @@ export const Footer = () => {
         </div>
 
         {/* Offices grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {offices.map((o) => (
             <div key={o.title}>
               <h4
@@ -227,7 +234,7 @@ export const Footer = () => {
             rel="noopener noreferrer"
             className="text-[0.78rem] text-fg-3 hover:text-foreground no-underline"
           >
-            {PHONE_NUMBER}
+            {WHATSAPP_DISPLAY}
           </a>
         </div>
       </div>
