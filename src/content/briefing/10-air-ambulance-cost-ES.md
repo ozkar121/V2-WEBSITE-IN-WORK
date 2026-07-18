@@ -10,6 +10,8 @@ Cuando una familia necesita una ambulancia aérea, casi siempre es la primera ve
 
 La respuesta corta: un traslado aeromédico nacional en México suele costar entre **$8,000 y $20,000 USD**, y un traslado México–Estados Unidos entre **$22,000 y $45,000 USD**, dependiendo de la distancia, la condición del paciente y el equipo médico requerido. Misiones largas — Sudamérica, Canadá, rutas con escalas — pueden superar los $70,000 USD. Abajo explicamos de dónde sale cada cifra.
 
+![Learjet 35 ambulancia aérea junto a ambulancia terrestre en plataforma](/photos/ambulancia-learjet-35.webp)
+
 ## Rangos de precio por tipo de traslado
 
 Cada misión se cotiza de forma personalizada, pero estos rangos de referencia le permiten dimensionar el gasto antes de pedir una cotización:

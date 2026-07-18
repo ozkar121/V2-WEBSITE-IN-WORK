@@ -12,6 +12,8 @@
 
 Los vuelos entre México y Estados Unidos representan una de las rutas más demandadas en la aviación privada. Dependiendo de la distancia, número de pasajeros y nivel de confort deseado, la elección entre un jet mediano y un heavy jet puede hacer toda la diferencia. En esta guía analizamos las mejores opciones disponibles en la flota de Numen Aviation para estas rutas transfronterizas.
 
+![Hawker 800 midsize jet en la plataforma de Toluca (MMTO)](/photos/hawker-800-plataforma.webp)
+
 ## ¿Por Qué un Jet Mediano para Rutas México-EUA?
 
 Los jets medianos ocupan el punto ideal entre los jets ligeros (más económicos pero con alcance y cabina limitados) y los jets pesados (mayor alcance pero costos significativamente más altos). Para las distancias típicas entre centros urbanos de México y EUA, un midsize jet ofrece:

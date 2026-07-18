@@ -12,6 +12,8 @@
 
 Flying on a private jet at a fraction of the usual price? It's not a myth — it's an empty leg. In this guide, we explain everything about this little-known opportunity in private aviation: what they are, how they work, how much you can save, and how to take advantage of them from Toluca Airport.
 
+![Citation 650 on the ramp at night, ready for an empty leg](/photos/citation-650-noche.webp)
+
 ## What Is an Empty Leg?
 
 An empty leg (also called a "deadhead flight," "repositioning flight," or "ferry flight") occurs when a private jet needs to reposition without passengers. This happens in two main scenarios:

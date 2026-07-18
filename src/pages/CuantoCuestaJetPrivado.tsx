@@ -28,6 +28,8 @@ const BODY_ES = `Es la primera pregunta de todos: **¿cuánto cuesta volar en je
 
 ## Rutas nacionales — Learjet 35
 
+![Learjet 35 en plataforma, disponible para renta desde Toluca (MMTO)](/photos/learjet-35.webp)
+
 El Learjet 35 es un light jet ágil y veloz, ideal para vuelos dentro de México. Tiene capacidad para **hasta 7 pasajeros**, aunque recomendamos un máximo de 6 para un viaje cómodo. Precios estimados one-way desde Toluca (MMTO):
 
 | Ruta (desde Toluca) | Tiempo de vuelo | Desde (one-way)    |
@@ -90,6 +92,8 @@ const BODY_EN = `It's everyone's first question: **how much does it cost to fly 
 > **Important: every trip is unique.** The prices on this page are **estimates and one-way (per leg)**. At Numen Aviation we don't sell a seat: **we design the entire trip around you**. The final cost depends on the exact route, the available aircraft, the number of passengers, overnight stays, crew waiting times and airport fees. Every quote is individual.
 
 ## Domestic routes — Learjet 35
+
+![Learjet 35 on the ramp, available for charter from Toluca (MMTO)](/photos/learjet-35.webp)
 
 The Learjet 35 is an agile, fast light jet, ideal for flights within Mexico. It seats **up to 7 passengers**, though we recommend a maximum of 6 for a comfortable trip. Estimated one-way prices from Toluca (MMTO):
 

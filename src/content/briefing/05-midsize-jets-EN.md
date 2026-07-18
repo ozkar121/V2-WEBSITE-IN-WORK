@@ -12,6 +12,8 @@
 
 Flights between Mexico and the United States represent one of the most in-demand routes in private aviation. Depending on distance, passenger count, and desired comfort level, the choice between a midsize and a heavy jet can make all the difference. In this guide, we analyze the best options available in Numen Aviation's fleet for these cross-border routes.
 
+![Hawker 800 midsize jet on the ramp at Toluca (MMTO)](/photos/hawker-800-plataforma.webp)
+
 ## Why a Midsize Jet for Mexico-USA Routes?
 
 Midsize jets occupy the sweet spot between light jets (more affordable but with limited range and cabin space) and heavy jets (greater range but significantly higher costs). For typical distances between Mexican and US urban centers, a midsize jet offers:

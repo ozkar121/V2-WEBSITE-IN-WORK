@@ -12,6 +12,8 @@
 
 ¿Volar en jet privado a una fracción del precio habitual? No es un mito — es un empty leg. En esta guía te explicamos todo sobre esta oportunidad poco conocida de la aviación privada: qué son, cómo funcionan, cuánto puedes ahorrar, y cómo aprovecharlos desde el Aeropuerto de Toluca.
 
+![Citation 650 en plataforma de noche, listo para un empty leg](/photos/citation-650-noche.webp)
+
 ## ¿Qué es un Empty Leg?
 
 Un empty leg (también llamado "trayecto vacío", "pierna vacía" o "ferry flight") ocurre cuando un jet privado necesita reposicionarse sin pasajeros. Esto sucede en dos escenarios principales:

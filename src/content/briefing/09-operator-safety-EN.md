@@ -10,6 +10,8 @@ The right question before booking a charter flight isn't "how much does it cost?
 
 In private aviation, the lowest price is almost never the best decision. Behind two identical quotes there can be one certified operator, with valid insurance and trained crew, and another flying at the edge of the rule —or outside it. The difference doesn't show up on the quote PDF; it shows up when something goes wrong. That's why at Numen Aviation we audit every operator before putting a client on board, and why we wrote this guide: so you know exactly what to ask.
 
+![Supervised fueling of a Hawker 800 on the ramp](/photos/hawker-fueling.webp)
+
 ## Broker vs. operator: who is responsible for safety
 
 It helps to understand a distinction many passengers miss. The **operator** holds the certificate to fly the aircraft, employs the crew, and is responsible for maintenance and insurance. The **broker** does not operate aircraft: it compares operators, negotiates, and coordinates the flight on the client's behalf.

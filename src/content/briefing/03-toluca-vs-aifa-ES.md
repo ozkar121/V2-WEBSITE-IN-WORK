@@ -12,6 +12,8 @@
 
 Con la apertura del Aeropuerto Internacional Felipe Ángeles (AIFA) en Santa Lucía, muchos viajeros de aviación privada se preguntan: ¿es mejor opción que Toluca? En esta comparativa analizamos ambos aeropuertos desde la perspectiva de la aviación ejecutiva para ayudarte a tomar la mejor decisión.
 
+![Turbohélice ejecutivo en la plataforma del aeropuerto de Toluca (MMTO)](/photos/tbm-plataforma-toluca.webp)
+
 ## Vista General
 
 | Característica | Toluca (MMTO) | Santa Lucía (AIFA) |

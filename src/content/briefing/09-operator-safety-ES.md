@@ -10,6 +10,8 @@ La pregunta correcta antes de reservar un vuelo charter no es "¿cuánto cuesta?
 
 En aviación privada, el precio más bajo casi nunca es la mejor decisión. Detrás de dos cotizaciones idénticas puede haber un operador certificado, con seguros vigentes y tripulación entrenada, y otro que vuela al límite de la regla —o fuera de ella—. La diferencia no se ve en el PDF de la cotización; se ve cuando algo sale mal. Por eso, en Numen Aviation auditamos cada operador antes de subir a un cliente a bordo, y por eso escribimos esta guía: para que usted sepa exactamente qué preguntar.
 
+![Recarga de combustible de un Hawker 800 supervisada en plataforma](/photos/hawker-fueling.webp)
+
 ## Broker vs. operador: quién responde por la seguridad
 
 Conviene entender una distinción que muchos pasajeros desconocen. El **operador** es quien posee el certificado para operar la aeronave, contrata a la tripulación y responde por el mantenimiento y los seguros. El **broker** (correduría) no opera aviones: compara operadores, negocia y coordina el vuelo en nombre del cliente.

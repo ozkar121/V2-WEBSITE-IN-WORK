@@ -12,6 +12,8 @@
 
 With the opening of Felipe Ángeles International Airport (AIFA) at Santa Lucía, many private aviation travelers are asking: is it a better option than Toluca? In this comparison, we analyze both airports from an executive aviation perspective to help you make the best decision.
 
+![Executive turboprop on the ramp at Toluca airport (MMTO)](/photos/tbm-plataforma-toluca.webp)
+
 ## Overview
 
 | Feature | Toluca (MMTO) | Santa Lucía (AIFA) |

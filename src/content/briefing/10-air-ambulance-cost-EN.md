@@ -10,6 +10,8 @@ When a family needs an air ambulance, it is almost always the first time they ha
 
 The short answer: a domestic aeromedical transfer within Mexico typically costs between **$8,000 and $20,000 USD**, and a Mexico–United States transfer between **$22,000 and $45,000 USD**, depending on distance, patient condition, and the medical equipment required. Long missions — South America, Canada, multi-stop routes — can exceed $70,000 USD. Below we explain where each figure comes from.
 
+![Learjet 35 air ambulance next to a ground ambulance on the ramp](/photos/ambulancia-learjet-35.webp)
+
 ## Price ranges by type of transfer
 
 Every mission is quoted individually, but these reference ranges let you size the expense before requesting a quote:
