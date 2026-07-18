@@ -10,7 +10,7 @@ import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { useLang } from "@/i18n/LanguageContext";
 import heroToluca from "@/assets/toluca-aerial.jpg";
-import imgTbm from "@/assets/photos/aircraft-tbm.webp";
+import imgPiperM500 from "@/assets/photos/aircraft-piper-m500.webp";
 import imgLearjet35 from "@/assets/photos/aircraft-learjet35.webp";
 import imgHawker800 from "@/assets/photos/aircraft-hawker800.webp";
 import imgG450 from "@/assets/photos/aircraft-g450.webp";
@@ -143,8 +143,8 @@ const RentaAvionPrivado = () => {
     {
       cat: isEs ? "Turbohélice" : "Turboprop",
       name: "Piper M500",
-      img: imgTbm,
-      alt: isEs ? "Turbohélice ejecutivo en plataforma del aeropuerto de Toluca" : "Executive turboprop on the ramp at Toluca airport",
+      img: imgPiperM500,
+      alt: isEs ? "Piper M500 turbohélice ejecutivo disponible para renta desde Toluca" : "Piper M500 executive turboprop available for charter from Toluca",
       pax: "4–5 pax",
       d: isEs
         ? "Rutas cortas y regionales — Monterrey, Guadalajara, San Miguel de Allende. La opción más eficiente para 1 a 2 horas de vuelo."

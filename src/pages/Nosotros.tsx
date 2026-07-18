@@ -8,6 +8,10 @@ import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import founderPhoto from "@/assets/oscar-cadena.webp";
+import opsHangar from "@/assets/photos/ops-hangar.webp";
+import opsFueling from "@/assets/photos/ops-fueling.webp";
+import opsRampa from "@/assets/photos/ops-rampa.webp";
+import opsEquipo from "@/assets/photos/ops-equipo.webp";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/oscar-cadena-numen/";
 
@@ -159,6 +163,48 @@ const Nosotros = () => {
           </div>
         ))}
       </div>
+
+      {/* Detrás de la operación */}
+      <section style={{ padding: "6rem clamp(1.5rem, 4vw, 4rem) 0" }}>
+        <div className="reveal">
+          <p className="text-[0.65rem] uppercase text-jade mb-4" style={{ letterSpacing: "0.3em" }}>
+            {en ? "Behind the Operation" : "Detrás de la Operación"}
+          </p>
+          <h2
+            className="font-serif font-light leading-[1.1] text-foreground"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
+          >
+            {en ? (
+              <>Where the work <em className="italic text-jade-light">actually happens.</em></>
+            ) : (
+              <>Donde el trabajo <em className="italic text-jade-light">realmente sucede.</em></>
+            )}
+          </h2>
+          <div className="w-10 h-px bg-jade my-6" />
+          <p className="text-[0.9rem] text-fg-3 leading-[1.7] max-w-[640px]">
+            {en
+              ? "Hangars, ramps and fueling stops — the unglamorous side of private aviation is where safety and punctuality are earned. These are our operations, not stock photos."
+              : "Hangares, plataformas y recargas de combustible — el lado poco glamoroso de la aviación privada es donde se ganan la seguridad y la puntualidad. Esto es nuestra operación, no fotos de stock."}
+          </p>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-12 reveal">
+          {[
+            { src: opsHangar, alt: en ? "Learjet inside the hangar at Toluca (MMTO)" : "Learjet en el hangar de Toluca (MMTO)" },
+            { src: opsFueling, alt: en ? "Supervised fueling of a Hawker 800" : "Recarga de combustible supervisada de un Hawker 800" },
+            { src: opsRampa, alt: en ? "Ramp operations with cargo pallets" : "Operación en rampa con pallets de carga" },
+            { src: opsEquipo, alt: en ? "Ground crew alongside a Learjet 35" : "Equipo de tierra junto a un Learjet 35" },
+          ].map((g) => (
+            <div key={g.alt} className="aspect-[3/4] overflow-hidden border border-jade-soft">
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Values */}
       <section

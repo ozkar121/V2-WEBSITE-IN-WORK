@@ -15,6 +15,7 @@ import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import type { TranslationKey } from "@/i18n/translations";
 import aircraftSnapshot from "@/data/aircraftSnapshot.json";
+import m500a from "@/assets/photos/fleet-m500-1.webp";
 import lj35b from "@/assets/photos/fleet-lj35-2.webp";
 import lj35c from "@/assets/photos/fleet-lj35-3.webp";
 import lj31a from "@/assets/photos/fleet-lj31-1.webp";
@@ -38,6 +39,7 @@ const SNAPSHOT_PHOTOS = aircraftSnapshot.photos as Record<string, string>;
 // Fotos reales adicionales por nombre de aeronave (se suman a la foto
 // principal de Supabase como slideshow). Nombres tal como están en la tabla.
 const EXTRA_PHOTOS: Record<string, string[]> = {
+  "Piper M500": [m500a],
   "Learjet 35": [lj35b, lj35c],
   "Learjet 31": [lj31a, lj31b],
   "Learjet 45": [lj45a],
