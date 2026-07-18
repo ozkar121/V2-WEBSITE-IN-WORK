@@ -12,6 +12,8 @@ In one of the largest cities on earth, the problem is never the distance — it 
 
 At Numen Aviation we operate helicopter charter for **executive transfers** and **scenic flights** across Mexico City and its metro area, positioning our aircraft at the Toluca FBOs and coordinating arrivals at the capital's strategic helipads. Many of our clients land at Toluca by private jet and board the helicopter directly on the ramp — never touching the traffic.
 
+![Bell 505 helicopter interior with executive leather seating](/photos/bell-505-interior.webp)
+
 ## Why move by helicopter in Mexico City
 
 The Valley of Mexico metro area is home to more than 21 million people across over 1,400 km². Traffic is chronic and affects residents and business travelers alike. At 500 metres of altitude, that variable disappears:

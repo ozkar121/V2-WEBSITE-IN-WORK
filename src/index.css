@@ -281,3 +281,11 @@
   font-size: 0.72rem;
   letter-spacing: 0.12em;
 }
+
+/* Imágenes dentro de artículos del briefing */
+.briefing-prose img {
+  width: 100%;
+  height: auto;
+  border: 1px solid hsl(var(--jade) / 0.25);
+  margin: 1.5rem 0;
+}

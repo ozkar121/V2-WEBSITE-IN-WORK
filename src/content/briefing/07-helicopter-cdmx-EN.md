@@ -14,6 +14,8 @@ Mexico City is one of the world's largest metropolises — and its traffic prove
 
 At Numen Aviation, we offer helicopter rental for executive transfers and scenic flights in Mexico City and its surroundings, operating from our hub at Toluca Airport (MMTO) and from strategic helipads within the city.
 
+![Bell 505 helicopter at the Toluca helipad ready for an executive transfer to Mexico City](/photos/bell-505-toluca.webp)
+
 ## Why Travel by Helicopter in Mexico City?
 
 Mexico City spans over 1,400 km² with a metropolitan population exceeding 21 million people. Traffic is a chronic problem affecting both residents and business travelers. A helicopter completely transforms the equation:

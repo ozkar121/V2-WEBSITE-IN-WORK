@@ -9,6 +9,7 @@ import { waLink, SITE_URL } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import { useLang } from "@/i18n/LanguageContext";
 import heroCharters from "@/assets/hero-charters.webp";
+import crjInterior from "@/assets/photos/charters-crj-interior.webp";
 
 const WA_GROUP =
   "https://wa.me/17868461440?text=Hola%2C%20me%20interesa%20un%20charter%20grupal";
@@ -339,6 +340,23 @@ const ChartersGrupos = () => {
             </article>
           ))}
         </div>
+
+        {/* Cabina real CRJ-200 */}
+        <figure className="mt-3 reveal m-0">
+          <div className="max-h-[480px] overflow-hidden border border-jade-soft">
+            <img
+              src={crjInterior}
+              alt={isEs ? "Interior de cabina del Bombardier CRJ-200 para charters de grupos" : "Bombardier CRJ-200 cabin interior for group charters"}
+              loading="lazy"
+              className="w-full object-cover"
+            />
+          </div>
+          <figcaption className="text-[0.7rem] text-fg-3 mt-3 italic">
+            {isEs
+              ? "Cabina del CRJ-200: hasta 50 pasajeros con asiento de aerolínea ejecutiva, todos en el mismo vuelo."
+              : "CRJ-200 cabin: up to 50 passengers in executive airline seating, everyone on the same flight."}
+          </figcaption>
+        </figure>
       </section>
 
       {/* USE CASES */}

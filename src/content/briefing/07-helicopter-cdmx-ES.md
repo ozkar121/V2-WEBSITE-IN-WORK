@@ -14,6 +14,8 @@ La Ciudad de México es una de las metrópolis más grandes del mundo — y su t
 
 En Numen Aviation ofrecemos renta de helicópteros para traslados ejecutivos y vuelos turísticos en la Ciudad de México y sus alrededores, operando desde nuestro hub en el Aeropuerto de Toluca (MMTO) y desde helipuertos estratégicos dentro de la CDMX.
 
+![Helicóptero Bell 505 en el helipuerto de Toluca listo para traslado ejecutivo a CDMX](/photos/bell-505-toluca.webp)
+
 ## ¿Por Qué Moverse en Helicóptero en la Ciudad de México?
 
 La CDMX tiene una extensión de más de 1,400 km² y una población metropolitana que supera los 21 millones de personas. El tráfico es un problema crónico que afecta tanto a residentes como a viajeros de negocios. Un helicóptero transforma completamente la ecuación:

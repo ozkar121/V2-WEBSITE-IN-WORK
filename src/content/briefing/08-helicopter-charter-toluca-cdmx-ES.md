@@ -12,6 +12,8 @@ En una de las ciudades más extensas del mundo, el problema nunca es la distanci
 
 En Numen Aviation operamos renta de helicópteros para **traslados ejecutivos** y **vuelos panorámicos** en la Ciudad de México y su zona metropolitana, posicionando nuestras aeronaves en los FBOs de Toluca y coordinando llegadas a los helipuertos estratégicos de la capital. Muchos de nuestros clientes aterrizan en Toluca en jet privado y abordan el helicóptero directamente en plataforma, sin pisar el tráfico.
 
+![Interior del helicóptero Bell 505 con asientos ejecutivos de piel](/photos/bell-505-interior.webp)
+
 ## Por qué moverse en helicóptero en la CDMX
 
 La zona metropolitana del Valle de México supera los 21 millones de habitantes y más de 1,400 km² de extensión. El tráfico es crónico y afecta por igual a residentes y viajeros de negocios. A 500 metros de altura, esa variable desaparece:

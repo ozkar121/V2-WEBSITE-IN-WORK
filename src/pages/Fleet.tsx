@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Gauge, Navigation } from "lucide-react";
+import { ArrowRight, Users, Gauge, Navigation, ChevronLeft, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { DotPattern } from "@/components/DotPattern";
 import { Footer } from "@/components/Footer";
@@ -15,9 +15,99 @@ import { waLink, SITE_URL, SITE_NAME } from "@/lib/site";
 import { buildBreadcrumb } from "@/lib/breadcrumb";
 import type { TranslationKey } from "@/i18n/translations";
 import aircraftSnapshot from "@/data/aircraftSnapshot.json";
+import lj35b from "@/assets/photos/fleet-lj35-2.webp";
+import lj35c from "@/assets/photos/fleet-lj35-3.webp";
+import lj31a from "@/assets/photos/fleet-lj31-1.webp";
+import lj31b from "@/assets/photos/fleet-lj31-2.webp";
+import lj45a from "@/assets/photos/fleet-lj45-1.webp";
+import lj75a from "@/assets/photos/fleet-lj75-1.webp";
+import lj75b from "@/assets/photos/fleet-lj75-2.webp";
+import hawkerB from "@/assets/photos/fleet-hawker-2.webp";
+import hawkerC from "@/assets/photos/fleet-hawker-3.webp";
+import challengerA from "@/assets/photos/fleet-challenger-1.webp";
+import g450b from "@/assets/photos/fleet-g450-2.webp";
+import g450c from "@/assets/photos/fleet-g450-3.webp";
+import legacyA from "@/assets/photos/fleet-legacy-1.webp";
+import legacyB from "@/assets/photos/fleet-legacy-2.webp";
+import bellA from "@/assets/photos/fleet-bell505-1.webp";
+import bellB from "@/assets/photos/fleet-bell505-2.webp";
+import bellC from "@/assets/photos/fleet-bell505-3.webp";
+import agustaA from "@/assets/photos/fleet-agusta-1.webp";
+import agustaB from "@/assets/photos/fleet-agusta-2.webp";
 
 const SNAPSHOT_AIRCRAFT = aircraftSnapshot.aircraft as Aircraft[];
 const SNAPSHOT_PHOTOS = aircraftSnapshot.photos as Record<string, string>;
+
+// Fotos reales adicionales por nombre de aeronave (se suman a la foto
+// principal de Supabase como slideshow). Nombres tal como están en la tabla.
+const EXTRA_PHOTOS: Record<string, string[]> = {
+  "Learjet 35": [lj35b, lj35c],
+  "Learjet 31": [lj31a, lj31b],
+  "Learjet 45": [lj45a],
+  "Learjet 75": [lj75a, lj75b],
+  "Hawker 800": [hawkerB, hawkerC],
+  "Challenger 601": [challengerA],
+  "Gulfstream G450": [g450b, g450c],
+  "Legacy 600": [legacyA, legacyB],
+  "Bell 505": [bellA, bellB, bellC],
+  "Agusta 109 E": [agustaA, agustaB],
+};
+
+interface Slide {
+  src: string;
+  srcSet?: string;
+}
+
+const FleetPhotoCarousel = ({ slides, alt }: { slides: Slide[]; alt: string }) => {
+  const [idx, setIdx] = useState(0);
+  const go = (d: number) => setIdx((p) => (p + d + slides.length) % slides.length);
+  return (
+    <>
+      <img
+        src={slides[idx].src}
+        srcSet={slides[idx].srcSet}
+        sizes={slides[idx].srcSet ? "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" : undefined}
+        alt={alt}
+        width={800}
+        height={600}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      {slides.length > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label="Foto anterior"
+            onClick={() => go(-1)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-background/70 backdrop-blur-sm border border-jade-soft text-foreground hover:text-jade hover:border-jade transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            type="button"
+            aria-label="Foto siguiente"
+            onClick={() => go(1)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-background/70 backdrop-blur-sm border border-jade-soft text-foreground hover:text-jade hover:border-jade transition-colors"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+          <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={`Foto ${i + 1}`}
+                onClick={() => setIdx(i)}
+                className={`w-1.5 h-1.5 rounded-full transition-colors ${i === idx ? "bg-jade" : "bg-foreground/40"}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </>
+  );
+};
 
 const CAT_KEY: Record<AircraftCategory, TranslationKey> = {
   turbo: "cat_turbo",
@@ -262,24 +352,18 @@ const Fleet = () => {
                   <CornerBrackets />
                   {list.map((a) => {
                     const img = photos[a.id];
+                    const slides: Slide[] = [
+                      ...(img ? [{ src: sbImage(img, 800), srcSet: sbImageSrcSet(img, [400, 800, 1200]) }] : []),
+                      ...(EXTRA_PHOTOS[a.name] ?? []).map((src) => ({ src })),
+                    ];
                     return (
                       <article
                         key={a.id}
                         className="group hover:bg-bg-2/50 transition-colors flex flex-col border-r border-b border-jade-soft"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden bg-bg-3">
-                          {img ? (
-                            <img
-                              src={sbImage(img, 800)}
-                              srcSet={sbImageSrcSet(img, [400, 800, 1200])}
-                              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                              alt={a.name}
-                              width={800}
-                              height={600}
-                              loading="lazy"
-                              decoding="async"
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
+                          {slides.length > 0 ? (
+                            <FleetPhotoCarousel slides={slides} alt={a.name} />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center">
                               <div
@@ -356,7 +440,7 @@ const Fleet = () => {
           <p className="text-base text-fg-2 max-w-xl mx-auto mb-10 leading-relaxed">
             {lang === "en"
               ? "Tell us your route, dates, and passengers. We'll match you with the best aircraft and quote in under 30 minutes."
-              : "Cuéntanos tu ruta, fechas y pasajeros. Te recomendamos la mejor aeronave y cotizamos en menos de 2 horas."}
+              : "Cuéntanos tu ruta, fechas y pasajeros. Te recomendamos la mejor aeronave y cotizamos en 30 minutos."}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a

@@ -49,6 +49,8 @@ Caminas de la sala del FBO al jet en la plataforma. Sin transportes lejanos ni p
 ### 5. Despegue a tu hora
 La salida se ajusta a tu agenda, no al revés. Tú defines la hora de despegue, incluso con avisos de última hora.
 
+![Learjet en el hangar del FBO de Toluca (MMTO)](/photos/hangar-toluca-learjet.webp)
+
 ## ¿Cuánto tiempo antes hay que llegar?
 
 Una de las mayores ventajas del FBO es el tiempo. Como referencia general:
@@ -128,6 +130,7 @@ You walk from the FBO lounge to the jet on the ramp. No distant shuttles or jet 
 ### 5. Takeoff on your schedule
 Departure adapts to your agenda, not the other way around. You set the takeoff time, even at short notice.
 
+![Learjet inside the Toluca (MMTO) FBO hangar](/photos/hangar-toluca-learjet.webp)
 ## How early should you arrive?
 
 One of the FBO's biggest advantages is time. As a general reference:
