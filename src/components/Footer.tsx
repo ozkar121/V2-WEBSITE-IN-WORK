@@ -242,6 +242,21 @@ export const Footer = () => {
       {/* Bottom strip */}
       <div className="flex justify-between items-center pt-6 border-t border-jade-soft flex-wrap gap-4">
         <p className="text-[0.7rem] text-fg-3">© {new Date().getFullYear()} {t("footer_rights")}</p>
+        <a
+          href="https://www.instagram.com/numen.aviation"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram de Numen Aviation"
+          className="inline-flex items-center gap-2 text-[0.68rem] uppercase text-fg-3 hover:text-jade-light transition-colors no-underline"
+          style={{ letterSpacing: "0.2em" }}
+        >
+          <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" />
+            <circle cx="12" cy="12" r="4.2" />
+            <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+          @numen.aviation
+        </a>
         <div className="flex gap-3">
           {["México", "AFAC", "24/7"].map((b) => (
             <span
