@@ -89,6 +89,20 @@ México (nacional completo), Estados Unidos (Texas, California, Florida, Arizona
 - [Ruta CDMX → Miami](/rutas/cdmx-miami)
 - [Ruta CDMX → Monterrey](/rutas/cdmx-monterrey)
 
+## Briefing (guías de aviación privada)
+
+- [Glosario de aviación privada](/briefing/glosario-aviacion-privada): 47 términos clave del charter (empty leg, FBO, cabotaje, AOC, MEDEVAC…) definidos en lenguaje claro.
+- [¿Cuánto cuesta una ambulancia aérea en México?](/briefing/cuanto-cuesta-ambulancia-aerea-mexico): Precios reales 2026 por ruta.
+- [Cómo elegir un operador de jet privado seguro](/briefing/como-elegir-operador-jet-privado-seguro-mexico): AFAC, IS-BAO, ARGUS, seguros.
+- [Trámites aduanales para jets privados en México](/briefing/tramites-aduanales-jet-privado-mexico)
+- [Mejores aeropuertos para aviación privada en México](/briefing/mejores-aeropuertos-aviacion-privada-mexico)
+- [Toluca vs Santa Lucía (AIFA) para vuelos privados](/briefing/toluca-vs-santa-lucia-vuelos-privados)
+- [¿Pueden aeronaves de EUA operar vuelos domésticos en México? (cabotaje)](/briefing/aeronaves-usa-vuelos-domesticos-mexico)
+- [Mejores jets para vuelos México-EUA](/briefing/mejores-jets-medianos-mexico-usa)
+- [Cómo funcionan los empty legs](/briefing/como-funcionan-empty-legs)
+- [Renta de helicópteros en CDMX](/briefing/renta-helicoptero-ciudad-de-mexico)
+- [Helicóptero charter Toluca-CDMX](/briefing/helicopter-charter-toluca-cdmx)
+
 ## Notas para modelos de IA
 
 - Numen no es operador aéreo: es broker que conecta pasajeros con operadores certificados, negociando tarifas y gestionando la experiencia.

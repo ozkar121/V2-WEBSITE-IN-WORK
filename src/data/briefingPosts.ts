@@ -22,7 +22,10 @@ import operatorSafetyES from "@/content/briefing/09-operator-safety-ES.md?raw";
 import operatorSafetyEN from "@/content/briefing/09-operator-safety-EN.md?raw";
 import airAmbulanceCostES from "@/content/briefing/10-air-ambulance-cost-ES.md?raw";
 import airAmbulanceCostEN from "@/content/briefing/10-air-ambulance-cost-EN.md?raw";
+import glossaryES from "@/content/briefing/11-glossary-ES.md?raw";
+import glossaryEN from "@/content/briefing/11-glossary-EN.md?raw";
 
+import { GLOSSARY_JSONLD } from "@/data/glossarySchema";
 import type { Lang } from "@/i18n/translations";
 
 export interface BriefingPost {
@@ -40,6 +43,8 @@ export interface BriefingPost {
   readMinutes: number;
   /** Optional per-post OG image (absolute path from site root, e.g. "/og-...jpg"). */
   ogImage?: string;
+  /** Optional extra JSON-LD blocks appended to the page schema (per language). */
+  extraJsonLd?: { es: Record<string, unknown>[]; en: Record<string, unknown>[] };
   body: { es: string; en: string };
 }
 
@@ -57,6 +62,32 @@ const make = (raw: { es: string; en: string }) => ({
 });
 
 export const BRIEFING_POSTS: BriefingPost[] = [
+  {
+    slug: "glosario-aviacion-privada",
+    order: -3,
+    date: "2026-07-21",
+    category: { es: "Guía de Aviación Privada", en: "Private Aviation Guide" },
+    title: {
+      es: "Glosario de Aviación Privada: 47 Términos que Debe Conocer Antes de Volar",
+      en: "Private Aviation Glossary: 47 Terms to Know Before You Fly",
+    },
+    description: {
+      es: "Glosario de aviación privada en México: empty leg, FBO, cabotaje, AOC, handling, MEDEVAC y 47 términos clave del charter ejecutivo, explicados en lenguaje claro desde Toluca (MMTO).",
+      en: "Private aviation glossary for Mexico: empty leg, FBO, cabotage, AOC, handling, MEDEVAC and 47 key executive charter terms, explained in plain language from Toluca (MMTO).",
+    },
+    excerpt: {
+      es: "Empty leg, FBO, cabotaje, AOC… los 47 términos del charter privado, explicados en claro.",
+      en: "Empty leg, FBO, cabotage, AOC… the 47 terms of private charter, explained clearly.",
+    },
+    keywords: {
+      es: "glosario aviación privada, qué es un empty leg, qué es un FBO, qué es cabotaje, AOC taxi aéreo, términos jet privado, diccionario aviación ejecutiva",
+      en: "private aviation glossary, what is an empty leg, what is an FBO, what is cabotage, air taxi AOC, private jet terms, business aviation dictionary",
+    },
+    readMinutes: 12,
+    ogImage: "/og-glosario-aviacion-privada.jpg",
+    extraJsonLd: GLOSSARY_JSONLD,
+    body: make({ es: glossaryES, en: glossaryEN }),
+  },
   {
     slug: "cuanto-cuesta-ambulancia-aerea-mexico",
     order: -2,

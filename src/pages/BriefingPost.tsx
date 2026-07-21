@@ -61,6 +61,7 @@ const BriefingPost = () => {
           { name: title, item: `${SITE_URL}/briefing/${post.slug}` },
         ],
       })!,
+      ...(post.extraJsonLd?.[lang] ?? []),
     ],
   });
 
